@@ -1,0 +1,121 @@
+run_id,topic,topic_class,pairing,pro_profile,con_profile,self_condition,allow_self_arguments,seed,trial,initialization_mode,target_initial_stance
+social_media_brings_more_harm_than_good__open_vs_open__trial_01__self_on,Social media brings more harm than good,Focus topic,Open/Open,Open,Open,self_on,True,472323449,1,target_controlled,0.75
+social_media_brings_more_harm_than_good__open_vs_open__trial_02__self_on,Social media brings more harm than good,Focus topic,Open/Open,Open,Open,self_on,True,217545594,2,target_controlled,0.75
+social_media_brings_more_harm_than_good__open_vs_open__trial_03__self_on,Social media brings more harm than good,Focus topic,Open/Open,Open,Open,self_on,True,287870301,3,target_controlled,0.75
+social_media_brings_more_harm_than_good__open_vs_committed__trial_01__self_on,Social media brings more harm than good,Focus topic,Open/Committed,Open,Committed,self_on,True,516386132,1,target_controlled,0.75
+social_media_brings_more_harm_than_good__open_vs_committed__trial_02__self_on,Social media brings more harm than good,Focus topic,Open/Committed,Open,Committed,self_on,True,296296750,2,target_controlled,0.75
+social_media_brings_more_harm_than_good__open_vs_committed__trial_03__self_on,Social media brings more harm than good,Focus topic,Open/Committed,Open,Committed,self_on,True,670481563,3,target_controlled,0.75
+social_media_brings_more_harm_than_good__committed_vs_open__trial_01__self_on,Social media brings more harm than good,Focus topic,Committed/Open,Committed,Open,self_on,True,258228089,1,target_controlled,0.75
+social_media_brings_more_harm_than_good__committed_vs_open__trial_02__self_on,Social media brings more harm than good,Focus topic,Committed/Open,Committed,Open,self_on,True,982013858,2,target_controlled,0.75
+social_media_brings_more_harm_than_good__committed_vs_open__trial_03__self_on,Social media brings more harm than good,Focus topic,Committed/Open,Committed,Open,self_on,True,184917328,3,target_controlled,0.75
+social_media_brings_more_harm_than_good__committed_vs_committed__trial_01__self_on,Social media brings more harm than good,Focus topic,Committed/Committed,Committed,Committed,self_on,True,610678965,1,target_controlled,0.75
+social_media_brings_more_harm_than_good__committed_vs_committed__trial_02__self_on,Social media brings more harm than good,Focus topic,Committed/Committed,Committed,Committed,self_on,True,924700303,2,target_controlled,0.75
+social_media_brings_more_harm_than_good__committed_vs_committed__trial_03__self_on,Social media brings more harm than good,Focus topic,Committed/Committed,Committed,Committed,self_on,True,385821870,3,target_controlled,0.75
+homeopathy_brings_more_harm_than_good__open_vs_open__trial_01__self_on,Homeopathy brings more harm than good,Focus topic,Open/Open,Open,Open,self_on,True,378153160,1,target_controlled,0.75
+homeopathy_brings_more_harm_than_good__open_vs_open__trial_02__self_on,Homeopathy brings more harm than good,Focus topic,Open/Open,Open,Open,self_on,True,491332476,2,target_controlled,0.75
+homeopathy_brings_more_harm_than_good__open_vs_open__trial_03__self_on,Homeopathy brings more harm than good,Focus topic,Open/Open,Open,Open,self_on,True,638032703,3,target_controlled,0.75
+homeopathy_brings_more_harm_than_good__open_vs_committed__trial_01__self_on,Homeopathy brings more harm than good,Focus topic,Open/Committed,Open,Committed,self_on,True,249809274,1,target_controlled,0.75
+homeopathy_brings_more_harm_than_good__open_vs_committed__trial_02__self_on,Homeopathy brings more harm than good,Focus topic,Open/Committed,Open,Committed,self_on,True,369092842,2,target_controlled,0.75
+homeopathy_brings_more_harm_than_good__open_vs_committed__trial_03__self_on,Homeopathy brings more harm than good,Focus topic,Open/Committed,Open,Committed,self_on,True,984466995,3,target_controlled,0.75
+homeopathy_brings_more_harm_than_good__committed_vs_open__trial_01__self_on,Homeopathy brings more harm than good,Focus topic,Committed/Open,Committed,Open,self_on,True,628718673,1,target_controlled,0.75
+homeopathy_brings_more_harm_than_good__committed_vs_open__trial_02__self_on,Homeopathy brings more harm than good,Focus topic,Committed/Open,Committed,Open,self_on,True,624349707,2,target_controlled,0.75
+homeopathy_brings_more_harm_than_good__committed_vs_open__trial_03__self_on,Homeopathy brings more harm than good,Focus topic,Committed/Open,Committed,Open,self_on,True,640863988,3,target_controlled,0.75
+homeopathy_brings_more_harm_than_good__committed_vs_committed__trial_01__self_on,Homeopathy brings more harm than good,Focus topic,Committed/Committed,Committed,Committed,self_on,True,928373371,1,target_controlled,0.75
+homeopathy_brings_more_harm_than_good__committed_vs_committed__trial_02__self_on,Homeopathy brings more harm than good,Focus topic,Committed/Committed,Committed,Committed,self_on,True,117729325,2,target_controlled,0.75
+homeopathy_brings_more_harm_than_good__committed_vs_committed__trial_03__self_on,Homeopathy brings more harm than good,Focus topic,Committed/Committed,Committed,Committed,self_on,True,516748774,3,target_controlled,0.75
+entrapment_should_be_legalized__open_vs_open__trial_01__self_on,Entrapment should be legalized,Focus topic,Open/Open,Open,Open,self_on,True,995670309,1,target_controlled,0.75
+entrapment_should_be_legalized__open_vs_open__trial_02__self_on,Entrapment should be legalized,Focus topic,Open/Open,Open,Open,self_on,True,377135673,2,target_controlled,0.75
+entrapment_should_be_legalized__open_vs_open__trial_03__self_on,Entrapment should be legalized,Focus topic,Open/Open,Open,Open,self_on,True,970582097,3,target_controlled,0.75
+entrapment_should_be_legalized__open_vs_committed__trial_01__self_on,Entrapment should be legalized,Focus topic,Open/Committed,Open,Committed,self_on,True,239615889,1,target_controlled,0.75
+entrapment_should_be_legalized__open_vs_committed__trial_02__self_on,Entrapment should be legalized,Focus topic,Open/Committed,Open,Committed,self_on,True,558577415,2,target_controlled,0.75
+entrapment_should_be_legalized__open_vs_committed__trial_03__self_on,Entrapment should be legalized,Focus topic,Open/Committed,Open,Committed,self_on,True,498419633,3,target_controlled,0.75
+entrapment_should_be_legalized__committed_vs_open__trial_01__self_on,Entrapment should be legalized,Focus topic,Committed/Open,Committed,Open,self_on,True,885096518,1,target_controlled,0.75
+entrapment_should_be_legalized__committed_vs_open__trial_02__self_on,Entrapment should be legalized,Focus topic,Committed/Open,Committed,Open,self_on,True,28837224,2,target_controlled,0.75
+entrapment_should_be_legalized__committed_vs_open__trial_03__self_on,Entrapment should be legalized,Focus topic,Committed/Open,Committed,Open,self_on,True,667424852,3,target_controlled,0.75
+entrapment_should_be_legalized__committed_vs_committed__trial_01__self_on,Entrapment should be legalized,Focus topic,Committed/Committed,Committed,Committed,self_on,True,771080579,1,target_controlled,0.75
+entrapment_should_be_legalized__committed_vs_committed__trial_02__self_on,Entrapment should be legalized,Focus topic,Committed/Committed,Committed,Committed,self_on,True,734670607,2,target_controlled,0.75
+entrapment_should_be_legalized__committed_vs_committed__trial_03__self_on,Entrapment should be legalized,Focus topic,Committed/Committed,Committed,Committed,self_on,True,32958670,3,target_controlled,0.75
+we_should_adopt_a_zero_tolerance_policy_in_schools__open_vs_open__trial_01__self_on,We should adopt a zero-tolerance policy in schools,Focus topic,Open/Open,Open,Open,self_on,True,152549740,1,target_controlled,0.75
+we_should_adopt_a_zero_tolerance_policy_in_schools__open_vs_open__trial_02__self_on,We should adopt a zero-tolerance policy in schools,Focus topic,Open/Open,Open,Open,self_on,True,733796083,2,target_controlled,0.75
+we_should_adopt_a_zero_tolerance_policy_in_schools__open_vs_open__trial_03__self_on,We should adopt a zero-tolerance policy in schools,Focus topic,Open/Open,Open,Open,self_on,True,387589746,3,target_controlled,0.75
+we_should_adopt_a_zero_tolerance_policy_in_schools__open_vs_committed__trial_01__self_on,We should adopt a zero-tolerance policy in schools,Focus topic,Open/Committed,Open,Committed,self_on,True,963371587,1,target_controlled,0.75
+we_should_adopt_a_zero_tolerance_policy_in_schools__open_vs_committed__trial_02__self_on,We should adopt a zero-tolerance policy in schools,Focus topic,Open/Committed,Open,Committed,self_on,True,98326310,2,target_controlled,0.75
+we_should_adopt_a_zero_tolerance_policy_in_schools__open_vs_committed__trial_03__self_on,We should adopt a zero-tolerance policy in schools,Focus topic,Open/Committed,Open,Committed,self_on,True,828885088,3,target_controlled,0.75
+we_should_adopt_a_zero_tolerance_policy_in_schools__committed_vs_open__trial_01__self_on,We should adopt a zero-tolerance policy in schools,Focus topic,Committed/Open,Committed,Open,self_on,True,972471161,1,target_controlled,0.75
+we_should_adopt_a_zero_tolerance_policy_in_schools__committed_vs_open__trial_02__self_on,We should adopt a zero-tolerance policy in schools,Focus topic,Committed/Open,Committed,Open,self_on,True,517393910,2,target_controlled,0.75
+we_should_adopt_a_zero_tolerance_policy_in_schools__committed_vs_open__trial_03__self_on,We should adopt a zero-tolerance policy in schools,Focus topic,Committed/Open,Committed,Open,self_on,True,937043049,3,target_controlled,0.75
+we_should_adopt_a_zero_tolerance_policy_in_schools__committed_vs_committed__trial_01__self_on,We should adopt a zero-tolerance policy in schools,Focus topic,Committed/Committed,Committed,Committed,self_on,True,936514775,1,target_controlled,0.75
+we_should_adopt_a_zero_tolerance_policy_in_schools__committed_vs_committed__trial_02__self_on,We should adopt a zero-tolerance policy in schools,Focus topic,Committed/Committed,Committed,Committed,self_on,True,82617354,2,target_controlled,0.75
+we_should_adopt_a_zero_tolerance_policy_in_schools__committed_vs_committed__trial_03__self_on,We should adopt a zero-tolerance policy in schools,Focus topic,Committed/Committed,Committed,Committed,self_on,True,999795868,3,target_controlled,0.75
+we_should_introduce_compulsory_voting__open_vs_open__trial_01__self_on,We should introduce compulsory voting,Focus topic,Open/Open,Open,Open,self_on,True,713747823,1,target_controlled,0.75
+we_should_introduce_compulsory_voting__open_vs_open__trial_02__self_on,We should introduce compulsory voting,Focus topic,Open/Open,Open,Open,self_on,True,966544949,2,target_controlled,0.75
+we_should_introduce_compulsory_voting__open_vs_open__trial_03__self_on,We should introduce compulsory voting,Focus topic,Open/Open,Open,Open,self_on,True,242202346,3,target_controlled,0.75
+we_should_introduce_compulsory_voting__open_vs_committed__trial_01__self_on,We should introduce compulsory voting,Focus topic,Open/Committed,Open,Committed,self_on,True,506251445,1,target_controlled,0.75
+we_should_introduce_compulsory_voting__open_vs_committed__trial_02__self_on,We should introduce compulsory voting,Focus topic,Open/Committed,Open,Committed,self_on,True,859200733,2,target_controlled,0.75
+we_should_introduce_compulsory_voting__open_vs_committed__trial_03__self_on,We should introduce compulsory voting,Focus topic,Open/Committed,Open,Committed,self_on,True,661857625,3,target_controlled,0.75
+we_should_introduce_compulsory_voting__committed_vs_open__trial_01__self_on,We should introduce compulsory voting,Focus topic,Committed/Open,Committed,Open,self_on,True,541150626,1,target_controlled,0.75
+we_should_introduce_compulsory_voting__committed_vs_open__trial_02__self_on,We should introduce compulsory voting,Focus topic,Committed/Open,Committed,Open,self_on,True,984229166,2,target_controlled,0.75
+we_should_introduce_compulsory_voting__committed_vs_open__trial_03__self_on,We should introduce compulsory voting,Focus topic,Committed/Open,Committed,Open,self_on,True,332938267,3,target_controlled,0.75
+we_should_introduce_compulsory_voting__committed_vs_committed__trial_01__self_on,We should introduce compulsory voting,Focus topic,Committed/Committed,Committed,Committed,self_on,True,300710405,1,target_controlled,0.75
+we_should_introduce_compulsory_voting__committed_vs_committed__trial_02__self_on,We should introduce compulsory voting,Focus topic,Committed/Committed,Committed,Committed,self_on,True,778266691,2,target_controlled,0.75
+we_should_introduce_compulsory_voting__committed_vs_committed__trial_03__self_on,We should introduce compulsory voting,Focus topic,Committed/Committed,Committed,Committed,self_on,True,151352834,3,target_controlled,0.75
+we_should_adopt_an_austerity_regime__open_vs_open__trial_01__self_on,We should adopt an austerity regime,Focus topic,Open/Open,Open,Open,self_on,True,277361264,1,target_controlled,0.75
+we_should_adopt_an_austerity_regime__open_vs_open__trial_02__self_on,We should adopt an austerity regime,Focus topic,Open/Open,Open,Open,self_on,True,986543120,2,target_controlled,0.75
+we_should_adopt_an_austerity_regime__open_vs_open__trial_03__self_on,We should adopt an austerity regime,Focus topic,Open/Open,Open,Open,self_on,True,311635955,3,target_controlled,0.75
+we_should_adopt_an_austerity_regime__open_vs_committed__trial_01__self_on,We should adopt an austerity regime,Focus topic,Open/Committed,Open,Committed,self_on,True,960892261,1,target_controlled,0.75
+we_should_adopt_an_austerity_regime__open_vs_committed__trial_02__self_on,We should adopt an austerity regime,Focus topic,Open/Committed,Open,Committed,self_on,True,675957712,2,target_controlled,0.75
+we_should_adopt_an_austerity_regime__open_vs_committed__trial_03__self_on,We should adopt an austerity regime,Focus topic,Open/Committed,Open,Committed,self_on,True,834866841,3,target_controlled,0.75
+we_should_adopt_an_austerity_regime__committed_vs_open__trial_01__self_on,We should adopt an austerity regime,Focus topic,Committed/Open,Committed,Open,self_on,True,899502421,1,target_controlled,0.75
+we_should_adopt_an_austerity_regime__committed_vs_open__trial_02__self_on,We should adopt an austerity regime,Focus topic,Committed/Open,Committed,Open,self_on,True,818048992,2,target_controlled,0.75
+we_should_adopt_an_austerity_regime__committed_vs_open__trial_03__self_on,We should adopt an austerity regime,Focus topic,Committed/Open,Committed,Open,self_on,True,367794963,3,target_controlled,0.75
+we_should_adopt_an_austerity_regime__committed_vs_committed__trial_01__self_on,We should adopt an austerity regime,Focus topic,Committed/Committed,Committed,Committed,self_on,True,130326854,1,target_controlled,0.75
+we_should_adopt_an_austerity_regime__committed_vs_committed__trial_02__self_on,We should adopt an austerity regime,Focus topic,Committed/Committed,Committed,Committed,self_on,True,794909646,2,target_controlled,0.75
+we_should_adopt_an_austerity_regime__committed_vs_committed__trial_03__self_on,We should adopt an austerity regime,Focus topic,Committed/Committed,Committed,Committed,self_on,True,93447746,3,target_controlled,0.75
+we_should_legalize_sex_selection__open_vs_open__trial_01__self_on,We should legalize sex selection,Focus topic,Open/Open,Open,Open,self_on,True,901022963,1,target_controlled,0.75
+we_should_legalize_sex_selection__open_vs_open__trial_02__self_on,We should legalize sex selection,Focus topic,Open/Open,Open,Open,self_on,True,721308451,2,target_controlled,0.75
+we_should_legalize_sex_selection__open_vs_open__trial_03__self_on,We should legalize sex selection,Focus topic,Open/Open,Open,Open,self_on,True,154844000,3,target_controlled,0.75
+we_should_legalize_sex_selection__open_vs_committed__trial_01__self_on,We should legalize sex selection,Focus topic,Open/Committed,Open,Committed,self_on,True,89535087,1,target_controlled,0.75
+we_should_legalize_sex_selection__open_vs_committed__trial_02__self_on,We should legalize sex selection,Focus topic,Open/Committed,Open,Committed,self_on,True,643291686,2,target_controlled,0.75
+we_should_legalize_sex_selection__open_vs_committed__trial_03__self_on,We should legalize sex selection,Focus topic,Open/Committed,Open,Committed,self_on,True,151073907,3,target_controlled,0.75
+we_should_legalize_sex_selection__committed_vs_open__trial_01__self_on,We should legalize sex selection,Focus topic,Committed/Open,Committed,Open,self_on,True,235232933,1,target_controlled,0.75
+we_should_legalize_sex_selection__committed_vs_open__trial_02__self_on,We should legalize sex selection,Focus topic,Committed/Open,Committed,Open,self_on,True,685539297,2,target_controlled,0.75
+we_should_legalize_sex_selection__committed_vs_open__trial_03__self_on,We should legalize sex selection,Focus topic,Committed/Open,Committed,Open,self_on,True,184039589,3,target_controlled,0.75
+we_should_legalize_sex_selection__committed_vs_committed__trial_01__self_on,We should legalize sex selection,Focus topic,Committed/Committed,Committed,Committed,self_on,True,546657709,1,target_controlled,0.75
+we_should_legalize_sex_selection__committed_vs_committed__trial_02__self_on,We should legalize sex selection,Focus topic,Committed/Committed,Committed,Committed,self_on,True,990870143,2,target_controlled,0.75
+we_should_legalize_sex_selection__committed_vs_committed__trial_03__self_on,We should legalize sex selection,Focus topic,Committed/Committed,Committed,Committed,self_on,True,43978687,3,target_controlled,0.75
+we_should_adopt_atheism__open_vs_open__trial_01__self_on,We should adopt atheism,Focus topic,Open/Open,Open,Open,self_on,True,60951683,1,target_controlled,0.75
+we_should_adopt_atheism__open_vs_open__trial_02__self_on,We should adopt atheism,Focus topic,Open/Open,Open,Open,self_on,True,56507363,2,target_controlled,0.75
+we_should_adopt_atheism__open_vs_open__trial_03__self_on,We should adopt atheism,Focus topic,Open/Open,Open,Open,self_on,True,459591827,3,target_controlled,0.75
+we_should_adopt_atheism__open_vs_committed__trial_01__self_on,We should adopt atheism,Focus topic,Open/Committed,Open,Committed,self_on,True,614228407,1,target_controlled,0.75
+we_should_adopt_atheism__open_vs_committed__trial_02__self_on,We should adopt atheism,Focus topic,Open/Committed,Open,Committed,self_on,True,778385704,2,target_controlled,0.75
+we_should_adopt_atheism__open_vs_committed__trial_03__self_on,We should adopt atheism,Focus topic,Open/Committed,Open,Committed,self_on,True,715496820,3,target_controlled,0.75
+we_should_adopt_atheism__committed_vs_open__trial_01__self_on,We should adopt atheism,Focus topic,Committed/Open,Committed,Open,self_on,True,837182678,1,target_controlled,0.75
+we_should_adopt_atheism__committed_vs_open__trial_02__self_on,We should adopt atheism,Focus topic,Committed/Open,Committed,Open,self_on,True,179255059,2,target_controlled,0.75
+we_should_adopt_atheism__committed_vs_open__trial_03__self_on,We should adopt atheism,Focus topic,Committed/Open,Committed,Open,self_on,True,46420880,3,target_controlled,0.75
+we_should_adopt_atheism__committed_vs_committed__trial_01__self_on,We should adopt atheism,Focus topic,Committed/Committed,Committed,Committed,self_on,True,43237823,1,target_controlled,0.75
+we_should_adopt_atheism__committed_vs_committed__trial_02__self_on,We should adopt atheism,Focus topic,Committed/Committed,Committed,Committed,self_on,True,510793299,2,target_controlled,0.75
+we_should_adopt_atheism__committed_vs_committed__trial_03__self_on,We should adopt atheism,Focus topic,Committed/Committed,Committed,Committed,self_on,True,450958678,3,target_controlled,0.75
+we_should_subsidize_journalism__open_vs_open__trial_01__self_on,We should subsidize journalism,Focus topic,Open/Open,Open,Open,self_on,True,546280361,1,target_controlled,0.75
+we_should_subsidize_journalism__open_vs_open__trial_02__self_on,We should subsidize journalism,Focus topic,Open/Open,Open,Open,self_on,True,350365155,2,target_controlled,0.75
+we_should_subsidize_journalism__open_vs_open__trial_03__self_on,We should subsidize journalism,Focus topic,Open/Open,Open,Open,self_on,True,673875839,3,target_controlled,0.75
+we_should_subsidize_journalism__open_vs_committed__trial_01__self_on,We should subsidize journalism,Focus topic,Open/Committed,Open,Committed,self_on,True,961117373,1,target_controlled,0.75
+we_should_subsidize_journalism__open_vs_committed__trial_02__self_on,We should subsidize journalism,Focus topic,Open/Committed,Open,Committed,self_on,True,959929569,2,target_controlled,0.75
+we_should_subsidize_journalism__open_vs_committed__trial_03__self_on,We should subsidize journalism,Focus topic,Open/Committed,Open,Committed,self_on,True,567439419,3,target_controlled,0.75
+we_should_subsidize_journalism__committed_vs_open__trial_01__self_on,We should subsidize journalism,Focus topic,Committed/Open,Committed,Open,self_on,True,87669023,1,target_controlled,0.75
+we_should_subsidize_journalism__committed_vs_open__trial_02__self_on,We should subsidize journalism,Focus topic,Committed/Open,Committed,Open,self_on,True,335769597,2,target_controlled,0.75
+we_should_subsidize_journalism__committed_vs_open__trial_03__self_on,We should subsidize journalism,Focus topic,Committed/Open,Committed,Open,self_on,True,992148372,3,target_controlled,0.75
+we_should_subsidize_journalism__committed_vs_committed__trial_01__self_on,We should subsidize journalism,Focus topic,Committed/Committed,Committed,Committed,self_on,True,48974246,1,target_controlled,0.75
+we_should_subsidize_journalism__committed_vs_committed__trial_02__self_on,We should subsidize journalism,Focus topic,Committed/Committed,Committed,Committed,self_on,True,497342554,2,target_controlled,0.75
+we_should_subsidize_journalism__committed_vs_committed__trial_03__self_on,We should subsidize journalism,Focus topic,Committed/Committed,Committed,Committed,self_on,True,744716985,3,target_controlled,0.75
+we_should_adopt_libertarianism__open_vs_open__trial_01__self_on,We should adopt libertarianism,Focus topic,Open/Open,Open,Open,self_on,True,444637797,1,target_controlled,0.75
+we_should_adopt_libertarianism__open_vs_open__trial_02__self_on,We should adopt libertarianism,Focus topic,Open/Open,Open,Open,self_on,True,179234509,2,target_controlled,0.75
+we_should_adopt_libertarianism__open_vs_open__trial_03__self_on,We should adopt libertarianism,Focus topic,Open/Open,Open,Open,self_on,True,181774506,3,target_controlled,0.75
+we_should_adopt_libertarianism__open_vs_committed__trial_01__self_on,We should adopt libertarianism,Focus topic,Open/Committed,Open,Committed,self_on,True,911053180,1,target_controlled,0.75
+we_should_adopt_libertarianism__open_vs_committed__trial_02__self_on,We should adopt libertarianism,Focus topic,Open/Committed,Open,Committed,self_on,True,888519929,2,target_controlled,0.75
+we_should_adopt_libertarianism__open_vs_committed__trial_03__self_on,We should adopt libertarianism,Focus topic,Open/Committed,Open,Committed,self_on,True,343807722,3,target_controlled,0.75
+we_should_adopt_libertarianism__committed_vs_open__trial_01__self_on,We should adopt libertarianism,Focus topic,Committed/Open,Committed,Open,self_on,True,264801481,1,target_controlled,0.75
+we_should_adopt_libertarianism__committed_vs_open__trial_02__self_on,We should adopt libertarianism,Focus topic,Committed/Open,Committed,Open,self_on,True,227223770,2,target_controlled,0.75
+we_should_adopt_libertarianism__committed_vs_open__trial_03__self_on,We should adopt libertarianism,Focus topic,Committed/Open,Committed,Open,self_on,True,11660571,3,target_controlled,0.75
+we_should_adopt_libertarianism__committed_vs_committed__trial_01__self_on,We should adopt libertarianism,Focus topic,Committed/Committed,Committed,Committed,self_on,True,486590267,1,target_controlled,0.75
+we_should_adopt_libertarianism__committed_vs_committed__trial_02__self_on,We should adopt libertarianism,Focus topic,Committed/Committed,Committed,Committed,self_on,True,167718146,2,target_controlled,0.75
+we_should_adopt_libertarianism__committed_vs_committed__trial_03__self_on,We should adopt libertarianism,Focus topic,Committed/Committed,Committed,Committed,self_on,True,827926419,3,target_controlled,0.75

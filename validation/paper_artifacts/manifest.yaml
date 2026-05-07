@@ -1,0 +1,46 @@
+paper_artifacts_version: "2026-05-07"
+generated_at_utc: "not timestamped; manifest is deterministic"
+artifact_root: "validation/paper_artifacts"
+
+reproducibility_boundary:
+  exact_paper_figures: "Use the committed CSV/PDF/TeX files in validation/paper_artifacts."
+  full_api_rerun: "Requires external data/API access and is not expected to be byte-identical because hosted LLM behavior can change."
+
+evidence_alignment:
+  artifact_dir: "validation/paper_artifacts/evidence_alignment"
+  fold_statistics_inputs:
+    group_heldout: "validation/results/parameter_recommendations_group_response5_evidence13x13_quality"
+    topic_heldout: "validation/results/parameter_recommendations_topic_response5_evidence13x13_quality"
+  selected_files: 16
+  primary_figures:
+    - "evidence_alignment/figure_parameter_rmse_surfaces_evidence_alignment_focus.pdf"
+    - "evidence_alignment/figure_parameter_rmse_surfaces_evidence_aligned_topic_category.pdf"
+  primary_tables:
+    - "evidence_alignment/evidence_alignment_focus_baseline_metrics.csv"
+    - "evidence_alignment/parameter_rmse_surface_evidence_alignment_focus.csv"
+    - "evidence_alignment/parameter_rmse_surface_evidence_aligned_topic_category.csv"
+    - "evidence_alignment/debate_rmse_confidence_intervals.csv"
+    - "evidence_alignment/debate_rmse_fold_tests.csv"
+
+two_agent_focus10:
+  artifact_dir: "validation/paper_artifacts/two_agent_focus10"
+  selected_files: 18
+  completed_runs: 120
+  topics: 10
+  pairings: 4
+  trials_per_topic_pairing: 3
+  rounds: 15
+  backend: "openai"
+  model: "gpt-4o-mini"
+  topic_grid_pdfs: 10
+  run_specs: 120
+  primary_tables:
+    - "two_agent_focus10/topic_convergence_by_pairing.csv"
+    - "two_agent_focus10/topic_convergence_diagnostics.csv"
+    - "two_agent_focus10/topic_convergence_by_pairing_table.tex"
+  regenerate_configs_command: >-
+    python validation/scripts/run_two_agent_controlled.py --preset human_showcase_focus10
+    --output-dir validation/results/two_agent_focus10_gpt4omini
+    --dry-run --backend-type openai --model gpt-4o-mini --rounds 15
+
+checksums: "MANIFEST.sha256"

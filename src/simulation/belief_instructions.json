@@ -1,0 +1,80 @@
+{
+    "directions": {
+        "positive": "Argue IN FAVOR of the motion.",
+        "negative": "Argue AGAINST the motion.",
+        "positive_label": "support",
+        "negative_label": "oppose"
+    },
+    "positive_bins": [
+        {
+            "min": 0.0,
+            "max": 0.1,
+            "intensity": "Neutral",
+            "instruction": "You are undecided. Explore both sides.",
+            "explicit_prefix": "uncertain"
+        },
+        {
+            "min": 0.1,
+            "max": 0.2,
+            "intensity": "Very Weak",
+            "instruction": "You have a slight hunch. Stay open-minded.",
+            "explicit_prefix": "slightly"
+        },
+        {
+            "min": 0.2,
+            "max": 0.3,
+            "intensity": "Weak",
+            "instruction": "You have a preference but are easily swayed.",
+            "explicit_prefix": "somewhat"
+        },
+        {
+            "min": 0.3,
+            "max": 0.4,
+            "intensity": "Moderate-Weak",
+            "instruction": "You are leaning towards this side. Acknowledge valid counter-points.",
+            "explicit_prefix": "leaning toward"
+        },
+        {
+            "min": 0.4,
+            "max": 0.5,
+            "intensity": "Moderate",
+            "instruction": "You are fairly confident. Support your view clearly.",
+            "explicit_prefix": "moderately"
+        },
+        {
+            "min": 0.5,
+            "max": 0.6,
+            "intensity": "Moderate-Strong",
+            "instruction": "You are confident. Argue for your position with good evidence.",
+            "explicit_prefix": "clearly"
+        },
+        {
+            "min": 0.6,
+            "max": 0.7,
+            "intensity": "Strong",
+            "instruction": "You are confident. Defend your position clearly.",
+            "explicit_prefix": "strongly"
+        },
+        {
+            "min": 0.7,
+            "max": 0.8,
+            "intensity": "Very Strong",
+            "instruction": "You are very confident. Challenge opposing views directly.",
+            "explicit_prefix": "very strongly"
+        },
+        {
+            "min": 0.8,
+            "max": 0.9,
+            "intensity": "Near Certainty",
+            "instruction": "You are almost certain. Dismiss most opposition as incorrect.",
+            "explicit_prefix": "almost completely"
+        },
+        {
+            "min": 0.9,
+            "max": 1.1,
+            "intensity": "Total Certainty",
+            "instruction": "You are absolutely certain. Do not concede anything.",
+            "explicit_prefix": "completely"
+        }
+    ]
+}

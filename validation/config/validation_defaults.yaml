@@ -1,0 +1,50 @@
+backend:
+  type: "openai"
+  model: "gpt-4o-mini-2024-07-18"
+  # model: "gpt-5-nano-2025-08-07"
+  # model: "gpt-5.4-nano-2026-03-17"
+
+
+  
+  # type: "openrouter"
+  # model: "anthropic/claude-sonnet-4"
+  # model: "anthropic/claude-opus-4"
+
+  # model: "anthropic/claude-haiku-4.5"
+  # model: "anthropic/claude-sonnet-4.5"
+  # model: "anthropic/claude-opus-4.5"
+
+  # model: "moonshotai/kimi-k2"
+
+  # model: "deepseek/deepseek-v3.2"
+
+  # model: "openai/gpt-5.4-nano"
+  # model: "openai/gpt-5.4-mini"
+  # model: "openai/gpt-5.4"
+
+  # model: "openai/gpt-5-nano"
+
+  # model: "openai/gpt-4o-mini"
+  # model: "openai/gpt-4o-2024-11-20"
+
+memory:
+  strength_estimation_method: "classifier"
+  classifier_model_path: "models/argument_quality_classifier"
+
+extraction:
+  cache_dir: "validation/data/cache/extractions"
+
+replay:
+  seed_with_initial_text: true
+  K: 0.4
+  Ka: 0.4
+
+parameter_sweep:
+  # K_grid: [0.05, 0.1, 0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0, 3.0]
+  # Ka_grid: [0.05, 0.1, 0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0, 3.0]
+  K_grid: [0.2, 0.4, 0.6, 0.8, 1.0]
+  Ka_grid: [0.2, 0.4, 0.6, 0.8, 1.0]
+
+
+output:
+  results_dir: "validation/results"

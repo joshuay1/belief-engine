@@ -1,0 +1,11 @@
+{
+  "artifact": "anonymous_reviewer_release",
+  "generated_at_utc": "2026-05-07T11:03:44Z",
+  "file_count_excluding_manifest": 198,
+  "redacted_text_files": 0,
+  "notes": [
+    "Git history and remotes are intentionally excluded.",
+    "Large caches and raw hosted-model logs are intentionally excluded.",
+    "Run `make -f paper_repro/Makefile reviewer-check` from this directory for the cold reviewer check."
+  ]
+}

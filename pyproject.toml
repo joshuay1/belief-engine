@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "review-artifact"
+version = "0.1.0"
+description = "Memory architectures and identity stability in LLM agents"
+requires-python = ">=3.11"
+
+# Core dependencies — enough to run episodic/summary/conceptual/worldview experiments
+dependencies = [
+    "pyyaml>=6.0",
+    "openai>=2.0",
+    "requests>=2.30",
+    "python-dotenv>=1.0",
+    "numpy>=2.0",
+    "pandas>=2.0",
+    "tabulate>=0.9",
+]
+
+[project.optional-dependencies]
+# Agentic memory mode (requires ChromaDB + sentence-transformers + torch)
+agentic = [
+    "sentence-transformers>=5.0",
+    "torch>=2.0",
+    "transformers>=5.0",
+    "chromadb>=1.0",
+]
+# Analysis & plotting tools
+analysis = [
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+    "scipy>=1.11",
+]
+# Full install (everything)
+full = [
+    "review-artifact[agentic]",
+    "review-artifact[analysis]",
+]
+
+[project.scripts]
+agentmem = "src.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "scripts*", "validation*"]

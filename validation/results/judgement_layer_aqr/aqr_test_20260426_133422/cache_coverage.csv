@@ -1,0 +1,14 @@
+cache_file,entries,overlap,nonempty_overlap
+extraction_cache.json,26882,0,0
+extraction_cache_4o.json,121,0,0
+extraction_cache_5.4-mini.json,121,0,0
+extraction_cache_5.4-nano.json,121,0,0
+extraction_cache_5.4.json,121,0,0
+extraction_cache_claude-4-opus.json,121,0,0
+extraction_cache_claude-4-sonnet.json,121,0,0
+extraction_cache_claude-4.5-haiku.json,121,0,0
+extraction_cache_claude-4.5-opus.json,121,0,0
+extraction_cache_claude-4.5-sonnet.json,121,0,0
+extraction_cache_deepseek-v3.2.json,121,0,0
+extraction_cache_kimi-k2.json,121,0,0
+extraction_cache_v1.json,27060,0,0

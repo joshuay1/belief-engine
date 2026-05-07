@@ -1,0 +1,769 @@
+run_id,topic,topic_slug,condition,condition_label,model,backend_type,use_belief_engine,trial,seed,agent,side,round,stance,stance_source
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,0,0.75,initial_anchor
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,0,-0.75,initial_anchor
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,1,0.92,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,1,-0.86,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,2,0.67,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,2,-0.86,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,3,0.68,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,3,-0.67,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,4,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,4,-0.62,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,5,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,5,-0.62,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,6,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,6,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,7,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,7,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,8,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,8,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,9,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,9,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,10,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,10,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,11,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,11,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,12,0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,12,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,13,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,13,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,14,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,14,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Pro,pro,15,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_01,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,1,,Con,con,15,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,0,0.75,initial_anchor
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,0,-0.75,initial_anchor
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,1,0.92,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,1,-0.68,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,2,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,2,-0.88,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,3,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,3,-0.62,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,4,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,4,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,5,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,5,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,6,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,6,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,7,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,7,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,8,0.24,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,8,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,9,0.78,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,9,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,10,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,10,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,11,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,11,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,12,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,12,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,13,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,13,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,14,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,14,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Pro,pro,15,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_02,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,2,,Con,con,15,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,0,0.75,initial_anchor
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,0,-0.75,initial_anchor
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,1,0.92,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,1,-0.88,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,2,0.86,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,2,-0.62,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,3,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,3,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,4,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,4,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,5,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,5,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,6,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,6,-0.88,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,7,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,7,-0.86,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,8,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,8,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,9,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,9,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,10,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,10,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,11,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,11,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,12,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,12,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,13,0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,13,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,14,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,14,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Pro,pro,15,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt4omini__trial_03,We should subsidize journalism,journalism,be_gpt4omini,Belief Engine GPT-4o-mini,gpt-4o-mini,openai,True,3,,Con,con,15,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,0,0.75,initial_anchor
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,0,-0.75,initial_anchor
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,1,0.92,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,1,-0.86,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,2,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,2,-0.62,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,3,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,3,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,4,0.62,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,4,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,5,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,5,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,6,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,6,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,7,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,7,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,8,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,8,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,9,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,9,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,10,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,10,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,11,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,11,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,12,0.78,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,12,-0.86,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,13,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,13,-0.86,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,14,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,14,0.86,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Pro,pro,15,0.62,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_01,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,1,,Con,con,15,-0.86,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,0,0.75,initial_anchor
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,0,-0.75,initial_anchor
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,1,0.92,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,1,-0.67,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,2,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,2,-0.78,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,3,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,3,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,4,0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,4,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,5,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,5,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,6,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,6,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,7,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,7,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,8,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,8,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,9,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,9,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,10,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,10,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,11,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,11,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,12,0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,12,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,13,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,13,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,14,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,14,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Pro,pro,15,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_02,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,2,,Con,con,15,0.62,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,0,0.75,initial_anchor
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,0,-0.75,initial_anchor
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,1,0.92,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,1,-0.62,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,2,0.92,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,2,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,3,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,3,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,4,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,4,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,5,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,5,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,6,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,6,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,7,0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,7,-0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,8,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,8,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,9,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,9,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,10,0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,10,-0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,11,0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,11,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,12,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,12,-0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,13,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,13,-0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,14,-0.22,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,14,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Pro,pro,15,-0.78,external_judge_rejudged_gpt54mini
+journalism__be_gpt54mini__trial_03,We should subsidize journalism,journalism,be_gpt54mini,Belief Engine GPT-5.4-mini,gpt-5.4-mini,openai,True,3,,Con,con,15,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,0,0.75,initial_anchor
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,0,-0.75,initial_anchor
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,1,0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,1,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,2,0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,2,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,3,0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,3,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,4,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,4,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,5,0.62,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,5,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,6,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,6,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,7,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,7,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,8,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,8,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,9,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,9,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,10,0.62,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,10,-0.62,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,11,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,11,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,12,-0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,12,0.18,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,13,0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,13,-0.22,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,14,0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,14,0.18,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Pro,pro,15,0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_01,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,1,,Con,con,15,-0.22,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,0,0.75,initial_anchor
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,0,-0.75,initial_anchor
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,1,0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,1,-0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,2,0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,2,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,3,0.86,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,3,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,4,0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,4,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,5,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,5,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,6,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,6,-0.78,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,7,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,7,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,8,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,8,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,9,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,9,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,10,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,10,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,11,0.62,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,11,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,12,0.86,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,12,0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,13,0.86,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,13,0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,14,-0.86,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,14,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Pro,pro,15,-0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_02,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,2,,Con,con,15,0.22,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,0,0.75,initial_anchor
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,0,-0.75,initial_anchor
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,1,0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,1,-0.67,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,2,0.92,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,2,-0.67,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,3,0.86,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,3,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,4,0.86,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,4,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,5,0.68,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,5,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,6,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,6,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,7,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,7,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,8,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,8,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,9,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,9,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,10,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,10,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,11,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,11,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,12,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,12,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,13,0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,13,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,14,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,14,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Pro,pro,15,0.23,external_judge_rejudged_gpt54mini
+journalism__be_qwen__trial_03,We should subsidize journalism,journalism,be_qwen,Belief Engine Qwen 3.5 9B,qwen3.5:9b,local,True,3,,Con,con,15,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,0,0.75,initial_anchor
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,0,-0.75,initial_anchor
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,1,0.92,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,1,-0.86,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,2,0.62,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,2,-0.67,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,3,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,3,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,4,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,4,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,5,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,5,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,6,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,6,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,7,0.62,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,7,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,8,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,8,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,9,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,9,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,10,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,10,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,11,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,11,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,12,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,12,0.0,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,13,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,13,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,14,0.62,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,14,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Pro,pro,15,0.86,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_01,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,1,,Con,con,15,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,0,0.75,initial_anchor
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,0,-0.75,initial_anchor
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,1,0.88,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,1,-0.67,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,2,0.88,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,2,-0.86,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,3,0.67,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,3,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,4,0.92,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,4,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,5,0.68,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,5,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,6,0.86,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,6,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,7,0.68,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,7,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,8,0.88,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,8,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,9,0.68,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,9,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,10,0.62,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,10,0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,11,0.86,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,11,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,12,0.68,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,12,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,13,0.86,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,13,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,14,0.68,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,14,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Pro,pro,15,0.62,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_02,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,2,,Con,con,15,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,0,0.75,initial_anchor
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,0,-0.75,initial_anchor
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,1,0.88,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,1,-0.86,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,2,0.62,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,2,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,3,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,3,-0.62,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,4,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,4,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,5,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,5,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,6,0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,6,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,7,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,7,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,8,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,8,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,9,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,9,-0.23,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,10,0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,10,-0.34,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,11,0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,11,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,12,0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,12,0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,13,0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,13,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,14,0.22,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,14,-0.18,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Pro,pro,15,0.23,external_judge_rejudged_gpt54mini
+journalism__be_gemma__trial_03,We should subsidize journalism,journalism,be_gemma,Belief Engine Gemma4 E4b,gemma4:latest,local,True,3,,Con,con,15,0.18,external_judge_rejudged_gpt54mini
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,0,0.75,initial_anchor
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,0,-0.75,initial_anchor
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,1,0.68,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,1,-0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,2,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,2,-0.78,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,3,0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,3,-0.67,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,4,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,4,-0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,5,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,5,-0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,6,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,6,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,7,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,7,-0.78,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,8,0.43,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,8,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,9,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,9,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,10,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,10,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,11,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,11,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,12,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,12,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,13,-0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,13,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,14,-0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,14,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,15,-0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_01,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,1,159171677,Con,con,15,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,0,0.75,initial_anchor
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,0,-0.75,initial_anchor
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,1,0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,1,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,2,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,2,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,3,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,3,-0.78,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,4,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,4,-0.78,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,5,0.43,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,5,-0.23,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,6,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,6,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,7,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,7,-0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,8,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,8,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,9,-0.78,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,9,0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,10,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,10,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,11,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,11,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,12,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,12,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,13,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,13,0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,14,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,14,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,15,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_02,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,15,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,0,0.75,initial_anchor
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,0,-0.75,initial_anchor
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,1,0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,1,-0.23,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,2,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,2,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,3,0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,3,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,4,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,4,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,5,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,5,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,6,0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,6,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,7,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,7,-0.78,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,8,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,8,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,9,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,9,-0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,10,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,10,-0.62,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,11,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,11,-0.78,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,12,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,12,-0.68,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,13,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,13,-0.78,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,14,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,14,-0.78,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,15,0.34,external_judge
+journalism__vanilla_no_update_gpt4omini__trial_03,We should subsidize journalism,journalism,vanilla_no_update_gpt4omini,Vanilla no-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,15,-0.62,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,0,0.75,initial_anchor
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,0,-0.75,initial_anchor
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,1,0.62,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,1,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,2,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,2,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,3,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,3,-0.62,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,4,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,4,-0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,5,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,5,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,6,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,6,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,7,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,7,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,8,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,8,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,9,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,9,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,10,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,10,-0.62,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,11,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,11,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,12,0.22,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,12,-0.78,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,13,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,13,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,14,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,14,-0.78,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,15,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,15,-0.62,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,0,0.75,initial_anchor
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,0,-0.75,initial_anchor
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,1,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,1,-0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,2,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,2,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,3,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,3,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,4,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,4,-0.43,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,5,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,5,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,6,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,6,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,7,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,7,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,8,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,8,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,9,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,9,-0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,10,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,10,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,11,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,11,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,12,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,12,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,13,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,13,-0.62,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,14,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,14,-0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,15,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,15,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,0,0.75,initial_anchor
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,0,-0.75,initial_anchor
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,1,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,1,-0.62,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,2,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,2,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,3,0.62,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,3,-0.62,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,4,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,4,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,5,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,5,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,6,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,6,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,7,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,7,-0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,8,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,8,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,9,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,9,-0.62,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,10,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,10,-0.86,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,11,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,11,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,12,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,12,-0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,13,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,13,-0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,14,0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,14,-0.34,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,15,0.23,external_judge
+journalism__prompt_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,prompt_self_update_gpt4omini,Prompt self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,15,-0.34,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,0,0.75,initial_anchor
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,0,-0.75,initial_anchor
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,1,0.24,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,1,-0.24,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,2,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,2,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,3,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,3,-0.34,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,4,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,4,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,5,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,5,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,6,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,6,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,7,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,7,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,8,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,8,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,9,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,9,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,10,0.24,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,10,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,11,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,11,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,12,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,12,-0.78,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,13,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,13,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,14,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,14,-0.24,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Pro,pro,15,0.62,external_judge
+journalism__rag_only_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,1,159171677,Con,con,15,-0.34,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,0,0.75,initial_anchor
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,0,-0.75,initial_anchor
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,1,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,1,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,2,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,2,-0.24,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,3,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,3,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,4,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,4,-0.24,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,5,0.24,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,5,-0.24,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,6,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,6,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,7,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,7,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,8,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,8,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,9,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,9,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,10,0.24,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,10,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,11,0.24,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,11,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,12,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,12,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,13,0.24,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,13,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,14,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,14,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,15,0.24,external_judge
+journalism__rag_only_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,2,4244973804,Con,con,15,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,0,0.75,initial_anchor
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,0,-0.75,initial_anchor
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,1,0.24,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,1,-0.24,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,2,0.24,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,2,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,3,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,3,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,4,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,4,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,5,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,5,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,6,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,6,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,7,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,7,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,8,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,8,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,9,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,9,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,10,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,10,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,11,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,11,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,12,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,12,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,13,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,13,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,14,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,14,-0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,15,0.23,external_judge
+journalism__rag_only_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_only_gpt4omini,RAG-only,gpt-4o-mini,openai,False,3,2675275331,Con,con,15,-0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,0,0.75,initial_anchor
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,0,-0.75,initial_anchor
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,1,0.62,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,1,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,2,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,2,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,3,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,3,-0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,4,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,4,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,5,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,5,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,6,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,6,-0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,7,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,7,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,8,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,8,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,9,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,9,-0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,10,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,10,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,11,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,11,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,12,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,12,-0.62,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,13,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,13,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,14,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,14,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Pro,pro,15,0.22,external_judge
+journalism__rag_self_update_gpt4omini__trial_01,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,1,159171677,Con,con,15,-0.62,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,0,0.75,initial_anchor
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,0,-0.75,initial_anchor
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,1,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,1,-0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,2,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,2,-0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,3,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,3,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,4,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,4,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,5,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,5,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,6,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,6,-0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,7,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,7,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,8,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,8,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,9,0.22,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,9,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,10,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,10,-0.78,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,11,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,11,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,12,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,12,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,13,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,13,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,14,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,14,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Pro,pro,15,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_02,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,2,4244973804,Con,con,15,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,0,0.75,initial_anchor
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,0,-0.75,initial_anchor
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,1,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,1,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,2,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,2,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,3,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,3,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,4,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,4,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,5,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,5,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,6,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,6,-0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,7,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,7,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,8,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,8,-0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,9,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,9,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,10,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,10,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,11,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,11,-0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,12,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,12,-0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,13,0.22,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,13,-0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,14,0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,14,-0.23,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Pro,pro,15,0.34,external_judge
+journalism__rag_self_update_gpt4omini__trial_03,We should subsidize journalism,journalism,rag_self_update_gpt4omini,RAG + self-update,gpt-4o-mini,openai,False,3,2675275331,Con,con,15,-0.23,external_judge

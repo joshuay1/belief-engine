@@ -1,0 +1,150 @@
+repro_version: "starter-2026-05-05"
+repo_root: "."
+
+principle: >-
+  Treat this manifest as the paper-facing reproducibility boundary. The wider
+  repository may contain exploratory runs that are useful for auditability but
+  are not required for reproducing the reported artifacts.
+
+environment:
+  python: ">=3.11"
+  install_command: 'python -m pip install -e ".[analysis]"'
+
+artifact_verification:
+  checksum_manifest: "validation/paper_artifacts/MANIFEST.sha256"
+  command: "python paper_repro/scripts/check_artifacts.py"
+
+paper_source:
+  active_manuscript: "paper manuscript source, not included in reviewer code artifact"
+  inventory: "paper_repro/PAPER_EXPERIMENT_INVENTORY.md"
+  excluded_manuscript: "older manuscript draft, not included in reviewer code artifact"
+
+canonical_artifact_groups:
+  stance_expression_mapping:
+    source_dir: "experiments/logs/stance_correlation_20260213_165900"
+    config: "config/selected_results/canonical_stance_correlation.yaml"
+    paper_claims:
+      subject_internal_external_pearson_r: 0.967386
+      subject_external_slope: 0.863266
+      moltbot_internal_external_pearson_r: 0.949793
+    key_outputs:
+      - "experiments/logs/stance_correlation_20260213_165900/data/results.csv"
+      - "experiments/logs/stance_correlation_20260213_165900/plots/stance_correlation.png"
+
+  model_sensitivity_sweeps:
+    source_dir: "validation/results/model_sensitivity_comparison"
+    source_logs:
+      - "logs/GPT-4o-mini_canonical_sensitivity_sweep_deterministic_counter_20260401_150045"
+      - "logs/QWEN_canonical_sensitivity_sweep_deterministic_counter_20260423_103726"
+      - "logs/GEMMA4_canonical_sensitivity_sweep_deterministic_counter_20260427_113651"
+    rebuild_command: "python validation/scripts/plot_model_sensitivity_comparison.py"
+    setup:
+      topic: "We should introduce compulsory voting"
+      rounds: 15
+      parameter_values: [0.2, 0.4, 0.6, 0.8, 1.0]
+      trials_per_value: 5
+      base_models: ["GPT-4o-mini", "Qwen3.5:9b", "Gemma4:E4b"]
+    key_outputs:
+      - "validation/results/model_sensitivity_comparison/figure_model_trajectory_sweep_be_agent.pdf"
+      - "validation/results/model_sensitivity_comparison/model_sensitivity_runs.csv"
+      - "validation/results/model_sensitivity_comparison/model_sensitivity_rounds.csv"
+
+  generated_profile_panel:
+    paper_figure: "paper-side configure.pdf, not included in reviewer code artifact"
+    current_source: "validation/paper_artifacts/two_agent_focus10/topic_grids/austerity_2agent_belief_grid.pdf"
+    status: "illustrative example from the compact two-agent artifact bundle"
+    note: "Not a reproducibility blocker for the core experiment bundle."
+
+  evidence_alignment:
+    artifact_dir: "validation/paper_artifacts/evidence_alignment"
+    fold_statistics_sources:
+      group_heldout: "validation/results/parameter_recommendations_group_response5_evidence13x13_quality"
+      topic_heldout: "validation/results/parameter_recommendations_topic_response5_evidence13x13_quality"
+    release_dir: "validation/paper_artifacts/evidence_alignment"
+    rebuild_command: "python validation/scripts/prepare_paper_artifacts.py"
+    key_outputs:
+      - "validation/paper_artifacts/evidence_alignment/figure_parameter_rmse_surfaces_evidence_alignment_focus.pdf"
+      - "validation/paper_artifacts/evidence_alignment/figure_parameter_importance_evidence_alignment_focus.pdf"
+      - "validation/paper_artifacts/evidence_alignment/parameter_rmse_surface_evidence_alignment_focus.csv"
+      - "validation/paper_artifacts/evidence_alignment/debate_rmse_confidence_intervals.csv"
+      - "validation/paper_artifacts/evidence_alignment/debate_rmse_fold_tests.csv"
+
+  two_agent_focus10:
+    artifact_dir: "validation/paper_artifacts/two_agent_focus10"
+    rebuild_command: "python validation/scripts/prepare_paper_artifacts.py"
+    key_outputs:
+      - "validation/paper_artifacts/two_agent_focus10/summary.csv"
+      - "validation/paper_artifacts/two_agent_focus10/stance_trajectories.csv"
+      - "validation/paper_artifacts/two_agent_focus10/run_specs.csv"
+      - "validation/paper_artifacts/two_agent_focus10/topic_grids/compulsory_voting_2agent_belief_grid.pdf"
+
+  trajectory_stability:
+    source_dir: "experiments/selected_results/canonical_6cond_symm"
+    config: "experiments/selected_results/canonical_6cond_symm/config/paper_campaign_config.yaml"
+    setup:
+      topic: "We should introduce compulsory voting"
+      trials_per_condition: 10
+      architectures: ["Subject/Worldview", "Moltbot/Episodic"]
+      update_conditions: ["Bayesian-style", "LLM-updater", "No-update reference"]
+    key_outputs:
+      - "experiments/selected_results/canonical_6cond_symm/data/results.csv"
+      - "experiments/selected_results/canonical_6cond_symm/topic_05.png"
+
+  judgement_layer_aqr:
+    classifier_source_dir: "validation/results/judgement_layer_aqr/aqr_test_20260426_133422"
+    llm_source_dir: "validation/results/judgement_layer_aqr_llm/aqr_llm_gpt-4o-mini_20260426_141615"
+    rebuild_commands:
+      - "python validation/scripts/evaluate_judgement_layer_aqr.py"
+      - "python validation/scripts/run_aqr_llm_extraction_eval.py"
+    key_outputs:
+      - "validation/results/judgement_layer_aqr/aqr_test_20260426_133422/metrics.json"
+      - "validation/results/judgement_layer_aqr_llm/aqr_llm_gpt-4o-mini_20260426_141615/llm_metrics.json"
+
+  five_topic_prompt_based_check:
+    source_dir: "validation/results/all_topics_u0.2_a0.4_8models"
+    setup:
+      topics:
+        - "Social media brings more harm than good"
+        - "We should subsidize journalism"
+        - "We should introduce compulsory voting"
+        - "We should adopt atheism"
+        - "We should adopt libertarianism"
+      rounds: 15
+      trials_per_topic_setup: 3
+      initial_pro_stance: 0.75
+      initial_con_stance: -0.75
+      be_update_sensitivity_u: 0.2
+      be_anchor_sensitivity_a: 0.4
+      prompt_baseline_model: "gpt-5.4-mini"
+    rebuild_command: >-
+      python validation/scripts/build_6panel_topic_grids_and_metrics.py
+      --all-topics-dir validation/results/all_topics_u0.2_a0.4_8models
+    key_outputs:
+      - "validation/results/all_topics_u0.2_a0.4_8models/metrics/all_topics_6panel_metrics.csv"
+      - "validation/results/all_topics_u0.2_a0.4_8models/metrics/all_topics_6panel_metrics.tex"
+      - "validation/results/all_topics_u0.2_a0.4_8models/social_media/figures/topic_grids_6panel/social_media_6panel_gpt54mini_baselines_grid_3x2.pdf"
+
+  individual_opinion_tracking:
+    source_dir: "validation/results/individual_opinion_tracking_response5_evidence13x13"
+    rebuild_command: >-
+      python validation/scripts/plot_top_matched_movers.py
+      --source-dir validation/results/parameter_recommendations_group_response5_evidence13x13_quality
+      --output-dir validation/results/individual_opinion_tracking_response5_evidence13x13
+      --model preset_evidence_alignment
+      --preset-key evidence_aligned_mover
+    key_outputs:
+      - "validation/results/individual_opinion_tracking_response5_evidence13x13/figure_individual_type_showcase_group.pdf"
+      - "validation/results/individual_opinion_tracking_response5_evidence13x13/type_showcase_examples_group.csv"
+      - "validation/results/individual_opinion_tracking_response5_evidence13x13/type_showcase_example_trajectories_group.csv"
+
+large_data_policy:
+  recommended_storage:
+    - "Zenodo"
+    - "OSF"
+    - "Hugging Face Datasets"
+    - "Git LFS, only if the repository host and quota make that practical"
+  required_metadata:
+    - "archive URL or DOI"
+    - "checksum manifest"
+    - "mapping from paper figure/table to source files"
+    - "rerun commands for API-backed experiments"

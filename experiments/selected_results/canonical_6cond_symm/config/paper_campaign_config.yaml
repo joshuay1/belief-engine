@@ -1,0 +1,60 @@
+name: "canonical_6cond_symm"
+description: "Symmetrical 6-condition benchmark reproducing CoreBot (Subject+Worldview) vs OpenClaw (Moltbot+Episodic) trajectories from the paper."
+
+topics:
+  - "We should introduce compulsory voting"
+
+execution:
+  trials_per_condition: 10
+
+global_settings:
+  debate:
+    rounds: 15
+    seed_stance: "affirmative"
+
+conditions:
+  # ----------------------------------------------------------------------
+  # CoreBot (Subject Agent with Worldview Abstractive Memory)
+  # ----------------------------------------------------------------------
+  Subject_Bayesian_Worldview:
+    type: "subject"
+    memory:
+      storage_mode: "worldview"
+      stance_method: "bayesian"
+      belief_engine_type: "bayesian"
+
+  Subject_Agentic_Worldview:
+    type: "subject"
+    memory:
+      storage_mode: "worldview"
+      stance_method: "agentic"
+      belief_engine_type: "agentic"
+
+  Subject_Blind_Worldview:
+    type: "subject"
+    memory:
+      storage_mode: "worldview"
+      stance_method: "blind"
+
+  # ----------------------------------------------------------------------
+  # OpenClaw (Moltbot Agent with Episodic Verbatim Memory)
+  # ----------------------------------------------------------------------
+  Moltbot_Bayesian_Episodic:
+    type: "moltbot"
+    memory:
+      storage_mode: "episodic"
+      stance_method: "bayesian"
+      belief_engine_type: "bayesian"
+
+  Moltbot_Agentic_Episodic:
+    type: "moltbot_stance"
+    memory:
+      storage_mode: "episodic"
+      stance_method: "agentic"
+      belief_engine_type: "agentic"
+
+  Moltbot_Blind_Episodic:
+    type: "moltbot_stance"
+    memory:
+      storage_mode: "episodic"
+      stance_method: "blind"

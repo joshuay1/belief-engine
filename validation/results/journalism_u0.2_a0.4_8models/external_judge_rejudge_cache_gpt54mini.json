@@ -1,0 +1,1096 @@
+{
+  "metadata": {
+    "judge_backend": "openai",
+    "judge_model": "gpt-5.4-mini",
+    "judge_reasoning_effort": "none",
+    "judge_verbosity": "low",
+    "judge_temperature": 0.0,
+    "topic": "We should subsidize journalism",
+    "note": "Scores for BE panels rejudged from each saved latest agent message. Baseline panels use their existing shared external-judge trajectories.",
+    "evaluator_prompt_path": "src/prompts/evaluator_optimized.txt",
+    "evaluator_prompt_sha256": "2c6eb444cd6ff752aa9b99929c1998936411379760b5a0340bfbcd4a2523ad83",
+    "updated_at": "2026-05-01T20:31:20"
+  },
+  "scores": {
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:2:Pro:beba64204d04e8683ba3a84fbd2dacc7868852f83cb1d2445141761088114d1c": {
+      "stance_score": 0.67
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:1:Pro:5bb611af4d1fc2982c69f92822ca1bd97a484a0354b694235b728ddea4c94c72": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:2:Con:cb319c50e9d93ec3c7599a38f00fcf25e07edc6aa5aa1bf72e120935256deb40": {
+      "stance_score": -0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:1:Con:b2abb6fab3b2506dfac6d789f14429cc8d98b2ab78d7fdec88024b035058aa1e": {
+      "stance_score": -0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:3:Pro:d0eb1ffc6e36508b3ddc982489f71c8b76e48459d06e59094f7c9a5850776c88": {
+      "stance_score": 0.68
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:3:Con:6cde13a4752e76a4813604e2cbfdc4785dfddafc8ccf054f901426c223d4bab4": {
+      "stance_score": -0.67
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:4:Pro:a5d22d929e192f3841e4043ff3c8f6aa141f678f2ec4721ae0255aa38356c8c2": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:4:Con:275ed37e827c6416a0b09af6b99f24fbeb7768f3829e2bb949cd8b9cdcd19733": {
+      "stance_score": -0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:5:Pro:8ec2ee2a2cf2e7c405f04c431ffa8907a32674b6d5fbf7dc470483ba23735bb2": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:5:Con:c5c9114c875a8e0cc83148b51260a8684419f5a21d3582d36cbcd709bc753717": {
+      "stance_score": -0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:6:Pro:346d2386fcd8d2dc6a854757c811367dccde53c25641286b938794e8c8d3404c": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:6:Con:777128deb95108ebd1ed59c3139414ba95bf16bd117dfbed04b9dc15862cdcab": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:7:Pro:5fa4c1bc57e0f1b9a0a8939cbce99a486e7cb3f63c4aa4706f7030703973f558": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:7:Con:837e740405dc5a96c71db62018882f20a566c1c054f8c47aec9ebcb4bdd0beab": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:8:Pro:c7cdc0cd2f14f35e3716350ce5c43f1aa2488f80299edc7cf706a7742eccda8c": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:8:Con:4985f3efe25cfbe1bf912700f2f580906c64e23936fb64068dcd3c0a65d38ca2": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:9:Con:48322b3750566a4ce9e9a5f7bb625fbec32c2f807572c446fbdc5cf129c33406": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:10:Pro:030cea3d5a5e31bb712fc882722ff0e076cfe0e1cb59bc1d41286cb28a774ca8": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:9:Pro:269704a32ccdc79dd5fd30dda60f0b4178099497780c446b61507f4f6532a616": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:10:Con:85d5ab5f8dee818de2f45cc218848678ea556d14c2fd027426cb10d46a0688dd": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:11:Pro:42b47c4c767826ad389c578a77e5760c8500a4d64cca464c1f50ca0b0fa3256e": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:11:Con:21a921243ffed2f19148e166aa7d7c5b67e5b407d67a103f706a2a422f9dd544": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:12:Con:d8e4fb2d0a2fb69deb6f0c83ca0846ceb762b897c61e042afa58faf67c8e1914": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:13:Con:4b53edc3002833cbe29a432b6e5fe5e48aca474212eaab19d4de6bc646514b3d": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:12:Pro:dc3fca5763e50baad89516200b9c6ddf963b778a162396dbba9fd3108a9a9020": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:14:Pro:47e5d32fd7ec2517bd4da2a4ccd73ffd1cb9ccdb95a29b6fe54887939169df85": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:14:Con:fc3f1f8bbb7574eb47ef2c3e7579e53f0d87e9825b6b848828122e01116fafeb": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:15:Con:a6a1a82e502d8a425fcbc0f1110560ddfbaf446889bf31752f7e5b7f5c0442ac": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:13:Pro:0dd40c619139b436dc8817ff3e6acc5cb07af124240038ca163799ad06606207": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_01:15:Pro:ecd3a51c0cd68f829ad84d2d6b578733fe92e1fe136fb8a1157efa102be0545d": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:1:Con:c0416b77221e6e0ff1720cf68b9baf58c963670a56dab392336b119bcf76bdab": {
+      "stance_score": -0.68
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:2:Pro:5ffe5a0db9d89b2a177222c6e91bcb02543ba539240fc64a762f20e9bddb7509": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:1:Pro:53271052037cf10510d49768c28b12c6f1c5ce99c1b08bc9f4b39679f4038915": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:2:Con:acd9cb9d7cf3a35ad68622dd5aee9182d7f7909b5db3eae7eb893b480272c568": {
+      "stance_score": -0.88
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:3:Pro:25d02b37f0387e3ed93a05a7cf0ebc6d823b9e19a252e8cb0549fbef58cd2279": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:4:Pro:49aeebff750937a45b087d332b8cde2849b7dd36ac58c1165f8588ad7991af0d": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:3:Con:e801866ec7ce21bf97c063a5c64cbdb88f9c56f07109dca472b0ea459b74d2bd": {
+      "stance_score": -0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:4:Con:55f7b578261fb43d74e905d0ee9c41814ecaf5ac15fe5218950e19f5b59cd7d2": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:5:Pro:3d0baebd1116c92f516cfecca2cab982680800607a1bd5f3aca2b858be1b3e86": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:5:Con:684b5ee166cf5370561116f716b18a28f8b7402f21857f4428e76a5065fcd45d": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:6:Pro:15eab7d4405cd529547528abad7c8a4854dbdb72a29f6d7ab11d5979195c7bcb": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:6:Con:cd7404675ce578b9eb7e696266a06d41d77580e384984c30bfb04b2f0c37d585": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:7:Pro:98502a92a909b51c9b6348a8c7b9b884c7a70867e1d52cbadd8e07cb25a95cba": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:7:Con:171bea3a44b0111ff52fb029451b78ce10276335a51c577367f379e5e9f84655": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:8:Con:18953acda3a075c2c98d1cefad2b2711bf86f215e25ca034e63933527bf07295": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:8:Pro:df04b2f07c3b7c0046040c39f333a7f7602e92f7c367e3bda7d6c3d55c749898": {
+      "stance_score": 0.24
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:9:Con:442b8039508e79c41f465f95e31c0f63314037a5ae9270a71d82902a685f5a3f": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:10:Pro:3b09c6ffa1b2cf8ee3f7b6323004b5ff8f644b68b3e1ee9d743004fcab131743": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:10:Con:05f4c9c7c31f7ff7ab7d07aefde70f04f3673ed4d59dd961fffa072e2ff5346f": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:11:Pro:bd96b9d9d0aa5eaffffac9530db9b75bbc0fceae0e9ca5be9d04d594d7e26149": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:9:Pro:8046e7494aaac803e0e68002f8ce043cc978dd3ce197dae9b7677c6b09ea1aaa": {
+      "stance_score": 0.78
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:11:Con:d5e8a72a33911951fae9033cbc3fb2ccd46bc3eb8d402f3b48e2bb2c8f796af0": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:12:Pro:b87c6923a1709cf1c6b64fb6d6323fc5001f9f5883558bdc4ee3626febc9b147": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:12:Con:9a66808269193cbc530f4cb6d6f850b34515de5885ba3ca4400ad15c2b009c22": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:13:Con:6031b61c5e4cd6aa8d067e3d05b44802bf421e27c136c2231a78440d58b5dcfb": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:14:Con:0c45ad8b80e9e9d9672fe815f4f5928c086c38a588d41b53073235ba5bb64f2e": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:14:Pro:aee73ff9e14917226a6f9f088087d0afcc01be2991a5d49d930e86acaebd37f1": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:13:Pro:019f34964a35a247b67e1ab99cd4d4e063beebc5f9f83f054a6ca61291c79559": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:15:Pro:72e0dfddcf9ce2cf86b87bc50c88d225278e1efde82440df3c0b0076d6f40953": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:1:Pro:0565863b7d241d4b48c6c01aff8218e707fb914d973d518db298b80c16b3c81b": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_02:15:Con:6256494f4e543611dc5b263122d6ef2d4c82906bb51cc8901a446066b4a1412a": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:1:Con:e174122dd417bef1ce0894b0112b1b02248c24cf4d3a737752c4af28ef3adfc9": {
+      "stance_score": -0.88
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:2:Pro:ee64370968264c4841e2cad117e5d8eaf528f4ba0df5f9ccdb4294b5053a892e": {
+      "stance_score": 0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:2:Con:7358841a10c155bdf79eb186eb5352f72b98940c476596b4375531b48924a4db": {
+      "stance_score": -0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:3:Pro:664704f4aa5aa5702054fdac4dc9a0e28e8031d94d6c60e907e1fdea7a7f1ab5": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:3:Con:b9bffc39cad5055b5ca4101b85d1541759a599d74f3c648b3660360fd7e853e7": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:4:Con:4fe022d9d8d09dd2333c4f8f04bf66f43c802340794132811a08e0785c0eeb01": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:5:Pro:ce1e10c8d06d908722179fc2ce4b3e869aff05c855dbf5b7cbe8fcd8d4dcc7b0": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:5:Con:050d27cf20c8190b871fedc946d8a79b7f5fca45116136d1f221bf22ec3b015a": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:6:Pro:d55293c6dd5e593f857981cfd4b47ab62589da8fe1ad526633344731830ae1b7": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:6:Con:7faf7fb03326cefa5799b00fce01360adf505e034f61e7c6782971ddf6fbba25": {
+      "stance_score": -0.88
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:7:Pro:c03ec111fb42e19ef408f599a325ad6ac82a68a9794683524c754d10a350b9f6": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:8:Pro:97cf50a56343e5d58d0759a905a7db0f275650925cd8c8d3059a0eeed825afde": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:4:Pro:d62111af801549521d40dbf17c2ec90497c8b6303336234a1e2baec7db289b0b": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:7:Con:b93cf0ff7ce885c428b08e87c7c0afb42100c277ea2b902b5bcd2940e2e1db60": {
+      "stance_score": -0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:8:Con:81f96429cf3b08a72463ebcaec78099a21407d670b550397dc6b8fef9c2c04a5": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:9:Pro:bdc03afdc20a74f5e9241c7ac14564c0d6ecff45d99696395fbba21281cbf74b": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:9:Con:605b0ea14d44904cdd463c30ccdb4b1b9668e5f7a5fa5e4de5ab05ccd323337d": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:10:Pro:fb59b5191c14a6f4e4d2a6e1bef0f1e0d1996e22298ffa87650adb5450ce4ba9": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:10:Con:d6709d1fb890060c66e1356b484fbe2f2480c661bdfd10db4cc482683c8c373a": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:11:Pro:446751341836cc48a803edff5f048629ead3faf534794ee98c7f70e8d7bf708f": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:11:Con:f5220c244d11f32c0768307914bc1e71e65321abaa592b9bf1d061d8b9a889d9": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:12:Pro:cf7e47c58b2919d915a71c3d002ee2b1bd433e052b0fcd28ebb07e97ed2910a1": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:12:Con:5ff919cc0a6946a5fee77dbba9443c3b26e885ff3c80276341fcab7cdd04141e": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:13:Pro:c460021280ac2c9021b76bbe2c0df27503a62802e247d29ebc6a6511b3ffa891": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:14:Pro:d9fc319135700df488a867594a8ae4338587116b0b6ff0c2e8531d9acac78c97": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:13:Con:8260ed29e53dd6268d852f2171b3f95fdd946d4989fb6a736fe570c5ceaf4e1c": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:14:Con:8b19530f96bd1a6f97ca82d111e42ef32a5cde824c4fd66f1c015f909e7882ee": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:15:Pro:7216d991077e011ef45ca69f11d5fa717975368d3a849f6d3955e54b77d325cc": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt4omini__trial_03:15:Con:f837733362ce897464d1f3f759a9e96f74a23739f4cd4a024609d061937ec729": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:1:Pro:7ec52afc950dfa52449a7583b2f4d645c55df615723c5370519e99be9a87185f": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:2:Pro:cdf8ba0aee85ff7182f1df38062bbff79b356196f490609cdcc4f3ecea873def": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:1:Con:26afeab773f60f9a8e078ccff771f9a28b671998c054835f897605adabbe7d52": {
+      "stance_score": -0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:3:Pro:f154ac97d50abe04c5fe633f8234508bde9a93f2cc5afc9ebbc68f6ec0e7e28f": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:2:Con:1f1e534cca15864bf6513af9c8484852160bb7b2727200fa833da0be085adf66": {
+      "stance_score": -0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:4:Pro:c40134cae288fabba4a4ae7ee1cde16612b87459e89e74fe24e5b7989cc2c3fb": {
+      "stance_score": 0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:3:Con:48a6d6d3a49813272f471748bcf64acdcf0f2226314721b87af6541aa4b07cc5": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:5:Pro:6303861f0267efd92695737ec5afa1428fcbffba503eb2a6c067d74ee10ac140": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:6:Pro:fe3fa58d2dfaeb7eedad4c1f8ab88ab3d814eb0fb1988de0d9ccc3398a86e1bf": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:5:Con:21f5bdbf25e9ad5ad51b95ffee1b344237f5de46944c201be33156ae77876e7d": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:6:Con:54e24ad13eff318a511699dbfdfd3a356ad117c2f866133043128f8b995eeb50": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:7:Pro:733bcbff661572cafcdbb4948c5e8e3a1ceaef424f4906464db9715b3a2e6ba8": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:7:Con:d7cc0021b33ac6dc0acb5dd04f2c38b44e3e6db647d97e2b3f66fcd70d8c63c8": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:8:Pro:3f60af22e48a34a3137d303d8cffd271cbdd2b964d0006e72b5d5c9ad4f262d7": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:4:Con:8a0fbd948752b33bcf9c06ff00d187fb3242255fd55aa38d829948924484dda2": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:9:Pro:e6ed8031e3db7f1a5b8d066fe5fa56cf0cfbea654e8aeb9efeb3cf6c0bcf3ffc": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:8:Con:515fdf007bcdf97fb03e9af094c50027e302dbe366c7db47a5cbd2fe55523735": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:10:Pro:77d918a484d01f6bc81336b4647e1837cdcd6cf7067c645b692a98eb5c6d961f": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:9:Con:7f88a2f82abb37b00bb7a51971f17d5868e0713e42ec4e386f14c0acfeaa70b9": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:10:Con:ec02bb67d5a23470d0a46f6342af5c1a481954ab15dcf988135760f01d392093": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:11:Pro:40e42c5b15aee52f6e3367f1cdc50f55615a58615f48ef8e7f4e5c9475e963f1": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:11:Con:cddab61c98fe9632350a7eac85e2832b8a1b8aa9c7f5154edb861cd9047e8b10": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:12:Con:d8253cae09a922965e33596623af42447d2b6737b3681a770a5108397e251d64": {
+      "stance_score": -0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:12:Pro:3fad77ae9e12e08f35ca9efa929409c44c863466c3b673bd49403cfd7fc88764": {
+      "stance_score": 0.78
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:13:Pro:6d71c5412bd282a0a2ba8cb949a158234403b8c5932f9bdcc7d13644c79527d3": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:14:Pro:b63ba37b438028bc75b41a5f5632cdb4e1c21ca19f9cd4c9f6ad2bcdd28d6fdf": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:13:Con:34fdac34549900e2a24e9787e445ff66b98e3cd5c480dd56c69f4aa0221a0276": {
+      "stance_score": -0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:14:Con:9d2947c34e0c8cd45c9a1e1ddd599c107777ae6d658f8f80e6729486ec30ac59": {
+      "stance_score": 0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:15:Pro:a88266e828c8ce347a2f870352b83ba9cceaab175c09c89718c411acedbd7f81": {
+      "stance_score": 0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_01:15:Con:791c149aa2b1b82ecf047e05042cb523a25bc8742ce2b13b6a313c6372d80b02": {
+      "stance_score": -0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:1:Con:10a6bf35123b549f421f7b06b9663b48eb16d96ff96bfdd6f8c62c50a4c9bee0": {
+      "stance_score": -0.67
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:1:Pro:2714ea1e8fe580282056b5c9fb696543b722dbcdd93111a74d8981d38bd7918e": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:2:Pro:937192bbb358e48e04c2ffe3fd51682e65842cff244a971e49316161aee5425a": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:3:Pro:b4d7cd14f043fc4dcbf07af0fc68fc7a95826ddb460bbc3aadf0b7328a364774": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:2:Con:85cbeefdc1bc14c38546b9b9dda81d8c581be8fd0e744804014f3263249119a1": {
+      "stance_score": -0.78
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:4:Pro:af0ce68b8a7c4d12e79aaad7041a2ffd49f62fd97981a7e059f204d99c17dded": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:3:Con:19a5921a121a81061ae328c013127f89a487fe76ecec32be6b1cfbb82375eecd": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:5:Con:0be8cfe74e610f8c18e9017ada2191abd8178303d9beb47171bf38768009a42f": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:4:Con:5c99272720a31c63015f42553a8dff643e43b96345728063fcec15b06703aec9": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:5:Pro:58d3ef3470cea10134ab1749412238ad0a060631fe9269a08e6341031b78df4a": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:6:Pro:d5013b772be12be59656cc33b90509e71ff9c443c1c032e4ebff4f494edd8ea6": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:7:Pro:1c56bfafae6b1ef2c128f469c25e73153d8f7263e434601a44245df1fdb5b9f2": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:6:Con:0d54dcf54d13315da00d92940195f7e125f045677df9998366b244e141401006": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:8:Pro:af36b6701958fb3b71000bc18ae8ce78d5d7ee6fdd1c0465efc6d8b89d4085bc": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:7:Con:6c0c34a9a670eb630b9994ec5d661a1145ccdefdcb7ad41a1bbdc8d55c5064d5": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:9:Pro:7a412c1f5454c4a77c7aa297e8f08b44a424fdd3fde5b9105dde0410d3012b29": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:9:Con:8c3f4209a0d7800aef78632762ec55d581caee51856635c7b4fbbd6faf38a321": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:10:Pro:d86b80b7d55e1d45b3c83926fc1252bc411ea6e234ea020bdf80cf39cb134391": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:8:Con:9e3b5f07f9e95535617ce39fd813ae27e09fb7afafd7fba77c23f7366bb5031a": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:10:Con:7b5aff4e5305315795c4822f9bde74aaead075cd474315d7442472934ef2f022": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:11:Pro:7ed44fb330a17154a7a6cc44f96d9d60af55386dee4c5234ffdaa112456bd5a5": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:11:Con:ff09bc739ae98fc2c54d6007e30fc58723c815b1324385ca5f5f48910c45d325": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:12:Con:2445d9af5a66de43e9bf80c99bd3f4242a90402f0a86bb114aef1c654d252b49": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:12:Pro:35e78b7f869dd3068e2b4b274f5cfd8ecf7035374a2319a99dc28e65af6bfd7a": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:13:Con:1dffa0c89a1a181619fdc80ff0c759bc0b9a3e7647e8fd141905d78510c15d62": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:13:Pro:5ca2c5b7065a7b5d23021fd09ba7cce8deaa6dbd44b2b82c31299f1493497156": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:14:Con:6a871544cbea88496d6eca6e23d797527852b3a69a69829f2aa2610fbcdad60b": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:14:Pro:c20e185ae77aef1f044c5b309f2e810fe97bd48f645c00f8f77fad188990c926": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:15:Pro:748be80be8f8990fa48c58b53792e7f4a3b35efc27479d6dcd55f4f26a1d18bc": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:1:Pro:e0ed3d8876d0dd79e8e8394ead651b628634b1f4b7a6494f500661964c21e122": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_02:15:Con:58194f0c8abe112a3d1bdd0d6fba3bff84535a53ddfd607de6a02253741d1fb9": {
+      "stance_score": 0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:1:Con:9b94c2c42b0e34d53c92763aec2ccbc954f9f74b6b15d645dfe0dd1f93b037cb": {
+      "stance_score": -0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:2:Pro:a563e084cf1b991d48b8e2498ed6d9d2046181bf5e85640fb022249aeafe7f6e": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:2:Con:3d445d3cf168f76f6ee2248c1a392b3539463480c21aa319673658e86ec1fdea": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:3:Pro:a9fa4a99fd435004c78f9e5fa5c74f05cb63dabe37f37d25df591739bdb61083": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:3:Con:559345a58dc4c246f8f656d479211f44f8229a028a9f9c230d6b45381ed6ce60": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:4:Pro:28b38da3cc676593f3fee2d3f99b31446c8dff0541d85ae20e88541d22685f11": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:4:Con:057f64ef7f103018494b4cecf1fd0076eda5fd55f83af401296a69a10acd83bc": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:5:Pro:4ded4b1cba03eef226f87b15d64189c04694c6e079ae39cff6aa11d5f1a9a26f": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:5:Con:a21d32530e1ee2c566d9e676dcfeb0dec3d38612d74a47fddd7ecc88efcc1ba0": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:6:Pro:5b91594f88f52783bf70d7e0c061fd309ab31a9a1055c985b804eb1ae9829c03": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:6:Con:b75d877357c03ca12531fdf62b0fe7981f129b1f351017550e54fa5351424e81": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:7:Pro:86c6033352d794521d3b77e013b3835b62b38d818579468c1f79127fe8cc99db": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:8:Pro:47683384a20a62f0993454f4fc345f49560de3593d9c039fdce987c2b7b1a960": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:7:Con:8eab24854cebfc793b6a09bfe222c5748d3aeb5af51af92f7ffba473c8cb71a5": {
+      "stance_score": -0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:8:Con:c2e5ef7ea9cab6551a596cf9dfd098a5f55ac367dada4cf4c4b02e3486e369b7": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:9:Pro:e4015483e53d9fd7923c92d723863a0325142c07ebfed6a01b496cf36131ae1f": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:9:Con:85d09d4870979c23f626557069438e73b654d1a3f77dbbf4f503edbc9dd51d7e": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:10:Pro:bf3259980011cf2794eb653bd8278a302fced33b0c5b4cd1f239cedf444b29f9": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:10:Con:04a564f0b0ac94871f83bd7db47c3d5e9a41c6fa859adddd13ccdd8579ad8923": {
+      "stance_score": -0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:11:Pro:c864e620367cdd8451734d477221a41664abe878503ac09731e87e942ece3cb5": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:12:Pro:59e5c1d9d19b824950092aab11ba6f0e3680a22c7ace69bddce0693c4b8dda0a": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:12:Con:f05537589c34ce5b32a8459841c0b9def66be36105a180022abc7b95602047b0": {
+      "stance_score": -0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:11:Con:c8ac5475eea6f8a868497bdf098872d7f7524365ca5e180f60eff6a06515c630": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:13:Pro:0cbc1878280a4eb2f42bde1da9db42c201e35a21470c9002e4fdc5e2378b420a": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:13:Con:941b618a7d9044a46872cd84fa887977cc1ab2de31d4b25816287f7e9d109733": {
+      "stance_score": -0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:14:Con:e4483a716755354b307cb49c5c5a78d3543c7079501426f10f4b87a8ec2199e5": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:14:Pro:9d5d4a3660136993b7a11b9e6209bde0cb95325ac09a571ee32584a601bf940c": {
+      "stance_score": -0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:15:Pro:ba69659f7fc15eb334005e8a7075e9d3067a869b3bdddfe73227b34c383dc81c": {
+      "stance_score": -0.78
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gpt54mini__trial_03:15:Con:e49c10f18d207a9292a1943f09e9933b85528e0d3e794c0e3cd56a3338a6a469": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:1:Pro:5e4f0673d243f5e2832c910431d6d524233a033bc2f6581123af751313d3c05b": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:2:Pro:be552edacb6e2007364bbcf656e1a50115d31535f95ce9be9e178fb2c28ea91d": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:2:Con:8b1bce0598ad11978ff2667892a623c9eb725ebfb6e3a055a7d8fdf0c51d5969": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:1:Con:125d777bd436f8577aa1c5727652b8f3049313a548f168338c1c47be44eccaa3": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:3:Con:5a0cb918bf00330fc4f4c87c0149789f60a9ea6ae8435be05cc69b17416c5cfe": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:3:Pro:a0a299a897f5a77695e9ad5eb805be605ec0feac299242fd72db75627998c48b": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:4:Pro:07839e67c942f4c612455aa6d1cba853bfa1793b57b07237d058a2d967b14b6b": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:5:Pro:b8c36a51941a5b89dd48d4ac692607a3ebf82cb9fc5e9d57c070f024186bfaf0": {
+      "stance_score": 0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:4:Con:70fd488b4824eaa4d591c667749e37e8f18fc17027d96a9db2552fc4201b02dd": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:5:Con:4c744260cc518b26325e41c1c55317c52c8ed86f15297a67bebb8b9f6170318f": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:6:Pro:b21a0c7c4df33ff541a9efe537a465dca2e5477c9afa9419cb163b93cbbe5a30": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:7:Pro:a03713a6ba5cf205e56049719cd8866033f916745044c1f4e4d6848ec6cd4fae": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:6:Con:33332ae2037ea6bdbe4d6512254c27c5f7aa12e4253b56e082e25e655f6efa9c": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:7:Con:350928e6cb79a2618d29b3afcc70e3e94c013af3c8fabc957f6e371834ef32e2": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:8:Pro:648ea971b8338ea94e9963f0b6159b146e0b41db22ec9b7e8ca6aca8e227e702": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:9:Pro:2d946479293ed88f3ee153cea337f1676cdb134c5312146b24599b0beb07599d": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:9:Con:ded0fcab5efaf006f57950741c5b1eca28fdbcc62be8ed2a47eb459bd22cfe65": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:8:Con:7ff5b89588545b01b42dcf306dbd268e8c901461bb77a0594948327857431a3b": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:10:Con:fd835031fed3a4de4a09b78bd66dea28fb8fcd6d6c188ba88fb37fd1ed930308": {
+      "stance_score": -0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:10:Pro:36b6783a561247eee8d64c39ea91353096449073c492f870f59b9ea746380498": {
+      "stance_score": 0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:11:Pro:88d29d5399ca01133d83361a219b0426f98d5d76424a9ae6aec5eba85abe850d": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:11:Con:6995f0609a635ded20ab96befd931a59a9d72fe63c3e48b4e92d397c4fffc3b8": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:12:Pro:9dd4070f3f2ddbc25ce201aec0acfba66bb996bbb549673676a162cfafdf6010": {
+      "stance_score": -0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:12:Con:406b4744b3d22ba61ecd211e3b14b8df51a4200eca483638c687d902c0189d10": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:13:Pro:fbe15d2f6b5d0792e88dc7e9015e0cc156ec20f419ff3ff476494ab97aa699f6": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:13:Con:8b2f618b29750f855385492e661e52588c4608638cde3a74972309e7baa35cc4": {
+      "stance_score": -0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:14:Con:3e90d3212d716de30c25f2d747d6fadb22e5dfcd83ac2b17835c338f4067ddef": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:14:Pro:f83ff2459e035fd3eac24346928c11d72483af468a986208bcd6a3aef7b36628": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:15:Con:5c4b9473b854434d9c4ac44a1d6145bcde1852fb4707ee85d89c041ae67037ab": {
+      "stance_score": -0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:1:Con:040a68ef2e1bd53765bbafe5bd274c1a90948280a337092d0c0817fbed9fc71e": {
+      "stance_score": -0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_01:15:Pro:936c6b9428a8296845cbde29c0597b5c6b24a0ded0ff78b1df316f33f35c2732": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:1:Pro:9d2732d685fcff4ee4421c01fb5473e0c836fcf9df6e3d1185ea5208b0f02b07": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:2:Pro:7df5c3de0f051444fe2ef8ba8b108f45a8098bf2202b993620506ce84d9cd936": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:2:Con:f83c00be338b8f8f85040ec0f33be18538fbcea7a24d37a4af5a75e6d25c5779": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:3:Pro:06964db213a23afaf3d71a2a9e0996fcfd8038c850b2620b1386eb0b603be0aa": {
+      "stance_score": 0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:3:Con:bc048f522e9f8d7ed4ac919769988f40f104185ba978535bc29635c20bc96297": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:5:Pro:157cb4b7b97b5570999a2b20e05439590176978a734f8c82f090b951618472ae": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:4:Con:f92980971b80d8647ff5d8f2de60d9a0ce53129b5861ae1c918aeb6da33f6334": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:5:Con:eab2504dc9a2eed4f57ed0ac5d17f07eead28196381c0ef45fc33be2ac2983b1": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:6:Pro:97cbda73be4a2b5c10d4473fdcc55ebc22ca0eae3171a7ee08c12ab14b9efba5": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:4:Pro:ca36ac254cee5fc05d21e0fc71f259d3d91893e96415fc07a47f9bb922ea755e": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:6:Con:1b6d34f885e0feef44230ebfefd69953dc4b3455166b0d874ebf252e276af540": {
+      "stance_score": -0.78
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:7:Pro:1db58a7e64ec83d9486a22f6720ff91b46ff47a8878e618e86c816da282b8284": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:7:Con:d1ca27fc4fc28d3ca92a2c9abe8ae558a3312176e633bcc91e5d21cae4b0d146": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:8:Con:8f391f5ff8a7f9a50d9dafbe96d74bd3b401aab32054a992206b1071c2001098": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:8:Pro:2fbb9ea1362dc743bd49b63e9fc0d00e2f4e3fa9b02a85dd68698ede4c62c393": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:9:Pro:41857d41a4fddf3231aee2b13fb5a5e6b50eb7907ebac5688d39d9cd5adc6f9c": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:9:Con:95734ea4843b6b3716c4c620f60f32178b71450f0335c4fc76a59a21e9f5fa6b": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:10:Pro:4197a92ba4d6eafff09ef6818cac47ce970c0af3cb6b9341cd68af9ee159f537": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:11:Pro:1c9ab2ffdd7aebd2f8283293d97bbd25f2ce2ba8bbbcd9df4ec59ac1a3764e16": {
+      "stance_score": 0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:10:Con:00eadfde1591570caec43aad8500e78fbe06d38bb30ac2b2783b68c22e78d8a9": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:11:Con:bf87a24b7b645de6ab5dea2312baa5dceef9479deb4d85f7a9e960eb458e4b4b": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:12:Pro:e16b2ccf072aff27c30f0e2ccb14909896206760deacce53733d344daaec2c1a": {
+      "stance_score": 0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:13:Pro:2b7bc61e85b20a92fefdeb1d09b7190621f0fe32c96e5a0dc9a1e8a284390cce": {
+      "stance_score": 0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:12:Con:b9403a5ddb13306d1c9ada7a97748d4e5d25beedc4483b5474faef255634e869": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:14:Pro:764ee4d77e6b4b7dfa3cc24b839f842a14d54922f5f598fe7a7736cfc52bbed8": {
+      "stance_score": -0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:13:Con:51bd3afbbb4f4ede701479212e50cfdec76dd006faeaf3e8ced16f470ded761a": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:14:Con:a430f563e74c47cc4beadb433a879acd55eca477a83734673a2c8c7aa73006c8": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:15:Pro:5ef3d9ec03481f019d923e529b5ba39f6da924e308e4ebbb04fb501074af49dc": {
+      "stance_score": -0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:2:Pro:f4e599d81c3c4a5b5f95e4711403b0f350ac6c78ae398181472ad3ef6c318cae": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_02:15:Con:0b6b7ca7c9b99b59bec3f6339296fd915bb2c6fb3ca196c9997084ae36f610b7": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:1:Pro:8367306ac2073d6e95c7b4b0fe2b8a6b78956eb1afc000c36e41ffd394df3543": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:3:Con:985e96e57a47d78d27ae7fb4c154f8efe365d4beefcac96cd41b94a902760406": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:2:Con:135fd383a02b4203d00e463c07bacfad70b694959fec5939811e561502a3ec01": {
+      "stance_score": -0.67
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:3:Pro:f6eb1d81e38021570dea3dc1e61f40651c0374db89c5d8f9b9bfca223935f535": {
+      "stance_score": 0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:4:Con:10c829aeb787e83aadb431447c15dac7540f28b76e4146afbf027291027e92da": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:1:Con:932d56d336ab51ef44d8c9facc068c804c4c48b35b06677cf84294e5ce0085e4": {
+      "stance_score": -0.67
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:4:Pro:afe8fd97dc96bd14ec9a5f35ec8c20461cc8f7400d411aebf2931b577591f6da": {
+      "stance_score": 0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:5:Pro:8f10fb32eb3227f9e1b80a60c7b0b4edfac7640601fcc83fc4bd7811c7cd0922": {
+      "stance_score": 0.68
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:6:Pro:45a6c9ab7dde79d55a5a69e8a452fc906f5ca89ee8342d91f1a84e233f27b358": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:5:Con:77f04515b116d5bb528b892bde8dcf33b479ebbace5eef895015bf6a5eb2ea0a": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:7:Pro:a92c0c94951a91add0f0e1fcb04f99e2fd3f4bbfe0e3fb2fab4c0f76301ae1a6": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:7:Con:9ca00a2cfde86223a63731c1df2df135703d0c2a41cf40ab4a026a5114495da5": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:8:Pro:f36577a3db1a0cbce942692f381dee5f347bd28a855a0d7cd6d42c6f70cfffac": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:8:Con:ecc3794203139f43940e92d0c7e08545438c0fbc3954124317fa0080acd43a4d": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:9:Pro:e1d6d5134614bc84bd5a42eb4454720c079d15a337bf43d5328a9379b1f0ea50": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:9:Con:3fa27499b99533880ea162134f41cca15ecc4afc01245d1ab61be046044b567f": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:6:Con:60f45bb20cd259faf9ae58ecc6595dd1d8b33d5e0248f62b2a0a33d2e5c16bae": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:10:Pro:4e316985c892ad5a55a734b2e94ad4ada37f0830523c2e7f42b1c12e12a590c6": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:11:Pro:5575954032123937a531f77fcdfad88021dc72e767b18ba89c35919b67593733": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:11:Con:28e281fbf627a61bbe25c7b86110eeab2e90a8c2f547d3adbe414c6fae3e8ca9": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:12:Pro:2eb13bf7f645188189b97d6c7f19feffc012a2f0c5bcf4fc4f547fe48e4bec5e": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:12:Con:602f80d85caa72543c0c59b67fd5efa471249fb1aadcbd2e579777934b1e501a": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:13:Pro:b9c37c258e8f5aa38cbe9e9b6e6c1aef1efc7276aa0c180dc4b772d3d7588397": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:13:Con:29b66c3ad656cfb716704854dfe50ea0552641fee418c87ed7976ea6c37f5d57": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:14:Con:23ed19df67509323ebe9360f587537bfe1e58a0fd83c71f3ca77649f9bb5cb0b": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:14:Pro:07b991b6b58ac549afc242836bba940686abcecada1e480a754423e2cb14283d": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:15:Pro:55180b8dfffa244ec32f4d8414b0890f2a07b10dc48236c666570cd48d9807c9": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:10:Con:5bbb49d4003d7f4c6cae14f455cea67b0dff5d6e96f016de3eb61d822d3f4588": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:1:Pro:5a0650c671c4bcafb98053875c955be79ac3b3681b08ec9ce7c89014db834d4e": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:2:Pro:ff79105c9ed81ce2423a638c8a3101a8d7c9acbfa3835bb5f01be1589a1d5b6c": {
+      "stance_score": 0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:1:Con:3b0f9dde029c58c16bd5ecd7d3be085b5b98554a1bb0b7d53683f96029c8f28a": {
+      "stance_score": -0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_qwen__trial_03:15:Con:8f33ec26697f04a75b23265dd54b6bf9ac95c100d8b7ad71fe3507eb59502aff": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:4:Pro:dde9b68e55532c97524dd08f6e9ca6b96ce171492c41c22c1dbd22bd06f635b9": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:3:Con:912189ef29dd7f12aaaa32262170c7ca414cc49cc215b14226a61a12f8efc3a6": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:3:Pro:634377256628b41b42d572805eb1807495a4567e336a27ec107bc7ed1bd445a2": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:2:Con:663ae8b41051f06617b559ffbcd3ed2d92a9ea7beb68bc910340c568f79ca0a0": {
+      "stance_score": -0.67
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:5:Pro:2731440bcc693bd5dd34e696aec13323807ccfb0ad54816d77d7708d9e9b1da6": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:4:Con:42e3e731e48830bba8e4c2abd6441e79446c56e156d9dd748d451e4de1ff47c7": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:5:Con:3d55b32de7d0fcfda458de8ecb6a4fc975d9fb00c7d74da8c31ffda9282c9707": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:6:Pro:d9d78c11c24dd3412fefebc4b81cf68366b52ef93bf9689f5c5a464c6e082b6c": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:6:Con:d6fd1ebb63af3b0f3fe42b24c9c6efc6491022811619c704b2ba7c3d5106bc6f": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:7:Con:354196f4208483e14c27bfd97c798856f9bed178ffc36b17af0b9d2cbfc358ec": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:7:Pro:0ca0097a812513b10bd61bcd548ea4be2c7e8da62196a892bbc0f76f95b257e5": {
+      "stance_score": 0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:8:Pro:e84c3d46336e38322865d9c214295ef4f68a488efb5f835d59d29604f6bdfa38": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:8:Con:15c74e07c2434e7f310158fffce296b857e67bb2fdf4a86b8722e779adcecc87": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:9:Pro:82d280a54f504771d8f9708b602d8b2dd3e68fc7cc06c3f686ac36a10c4461aa": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:9:Con:1b50a0835500ac73b3431d62280c62a5b92eebf1fb5d66d720903b8064b516bc": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:10:Pro:c4a2eeb51c0f473614de8f7f914a59a9a56117ca59610bde9c15ffbe43336d64": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:10:Con:90c4dce5435d48f880ec2e23e8b8391fade39f64b80c1356d510594c1515c564": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:11:Pro:1057f1d58d35fb6c521b93894c8a85c571a1e1e7dd4d361299aef35903989203": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:11:Con:75350dd1946677b43bcc21c969191d0fc2b17c3cbe79312d9195ab0cbbe24825": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:12:Pro:553a1b2e82d46739386fee734bcebb76ff34405251057c2cacea19677bdeac07": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:13:Pro:3531e400b702cbfa7005062a689c9a28f536dd34371bad63ef8f23629992cf22": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:13:Con:5624f2d8693b706134fce846e3adbb3fdf5954e4bd4ef09901e2495f9bc52fed": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:12:Con:2f0183140fe750b2cc9d5f08d2e6dee920ad00888ee2cc1ad7f88958c5ac6ddb": {
+      "stance_score": 0.0
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:14:Con:96cfb5d98425d652ebcdfc4de95952708bfad3149db8799299647481b7a66930": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:15:Con:122fa9133243c1b1efa71e620ccf759684fcd2746782c57936f263f5fbf4a147": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:15:Pro:c679b1f87b7ddddf7441ff7daba93f778cdf8be92a525aa76f4d9f0af54964ba": {
+      "stance_score": 0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_01:14:Pro:573b151f6e908f84bb297bc33d895b487cefa00fa1c5d85708eef8d11d97d5e9": {
+      "stance_score": 0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:1:Con:5c31aee90f8aa7fbc03349c9b949bfdb5e5e960a532967ec20bc2268a3204e69": {
+      "stance_score": -0.67
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:2:Pro:97f6fc7aff1e4d69f301e743c14927e7213ae1bdf148f66004acd0f5df4c4d7d": {
+      "stance_score": 0.88
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:1:Pro:89a0d80e58c7927b2441019e27eb98db4027e394ee1b9b55b0717721d4758f58": {
+      "stance_score": 0.88
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:2:Con:2bfe8f198305cf6da6202b5351618deef854aff6f694fd224c468e6a284fab7a": {
+      "stance_score": -0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:3:Pro:34177ed39ee60d9f377e5d957be1a7b04ba052d64aaaa69edcdd16b4da584f91": {
+      "stance_score": 0.67
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:3:Con:2c54c46f6bc41d5482dae0027e04ad77cc4df1c91d038f6d7e366dd234ae26f2": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:4:Pro:d3597a3377207683bde48e25556eb45f8b72ee016ac6ce7cc40c39b3ca39a890": {
+      "stance_score": 0.92
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:5:Pro:89bd35ea43584ef4a1f2cf1fcf529fc11317a2790749208b0f5cc96d855745f7": {
+      "stance_score": 0.68
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:4:Con:69059cd8390e3493203800aeae50aa5e40a7c70c9b2499b03382fe44e61214d1": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:5:Con:b38664ab983140df0cd32d74ccb8b0b34079433d5f3d627dce3ec1b6ff340955": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:6:Pro:39311fbbddd5d746f85ef86763e37352f657b439fe9c839b0857ad7276c635a3": {
+      "stance_score": 0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:7:Pro:8920c58e2198c96b7829ef0310f0314501cb00faccbaa900e822a9f5023d7f5c": {
+      "stance_score": 0.68
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:6:Con:b072e456da40103c1461cd10fcf11350b3f498070da82fe17d5fa22bd8fa2322": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:7:Con:447a1182d1b4889ded5d6403cf195453cb3dcdfc0704f832aabe47470ff703d6": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:9:Pro:5e5acc7f0e5757d9f8e7292cd955fc1fdca29428d0ec2541ea578312fc268890": {
+      "stance_score": 0.68
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:8:Con:13af1af0147069c0366aaa1378730e5c543e9bd5813713bdabf3950dd32dd97f": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:8:Pro:fcb9fdf9ba5802079e0fe7c9da434d175348cbf4b92a58733e574b094fce8bed": {
+      "stance_score": 0.88
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:9:Con:891d88429e132ba38e5435ec1ee8fbf9aa95a0592eac6592682e18dc79063932": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:10:Pro:cfa04241056b99cab00d9613cdb36875fbe6cce8aa5fa0f5440cb8d6bce3cbcb": {
+      "stance_score": 0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:10:Con:f058fa68dc2629ccf2074691d752818d731384c21374c52c5673b6515fc984ec": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:11:Con:043e12a98fa104a57347e5d54d9b44d65aa1bce0e97b63b6bf46d6b636eacc04": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:12:Pro:7a4eb3e14bffd70272e64bc3235f949565937aa8ec54b33db5e7063e56df35af": {
+      "stance_score": 0.68
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:12:Con:c50228cbfab6d7a87e9b555ac3a214a1d8a37414d5a9cffaeea3377a0b18fbef": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:11:Pro:bb14903d23f6c3062ddcc3012abe34811680c27f7091a0608cdd9af993e49761": {
+      "stance_score": 0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:13:Pro:31aad935bcbcd2568244c8bcd8a23a1ddb42bc0c046cf534580ee3c111523807": {
+      "stance_score": 0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:13:Con:fb0f9f1dcef00c0473e90a690ed09b4853feb1153f2c932e59461c82889ace07": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:14:Con:9d16306304c77d5278e0868668ca91fba2626a6e03433b6be71d46a2a6edf743": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:14:Pro:35f3ced7131d314bb1349fd507abcbfc811a5a963206e5b46944fe86878c9c3d": {
+      "stance_score": 0.68
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:15:Con:0efba848c32541966fd35746e404638f80e54e5efc14f0925d81640db71a236a": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_02:15:Pro:e3bdf7c3786152b0afe8c322a53b9cef8e9a9d89707b416017b8972600172f5d": {
+      "stance_score": 0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:1:Con:1e45511ba0fa245a64e3fa05231ea571894fc98be19b19835807b7abf1793cfb": {
+      "stance_score": -0.86
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:2:Con:2738d987ee980e68250a16f395187644654fce718aefbb81a42bea4a47c403ec": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:1:Pro:2d766e2408639d8eb202524f9deecbf839248c754dd64c4862643d5348069207": {
+      "stance_score": 0.88
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:2:Pro:8ebd521f5c02af6735d734a42861eabd651a135ff0a000242e641995ec331eaa": {
+      "stance_score": 0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:3:Pro:b9ae479371450356232e14ca25c5fb22104876d3442167107f74e9091ddccd9b": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:4:Pro:485f17bb28a9180539b60f23d687476cec3ab8282db4af3f4816cf3b93af4887": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:3:Con:45372de07c1265b5a120e1d1a01f21a76c80c343c5bc6febe510078e82cd970d": {
+      "stance_score": -0.62
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:5:Pro:c5a70aa2629f96a6ea1ab64af87d02a88ff0ae596874346e23444326335b7ca2": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:4:Con:7f549afd2a07b8d26dc7e3f64dd1b1d1e79301ac76ba35c88c56284ee9558d3c": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:6:Pro:5d6ac5548d2287660c0fdc1b2a31f2aba321ac63c696ec8a7bef534154daf2bc": {
+      "stance_score": 0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:5:Con:ea44088cb2ae10287e19ee1a837c394f1a9ca979f67e489fafbe9af98f435431": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:7:Pro:7cdc71ae428226a020cec3f92de6b016867bf2f26ad16a2710951b683dcf0e46": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:6:Con:23c2e05e193c38c22a194cece8ae94201324da51257bf818f0271aae880e55f5": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:8:Pro:fd9b3048e282fda3aff869ec9a1a445e01c2c1593e504c02e87c4885c2e4ae60": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:7:Con:a630c0fb585f8f1fb2f572a216e9970b1b16e04d7ef478b3c4fbc796d718df12": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:9:Pro:b532482b4967cb1694c79ce130b13c6b09a41fb2aee2c69557ab12ec34caca88": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:8:Con:ab295f114f21916188d6fa9dd6230fce4604a2304da0a669cd63f10ba049857d": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:10:Pro:be15891747e5cf5a9b4531a11ef09135f75d4d508e03503e5755a487b675c94c": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:9:Con:a92c4063e429343591d49c852befbb4489ae510a754a8a013f19d4e371fbe3f5": {
+      "stance_score": -0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:10:Con:1952e069bf298d051480489c93bea8d5c890edbf634fa750818114a723da65c8": {
+      "stance_score": -0.34
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:11:Pro:d239449ea2a14825612e02ae050a88e84a9ae8a8cac4cfdc5b0e107e572844e4": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:12:Pro:be0cf9b06c805fab0000000174b471b3301d6f186dc18ad26fc7db048c3f65d2": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:13:Pro:ca3bb99ba0e6ff850218a0abd02ed78ccb608494c3e6ea27c3f37ba07ddaa9f5": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:12:Con:f5e881369a14fa390a9af225419efbf78089356a9d910b1bdf2cda6598371f92": {
+      "stance_score": 0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:11:Con:a2a5217f2979a297c420fb580086e8270fcff80f8621ed641368f8e4b1be93bc": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:14:Con:ec30567f7d6a5a884bc2d862162c7ec75223adbe68dc64f3af6c86f5b23ce3c6": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:15:Pro:122102aa01e8433b809089b83eedfc71ec7d46474e9a1626b1889865bc400264": {
+      "stance_score": 0.23
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:14:Pro:e1a7e2894e0b6d92c36054ffd8d9357929a5e500d779f69a5fa9ad7000919e80": {
+      "stance_score": 0.22
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:13:Con:b9b409d6cc5ee372fc4398a7e662e24933e8c10bc629f7fdf5ba3d4dba93c4de": {
+      "stance_score": -0.18
+    },
+    "openai:gpt-5.4-mini:We should subsidize journalism:journalism__be_gemma__trial_03:15:Con:904b1ece28f81fbbbbf27d4ac7d630d685669128dcefebd1b95bd3d00148b393": {
+      "stance_score": 0.18
+    }
+  }
+}
