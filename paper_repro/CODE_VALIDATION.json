@@ -1,6 +1,6 @@
 {
   "date": "2026-11-06",
-  "status": "local code candidate",
+  "status": "camera-ready code candidate",
   "base_snapshot": "anonymous reviewer release generated 2026-05-07T11:03:44Z",
   "tests": {
     "core": 57,
