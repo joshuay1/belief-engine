@@ -12,12 +12,23 @@
     "classifier_weights": "synthetic tensors, no checkpoint downloaded"
   },
   "verification": {
-    "syntax_files": 98,
+    "syntax_files": 117,
     "checked_imports": 10,
     "original_paper_manifest_files": 36,
     "unchanged_original_artifact_files": 88,
     "pip_check": "passed",
-    "replay_tables_rebuilt_and_matched": 3
+    "replay_tables_rebuilt_and_matched": 3,
+    "camera_ready_study_rebuilds": [
+      "stance",
+      "baselines",
+      "endpoints",
+      "components",
+      "aqr",
+      "checks"
+    ],
+    "fresh_checkout_commit": "92a2145a4e043465b6345f71b788a08ce90b287d",
+    "fresh_checkout_environment": "Separate Git clone using the verified Python 3.11 environment; no original input paths or model calls needed.",
+    "replay_bootstrap_scope": "Older scoring/updater check: exact point estimates and same reported interval conclusions. Hashed cluster ordering changes Monte Carlo draws; original intervals are retained."
   },
   "environment": {
     "python": "3.11.2",
@@ -32,8 +43,8 @@
     "Removed the superseded six-condition benchmark (three files) and stale release documentation; preserved them in Git history."
   ],
   "remaining": [
-    "Newer camera-ready result packages and exact run configurations",
-    "Final project license, citation and public release URL",
+    "Final project licence, citation metadata and release tag",
+    "Separate final-figure and older-bundle consistency audit",
     "Full checkpoint inference can be checked using the pinned Hugging Face release verifier"
   ]
 }
