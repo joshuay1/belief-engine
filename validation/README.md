@@ -18,10 +18,11 @@ Run verification and rebuild commands from the repository root, following
 | Original AQR extraction audit | [100-input extraction outputs](results/judgement_layer_aqr_llm/aqr_llm_gpt-4o-mini_20260426_141615/) |
 | Earlier classifier summary | [Historical 1,000-input summary](results/judgement_layer_aqr/aqr_test_20260426_133422/) |
 
-The earlier classifier summary is not the source of the paper's retained
-100-input classifier correlation. Its exact predictions and sample mapping
-still need to be packaged. The newer stance-alignment, common-evaluator,
-finite-solver, and component-study packages are also pending.
+The [camera-ready packages](camera_ready/README.md) add the ten-topic stance
+validation, common-evaluator comparison, endpoint solver, component study,
+original 100-input AQR classifier audit, and supporting component checks.
+The historical 1,000-input classifier summary is not used for the paper's retained
+100-input correlation. Its exact selected rows are now in `camera_ready/aqr/`.
 
 The original one-topic stance-calibration outputs are retained under
 [`experiments/logs/`](../experiments/logs/).

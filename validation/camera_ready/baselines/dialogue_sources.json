@@ -1,0 +1,602 @@
+[
+  {
+    "run_id": "atheism__be_gpt54mini__trial_01",
+    "sha256": "56e489aa44d59628b491561d671cd6caab5c9ceecbe6eb76300270e1accd1d1d"
+  },
+  {
+    "run_id": "atheism__be_gpt54mini__trial_02",
+    "sha256": "3bb7e4a42460007d536c844f2250bdec777250ab3e788570a8ead5a008cbce6c"
+  },
+  {
+    "run_id": "atheism__be_gpt54mini__trial_03",
+    "sha256": "118f8d2a458c2b4a73032ee03934713402e71a934ae39f66eb50c06a096507e6"
+  },
+  {
+    "run_id": "atheism__be_gpt54mini__trial_04",
+    "sha256": "d4f811b0087f800bb7a49478f598ba5d090bc3c3ff66b9f67a9e6aa1eb17920c"
+  },
+  {
+    "run_id": "atheism__be_gpt54mini__trial_05",
+    "sha256": "7f29c4a0934e92df88728dcb973892643a5f4739690ea4e02e8ac32cba58898b"
+  },
+  {
+    "run_id": "atheism__be_gpt54mini__trial_06",
+    "sha256": "6b5e3176a0077c44287cd7735869241bb883b045205a22ae0b03cdeef00348bf"
+  },
+  {
+    "run_id": "atheism__be_gpt54mini__trial_07",
+    "sha256": "53ab46ff15482ae490c92f8ef08628fd012aabbf919b16967e4adeab75775347"
+  },
+  {
+    "run_id": "atheism__be_gpt54mini__trial_08",
+    "sha256": "6979d4a18127ab787826a4e1791575652dee0964fd36a5526da487910f2eb3f2"
+  },
+  {
+    "run_id": "atheism__be_gpt54mini__trial_09",
+    "sha256": "ec08c42f62f14ac547539dec2d9f362f220b2d59c5f7ccf3f92f380abbe81251"
+  },
+  {
+    "run_id": "atheism__be_gpt54mini__trial_10",
+    "sha256": "a23c55ef5cc26a49c7f78a9cbf5cb6bb208f2960092c78341369167c6fcb7f3a"
+  },
+  {
+    "run_id": "atheism__prompt_self_update_gpt54mini__trial_01",
+    "sha256": "6c9917cce6403570ae6f51df1a8dd4ce86b3e1231c415b68cc03dc54dfa4706e"
+  },
+  {
+    "run_id": "atheism__prompt_self_update_gpt54mini__trial_02",
+    "sha256": "ca6cfb4ce24c81c1ea50f863afadc9c89c75a2d96afb44f5e5149f2cf4a55524"
+  },
+  {
+    "run_id": "atheism__prompt_self_update_gpt54mini__trial_03",
+    "sha256": "aef18dad23aa79cb893ce2a9bec287926febcfa003be8edc7ee56a10926b6aed"
+  },
+  {
+    "run_id": "atheism__prompt_self_update_gpt54mini__trial_04",
+    "sha256": "c6e42713a846c988e21dad8916b08206502a3a8dce36b673082d2b40fa029db0"
+  },
+  {
+    "run_id": "atheism__prompt_self_update_gpt54mini__trial_05",
+    "sha256": "627b4e2e27c0db639cf76d3fa4b688548e50ee7a3dd9c56c7661974b6f3b182c"
+  },
+  {
+    "run_id": "atheism__prompt_self_update_gpt54mini__trial_06",
+    "sha256": "f3e365e06248cf0d1dc6e524b820521457d8e056aa7bd10e240b0de2dccc65bf"
+  },
+  {
+    "run_id": "atheism__prompt_self_update_gpt54mini__trial_07",
+    "sha256": "5453cb11c41757d58df1722669f8049087587266237ee80004b276ffe693fc87"
+  },
+  {
+    "run_id": "atheism__prompt_self_update_gpt54mini__trial_08",
+    "sha256": "07ba2ee3b43114b96cabf9086475baf059364df759a722737ffc9f486e2aee70"
+  },
+  {
+    "run_id": "atheism__prompt_self_update_gpt54mini__trial_09",
+    "sha256": "4cb676a110048c408abc5aaa4027f5c2cb0b889ede9a898fbd244203ec6a315a"
+  },
+  {
+    "run_id": "atheism__prompt_self_update_gpt54mini__trial_10",
+    "sha256": "bd52a686575974f6db183086b300bfe32200bb192e8e48f4fce21c00f0465d6e"
+  },
+  {
+    "run_id": "atheism__rag_self_update_gpt54mini__trial_01",
+    "sha256": "8b517513df0d2adc62ea03f7b81f2a7368da4fddfd8c50168d4d47bf642b570f"
+  },
+  {
+    "run_id": "atheism__rag_self_update_gpt54mini__trial_02",
+    "sha256": "1a655d421848e1ef46276a8fdff549036ea0771baca6cb8de425e3e7f23bc10e"
+  },
+  {
+    "run_id": "atheism__rag_self_update_gpt54mini__trial_03",
+    "sha256": "51fa16a0d284aeee32d2d0752c1220a84a7c217923975116c95b5dd419dabcd9"
+  },
+  {
+    "run_id": "atheism__rag_self_update_gpt54mini__trial_04",
+    "sha256": "346d6eb4c77b76b29362fac0d6d3acac041a9908b0e1a4d024edce83822cd289"
+  },
+  {
+    "run_id": "atheism__rag_self_update_gpt54mini__trial_05",
+    "sha256": "9b7b422bf17a19080e16a4d8426ff10f44a7a191a7cc71dce4afc97a7ec38f60"
+  },
+  {
+    "run_id": "atheism__rag_self_update_gpt54mini__trial_06",
+    "sha256": "3caf96eaad86935867c16e30e30d9e0c15c0745ea2f730a62f8fa9d4b5d0ba77"
+  },
+  {
+    "run_id": "atheism__rag_self_update_gpt54mini__trial_07",
+    "sha256": "e6b5097a032cdd49c16a47cbc6a08b442b914bae4934329889d09ddcff3c0398"
+  },
+  {
+    "run_id": "atheism__rag_self_update_gpt54mini__trial_08",
+    "sha256": "31d4960d80b4f88bf5108008f75265e6e4c948ecd89b1bb0198306b7bf881c5d"
+  },
+  {
+    "run_id": "atheism__rag_self_update_gpt54mini__trial_09",
+    "sha256": "3367ae58308e4bcb6d27a0b10224d33df389883ffc3dba601ea4d2e747049f79"
+  },
+  {
+    "run_id": "atheism__rag_self_update_gpt54mini__trial_10",
+    "sha256": "74a5d06de6ced87b4a05021ed1e857395eb67b0af4f9a2b54de6f95fd086032a"
+  },
+  {
+    "run_id": "compulsory_voting__be_gpt54mini__trial_01",
+    "sha256": "46ceff4cb77354df19ddcdb2f30bac20123f6afd54473161dd97ec35798e76fb"
+  },
+  {
+    "run_id": "compulsory_voting__be_gpt54mini__trial_02",
+    "sha256": "998890b4d70f7265b90553d5817a8a8fcc1f25befde00e963263897d2500099c"
+  },
+  {
+    "run_id": "compulsory_voting__be_gpt54mini__trial_03",
+    "sha256": "b94e785dbef1277af37c867d630edd3f1920e230a8dd4aa07f12a3037754bea2"
+  },
+  {
+    "run_id": "compulsory_voting__be_gpt54mini__trial_04",
+    "sha256": "620bcb1525d830c875d74ca53687750cb85b987bafe95573ebc75d1f5da5dffd"
+  },
+  {
+    "run_id": "compulsory_voting__be_gpt54mini__trial_05",
+    "sha256": "0a6d666f688c6c3c7de04b4277ebc6344cbf960087d9c83bf09621b43f2477b7"
+  },
+  {
+    "run_id": "compulsory_voting__be_gpt54mini__trial_06",
+    "sha256": "9c70560e6b6ee965e9f3e54c715ccc2374b385a7ed5c98a1b6e62fc9e247ff3c"
+  },
+  {
+    "run_id": "compulsory_voting__be_gpt54mini__trial_07",
+    "sha256": "49f2fab36ad450985dcdc4b549a87b0f465876c70dc607dcc31ed4aa99855f2d"
+  },
+  {
+    "run_id": "compulsory_voting__be_gpt54mini__trial_08",
+    "sha256": "f1940723098db18b146672747b73473c9f72e40942a0c281bd9cdc60dde0ff74"
+  },
+  {
+    "run_id": "compulsory_voting__be_gpt54mini__trial_09",
+    "sha256": "2b80b4d80187ac487cc6336be35145bb75263f0d6256e370f629a7eb05470912"
+  },
+  {
+    "run_id": "compulsory_voting__be_gpt54mini__trial_10",
+    "sha256": "ca01a109ada8ae406a2486fd60cea857cb18af7b51087d828966eba8ed1fc9ae"
+  },
+  {
+    "run_id": "compulsory_voting__prompt_self_update_gpt54mini__trial_01",
+    "sha256": "f3637ff374e1b52a4e92ea7053c94cf78b9a427ea9ea0fcfbf2ec5533da60915"
+  },
+  {
+    "run_id": "compulsory_voting__prompt_self_update_gpt54mini__trial_02",
+    "sha256": "6288ff2561f9290fb488260398b6c74e4e2cb5859847fe08637ec8ea16abfe57"
+  },
+  {
+    "run_id": "compulsory_voting__prompt_self_update_gpt54mini__trial_03",
+    "sha256": "ef3767b7c9941285e8e82e7fcae8f8c35b8607ea7a34f7ed6308f57e2ac521a6"
+  },
+  {
+    "run_id": "compulsory_voting__prompt_self_update_gpt54mini__trial_04",
+    "sha256": "cf62f48ef880fd418dbb232fd7abbbd8dbb11c3956693346f35a7c6a4adbf257"
+  },
+  {
+    "run_id": "compulsory_voting__prompt_self_update_gpt54mini__trial_05",
+    "sha256": "c116e26a05f95109294c4997ab52245063122f59f221415e27b4f79f81c037c2"
+  },
+  {
+    "run_id": "compulsory_voting__prompt_self_update_gpt54mini__trial_06",
+    "sha256": "53cc0a5af30967b7bb8fd8adbea57e7c92a5cd54414d3e7dc02c2ceca0f49e2a"
+  },
+  {
+    "run_id": "compulsory_voting__prompt_self_update_gpt54mini__trial_07",
+    "sha256": "c05567a178d6139bcf97547b9004c7babf70ba542818cbf1fbd070be5f215342"
+  },
+  {
+    "run_id": "compulsory_voting__prompt_self_update_gpt54mini__trial_08",
+    "sha256": "2b48fa1d2befc15b789d8bebf64e0e333763b08a7b6d66c3c89c03717fddcec4"
+  },
+  {
+    "run_id": "compulsory_voting__prompt_self_update_gpt54mini__trial_09",
+    "sha256": "5e45c3b2fb57670fcd3f1c2473c946076c49fc386c59250aac5969c23a664e64"
+  },
+  {
+    "run_id": "compulsory_voting__prompt_self_update_gpt54mini__trial_10",
+    "sha256": "1e22d85d6e5d43fd3bf037933b8a153135d2ddee239082022b1b2882286b1cda"
+  },
+  {
+    "run_id": "compulsory_voting__rag_self_update_gpt54mini__trial_01",
+    "sha256": "7702df3ccb3a9bdfd41c1f359e6576e898aeb2b8cc4a8e6e2880aa056c4fded7"
+  },
+  {
+    "run_id": "compulsory_voting__rag_self_update_gpt54mini__trial_02",
+    "sha256": "7232c2014a13963b98ef268b9015dd4f7252448a59689f8d6fabf09716a13ccb"
+  },
+  {
+    "run_id": "compulsory_voting__rag_self_update_gpt54mini__trial_03",
+    "sha256": "820a736464e8b85af7b01b10e7e94259e7c6cbe609cc730a50a7fd3d0751b942"
+  },
+  {
+    "run_id": "compulsory_voting__rag_self_update_gpt54mini__trial_04",
+    "sha256": "a39e1012ee23a3970d43a22b315228973c70ed5baef5b84f512e724055a831bb"
+  },
+  {
+    "run_id": "compulsory_voting__rag_self_update_gpt54mini__trial_05",
+    "sha256": "7a067ae505f718cfbe360359c11e154533a70b6fac2a483916b84ef313916dcb"
+  },
+  {
+    "run_id": "compulsory_voting__rag_self_update_gpt54mini__trial_06",
+    "sha256": "571eaf23e7b5bf51c659b57bfb14b60e3a1afb8bdd2ff215521459f6365f968b"
+  },
+  {
+    "run_id": "compulsory_voting__rag_self_update_gpt54mini__trial_07",
+    "sha256": "1bf25cc7856aec0e730c135f5c8038956c667d989a9f32ab6599c95ce82ab319"
+  },
+  {
+    "run_id": "compulsory_voting__rag_self_update_gpt54mini__trial_08",
+    "sha256": "d6e4eaff4aab69d6608aa87f92ba82942752ea86c240a05baa1dc8364bccdf0f"
+  },
+  {
+    "run_id": "compulsory_voting__rag_self_update_gpt54mini__trial_09",
+    "sha256": "815ad1a5cc8a1a3cb8d927d3d386dbd6942b91683d8a781970c9e8175c15bfa1"
+  },
+  {
+    "run_id": "compulsory_voting__rag_self_update_gpt54mini__trial_10",
+    "sha256": "6fa661230ff788bc28cae42c50d616711e320d9428277575744695c28c85213b"
+  },
+  {
+    "run_id": "journalism__be_gpt54mini__trial_01",
+    "sha256": "d8d3818ace914f215c0e27ab70f757637721715f84705b54a632916ba20f4de9"
+  },
+  {
+    "run_id": "journalism__be_gpt54mini__trial_02",
+    "sha256": "219299ff5bc3ef56c15c38eff2bd94b68fc90b9e4a584e9b476ec8fe3b2d95a8"
+  },
+  {
+    "run_id": "journalism__be_gpt54mini__trial_03",
+    "sha256": "d5c74da52a94b7a6c71502a2dd519daea7f579de54a25a716cfc2e262e01d5c5"
+  },
+  {
+    "run_id": "journalism__be_gpt54mini__trial_04",
+    "sha256": "96dde679ad76a10a4f779926a7c2b86b2decec3c11b8c6f0b5c32ba2d3ba104e"
+  },
+  {
+    "run_id": "journalism__be_gpt54mini__trial_05",
+    "sha256": "ef9a3906ff2df5518f2f1bfe24543c0c7db8a58da2dc39831186574709b0b8f7"
+  },
+  {
+    "run_id": "journalism__be_gpt54mini__trial_06",
+    "sha256": "b0ea09d26bcc8facfee3b9becd3f0db545b8dcc14af906e0573cf94614b8d5a8"
+  },
+  {
+    "run_id": "journalism__be_gpt54mini__trial_07",
+    "sha256": "115e96341ad180141f97f4b2f9a9684f532566cd2c0d8fb606e082ba0d7f6dda"
+  },
+  {
+    "run_id": "journalism__be_gpt54mini__trial_08",
+    "sha256": "c7fdf2c138b7bb8334a6114e02335ad1b38f3f780dfab8a8c979bde69235e65c"
+  },
+  {
+    "run_id": "journalism__be_gpt54mini__trial_09",
+    "sha256": "56bb2a7c376babb27157f3e1740a8039fc03bbf8e187a3a496b1abbe178b8632"
+  },
+  {
+    "run_id": "journalism__be_gpt54mini__trial_10",
+    "sha256": "a236d21b4a7ddf374b93b6f4ec4b06cac9b83d5a8daf526c551e5d2ce356f689"
+  },
+  {
+    "run_id": "journalism__prompt_self_update_gpt54mini__trial_01",
+    "sha256": "c808e4c7e3c45cd53d2603b282bc530faecae9599504e58b15724732e4324fe6"
+  },
+  {
+    "run_id": "journalism__prompt_self_update_gpt54mini__trial_02",
+    "sha256": "157e297cfcf0b2e2303d36ae8c44cbcd4a24a618a2605f0e72a346447cebbe6f"
+  },
+  {
+    "run_id": "journalism__prompt_self_update_gpt54mini__trial_03",
+    "sha256": "67ed10524068494ea0eb8581e2299cb1e4a1756aa895e28a6b79f759afbe12a1"
+  },
+  {
+    "run_id": "journalism__prompt_self_update_gpt54mini__trial_04",
+    "sha256": "7f08f8d362aca5733d926f2166950a8882bd82e9be50b0a33a7ad8b5a48dda87"
+  },
+  {
+    "run_id": "journalism__prompt_self_update_gpt54mini__trial_05",
+    "sha256": "b7cc87a7d2e097cdb61bd65970963e2351d80610ba215eb6deea8d40af92ddab"
+  },
+  {
+    "run_id": "journalism__prompt_self_update_gpt54mini__trial_06",
+    "sha256": "86a2531a7e55cd7b6fca0989ca83ec34c6674a77a727eae5b1fe48e9a701249d"
+  },
+  {
+    "run_id": "journalism__prompt_self_update_gpt54mini__trial_07",
+    "sha256": "a95844e13e86d7d43f694b6a10b6e1729cd4006c9e754506bf29ee167f2bfacb"
+  },
+  {
+    "run_id": "journalism__prompt_self_update_gpt54mini__trial_08",
+    "sha256": "2f6581a90e2e1cca71228149b3f57bd38cb1f49fea345dcbed5d6545ff50786b"
+  },
+  {
+    "run_id": "journalism__prompt_self_update_gpt54mini__trial_09",
+    "sha256": "9fb233e06093d141f6265a07e829c0457001ef1b6479f72ce6fadb4ca441f8da"
+  },
+  {
+    "run_id": "journalism__prompt_self_update_gpt54mini__trial_10",
+    "sha256": "5abc55ea169842761fc016342e35500f855bd746a2340b04028f270bfa3df3f9"
+  },
+  {
+    "run_id": "journalism__rag_self_update_gpt54mini__trial_01",
+    "sha256": "ddd6e1f067444e7e9a4c9d146ce95724d7a397d829545700e5e5711b6e032941"
+  },
+  {
+    "run_id": "journalism__rag_self_update_gpt54mini__trial_02",
+    "sha256": "25e8cff502eeccccd3996d5e52a007c07528d2931e8cd6a919aad761d8a31cd5"
+  },
+  {
+    "run_id": "journalism__rag_self_update_gpt54mini__trial_03",
+    "sha256": "036bb85881bcad691a5cc5279dcbd9b79ef37e5a639b8cf363459d59e43997f3"
+  },
+  {
+    "run_id": "journalism__rag_self_update_gpt54mini__trial_04",
+    "sha256": "d669ee4dafb7fab5fc1dac7be14da61106a54161b84cdfb0c3edca4606ab4160"
+  },
+  {
+    "run_id": "journalism__rag_self_update_gpt54mini__trial_05",
+    "sha256": "53ad169825e53abac041d1230f869f81320fc63ca10676871d30bedd70b85d99"
+  },
+  {
+    "run_id": "journalism__rag_self_update_gpt54mini__trial_06",
+    "sha256": "a44d1ff6855014e9c0390e8b68f0bc7a06ccb8b441da6c3432ce01988b559cfa"
+  },
+  {
+    "run_id": "journalism__rag_self_update_gpt54mini__trial_07",
+    "sha256": "034c3519523b3af8c01f4d9c0d5ac87b29afbbb5c88732070aa8b47fee005d4c"
+  },
+  {
+    "run_id": "journalism__rag_self_update_gpt54mini__trial_08",
+    "sha256": "e458d4d5a6c87492d2b6ae798459f562e5b17daf016817a325d005b721374250"
+  },
+  {
+    "run_id": "journalism__rag_self_update_gpt54mini__trial_09",
+    "sha256": "2cedc71e5bea03b7e584d71e62224537ea746e264bbeba545b8a415aee4ca949"
+  },
+  {
+    "run_id": "journalism__rag_self_update_gpt54mini__trial_10",
+    "sha256": "8e513a22104b9336b890492496d0d9548c721a302070404293b0b071ae69925b"
+  },
+  {
+    "run_id": "libertarianism__be_gpt54mini__trial_01",
+    "sha256": "47ca28be4a80fcfc46aebafa3a60aa32f17cedc985efec10daad82f493d5816d"
+  },
+  {
+    "run_id": "libertarianism__be_gpt54mini__trial_02",
+    "sha256": "0e576a581654c00a54ed30a3f0cfa4a00aa7468810348253d367c0b8e9069cf3"
+  },
+  {
+    "run_id": "libertarianism__be_gpt54mini__trial_03",
+    "sha256": "77caee5dff62eb398607db25b12587c878b43f7809b704ad5955c29d86548381"
+  },
+  {
+    "run_id": "libertarianism__be_gpt54mini__trial_04",
+    "sha256": "e01da32bc1820aec2e11012da2d081a4081be8e39544f7af9f98cfebeabd4e1b"
+  },
+  {
+    "run_id": "libertarianism__be_gpt54mini__trial_05",
+    "sha256": "4cbd9d652f93cfd9caa96a21de637b46a9502fea1abca0c97327b0f14c200ef5"
+  },
+  {
+    "run_id": "libertarianism__be_gpt54mini__trial_06",
+    "sha256": "619a8a99e2976b414f1e747f8446fb8200a0b11e659cea1bcccf2133e83fd19c"
+  },
+  {
+    "run_id": "libertarianism__be_gpt54mini__trial_07",
+    "sha256": "a8ba82da396fbc549c5ca6eb9e1ad3211c31fbad6dbd8f5ce655890da5a2063c"
+  },
+  {
+    "run_id": "libertarianism__be_gpt54mini__trial_08",
+    "sha256": "70be573374e2a23af8883c4a8a6c94e2b8c9fb0c849adf13a5fd7f02226bb787"
+  },
+  {
+    "run_id": "libertarianism__be_gpt54mini__trial_09",
+    "sha256": "10bf20c2943d674c6955d83459c6beded97c95d80aaee160a7a764ebb9724fb3"
+  },
+  {
+    "run_id": "libertarianism__be_gpt54mini__trial_10",
+    "sha256": "b4f501d3bbbe16aa170be2a11d754b2c1db27714811e61bba3a0ed74948de2ef"
+  },
+  {
+    "run_id": "libertarianism__prompt_self_update_gpt54mini__trial_01",
+    "sha256": "6c31f3c0c7f1b70c9382400e6bd7f86cde0cb846a4cb60b682e9190a8c35428f"
+  },
+  {
+    "run_id": "libertarianism__prompt_self_update_gpt54mini__trial_02",
+    "sha256": "f167156cfbe5a1472ae300a5e0252d5726d23db9e4ab3793b315da8b8dd54a19"
+  },
+  {
+    "run_id": "libertarianism__prompt_self_update_gpt54mini__trial_03",
+    "sha256": "130107544ddbc5694bb4e8b03058b22fb776117c83d50ef29f9e7ce16e7541e4"
+  },
+  {
+    "run_id": "libertarianism__prompt_self_update_gpt54mini__trial_04",
+    "sha256": "0369e84912d442a0f6ef3e420cc502fe777af86bbeded0551277a590c3b5825e"
+  },
+  {
+    "run_id": "libertarianism__prompt_self_update_gpt54mini__trial_05",
+    "sha256": "34fa4871a3b78bcb3d211efb272cffe30e85432234db90cc5e203d31e1caf39f"
+  },
+  {
+    "run_id": "libertarianism__prompt_self_update_gpt54mini__trial_06",
+    "sha256": "4afea4ccabb4af7a58b5eb7d8bcdddd483ea1e368f7c1b4b971448746b940a03"
+  },
+  {
+    "run_id": "libertarianism__prompt_self_update_gpt54mini__trial_07",
+    "sha256": "771f162972a7745d59c1e01c8b6ca83e4f58525da412cea4efb84940c00a7f65"
+  },
+  {
+    "run_id": "libertarianism__prompt_self_update_gpt54mini__trial_08",
+    "sha256": "b194c5c21f57283cc698b551e6a98aad2862cd8f676199ca55835f09865ad1b9"
+  },
+  {
+    "run_id": "libertarianism__prompt_self_update_gpt54mini__trial_09",
+    "sha256": "a94b5f62582742623a1f26c4cf69a1e92ff5d0a0bcb66d55ab3523108eb5efe3"
+  },
+  {
+    "run_id": "libertarianism__prompt_self_update_gpt54mini__trial_10",
+    "sha256": "3a09aad6efc04d6aaf377aad1db45bb78bc8eafa86098d79ee4eb3cbe702633c"
+  },
+  {
+    "run_id": "libertarianism__rag_self_update_gpt54mini__trial_01",
+    "sha256": "31289aa6dcc72af637da482ea419a1ef0b8d6fd3f2c75349a8acb24cd7eae33b"
+  },
+  {
+    "run_id": "libertarianism__rag_self_update_gpt54mini__trial_02",
+    "sha256": "6f5a9f6645e5e531ca051a933dc02fa3736b46da5b5fcc25de20fc4fbf4f5459"
+  },
+  {
+    "run_id": "libertarianism__rag_self_update_gpt54mini__trial_03",
+    "sha256": "ae34a593ec4e16a4b24c3ef1732fcf44f81486e559c6d50016ecdd40edd75edf"
+  },
+  {
+    "run_id": "libertarianism__rag_self_update_gpt54mini__trial_04",
+    "sha256": "99d495bcfdbc62ffc4c5c02450c059e83094791fda91d3765061f7da3e324a15"
+  },
+  {
+    "run_id": "libertarianism__rag_self_update_gpt54mini__trial_05",
+    "sha256": "b5e7ce9274df5de022fd4110b74b045adb754f4af3bc3bf60639750b97ade0a8"
+  },
+  {
+    "run_id": "libertarianism__rag_self_update_gpt54mini__trial_06",
+    "sha256": "b4963f60f44a34ce34c2e64f6779145874e2e28c488a272edc68df594d310ebc"
+  },
+  {
+    "run_id": "libertarianism__rag_self_update_gpt54mini__trial_07",
+    "sha256": "96e31e9ef93615527a4af23675ea18981170631994040318b4126ff532207b4b"
+  },
+  {
+    "run_id": "libertarianism__rag_self_update_gpt54mini__trial_08",
+    "sha256": "d70bead9de9803b5efa0c9f44df0f25717b67656ac8b1c9005579871bd1c4d99"
+  },
+  {
+    "run_id": "libertarianism__rag_self_update_gpt54mini__trial_09",
+    "sha256": "e837a8857c3ecb86ee7c0ab896e1a807d9d2bea57cd76e1951ebd1f71e36ee2c"
+  },
+  {
+    "run_id": "libertarianism__rag_self_update_gpt54mini__trial_10",
+    "sha256": "eac94c9a7033431cbf54cb6aedabd879bba001a27c96625ee795a6c1a02eced8"
+  },
+  {
+    "run_id": "social_media__be_gpt54mini__trial_01",
+    "sha256": "1f69ad33dcad08e6cee196f5829753b55e2cc89916c18289cfd71064d78f42d6"
+  },
+  {
+    "run_id": "social_media__be_gpt54mini__trial_02",
+    "sha256": "663935069a9d4c7160c705a2bed8145d4a50e71be4a99e5e65d3384948e85848"
+  },
+  {
+    "run_id": "social_media__be_gpt54mini__trial_03",
+    "sha256": "24195cc8f44f43e336870d1b6249db508fa39edc7f9ceda128b15b50019119de"
+  },
+  {
+    "run_id": "social_media__be_gpt54mini__trial_04",
+    "sha256": "846d591a8852c89cdead9d0228d4fc126d7e34b2ab2f1afd17fe7cfd699d99ae"
+  },
+  {
+    "run_id": "social_media__be_gpt54mini__trial_05",
+    "sha256": "daa3044514285b78683ab029ee27e28f162e68d60a1cbe654917b231afa4770e"
+  },
+  {
+    "run_id": "social_media__be_gpt54mini__trial_06",
+    "sha256": "31784e82b16a1302ccfc5e0f26d0d6e702276cbb53e46470740eb1fad268ba4c"
+  },
+  {
+    "run_id": "social_media__be_gpt54mini__trial_07",
+    "sha256": "8770b23067aa9631d789b17e65c9d6c2ce49f0853c2964c667f427168fdb6953"
+  },
+  {
+    "run_id": "social_media__be_gpt54mini__trial_08",
+    "sha256": "817c86fee6b2c0a90c57c74ad6ee745cd4b3dfac6e7ad0c39645c46e6b41e8f8"
+  },
+  {
+    "run_id": "social_media__be_gpt54mini__trial_09",
+    "sha256": "317ab0520cf3835faba3659d77f1bb658106798cd1cbd87d3288d30c97a5c827"
+  },
+  {
+    "run_id": "social_media__be_gpt54mini__trial_10",
+    "sha256": "58f96a07a5fa4124f42fe10f3c064b6295aa4a8aa426d62fe88dcc996fa39138"
+  },
+  {
+    "run_id": "social_media__prompt_self_update_gpt54mini__trial_01",
+    "sha256": "2760dcc04b1758653214a2e749505b224e4a85a6e54487571f34944cd68b29f3"
+  },
+  {
+    "run_id": "social_media__prompt_self_update_gpt54mini__trial_02",
+    "sha256": "28a5ed5a4715b002779bd7aa80820fe74ad4aaab096d2c19b1e363d9d4c47449"
+  },
+  {
+    "run_id": "social_media__prompt_self_update_gpt54mini__trial_03",
+    "sha256": "260d0073a1cdf9ddee001a6941a71ed29ba31495672942c0b88f65b963d07aa3"
+  },
+  {
+    "run_id": "social_media__prompt_self_update_gpt54mini__trial_04",
+    "sha256": "802bdee610eb37de3f1a5a8cd0de0667614ec0c26b46f999df055f7594d061fa"
+  },
+  {
+    "run_id": "social_media__prompt_self_update_gpt54mini__trial_05",
+    "sha256": "8a23b55980279ef4dbef66aa7507482eaa6dc19d31ce34bc49506bfe8cab763d"
+  },
+  {
+    "run_id": "social_media__prompt_self_update_gpt54mini__trial_06",
+    "sha256": "12347e0f16867b25b1c7294e9857af5bbc49b31f43a7ed7a675d3f7876622d40"
+  },
+  {
+    "run_id": "social_media__prompt_self_update_gpt54mini__trial_07",
+    "sha256": "82952df1baf1dd1542a45073019d190f5654fc761e2db08d6311ba2c568985eb"
+  },
+  {
+    "run_id": "social_media__prompt_self_update_gpt54mini__trial_08",
+    "sha256": "25c6453a1caaacce6d96782d820e582d4fed17f660a451fa5fa355d90a08e531"
+  },
+  {
+    "run_id": "social_media__prompt_self_update_gpt54mini__trial_09",
+    "sha256": "4ed17a10250cca8eff9fc72dccdeb290e5e819e305853edc943c8fd7ece57111"
+  },
+  {
+    "run_id": "social_media__prompt_self_update_gpt54mini__trial_10",
+    "sha256": "de200410bf39a40c1597dee56ab449ae6e54e3f02ba95d93d46f57edf51dbcf5"
+  },
+  {
+    "run_id": "social_media__rag_self_update_gpt54mini__trial_01",
+    "sha256": "7431ebc6b16403832757845554a2eb438937e74e799e8bc85d735065053e3b42"
+  },
+  {
+    "run_id": "social_media__rag_self_update_gpt54mini__trial_02",
+    "sha256": "7a28ccbf1bfa7c37205481ffc1f68f66d1d1b7e04d93008963f2dd27f5291813"
+  },
+  {
+    "run_id": "social_media__rag_self_update_gpt54mini__trial_03",
+    "sha256": "c1e7e70fd677fb57bb53ed9fecdd93cad6b00abdff026a0e44cf706e4046e23a"
+  },
+  {
+    "run_id": "social_media__rag_self_update_gpt54mini__trial_04",
+    "sha256": "4fa88654e87f3d0f2f0341cbc476ff0cc6ecf58b26da30bc7eda26497f434fd4"
+  },
+  {
+    "run_id": "social_media__rag_self_update_gpt54mini__trial_05",
+    "sha256": "8a80dd478064e5bb13df1e76d45f95546f17155d6df0a9a7f5006418e421a1e3"
+  },
+  {
+    "run_id": "social_media__rag_self_update_gpt54mini__trial_06",
+    "sha256": "19898bb3dc8821d9c7b2d5a1371f434d57ca451bdbd4d9df1d2d507f572340a7"
+  },
+  {
+    "run_id": "social_media__rag_self_update_gpt54mini__trial_07",
+    "sha256": "ea91dd00a522389a161ea52295c82ca1d23410811184273eac06c51ecb9457ac"
+  },
+  {
+    "run_id": "social_media__rag_self_update_gpt54mini__trial_08",
+    "sha256": "65fbe278441214d61e7775bd89cfc17d34344c062fe78b305c58f899a421f646"
+  },
+  {
+    "run_id": "social_media__rag_self_update_gpt54mini__trial_09",
+    "sha256": "30cd62f138af15dd293a089a94f641ceed832b723e2514082e982b2e8581c1e0"
+  },
+  {
+    "run_id": "social_media__rag_self_update_gpt54mini__trial_10",
+    "sha256": "deb4306cc92c7114acde093022c85b4fb206220a36cc7e78a4145aed3df58468"
+  }
+]

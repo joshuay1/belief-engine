@@ -1,0 +1,53 @@
+{
+  "artifacts": [
+    {
+      "name": "REPORT.md",
+      "sha256": "5d96490766138b2b00d4d0c2f535f31bfc2640b378b29130c8142cee9cd25448",
+      "size_bytes": 4243
+    },
+    {
+      "name": "accepted_stream.jsonl.gz",
+      "sha256": "ecb79b76738c7bf6ada4dbaba8fd1f8dc836cc3c2f11d61c796fee297e6e491e",
+      "size_bytes": 1490421
+    },
+    {
+      "name": "fold_contrasts.csv",
+      "sha256": "b9bbc311a688935da5ed89253a7110866f32825847f9bb3adc4954e025af1904",
+      "size_bytes": 8862
+    },
+    {
+      "name": "fold_metrics.csv",
+      "sha256": "7645442214260c403f33b5094de55826557bbf0b9bd0c2131f1053bf8100617f",
+      "size_bytes": 4142
+    },
+    {
+      "name": "paired_cluster_bootstrap.csv",
+      "sha256": "2982193fa2e528eb389c46eed95c8a659e6c882b2be5da675b09d8693e5c30a7",
+      "size_bytes": 4199
+    },
+    {
+      "name": "pooled_metrics.csv",
+      "sha256": "0352d8d72392d7221bd8a742d159769798fbacdba6fbcf22f6c8f77ff4a8791b",
+      "size_bytes": 832
+    },
+    {
+      "name": "predictions.csv.gz",
+      "sha256": "d22de2566db26ee9fcbcf85f68423bbd51163c830b643f633fbe9646168ab943",
+      "size_bytes": 3544650
+    },
+    {
+      "name": "selected_params.csv",
+      "sha256": "993c4668717f3e47cc257a0c42864a5cd89bd6a8223daaa7270b878bbfc2a6d0",
+      "size_bytes": 5279
+    },
+    {
+      "name": "summary.json",
+      "sha256": "43779182279a26345de0da30c4f1146e59c504f876a8541293b81415ba88a300",
+      "size_bytes": 17069
+    }
+  ],
+  "registered_implementation_commit": "fe8f5ab1e20fcddc3e0ee0114faba46a88cc0ca3",
+  "schema_version": 1,
+  "study_id": "neurips_2026_debate_component_ablation_v1",
+  "support_commit": "44be279113c47969fb968fd4bb36359ef55e3c2f"
+}

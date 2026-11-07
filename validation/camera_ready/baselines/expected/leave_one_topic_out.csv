@@ -1,0 +1,11 @@
+comparison,omitted_topic_slug,omitted_topic,estimate,retained_topics,retained_paired_blocks
+be_gpt54mini_minus_prompt_self_update_gpt54mini,social_media,Social media brings more harm than good,-0.41550000000000004,4,40
+be_gpt54mini_minus_rag_self_update_gpt54mini,social_media,Social media brings more harm than good,-0.34450000000000008,4,40
+be_gpt54mini_minus_prompt_self_update_gpt54mini,journalism,We should subsidize journalism,-0.68325000000000002,4,40
+be_gpt54mini_minus_rag_self_update_gpt54mini,journalism,We should subsidize journalism,-0.49475000000000008,4,40
+be_gpt54mini_minus_prompt_self_update_gpt54mini,compulsory_voting,We should introduce compulsory voting,-0.62275000000000014,4,40
+be_gpt54mini_minus_rag_self_update_gpt54mini,compulsory_voting,We should introduce compulsory voting,-0.49825000000000008,4,40
+be_gpt54mini_minus_prompt_self_update_gpt54mini,atheism,We should adopt atheism,-0.58125000000000004,4,40
+be_gpt54mini_minus_rag_self_update_gpt54mini,atheism,We should adopt atheism,-0.55025000000000002,4,40
+be_gpt54mini_minus_prompt_self_update_gpt54mini,libertarianism,We should adopt libertarianism,-0.63524999999999998,4,40
+be_gpt54mini_minus_rag_self_update_gpt54mini,libertarianism,We should adopt libertarianism,-0.56225000000000003,4,40

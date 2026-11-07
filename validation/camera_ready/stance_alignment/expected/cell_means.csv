@@ -1,0 +1,211 @@
+topic,topic_slug,internal_stance,external_stance_mean,external_stance_sd,n_repeats
+Entrapment should be legalized,entrapment_should_be_legalized,-0.999,-0.7400000000000001,0.15874507866387544,3
+Entrapment should be legalized,entrapment_should_be_legalized,-0.9,-0.7400000000000001,0.15874507866387544,3
+Entrapment should be legalized,entrapment_should_be_legalized,-0.8,-0.92,0.0,3
+Entrapment should be legalized,entrapment_should_be_legalized,-0.7,-0.9066666666666667,0.023094010767585042,3
+Entrapment should be legalized,entrapment_should_be_legalized,-0.6,-0.88,0.034641016151377574,3
+Entrapment should be legalized,entrapment_should_be_legalized,-0.5,-0.27,0.060827625302982205,3
+Entrapment should be legalized,entrapment_should_be_legalized,-0.3999999999999999,-0.23,0.0,3
+Entrapment should be legalized,entrapment_should_be_legalized,-0.3,-0.23,0.0,3
+Entrapment should be legalized,entrapment_should_be_legalized,-0.1999999999999999,-0.21333333333333335,0.02886751345948129,3
+Entrapment should be legalized,entrapment_should_be_legalized,-0.1,-0.23,0.0,3
+Entrapment should be legalized,entrapment_should_be_legalized,0.0,-0.17666666666666667,0.055075705472861024,3
+Entrapment should be legalized,entrapment_should_be_legalized,0.1,0.18000000000000002,0.0,3
+Entrapment should be legalized,entrapment_should_be_legalized,0.1999999999999999,0.19666666666666666,0.028867513459481298,3
+Entrapment should be legalized,entrapment_should_be_legalized,0.3,0.23,0.0,3
+Entrapment should be legalized,entrapment_should_be_legalized,0.3999999999999999,0.22666666666666668,0.005773502691896261,3
+Entrapment should be legalized,entrapment_should_be_legalized,0.5,0.2333333333333333,0.005773502691896251,3
+Entrapment should be legalized,entrapment_should_be_legalized,0.6000000000000001,0.7400000000000001,0.1039230484541326,3
+Entrapment should be legalized,entrapment_should_be_legalized,0.7,0.92,0.0,3
+Entrapment should be legalized,entrapment_should_be_legalized,0.7999999999999998,0.9066666666666667,0.023094010767585042,3
+Entrapment should be legalized,entrapment_should_be_legalized,0.8999999999999997,0.61,0.35028559776273993,3
+Entrapment should be legalized,entrapment_should_be_legalized,0.9990000000000004,0.66,0.034641016151377574,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,-0.999,-0.64,0.034641016151377574,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,-0.9,-0.7999999999999999,0.15874507866387544,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,-0.8,-0.8266666666666667,0.12858201014657272,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,-0.7,-0.88,0.0,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,-0.6,-0.68,0.0,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,-0.5,-0.5966666666666667,0.31754264805429416,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,-0.3999999999999999,-0.21333333333333335,0.0288675134594813,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,-0.3,-0.18000000000000002,0.0,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,-0.1999999999999999,-0.18000000000000002,0.0,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,-0.1,-0.18000000000000002,0.0,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,0.0,0.04,0.06928203230275509,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,0.1,0.23,0.0,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,0.1999999999999999,0.21333333333333335,0.0288675134594813,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,0.3,0.23,0.0,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,0.3999999999999999,0.23,0.0,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,0.5,0.3633333333333333,0.22233608194203056,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,0.6000000000000001,0.8666666666666667,0.011547005383792509,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,0.7,0.91,0.017320508075688787,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,0.7999999999999998,0.9066666666666667,0.023094010767585067,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,0.8999999999999997,0.6133333333333334,0.3448671241700684,3
+Homeopathy brings more harm than good,homeopathy_brings_more_harm_than_good,0.9990000000000004,0.7200000000000001,0.12489995996796797,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,-0.999,-0.7400000000000001,0.1039230484541326,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,-0.9,-0.7200000000000001,0.17320508075688776,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,-0.8,-0.68,0.0,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,-0.7,-0.8933333333333334,0.023094010767585067,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,-0.6,-0.86,0.0,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,-0.5,-0.62,0.0,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,-0.3999999999999999,-0.23,0.0,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,-0.3,-0.23,0.0,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,-0.1999999999999999,-0.18000000000000002,0.0,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,-0.1,-0.18000000000000002,0.0,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,0.0,-0.09999999999999999,0.0916515138991168,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,0.1,0.21,0.02645751311064591,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,0.1999999999999999,0.22666666666666668,0.005773502691896261,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,0.3,0.23,0.0,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,0.3999999999999999,0.23,0.0,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,0.5,0.62,0.0,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,0.6000000000000001,0.8066666666666666,0.11015141094572202,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,0.7,0.8966666666666666,0.02081665999466135,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,0.7999999999999998,0.92,0.0,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,0.8999999999999997,0.84,0.13856406460551018,3
+Social media brings more harm than good,social_media_brings_more_harm_than_good,0.9990000000000004,0.84,0.13856406460551018,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,-0.999,-0.84,0.13856406460551018,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,-0.9,-0.7566666666666667,0.14153915830374764,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,-0.8,-0.84,0.13856406460551018,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,-0.7,-0.8966666666666666,0.02081665999466133,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,-0.6,-0.87,0.017320508075688787,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,-0.5,-0.36333333333333334,0.22233608194203056,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,-0.3999999999999999,-0.23,0.0,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,-0.3,-0.23,0.0,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,-0.1999999999999999,-0.23,0.0,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,-0.1,-0.21333333333333335,0.02886751345948129,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,0.0,-0.06,0.10392304845413264,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,0.1,0.21,0.02645751311064591,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,0.1999999999999999,0.19666666666666666,0.0288675134594813,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,0.3,0.22333333333333336,0.005773502691896267,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,0.3999999999999999,0.22666666666666668,0.005773502691896267,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,0.5,0.2333333333333333,0.005773502691896238,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,0.6000000000000001,0.7999999999999999,0.1039230484541326,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,0.7,0.8933333333333334,0.023094010767585067,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,0.7999999999999998,0.9066666666666667,0.023094010767585042,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,0.8999999999999997,0.68,0.0,3
+We should adopt a zero-tolerance policy in schools,we_should_adopt_a_zero_tolerance_policy_in_schools,0.9990000000000004,0.92,0.0,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,-0.999,-0.84,0.13856406460551018,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,-0.9,-0.5133333333333333,0.23860706890897707,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,-0.8,-0.92,0.0,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,-0.7,-0.9,0.017320508075688787,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,-0.6,-0.7966666666666667,0.10969655114602885,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,-0.5,-0.3633333333333333,0.22233608194203058,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,-0.3999999999999999,-0.23,0.0,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,-0.3,-0.23,0.0,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,-0.1999999999999999,-0.21333333333333335,0.0288675134594813,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,-0.1,-0.21333333333333335,0.0288675134594813,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,0.0,0.0,0.0,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,0.1,0.18000000000000002,0.0,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,0.1999999999999999,0.19333333333333333,0.023094010767585035,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,0.3,0.22,0.0,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,0.3999999999999999,0.21,0.02645751311064591,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,0.5,0.3666666666666667,0.2193931022920578,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,0.6000000000000001,0.7366666666666667,0.10692676621563624,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,0.7,0.92,0.0,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,0.7999999999999998,0.8933333333333334,0.023094010767585042,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,0.8999999999999997,0.92,0.0,3
+We should adopt an austerity regime,we_should_adopt_an_austerity_regime,0.9990000000000004,0.66,0.034641016151377574,3
+We should adopt atheism,we_should_adopt_atheism,-0.999,-0.49333333333333335,0.2193931022920578,3
+We should adopt atheism,we_should_adopt_atheism,-0.9,-0.64,0.034641016151377574,3
+We should adopt atheism,we_should_adopt_atheism,-0.8,-0.92,0.0,3
+We should adopt atheism,we_should_adopt_atheism,-0.7,-0.8833333333333333,0.0057735026918962545,3
+We should adopt atheism,we_should_adopt_atheism,-0.6,-0.7966666666666667,0.10969655114602887,3
+We should adopt atheism,we_should_adopt_atheism,-0.5,-0.23,0.0,3
+We should adopt atheism,we_should_adopt_atheism,-0.3999999999999999,-0.22666666666666668,0.005773502691896261,3
+We should adopt atheism,we_should_adopt_atheism,-0.3,-0.23,0.0,3
+We should adopt atheism,we_should_adopt_atheism,-0.1999999999999999,-0.21333333333333335,0.0288675134594813,3
+We should adopt atheism,we_should_adopt_atheism,-0.1,-0.18000000000000002,0.0,3
+We should adopt atheism,we_should_adopt_atheism,0.0,0.0,0.0,3
+We should adopt atheism,we_should_adopt_atheism,0.1,0.19333333333333333,0.023094010767585032,3
+We should adopt atheism,we_should_adopt_atheism,0.1999999999999999,0.19666666666666666,0.0288675134594813,3
+We should adopt atheism,we_should_adopt_atheism,0.3,0.22666666666666668,0.005773502691896267,3
+We should adopt atheism,we_should_adopt_atheism,0.3999999999999999,0.22333333333333336,0.005773502691896261,3
+We should adopt atheism,we_should_adopt_atheism,0.5,0.23666666666666666,0.0057735026918962545,3
+We should adopt atheism,we_should_adopt_atheism,0.6000000000000001,0.6733333333333333,0.0057735026918962545,3
+We should adopt atheism,we_should_adopt_atheism,0.7,0.92,0.0,3
+We should adopt atheism,we_should_adopt_atheism,0.7999999999999998,0.92,0.0,3
+We should adopt atheism,we_should_adopt_atheism,0.8999999999999997,0.7600000000000001,0.13856406460551018,3
+We should adopt atheism,we_should_adopt_atheism,0.9990000000000004,0.49333333333333335,0.2193931022920578,3
+We should adopt libertarianism,we_should_adopt_libertarianism,-0.999,-0.7999999999999999,0.15874507866387544,3
+We should adopt libertarianism,we_should_adopt_libertarianism,-0.9,-0.7200000000000001,0.17320508075688776,3
+We should adopt libertarianism,we_should_adopt_libertarianism,-0.8,-0.92,0.0,3
+We should adopt libertarianism,we_should_adopt_libertarianism,-0.7,-0.92,0.0,3
+We should adopt libertarianism,we_should_adopt_libertarianism,-0.6,-0.7999999999999999,0.10392304845413261,3
+We should adopt libertarianism,we_should_adopt_libertarianism,-0.5,-0.2333333333333333,0.005773502691896251,3
+We should adopt libertarianism,we_should_adopt_libertarianism,-0.3999999999999999,-0.23,0.0,3
+We should adopt libertarianism,we_should_adopt_libertarianism,-0.3,-0.23,0.0,3
+We should adopt libertarianism,we_should_adopt_libertarianism,-0.1999999999999999,-0.19666666666666666,0.0288675134594813,3
+We should adopt libertarianism,we_should_adopt_libertarianism,-0.1,-0.21333333333333335,0.0288675134594813,3
+We should adopt libertarianism,we_should_adopt_libertarianism,0.0,-0.07333333333333333,0.12701705922171766,3
+We should adopt libertarianism,we_should_adopt_libertarianism,0.1,0.20666666666666667,0.023094010767585035,3
+We should adopt libertarianism,we_should_adopt_libertarianism,0.1999999999999999,0.21,0.026457513110645904,3
+We should adopt libertarianism,we_should_adopt_libertarianism,0.3,0.22333333333333336,0.005773502691896261,3
+We should adopt libertarianism,we_should_adopt_libertarianism,0.3999999999999999,0.22666666666666668,0.005773502691896261,3
+We should adopt libertarianism,we_should_adopt_libertarianism,0.5,0.2333333333333333,0.005773502691896247,3
+We should adopt libertarianism,we_should_adopt_libertarianism,0.6000000000000001,0.7400000000000001,0.10392304845413261,3
+We should adopt libertarianism,we_should_adopt_libertarianism,0.7,0.92,0.0,3
+We should adopt libertarianism,we_should_adopt_libertarianism,0.7999999999999998,0.92,0.0,3
+We should adopt libertarianism,we_should_adopt_libertarianism,0.8999999999999997,0.8133333333333334,0.11547005383792512,3
+We should adopt libertarianism,we_should_adopt_libertarianism,0.9990000000000004,0.7600000000000001,0.13856406460551018,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,-0.999,-0.5133333333333333,0.23860706890897707,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,-0.9,-0.68,0.0,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,-0.8,-0.92,0.0,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,-0.7,-0.9066666666666667,0.023094010767585067,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,-0.6,-0.7999999999999999,0.1039230484541326,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,-0.5,-0.49,0.22516660498395405,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,-0.3999999999999999,-0.23,0.0,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,-0.3,-0.26666666666666666,0.06350852961085884,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,-0.1999999999999999,-0.21333333333333335,0.0288675134594813,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,-0.1,-0.23,0.0,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,0.0,0.0,0.0,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,0.1,0.18000000000000002,0.0,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,0.1999999999999999,0.19666666666666666,0.0288675134594813,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,0.3,0.26666666666666666,0.06350852961085886,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,0.3999999999999999,0.23,0.0,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,0.5,0.36333333333333334,0.22233608194203056,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,0.6000000000000001,0.68,0.0,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,0.7,0.9066666666666667,0.023094010767585067,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,0.7999999999999998,0.92,0.0,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,0.8999999999999997,0.5333333333333333,0.2540341184434354,3
+We should introduce compulsory voting,we_should_introduce_compulsory_voting,0.9990000000000004,0.7400000000000001,0.15874507866387547,3
+We should legalize sex selection,we_should_legalize_sex_selection,-0.999,-0.7400000000000001,0.15874507866387544,3
+We should legalize sex selection,we_should_legalize_sex_selection,-0.9,-0.7566666666666667,0.14153915830374764,3
+We should legalize sex selection,we_should_legalize_sex_selection,-0.8,-0.84,0.13856406460551018,3
+We should legalize sex selection,we_should_legalize_sex_selection,-0.7,-0.9,0.017320508075688787,3
+We should legalize sex selection,we_should_legalize_sex_selection,-0.6,-0.86,0.0,3
+We should legalize sex selection,we_should_legalize_sex_selection,-0.5,-0.49,0.22516660498395405,3
+We should legalize sex selection,we_should_legalize_sex_selection,-0.3999999999999999,-0.23,0.0,3
+We should legalize sex selection,we_should_legalize_sex_selection,-0.3,-0.23,0.0,3
+We should legalize sex selection,we_should_legalize_sex_selection,-0.1999999999999999,-0.23,0.0,3
+We should legalize sex selection,we_should_legalize_sex_selection,-0.1,-0.21333333333333335,0.02886751345948129,3
+We should legalize sex selection,we_should_legalize_sex_selection,0.0,-0.06,0.10392304845413264,3
+We should legalize sex selection,we_should_legalize_sex_selection,0.1,0.19333333333333333,0.023094010767585035,3
+We should legalize sex selection,we_should_legalize_sex_selection,0.1999999999999999,0.22333333333333336,0.005773502691896261,3
+We should legalize sex selection,we_should_legalize_sex_selection,0.3,0.23,0.0,3
+We should legalize sex selection,we_should_legalize_sex_selection,0.3999999999999999,0.22666666666666668,0.005773502691896267,3
+We should legalize sex selection,we_should_legalize_sex_selection,0.5,0.3666666666666667,0.2193931022920578,3
+We should legalize sex selection,we_should_legalize_sex_selection,0.6000000000000001,0.7466666666666667,0.11547005383792512,3
+We should legalize sex selection,we_should_legalize_sex_selection,0.7,0.92,0.0,3
+We should legalize sex selection,we_should_legalize_sex_selection,0.7999999999999998,0.92,0.0,3
+We should legalize sex selection,we_should_legalize_sex_selection,0.8999999999999997,0.5333333333333333,0.2540341184434354,3
+We should legalize sex selection,we_should_legalize_sex_selection,0.9990000000000004,0.84,0.13856406460551018,3
+We should subsidize journalism,we_should_subsidize_journalism,-0.999,-0.7533333333333334,0.14433756729740643,3
+We should subsidize journalism,we_should_subsidize_journalism,-0.9,-0.7566666666666667,0.14153915830374764,3
+We should subsidize journalism,we_should_subsidize_journalism,-0.8,-0.9266666666666667,0.005773502691896279,3
+We should subsidize journalism,we_should_subsidize_journalism,-0.7,-0.9,0.017320508075688787,3
+We should subsidize journalism,we_should_subsidize_journalism,-0.6,-0.67,0.0,3
+We should subsidize journalism,we_should_subsidize_journalism,-0.5,-0.23666666666666666,0.005773502691896242,3
+We should subsidize journalism,we_should_subsidize_journalism,-0.3999999999999999,-0.23,0.0,3
+We should subsidize journalism,we_should_subsidize_journalism,-0.3,-0.23,0.0,3
+We should subsidize journalism,we_should_subsidize_journalism,-0.1999999999999999,-0.19666666666666666,0.0288675134594813,3
+We should subsidize journalism,we_should_subsidize_journalism,-0.1,-0.21333333333333335,0.02886751345948129,3
+We should subsidize journalism,we_should_subsidize_journalism,0.0,0.0,0.0,3
+We should subsidize journalism,we_should_subsidize_journalism,0.1,0.19333333333333333,0.023094010767585032,3
+We should subsidize journalism,we_should_subsidize_journalism,0.1999999999999999,0.19666666666666666,0.0288675134594813,3
+We should subsidize journalism,we_should_subsidize_journalism,0.3,0.23,0.0,3
+We should subsidize journalism,we_should_subsidize_journalism,0.3999999999999999,0.23,0.0,3
+We should subsidize journalism,we_should_subsidize_journalism,0.5,0.24,0.0,3
+We should subsidize journalism,we_should_subsidize_journalism,0.6000000000000001,0.7333333333333334,0.10969655114602887,3
+We should subsidize journalism,we_should_subsidize_journalism,0.7,0.8933333333333334,0.023094010767585067,3
+We should subsidize journalism,we_should_subsidize_journalism,0.7999999999999998,0.8933333333333334,0.023094010767585042,3
+We should subsidize journalism,we_should_subsidize_journalism,0.8999999999999997,0.7600000000000001,0.13856406460551018,3
+We should subsidize journalism,we_should_subsidize_journalism,0.9990000000000004,0.7600000000000001,0.13856406460551018,3

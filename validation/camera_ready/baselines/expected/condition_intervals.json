@@ -1,0 +1,29 @@
+[
+  {
+    "ci_lower": 0.31419500000000006,
+    "ci_upper": 0.7504,
+    "condition": "be_gpt54mini",
+    "estimate": 0.5282,
+    "metric": "final_gap",
+    "paired_seeds": 50,
+    "topics": 5
+  },
+  {
+    "ci_lower": 0.971195,
+    "ci_upper": 1.306405,
+    "condition": "prompt_self_update_gpt54mini",
+    "estimate": 1.1158,
+    "metric": "final_gap",
+    "paired_seeds": 50,
+    "topics": 5
+  },
+  {
+    "ci_lower": 0.760995,
+    "ci_upper": 1.2404,
+    "condition": "rag_self_update_gpt54mini",
+    "estimate": 1.0182,
+    "metric": "final_gap",
+    "paired_seeds": 50,
+    "topics": 5
+  }
+]

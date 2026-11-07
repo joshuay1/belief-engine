@@ -72,24 +72,16 @@ Wilcoxon calculation explicitly retains the original SciPy 1.10 selection rule
 avoids a change in newer SciPy defaults for zero differences. The three rebuilt
 tables match the saved outputs to numerical tolerance.
 
-## Remaining paper packaging
+## Camera-ready result packaging
 
-These are the next stage, not prerequisites for the code tests:
+The six missing empirical packages are included under `validation/camera_ready/`.
+`make rebuild-paper` checks them from saved inputs without hosted-model calls.
+See that folder's README for the study map and numerical verification scope.
 
-1. Add the ten-topic stance-alignment study and 150-debate common-evaluator study,
-   with frozen configurations, prompts, compact outputs, and numerical checks.
-2. Add finite-solver endpoint/path evidence and component-study analysis artifacts.
-3. Include the exact original 100-input AQR sample mapping and predictions that
-   support the retained manuscript result. Keep differently sampled older
-   summaries clearly identified.
-4. Add final Figure 1 code and reconcile the profile panel and other figure copies.
-5. Complete the result index with a claim-to-artifact map, exact replay
-   aggregation, and experiment-specific update modes for the newer studies.
-6. Finalize the project license, citation, public URL, and release version.
-
-The separate data/model access requirements remain in force. Do not copy the
-entire development tree, raw datasets, credentials, or model weights into this
-candidate merely to satisfy a path in an older manifest.
+Before a final named release, choose the project licence and citation metadata,
+and complete the separate audit of final figure copies and the older bundles.
+The new empirical packages do not certify every historical plotting command.
+Figure 1 drawing code is optional and remains in the paper project.
 
 ## Repository cleanup
 

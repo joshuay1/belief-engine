@@ -1,0 +1,446 @@
+{
+  "sources": [
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/scripts/analyze_matched_baseline.py",
+      "source_sha256": "47d148b12aa602ec5d94c9acbcdfd5a1f492936b92f2811cc9e1690ac6e26f79",
+      "destination": "validation/scripts/paper/frozen/analyze_matched_baseline.py",
+      "destination_sha256": "1f4170fe5309139deed6af04e9d2f43b44113e310033e19e96ef7c5a37fdbde9",
+      "transformation": "original analyzer; np.trapz renamed to np.trapezoid for NumPy 2.4 compatibility"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/scripts/analyze_matched_baseline_primary_multiplicity.py",
+      "source_sha256": "5841dd2b1d42f703e4cdef15f3942ae3b010baf6d7ad6191c24055166f52a118",
+      "destination": "validation/scripts/paper/frozen/analyze_matched_baseline_primary_multiplicity.py",
+      "destination_sha256": "5841dd2b1d42f703e4cdef15f3942ae3b010baf6d7ad6191c24055166f52a118",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/scripts/analyze_exact_endpoint_trajectories.py",
+      "source_sha256": "f42bd65d83e8237ef1a66e5a68f44357b9408ad0f8558ee1fb489a7278be0dc0",
+      "destination": "validation/scripts/paper/frozen/analyze_exact_endpoint_trajectories.py",
+      "destination_sha256": "f42bd65d83e8237ef1a66e5a68f44357b9408ad0f8558ee1fb489a7278be0dc0",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/scripts/analyze_uptake_anchor_trajectories.py",
+      "source_sha256": "52786a7ca9e28248cbcec6189df45fff230184167b8a4598030cf46556c779b6",
+      "destination": "validation/scripts/paper/frozen/analyze_uptake_anchor_trajectories.py",
+      "destination_sha256": "52786a7ca9e28248cbcec6189df45fff230184167b8a4598030cf46556c779b6",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_response_factorial_v1/rebuttal/scripts/analyze_component_necessity_factorial.py",
+      "source_sha256": "6156a741f4cd749b1cd20df479665cbc5af158dd395f7374214f8bd02fdc7110",
+      "destination": "validation/scripts/paper/frozen/analyze_component_necessity_factorial.py",
+      "destination_sha256": "6156a741f4cd749b1cd20df479665cbc5af158dd395f7374214f8bd02fdc7110",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/multi_topic_stance_alignment/run_multi_topic_stance_alignment.py",
+      "source_sha256": "e53646292e5486920e5b20e7346361e28e0399ff880769e0b2caf145ff50c858",
+      "destination": "validation/scripts/paper/frozen/stance_alignment.py",
+      "destination_sha256": "e53646292e5486920e5b20e7346361e28e0399ff880769e0b2caf145ff50c858",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/results/multi_topic_stance_alignment/full_20260727/results.csv",
+      "source_sha256": "ed44d51ca0b6bc301b3ac71c51f7c0287be5d96286f21608d8ee960361367831",
+      "destination": "validation/camera_ready/stance_alignment/results.csv",
+      "destination_sha256": "ed44d51ca0b6bc301b3ac71c51f7c0287be5d96286f21608d8ee960361367831",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/results/multi_topic_stance_alignment/full_20260727/resolved_config.yaml",
+      "source_sha256": "f6171404cf565cf8b5532a1f246eeee6c028cddd68738054efea19872997bf39",
+      "destination": "validation/camera_ready/stance_alignment/resolved_config.yaml",
+      "destination_sha256": "f6171404cf565cf8b5532a1f246eeee6c028cddd68738054efea19872997bf39",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/results/multi_topic_stance_alignment/full_20260727/analysis/metrics.json",
+      "source_sha256": "6f1ae1aa2325b63cab1f7071eb5ff13821d6e40aefea989033a67da370e4b807",
+      "destination": "validation/camera_ready/stance_alignment/expected/metrics.json",
+      "destination_sha256": "6f1ae1aa2325b63cab1f7071eb5ff13821d6e40aefea989033a67da370e4b807",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/results/multi_topic_stance_alignment/full_20260727/analysis/topic_metrics.csv",
+      "source_sha256": "cc6bd7c75163c1bd625acbd60a3da7bbf8c6a924a91537a4f43a96ef75bb9d88",
+      "destination": "validation/camera_ready/stance_alignment/expected/topic_metrics.csv",
+      "destination_sha256": "cc6bd7c75163c1bd625acbd60a3da7bbf8c6a924a91537a4f43a96ef75bb9d88",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/results/multi_topic_stance_alignment/full_20260727/analysis/cell_means.csv",
+      "source_sha256": "c73766d2ac0818a55feebe94cd668a233166adc238b12a5ad350fd35d4307063",
+      "destination": "validation/camera_ready/stance_alignment/expected/cell_means.csv",
+      "destination_sha256": "c73766d2ac0818a55feebe94cd668a233166adc238b12a5ad350fd35d4307063",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/results/multi_topic_stance_alignment/full_20260727/provenance/src/simulation/belief_engine.py",
+      "source_sha256": "878e367c007c630219bac4a3f178a201740e1905ba5ba84087544e44c2344941",
+      "destination": "validation/camera_ready/stance_alignment/source/simulation/belief_engine.py",
+      "destination_sha256": "878e367c007c630219bac4a3f178a201740e1905ba5ba84087544e44c2344941",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/results/multi_topic_stance_alignment/full_20260727/provenance/src/simulation/belief_instructions.json",
+      "source_sha256": "79c9ea3f1abfd9a3af482c93c7cc9efee1a9897758f261c4fe8a09890e1ca6ba",
+      "destination": "validation/camera_ready/stance_alignment/source/simulation/belief_instructions.json",
+      "destination_sha256": "79c9ea3f1abfd9a3af482c93c7cc9efee1a9897758f261c4fe8a09890e1ca6ba",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/results/multi_topic_stance_alignment/full_20260727/provenance/src/agents/evaluation_agent.py",
+      "source_sha256": "798bed57983920e8df95f172a7628a43152b1dd16979287953aa1835b9f1ce2d",
+      "destination": "validation/camera_ready/stance_alignment/source/agents/evaluation_agent.py",
+      "destination_sha256": "798bed57983920e8df95f172a7628a43152b1dd16979287953aa1835b9f1ce2d",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/results/multi_topic_stance_alignment/full_20260727/provenance/src/agents/subject_agent.py",
+      "source_sha256": "0e407605c7cfd67471929a46299517113243eaa096ef87753c64d4568e7583b2",
+      "destination": "validation/camera_ready/stance_alignment/source/agents/subject_agent.py",
+      "destination_sha256": "0e407605c7cfd67471929a46299517113243eaa096ef87753c64d4568e7583b2",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/results/multi_topic_stance_alignment/full_20260727/provenance/src/agents/shared_instructions.py",
+      "source_sha256": "6ddfcf8c9a3482162d3d7cc770ed3a9960f8765ba8c20e7654b87c9ecf87716b",
+      "destination": "validation/camera_ready/stance_alignment/source/agents/shared_instructions.py",
+      "destination_sha256": "6ddfcf8c9a3482162d3d7cc770ed3a9960f8765ba8c20e7654b87c9ecf87716b",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/results/multi_topic_stance_alignment/full_20260727/provenance/src/backend/factory.py",
+      "source_sha256": "1347b9155941046ba84cda6c15d511e602a27347b31373e2f0782f37cbf59454",
+      "destination": "validation/camera_ready/stance_alignment/source/backend/factory.py",
+      "destination_sha256": "1347b9155941046ba84cda6c15d511e602a27347b31373e2f0782f37cbf59454",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/results/multi_topic_stance_alignment/full_20260727/provenance/src/backend/backend_openai.py",
+      "source_sha256": "59e446ea17b8e3bd8a9585480c823e4769b592cda9138236166e373543e87b64",
+      "destination": "validation/camera_ready/stance_alignment/source/backend/backend_openai.py",
+      "destination_sha256": "59e446ea17b8e3bd8a9585480c823e4769b592cda9138236166e373543e87b64",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "paper/experiments/results/multi_topic_stance_alignment/full_20260727/provenance/src/prompts/evaluator_optimized.txt",
+      "source_sha256": "2c6eb444cd6ff752aa9b99929c1998936411379760b5a0340bfbcd4a2523ad83",
+      "destination": "validation/camera_ready/stance_alignment/source/prompts/evaluator_optimized.txt",
+      "destination_sha256": "2c6eb444cd6ff752aa9b99929c1998936411379760b5a0340bfbcd4a2523ad83",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/matched_baseline_v1/summary.csv",
+      "source_sha256": "8d0cc4cb84b64c61aacad8143cfd5126b74fd51594473564b9b8c90cfbceb3c2",
+      "destination": "validation/camera_ready/baselines/runs.csv",
+      "destination_sha256": "211315540dd956dc4c9cb5315e42926e4430a625946a7d0816f7f023d0927e59",
+      "transformation": "column projection; no rows removed"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/matched_baseline_v1/stance_trajectories.csv",
+      "source_sha256": "75d3322a074ea49b31a92505267619b5e71e6be9e60d635d5cb7c891cf7c053a",
+      "destination": "validation/camera_ready/baselines/trajectories.csv",
+      "destination_sha256": "75d3322a074ea49b31a92505267619b5e71e6be9e60d635d5cb7c891cf7c053a",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/MATCHED_BASELINE_PREREGISTRATION.yaml",
+      "source_sha256": "d7bf7348840692a8e07b9c81677f0664228c1a0a154757ff4e87229bc96076e0",
+      "destination": "validation/camera_ready/baselines/MATCHED_BASELINE_PREREGISTRATION.yaml",
+      "destination_sha256": "d7bf7348840692a8e07b9c81677f0664228c1a0a154757ff4e87229bc96076e0",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/MATCHED_BASELINE_PRIMARY_MULTIPLICITY_POSTHOC_SPEC.yaml",
+      "source_sha256": "440940ea5315487346159a942ee6dd95b59c5eb6746349fc55a802312804d67b",
+      "destination": "validation/camera_ready/baselines/MATCHED_BASELINE_PRIMARY_MULTIPLICITY_POSTHOC_SPEC.yaml",
+      "destination_sha256": "440940ea5315487346159a942ee6dd95b59c5eb6746349fc55a802312804d67b",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/analyses/matched_baseline_primary_multiplicity_posthoc_v1/bootstrap_intervals.csv",
+      "source_sha256": "300f9333d43619f097513a2ed7fd52aebc420fe2e42cf0ecbf9430f4fe787ff6",
+      "destination": "validation/camera_ready/baselines/expected/bootstrap_intervals.csv",
+      "destination_sha256": "300f9333d43619f097513a2ed7fd52aebc420fe2e42cf0ecbf9430f4fe787ff6",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/analyses/matched_baseline_primary_multiplicity_posthoc_v1/leave_one_topic_out.csv",
+      "source_sha256": "0872120090f3f7e00e800e349ab83cb916ad1bb9317e9e30bf6330c1a9649d7a",
+      "destination": "validation/camera_ready/baselines/expected/leave_one_topic_out.csv",
+      "destination_sha256": "0872120090f3f7e00e800e349ab83cb916ad1bb9317e9e30bf6330c1a9649d7a",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/analyses/matched_baseline_primary_multiplicity_posthoc_v1/exact_topic_sign_flip_tests.csv",
+      "source_sha256": "efa571af970858f9801f02317425f5264e7be77612d2b98c4b8c6b677fc172fe",
+      "destination": "validation/camera_ready/baselines/expected/exact_topic_sign_flip_tests.csv",
+      "destination_sha256": "efa571af970858f9801f02317425f5264e7be77612d2b98c4b8c6b677fc172fe",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/debate_component_ablation_v1/accepted_stream.jsonl.gz",
+      "source_sha256": "ecb79b76738c7bf6ada4dbaba8fd1f8dc836cc3c2f11d61c796fee297e6e491e",
+      "destination": "validation/camera_ready/replay/accepted_stream.jsonl.gz",
+      "destination_sha256": "ecb79b76738c7bf6ada4dbaba8fd1f8dc836cc3c2f11d61c796fee297e6e491e",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/debate_component_ablation_v1/predictions.csv.gz",
+      "source_sha256": "d22de2566db26ee9fcbcf85f68423bbd51163c830b643f633fbe9646168ab943",
+      "destination": "validation/camera_ready/replay/predictions.csv.gz",
+      "destination_sha256": "d22de2566db26ee9fcbcf85f68423bbd51163c830b643f633fbe9646168ab943",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/debate_component_ablation_v1/manifest.json",
+      "source_sha256": "929e3a20747fff56a31da2e0acb31c8895310f3ab85c4231d363d782d5bb7521",
+      "destination": "validation/camera_ready/replay/manifest.json",
+      "destination_sha256": "929e3a20747fff56a31da2e0acb31c8895310f3ab85c4231d363d782d5bb7521",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/debate_component_ablation_v1/selected_params.csv",
+      "source_sha256": "993c4668717f3e47cc257a0c42864a5cd89bd6a8223daaa7270b878bbfc2a6d0",
+      "destination": "validation/camera_ready/replay/selected_params.csv",
+      "destination_sha256": "993c4668717f3e47cc257a0c42864a5cd89bd6a8223daaa7270b878bbfc2a6d0",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/debate_component_ablation_v1/pooled_metrics.csv",
+      "source_sha256": "0352d8d72392d7221bd8a742d159769798fbacdba6fbcf22f6c8f77ff4a8791b",
+      "destination": "validation/camera_ready/replay/expected/pooled_metrics.csv",
+      "destination_sha256": "0352d8d72392d7221bd8a742d159769798fbacdba6fbcf22f6c8f77ff4a8791b",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/debate_component_ablation_v1/paired_cluster_bootstrap.csv",
+      "source_sha256": "2982193fa2e528eb389c46eed95c8a659e6c882b2be5da675b09d8693e5c30a7",
+      "destination": "validation/camera_ready/replay/expected/paired_cluster_bootstrap.csv",
+      "destination_sha256": "2982193fa2e528eb389c46eed95c8a659e6c882b2be5da675b09d8693e5c30a7",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/analyses/exact_endpoint_trajectory_v1/EXACT_ENDPOINT_TRAJECTORY_ANALYSIS_SPEC.yaml",
+      "source_sha256": "c33782be9003246a23f9124632ee5d6b4f7b22e127ad9fd4140e46adf22d4e4d",
+      "destination": "validation/camera_ready/endpoints/spec.yaml",
+      "destination_sha256": "c33782be9003246a23f9124632ee5d6b4f7b22e127ad9fd4140e46adf22d4e4d",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/analyses/exact_endpoint_trajectory_v1/summary.csv",
+      "source_sha256": "bb61e51230f69d62e21765887a8af6b8b66797598bde4e93a5ac4a3bc75f340c",
+      "destination": "validation/camera_ready/endpoints/expected/summary.csv",
+      "destination_sha256": "bb61e51230f69d62e21765887a8af6b8b66797598bde4e93a5ac4a3bc75f340c",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/analyses/exact_endpoint_trajectory_v1/bootstrap_intervals.csv",
+      "source_sha256": "6f61da469aa13cbec8892e64daa7456242623f63efeb114219ad626e1a34b677",
+      "destination": "validation/camera_ready/endpoints/expected/bootstrap_intervals.csv",
+      "destination_sha256": "6f61da469aa13cbec8892e64daa7456242623f63efeb114219ad626e1a34b677",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/analyses/exact_endpoint_trajectory_v1/selected_example_trajectories.csv",
+      "source_sha256": "6dcfd91c3649d90fca392002530ca9d9df465b81a9bfbd28787da0fb68c52799",
+      "destination": "validation/camera_ready/endpoints/expected/selected_example_trajectories.csv",
+      "destination_sha256": "6dcfd91c3649d90fca392002530ca9d9df465b81a9bfbd28787da0fb68c52799",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/analyses/exact_endpoint_trajectory_v1/participant_denominator.csv",
+      "source_sha256": "0749db00d7201239474da700db3d0706b370ed6ff1515575ef08057b1c96e346",
+      "destination": "validation/camera_ready/endpoints/expected/participant_denominator.csv",
+      "destination_sha256": "0749db00d7201239474da700db3d0706b370ed6ff1515575ef08057b1c96e346",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_response_factorial_v1/rebuttal/results/analyses/component_necessity_factorial_v1_schema_contract_repair_restart_v3/cell_outcomes.csv",
+      "source_sha256": "89a56b341bbf67f9f42890358fe96a5e5427668b6713f8960d22b5e2006773fe",
+      "destination": "validation/camera_ready/components/cells.csv",
+      "destination_sha256": "e45576cb845a6a682104ca1aca98d7e8be4714249390d22c1cee31b5ae28468f",
+      "transformation": "column projection; no rows removed"
+    },
+    {
+      "source": "agent_mem_response_factorial_v1/rebuttal/results/analyses/component_necessity_factorial_v1_schema_contract_repair_restart_v3/primary_contrasts.csv",
+      "source_sha256": "c3317b9f4b01c6055f549533765c66774c8affd9d6062413992d0e6a13ae65a8",
+      "destination": "validation/camera_ready/components/expected/primary_contrasts.csv",
+      "destination_sha256": "c3317b9f4b01c6055f549533765c66774c8affd9d6062413992d0e6a13ae65a8",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_response_factorial_v1/rebuttal/results/analyses/component_necessity_factorial_v1_schema_contract_repair_restart_v3/structured_decomposition_manipulation_summary.json",
+      "source_sha256": "b24fbbe5cf743bf427224584c035fbd56d23f34f96e07fadafc3901c0d58019f",
+      "destination": "validation/camera_ready/components/expected/structured_decomposition_manipulation_summary.json",
+      "destination_sha256": "b24fbbe5cf743bf427224584c035fbd56d23f34f96e07fadafc3901c0d58019f",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_response_factorial_v1/rebuttal/COMPONENT_NECESSITY_FACTORIAL_SPEC.yaml",
+      "source_sha256": "0a2e75763affd55992f2e661499d8a71f6c235386b66153b64cbe98050b6f098",
+      "destination": "validation/camera_ready/components/COMPONENT_NECESSITY_FACTORIAL_SPEC.yaml",
+      "destination_sha256": "0a2e75763affd55992f2e661499d8a71f6c235386b66153b64cbe98050b6f098",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_response_factorial_v1/rebuttal/component_necessity_factorial_v1/comparison_spec.yaml",
+      "source_sha256": "e3aa5bf4ea890cf7cfc56d115d49ee4b0f5d11cd86291bc5f9c3d22bca897f3e",
+      "destination": "validation/camera_ready/components/protocol/comparison_spec.yaml",
+      "destination_sha256": "e3aa5bf4ea890cf7cfc56d115d49ee4b0f5d11cd86291bc5f9c3d22bca897f3e",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_response_factorial_v1/rebuttal/component_necessity_factorial_v1/registry.csv",
+      "source_sha256": "9dec1c176f28239598424f32e496f2330e0b3e013f886073767184ed10d0e5eb",
+      "destination": "validation/camera_ready/components/protocol/registry.csv",
+      "destination_sha256": "9dec1c176f28239598424f32e496f2330e0b3e013f886073767184ed10d0e5eb",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_response_factorial_v1/rebuttal/component_necessity_factorial_v1/implementation_lock.json",
+      "source_sha256": "d6159d555719932682aead39e83a26ab61b8cfd99b811175868b49581dcbdb78",
+      "destination": "validation/camera_ready/components/protocol/implementation_lock.json",
+      "destination_sha256": "d6159d555719932682aead39e83a26ab61b8cfd99b811175868b49581dcbdb78",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_response_factorial_v1/rebuttal/component_necessity_factorial_v1/PREOUTCOME_POWER_AMENDMENT.md",
+      "source_sha256": "136423c2c01f1b133c8f7add1760c00ca21f583ccc6c7ff4b3c033a473ab39a5",
+      "destination": "validation/camera_ready/components/protocol/PREOUTCOME_POWER_AMENDMENT.md",
+      "destination_sha256": "136423c2c01f1b133c8f7add1760c00ca21f583ccc6c7ff4b3c033a473ab39a5",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_response_factorial_v1/rebuttal/component_necessity_factorial_v1/POST_FAILURE_SCHEMA_CONTRACT_AMENDMENT.md",
+      "source_sha256": "4d934882e1e807ca6e899b4e5be8f9a5c5f88f3a2320bf069d441a5ca4f5721a",
+      "destination": "validation/camera_ready/components/protocol/POST_FAILURE_SCHEMA_CONTRACT_AMENDMENT.md",
+      "destination_sha256": "4d934882e1e807ca6e899b4e5be8f9a5c5f88f3a2320bf069d441a5ca4f5721a",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_response_factorial_v1/rebuttal/component_necessity_factorial_v1/POST_FAILURE_FLAT_COMPLETION_AUDIT_AMENDMENT.md",
+      "source_sha256": "19cb3ae9f5ecc522d56256a5e8f46873cde1e18bde0efc642d9ffe53691cbd01",
+      "destination": "validation/camera_ready/components/protocol/POST_FAILURE_FLAT_COMPLETION_AUDIT_AMENDMENT.md",
+      "destination_sha256": "19cb3ae9f5ecc522d56256a5e8f46873cde1e18bde0efc642d9ffe53691cbd01",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem/validation/results/judgement_layer_aqr/aqr_test_20260426_133422/predictions.csv",
+      "source_sha256": "28fd6fafceb7adbed380602294dfe49a4353f7dcf203964b3cf1505ccc51270c",
+      "destination": "validation/camera_ready/aqr/selected_100.csv",
+      "destination_sha256": "86581520496202c27e768430240f57e358060f792d0861d3b0af734a1cc66f07",
+      "transformation": "first 100 audit rows matched in order by text_hash to extraction audit; joined extraction fields; original argument text excluded"
+    },
+    {
+      "source": "agent_mem/validation/results/judgement_layer_aqr_llm/aqr_llm_gpt-4o-mini_20260426_141615/llm_extraction_predictions.csv",
+      "source_sha256": "b52eb07256ec7763b63e009d2ec0b72e11ac355fb994b1f69bb07e84dbc89916",
+      "destination": "validation/camera_ready/aqr/selected_100.csv",
+      "destination_sha256": "86581520496202c27e768430240f57e358060f792d0861d3b0af734a1cc66f07",
+      "transformation": "joined extraction fields by text_hash"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/analyses/debate_natural_dedup_v1/predictions.csv.gz",
+      "source_sha256": "45e05e9dc8f787bb61428084d00cc1fe3ac151e555edab964ed08bb18b745ecc",
+      "destination": "validation/camera_ready/checks/natural_dedup_predictions.csv.gz",
+      "destination_sha256": "45e05e9dc8f787bb61428084d00cc1fe3ac151e555edab964ed08bb18b745ecc",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/analyses/debate_natural_dedup_v1/paired_contrasts.csv",
+      "source_sha256": "242566a13fd9d6c6d062461b31a2ee1a30f3abd1f814c46aeb6f9d9367404aa6",
+      "destination": "validation/camera_ready/checks/expected/natural_paired_contrasts.csv",
+      "destination_sha256": "242566a13fd9d6c6d062461b31a2ee1a30f3abd1f814c46aeb6f9d9367404aa6",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/analyses/debate_natural_dedup_v1/bootstrap_intervals.csv",
+      "source_sha256": "22a6a80c7a7ac5d6d270cce3791386ea725ae313f6314a39055de2ca20c28459",
+      "destination": "validation/camera_ready/checks/expected/natural_bootstrap_intervals.csv",
+      "destination_sha256": "22a6a80c7a7ac5d6d270cce3791386ea725ae313f6314a39055de2ca20c28459",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/dedup_stress_v1/results.json",
+      "source_sha256": "c7a82762af250050e7a24b35e8289da0aba00386aa3a8bdd029a08f72a5f92fe",
+      "destination": "validation/camera_ready/checks/controlled_results.json",
+      "destination_sha256": "c7a82762af250050e7a24b35e8289da0aba00386aa3a8bdd029a08f72a5f92fe",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/results/dedup_stress_v1/result_table.csv",
+      "source_sha256": "70f9da11371fdda78de7b4c171e9e39a8a9398abfd503abef2a217fcfb1a68a3",
+      "destination": "validation/camera_ready/checks/controlled_result_table.csv",
+      "destination_sha256": "70f9da11371fdda78de7b4c171e9e39a8a9398abfd503abef2a217fcfb1a68a3",
+      "transformation": "byte-for-byte copy"
+    },
+    {
+      "source": "agent_mem_artifact_packaging/rebuttal/scripts/run_debate_component_ablation.py",
+      "source_sha256": "f810ae454748bcb0caaa2c2874a65e0cf41a8aaff220df7b64418c90f3b2606e",
+      "destination": "validation/scripts/paper/frozen/replay_uncertainty.py",
+      "destination_sha256": "4fefd523760cdc888a7c6c94cfefb59a971fed7f498cfe69b31732522303337c",
+      "transformation": "verbatim original contrast and bootstrap function bodies with minimal imports and compact saved-prediction adapters; anonymized cluster names change Monte Carlo ordering"
+    },
+    {
+      "source": "agent_mem_artifact_packaging@9d66614fb9fcf912d87b2aa446a591cffd24dc0e:validation/config/two_agent_model_comparison.yaml",
+      "source_sha256": "76bbc7ce79467a77c76d0e6d2db124d92592cfd8335312a826e08c1d54971070",
+      "destination": "validation/camera_ready/baselines/source/validation/config/two_agent_model_comparison.yaml",
+      "destination_sha256": "76bbc7ce79467a77c76d0e6d2db124d92592cfd8335312a826e08c1d54971070",
+      "transformation": "git blob copied from recorded clean execution commit"
+    },
+    {
+      "source": "agent_mem_artifact_packaging@9d66614fb9fcf912d87b2aa446a591cffd24dc0e:src/agents/shared_instructions.py",
+      "source_sha256": "1b56611bdca1d2663ab9c25e7803921d72c2458532d7877948c250f503824885",
+      "destination": "validation/camera_ready/baselines/source/src/agents/shared_instructions.py",
+      "destination_sha256": "1b56611bdca1d2663ab9c25e7803921d72c2458532d7877948c250f503824885",
+      "transformation": "git blob copied from recorded clean execution commit"
+    },
+    {
+      "source": "agent_mem_artifact_packaging@9d66614fb9fcf912d87b2aa446a591cffd24dc0e:src/agents/evaluation_agent.py",
+      "source_sha256": "47d225a6563d4d74aa9ec782c4004a7bed09a80dbfd3bba83ba4f3462870461d",
+      "destination": "validation/camera_ready/baselines/source/src/agents/evaluation_agent.py",
+      "destination_sha256": "47d225a6563d4d74aa9ec782c4004a7bed09a80dbfd3bba83ba4f3462870461d",
+      "transformation": "git blob copied from recorded clean execution commit"
+    },
+    {
+      "source": "agent_mem_artifact_packaging@9d66614fb9fcf912d87b2aa446a591cffd24dc0e:src/agents/self_updating_agent.py",
+      "source_sha256": "a2b4f8931908ee4e92f5c64ce6a93abe33cf47f2c2bc7efc57c227b9c4fc160e",
+      "destination": "validation/camera_ready/baselines/source/src/agents/self_updating_agent.py",
+      "destination_sha256": "a2b4f8931908ee4e92f5c64ce6a93abe33cf47f2c2bc7efc57c227b9c4fc160e",
+      "transformation": "git blob copied from recorded clean execution commit"
+    },
+    {
+      "source": "agent_mem_artifact_packaging@9d66614fb9fcf912d87b2aa446a591cffd24dc0e:src/agents/subject_agent.py",
+      "source_sha256": "61a50f8c6f9060354875df4ad81b0c6000eafa0f655966445f117516b0d5fd0c",
+      "destination": "validation/camera_ready/baselines/source/src/agents/subject_agent.py",
+      "destination_sha256": "61a50f8c6f9060354875df4ad81b0c6000eafa0f655966445f117516b0d5fd0c",
+      "transformation": "git blob copied from recorded clean execution commit"
+    },
+    {
+      "source": "agent_mem_artifact_packaging@9d66614fb9fcf912d87b2aa446a591cffd24dc0e:src/agents/extractor_agent.py",
+      "source_sha256": "582d16a1dc0f1ebfa67746b66ce02bfea7248d87234abe9ab6299316384329c3",
+      "destination": "validation/camera_ready/baselines/source/src/agents/extractor_agent.py",
+      "destination_sha256": "582d16a1dc0f1ebfa67746b66ce02bfea7248d87234abe9ab6299316384329c3",
+      "transformation": "git blob copied from recorded clean execution commit"
+    },
+    {
+      "source": "agent_mem_artifact_packaging@9d66614fb9fcf912d87b2aa446a591cffd24dc0e:src/prompts/evaluator_optimized.txt",
+      "source_sha256": "2c6eb444cd6ff752aa9b99929c1998936411379760b5a0340bfbcd4a2523ad83",
+      "destination": "validation/camera_ready/baselines/source/src/prompts/evaluator_optimized.txt",
+      "destination_sha256": "2c6eb444cd6ff752aa9b99929c1998936411379760b5a0340bfbcd4a2523ad83",
+      "transformation": "git blob copied from recorded clean execution commit"
+    },
+    {
+      "source": "agent_mem_artifact_packaging@9d66614fb9fcf912d87b2aa446a591cffd24dc0e:src/simulation/belief_instructions.json",
+      "source_sha256": "79c9ea3f1abfd9a3af482c93c7cc9efee1a9897758f261c4fe8a09890e1ca6ba",
+      "destination": "validation/camera_ready/baselines/source/src/simulation/belief_instructions.json",
+      "destination_sha256": "79c9ea3f1abfd9a3af482c93c7cc9efee1a9897758f261c4fe8a09890e1ca6ba",
+      "transformation": "git blob copied from recorded clean execution commit"
+    }
+  ],
+  "scope": "Saved-output reproduction; no new model calls. Column projections and joins are stated per file. Original raw runs remain outside this compact release."
+}

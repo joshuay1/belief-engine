@@ -1,0 +1,707 @@
+{
+  "classification": "deterministic_post_hoc_mechanism_stress_test",
+  "design": {
+    "belief_semantics_mode": "active_explicit_prior_v1",
+    "conditions": [
+      "full_dedup",
+      "no_dedup"
+    ],
+    "confirmation_bias": 0.0,
+    "cross_polarity_dedup": false,
+    "evidence_uptake": 0.2,
+    "initial_stance": 0.0,
+    "multiplicities": [
+      1,
+      3,
+      5
+    ],
+    "prior_anchoring": 0.4,
+    "support_strength": 0.8
+  },
+  "execution_contract": {
+    "backend": null,
+    "embedding_model_loading": "blocked",
+    "extraction": false,
+    "generation": false,
+    "judging": false,
+    "network_access": "blocked",
+    "retrieval": false,
+    "retrieval_implementation": "disabled_empty_context_stub",
+    "similarity_source": "frozen_full_cosine_matrices_only",
+    "stable_ids_and_timestamps": true
+  },
+  "experiment_id": "neurips_2026_dedup_stress_v1",
+  "frozen_fixture": {
+    "model_name": "all-MiniLM-L6-v2",
+    "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "normalize_embeddings": false,
+    "sentence_transformers_version": "5.2.0",
+    "similarity_threshold": 0.6,
+    "within_family_min_cosine": {
+      "anti_congestion": 0.708218098,
+      "pro_safety": 0.637442589
+    }
+  },
+  "implementation_provenance": {
+    "base_commit": "44be279113c47969fb968fd4bb36359ef55e3c2f",
+    "checkout_requirement": "clean descendant of implementation_commit with matching source hashes",
+    "fixture_file_sha256": "c971af3b116f30c6a9c8f4041b120fc70c6647199f806cf1713b06f6a3b499f4",
+    "fixture_payload_sha256": "394755f3acd022de109958fd3bc300f0d6304f68958f860fa0e123c3bebd1113",
+    "implementation_commit": "2493f43bc58b78eb6add4c43e0aa371380124997",
+    "implementation_commit_semantics": "immutable_registered_source_commit",
+    "preregistration_sha256": "4714beaab483089faf66d6e5797cbbd35d0cb7efc64c123594394d16d621d64c",
+    "provenance_schema": "registered_content_v2",
+    "runner_sha256": "7775faf78a357fed97bca3bd3977f343aef80ebabc05fe9781c4ab98263967e0",
+    "tests_sha256": "03b47e6a55641716040e2d4e4f26696df0484bd29703cff96e78fe27304449ac"
+  },
+  "rows": [
+    {
+      "absolute_stance_displacement": 0.0,
+      "active_claim_ids": [
+        "pro_safety_01",
+        "anti_congestion_01"
+      ],
+      "active_records": 2,
+      "added": 2,
+      "archived_claim_ids": [],
+      "archived_records": 0,
+      "condition": "full_dedup",
+      "frozen_similarity_lookups": 0,
+      "ignored": 0,
+      "paraphrase_multiplicity": 1,
+      "replaced": 0,
+      "signed_log_odds": 0.0,
+      "signed_stance": 0.0,
+      "single_record_log_odds_contribution": 0.1484200051182733,
+      "steps": [
+        {
+          "claim_id": "pro_safety_01",
+          "credence_relevant": true,
+          "position": 1,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_01",
+          "credence_relevant": true,
+          "position": 2,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        }
+      ],
+      "total_stored": 2,
+      "trace_direction": "pro_control_then_anti_paraphrases"
+    },
+    {
+      "absolute_stance_displacement": 0.0,
+      "active_claim_ids": [
+        "pro_safety_01",
+        "anti_congestion_01"
+      ],
+      "active_records": 2,
+      "added": 2,
+      "archived_claim_ids": [],
+      "archived_records": 0,
+      "condition": "no_dedup",
+      "frozen_similarity_lookups": 0,
+      "ignored": 0,
+      "paraphrase_multiplicity": 1,
+      "replaced": 0,
+      "signed_log_odds": 0.0,
+      "signed_stance": 0.0,
+      "single_record_log_odds_contribution": 0.1484200051182733,
+      "steps": [
+        {
+          "claim_id": "pro_safety_01",
+          "credence_relevant": true,
+          "position": 1,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_01",
+          "credence_relevant": true,
+          "position": 2,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        }
+      ],
+      "total_stored": 2,
+      "trace_direction": "pro_control_then_anti_paraphrases"
+    },
+    {
+      "absolute_stance_displacement": 0.0,
+      "active_claim_ids": [
+        "pro_safety_01",
+        "anti_congestion_01"
+      ],
+      "active_records": 2,
+      "added": 2,
+      "archived_claim_ids": [
+        "anti_congestion_02",
+        "anti_congestion_03"
+      ],
+      "archived_records": 2,
+      "condition": "full_dedup",
+      "frozen_similarity_lookups": 2,
+      "ignored": 2,
+      "paraphrase_multiplicity": 3,
+      "replaced": 0,
+      "signed_log_odds": 0.0,
+      "signed_stance": 0.0,
+      "single_record_log_odds_contribution": 0.1484200051182733,
+      "steps": [
+        {
+          "claim_id": "pro_safety_01",
+          "credence_relevant": true,
+          "position": 1,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_01",
+          "credence_relevant": true,
+          "position": 2,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_02",
+          "credence_relevant": false,
+          "position": 3,
+          "reason": "Ignored (Soft): Vector Ignore: New (0.80) <= Old (0.80) [Sim: 0.72]",
+          "status": "ignored"
+        },
+        {
+          "claim_id": "anti_congestion_03",
+          "credence_relevant": false,
+          "position": 4,
+          "reason": "Ignored (Soft): Vector Ignore: New (0.80) <= Old (0.80) [Sim: 0.89]",
+          "status": "ignored"
+        }
+      ],
+      "total_stored": 4,
+      "trace_direction": "pro_control_then_anti_paraphrases"
+    },
+    {
+      "absolute_stance_displacement": 0.14733969986357442,
+      "active_claim_ids": [
+        "pro_safety_01",
+        "anti_congestion_01",
+        "anti_congestion_02",
+        "anti_congestion_03"
+      ],
+      "active_records": 4,
+      "added": 4,
+      "archived_claim_ids": [],
+      "archived_records": 0,
+      "condition": "no_dedup",
+      "frozen_similarity_lookups": 0,
+      "ignored": 0,
+      "paraphrase_multiplicity": 3,
+      "replaced": 0,
+      "signed_log_odds": -0.2968400102365466,
+      "signed_stance": -0.14733969986357442,
+      "single_record_log_odds_contribution": 0.1484200051182733,
+      "steps": [
+        {
+          "claim_id": "pro_safety_01",
+          "credence_relevant": true,
+          "position": 1,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_01",
+          "credence_relevant": true,
+          "position": 2,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_02",
+          "credence_relevant": true,
+          "position": 3,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_03",
+          "credence_relevant": true,
+          "position": 4,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        }
+      ],
+      "total_stored": 4,
+      "trace_direction": "pro_control_then_anti_paraphrases"
+    },
+    {
+      "absolute_stance_displacement": 0.0,
+      "active_claim_ids": [
+        "pro_safety_01",
+        "anti_congestion_01"
+      ],
+      "active_records": 2,
+      "added": 2,
+      "archived_claim_ids": [
+        "anti_congestion_02",
+        "anti_congestion_03",
+        "anti_congestion_04",
+        "anti_congestion_05"
+      ],
+      "archived_records": 4,
+      "condition": "full_dedup",
+      "frozen_similarity_lookups": 4,
+      "ignored": 4,
+      "paraphrase_multiplicity": 5,
+      "replaced": 0,
+      "signed_log_odds": 0.0,
+      "signed_stance": 0.0,
+      "single_record_log_odds_contribution": 0.1484200051182733,
+      "steps": [
+        {
+          "claim_id": "pro_safety_01",
+          "credence_relevant": true,
+          "position": 1,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_01",
+          "credence_relevant": true,
+          "position": 2,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_02",
+          "credence_relevant": false,
+          "position": 3,
+          "reason": "Ignored (Soft): Vector Ignore: New (0.80) <= Old (0.80) [Sim: 0.72]",
+          "status": "ignored"
+        },
+        {
+          "claim_id": "anti_congestion_03",
+          "credence_relevant": false,
+          "position": 4,
+          "reason": "Ignored (Soft): Vector Ignore: New (0.80) <= Old (0.80) [Sim: 0.89]",
+          "status": "ignored"
+        },
+        {
+          "claim_id": "anti_congestion_04",
+          "credence_relevant": false,
+          "position": 5,
+          "reason": "Ignored (Soft): Vector Ignore: New (0.80) <= Old (0.80) [Sim: 0.72]",
+          "status": "ignored"
+        },
+        {
+          "claim_id": "anti_congestion_05",
+          "credence_relevant": false,
+          "position": 6,
+          "reason": "Ignored (Soft): Vector Ignore: New (0.80) <= Old (0.80) [Sim: 0.79]",
+          "status": "ignored"
+        }
+      ],
+      "total_stored": 6,
+      "trace_direction": "pro_control_then_anti_paraphrases"
+    },
+    {
+      "absolute_stance_displacement": 0.28841813415720474,
+      "active_claim_ids": [
+        "pro_safety_01",
+        "anti_congestion_01",
+        "anti_congestion_02",
+        "anti_congestion_03",
+        "anti_congestion_04",
+        "anti_congestion_05"
+      ],
+      "active_records": 6,
+      "added": 6,
+      "archived_claim_ids": [],
+      "archived_records": 0,
+      "condition": "no_dedup",
+      "frozen_similarity_lookups": 0,
+      "ignored": 0,
+      "paraphrase_multiplicity": 5,
+      "replaced": 0,
+      "signed_log_odds": -0.5936800204730932,
+      "signed_stance": -0.28841813415720474,
+      "single_record_log_odds_contribution": 0.1484200051182733,
+      "steps": [
+        {
+          "claim_id": "pro_safety_01",
+          "credence_relevant": true,
+          "position": 1,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_01",
+          "credence_relevant": true,
+          "position": 2,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_02",
+          "credence_relevant": true,
+          "position": 3,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_03",
+          "credence_relevant": true,
+          "position": 4,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_04",
+          "credence_relevant": true,
+          "position": 5,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "anti_congestion_05",
+          "credence_relevant": true,
+          "position": 6,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        }
+      ],
+      "total_stored": 6,
+      "trace_direction": "pro_control_then_anti_paraphrases"
+    },
+    {
+      "absolute_stance_displacement": 0.0,
+      "active_claim_ids": [
+        "anti_congestion_01",
+        "pro_safety_01"
+      ],
+      "active_records": 2,
+      "added": 2,
+      "archived_claim_ids": [],
+      "archived_records": 0,
+      "condition": "full_dedup",
+      "frozen_similarity_lookups": 0,
+      "ignored": 0,
+      "paraphrase_multiplicity": 1,
+      "replaced": 0,
+      "signed_log_odds": 0.0,
+      "signed_stance": 0.0,
+      "single_record_log_odds_contribution": 0.1484200051182733,
+      "steps": [
+        {
+          "claim_id": "anti_congestion_01",
+          "credence_relevant": true,
+          "position": 1,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_01",
+          "credence_relevant": true,
+          "position": 2,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        }
+      ],
+      "total_stored": 2,
+      "trace_direction": "anti_control_then_pro_paraphrases"
+    },
+    {
+      "absolute_stance_displacement": 0.0,
+      "active_claim_ids": [
+        "anti_congestion_01",
+        "pro_safety_01"
+      ],
+      "active_records": 2,
+      "added": 2,
+      "archived_claim_ids": [],
+      "archived_records": 0,
+      "condition": "no_dedup",
+      "frozen_similarity_lookups": 0,
+      "ignored": 0,
+      "paraphrase_multiplicity": 1,
+      "replaced": 0,
+      "signed_log_odds": 0.0,
+      "signed_stance": 0.0,
+      "single_record_log_odds_contribution": 0.1484200051182733,
+      "steps": [
+        {
+          "claim_id": "anti_congestion_01",
+          "credence_relevant": true,
+          "position": 1,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_01",
+          "credence_relevant": true,
+          "position": 2,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        }
+      ],
+      "total_stored": 2,
+      "trace_direction": "anti_control_then_pro_paraphrases"
+    },
+    {
+      "absolute_stance_displacement": 0.0,
+      "active_claim_ids": [
+        "anti_congestion_01",
+        "pro_safety_01"
+      ],
+      "active_records": 2,
+      "added": 2,
+      "archived_claim_ids": [
+        "pro_safety_02",
+        "pro_safety_03"
+      ],
+      "archived_records": 2,
+      "condition": "full_dedup",
+      "frozen_similarity_lookups": 2,
+      "ignored": 2,
+      "paraphrase_multiplicity": 3,
+      "replaced": 0,
+      "signed_log_odds": 0.0,
+      "signed_stance": 0.0,
+      "single_record_log_odds_contribution": 0.1484200051182733,
+      "steps": [
+        {
+          "claim_id": "anti_congestion_01",
+          "credence_relevant": true,
+          "position": 1,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_01",
+          "credence_relevant": true,
+          "position": 2,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_02",
+          "credence_relevant": false,
+          "position": 3,
+          "reason": "Ignored (Soft): Vector Ignore: New (0.80) <= Old (0.80) [Sim: 0.74]",
+          "status": "ignored"
+        },
+        {
+          "claim_id": "pro_safety_03",
+          "credence_relevant": false,
+          "position": 4,
+          "reason": "Ignored (Soft): Vector Ignore: New (0.80) <= Old (0.80) [Sim: 0.77]",
+          "status": "ignored"
+        }
+      ],
+      "total_stored": 4,
+      "trace_direction": "anti_control_then_pro_paraphrases"
+    },
+    {
+      "absolute_stance_displacement": 0.1473396998635743,
+      "active_claim_ids": [
+        "anti_congestion_01",
+        "pro_safety_01",
+        "pro_safety_02",
+        "pro_safety_03"
+      ],
+      "active_records": 4,
+      "added": 4,
+      "archived_claim_ids": [],
+      "archived_records": 0,
+      "condition": "no_dedup",
+      "frozen_similarity_lookups": 0,
+      "ignored": 0,
+      "paraphrase_multiplicity": 3,
+      "replaced": 0,
+      "signed_log_odds": 0.2968400102365466,
+      "signed_stance": 0.1473396998635743,
+      "single_record_log_odds_contribution": 0.1484200051182733,
+      "steps": [
+        {
+          "claim_id": "anti_congestion_01",
+          "credence_relevant": true,
+          "position": 1,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_01",
+          "credence_relevant": true,
+          "position": 2,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_02",
+          "credence_relevant": true,
+          "position": 3,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_03",
+          "credence_relevant": true,
+          "position": 4,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        }
+      ],
+      "total_stored": 4,
+      "trace_direction": "anti_control_then_pro_paraphrases"
+    },
+    {
+      "absolute_stance_displacement": 0.0,
+      "active_claim_ids": [
+        "anti_congestion_01",
+        "pro_safety_01"
+      ],
+      "active_records": 2,
+      "added": 2,
+      "archived_claim_ids": [
+        "pro_safety_02",
+        "pro_safety_03",
+        "pro_safety_04",
+        "pro_safety_05"
+      ],
+      "archived_records": 4,
+      "condition": "full_dedup",
+      "frozen_similarity_lookups": 4,
+      "ignored": 4,
+      "paraphrase_multiplicity": 5,
+      "replaced": 0,
+      "signed_log_odds": 0.0,
+      "signed_stance": 0.0,
+      "single_record_log_odds_contribution": 0.1484200051182733,
+      "steps": [
+        {
+          "claim_id": "anti_congestion_01",
+          "credence_relevant": true,
+          "position": 1,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_01",
+          "credence_relevant": true,
+          "position": 2,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_02",
+          "credence_relevant": false,
+          "position": 3,
+          "reason": "Ignored (Soft): Vector Ignore: New (0.80) <= Old (0.80) [Sim: 0.74]",
+          "status": "ignored"
+        },
+        {
+          "claim_id": "pro_safety_03",
+          "credence_relevant": false,
+          "position": 4,
+          "reason": "Ignored (Soft): Vector Ignore: New (0.80) <= Old (0.80) [Sim: 0.77]",
+          "status": "ignored"
+        },
+        {
+          "claim_id": "pro_safety_04",
+          "credence_relevant": false,
+          "position": 5,
+          "reason": "Ignored (Soft): Vector Ignore: New (0.80) <= Old (0.80) [Sim: 0.71]",
+          "status": "ignored"
+        },
+        {
+          "claim_id": "pro_safety_05",
+          "credence_relevant": false,
+          "position": 6,
+          "reason": "Ignored (Soft): Vector Ignore: New (0.80) <= Old (0.80) [Sim: 0.78]",
+          "status": "ignored"
+        }
+      ],
+      "total_stored": 6,
+      "trace_direction": "anti_control_then_pro_paraphrases"
+    },
+    {
+      "absolute_stance_displacement": 0.28841813415720474,
+      "active_claim_ids": [
+        "anti_congestion_01",
+        "pro_safety_01",
+        "pro_safety_02",
+        "pro_safety_03",
+        "pro_safety_04",
+        "pro_safety_05"
+      ],
+      "active_records": 6,
+      "added": 6,
+      "archived_claim_ids": [],
+      "archived_records": 0,
+      "condition": "no_dedup",
+      "frozen_similarity_lookups": 0,
+      "ignored": 0,
+      "paraphrase_multiplicity": 5,
+      "replaced": 0,
+      "signed_log_odds": 0.5936800204730932,
+      "signed_stance": 0.28841813415720474,
+      "single_record_log_odds_contribution": 0.1484200051182733,
+      "steps": [
+        {
+          "claim_id": "anti_congestion_01",
+          "credence_relevant": true,
+          "position": 1,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_01",
+          "credence_relevant": true,
+          "position": 2,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_02",
+          "credence_relevant": true,
+          "position": 3,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_03",
+          "credence_relevant": true,
+          "position": 4,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_04",
+          "credence_relevant": true,
+          "position": 5,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        },
+        {
+          "claim_id": "pro_safety_05",
+          "credence_relevant": true,
+          "position": 6,
+          "reason": "Novel argument (Vector distinct)",
+          "status": "added"
+        }
+      ],
+      "total_stored": 6,
+      "trace_direction": "anti_control_then_pro_paraphrases"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Known-equivalent same-polarity paraphrases test whether soft deduplication prevents duplicate evidence from inflating active-set stance while retaining ignored records as archived provenance.",
+  "validation": {
+    "all_inputs_frozen": true,
+    "exact_registered_formula_and_counts": "passed",
+    "external_calls": 0,
+    "mirror_equal_and_opposite": "passed"
+  }
+}

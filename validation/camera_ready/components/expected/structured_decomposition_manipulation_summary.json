@@ -1,0 +1,41 @@
+{
+  "canonical_dynamic_state_diverged_pairs": 200,
+  "continuation_rule": "report_only_never_controls_campaign_continuation",
+  "factor_label": "structured_atomic_decomposition_vs_verbatim_whole_message",
+  "internal_state_sequence_diverged_pairs": 200,
+  "interpretation": "S1 versus S0 tests structured atomic decomposition, not memory versus no memory. Both arms retain update metadata.",
+  "mean_active_difference_s1_minus_s0": 47.255,
+  "mean_archived_difference_s1_minus_s0": 36.435,
+  "paired_units": 200,
+  "retrieval_off_context_diverged_pairs": 0,
+  "retrieval_off_pairs": 100,
+  "retrieval_on_context_diverged_pairs": 100,
+  "retrieval_on_pairs": 100,
+  "s0_records_per_message": {
+    "fraction_with_more_than_one_record": 0.0,
+    "mean": 1.0,
+    "messages": 6000,
+    "messages_with_more_than_one_record": 0,
+    "q05": 1.0,
+    "q25": 1.0,
+    "q50": 1.0,
+    "q75": 1.0,
+    "q95": 1.0,
+    "records": 6000,
+    "sd": 0.0
+  },
+  "s1_claims_per_message": {
+    "fraction_with_more_than_one_record": 1.0,
+    "mean": 6.343833333333333,
+    "messages": 6000,
+    "messages_with_more_than_one_record": 6000,
+    "q05": 4.0,
+    "q25": 5.0,
+    "q50": 6.0,
+    "q75": 7.0,
+    "q95": 9.0,
+    "records": 38063,
+    "sd": 1.3358802596915618
+  },
+  "schema_version": 1
+}

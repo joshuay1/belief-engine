@@ -26,11 +26,18 @@ prediction tables. Outputs go to `output/replay/`, leaving the frozen results in
 The [result index](validation/README.md) links to the saved sweeps, baseline
 comparisons, replay tables, topic grids, and validation outputs.
 
-The ten-topic stance validation, 150-debate common-evaluator comparison,
-finite-solver analysis, and component-study result packages are still pending.
-The original 100-input AQR sample also needs its exact classifier predictions and
-sample mapping. The final release will map each reported result to its input
-files, configuration, and rebuild command.
+The six camera-ready packages can be rebuilt and checked with:
+
+```bash
+make rebuild-paper
+```
+
+This runs the original numerical analyses on compact saved inputs, checks the
+reported estimates and primary confidence intervals, and writes tables and plots
+to `output/paper/`. It requires no API keys or model downloads. Allow a few minutes
+for the endpoint search and bootstrap calculations. The
+[paper result guide](validation/camera_ready/README.md) maps each study to its
+inputs, expected results, and a command for rebuilding it separately.
 
 ## 3. Run experiments with the correct update mode
 

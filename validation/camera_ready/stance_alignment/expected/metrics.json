@@ -1,0 +1,85 @@
+{
+  "analysis_unit": "topic-by-internal-stance cell mean",
+  "n_topics": 10,
+  "n_cells": 210,
+  "n_successful_raw_rows": 630,
+  "n_error_rows": 0,
+  "pooled": {
+    "pearson_r": 0.9585102522604391,
+    "pearson_p": 2.4363397951121802e-115,
+    "slope": 0.928367395607918,
+    "intercept": -0.004190476190476189,
+    "mae": 0.1440952380952381,
+    "rmse": 0.1727242963212835,
+    "bias_external_minus_internal": -0.004190476190476185,
+    "pearson_r_ci95": [
+      0.9519561876180255,
+      0.9642912934677803
+    ],
+    "slope_ci95": [
+      0.9053970576757457,
+      0.9496808537731656
+    ]
+  },
+  "within_topic_centered": {
+    "pearson_r": 0.9587454475985387,
+    "pearson_p": 1.3654913606436493e-115,
+    "common_slope": 0.9283673956079183
+  },
+  "macro": {
+    "fisher_z_mean_pearson_r": 0.9600023991211737,
+    "median_topic_pearson_r": 0.9619748877290202,
+    "min_topic_pearson_r": 0.9343516057577173,
+    "median_topic_slope": 0.9316300420226848,
+    "min_topic_sign_accuracy": 1.0
+  },
+  "generality_gate": {
+    "topic_correlation_threshold": 0.8,
+    "required_topic_fraction": 0.8,
+    "passing_topics": 10,
+    "observed_topic_fraction": 1.0,
+    "passed": true
+  },
+  "leave_one_topic_out": [
+    {
+      "held_out_topic": "Entrapment should be legalized",
+      "pooled_pearson_r": 0.9594475315345103
+    },
+    {
+      "held_out_topic": "Homeopathy brings more harm than good",
+      "pooled_pearson_r": 0.9583504764067834
+    },
+    {
+      "held_out_topic": "Social media brings more harm than good",
+      "pooled_pearson_r": 0.9573317533993935
+    },
+    {
+      "held_out_topic": "We should adopt a zero-tolerance policy in schools",
+      "pooled_pearson_r": 0.9574605698195026
+    },
+    {
+      "held_out_topic": "We should adopt an austerity regime",
+      "pooled_pearson_r": 0.9582484309273889
+    },
+    {
+      "held_out_topic": "We should adopt atheism",
+      "pooled_pearson_r": 0.9612419801116872
+    },
+    {
+      "held_out_topic": "We should adopt libertarianism",
+      "pooled_pearson_r": 0.9580228375011409
+    },
+    {
+      "held_out_topic": "We should introduce compulsory voting",
+      "pooled_pearson_r": 0.959448544325535
+    },
+    {
+      "held_out_topic": "We should legalize sex selection",
+      "pooled_pearson_r": 0.957943914372332
+    },
+    {
+      "held_out_topic": "We should subsidize journalism",
+      "pooled_pearson_r": 0.9576547307828311
+    }
+  ]
+}

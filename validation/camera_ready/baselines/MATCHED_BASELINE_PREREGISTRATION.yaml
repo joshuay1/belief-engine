@@ -1,0 +1,191 @@
+experiment_id: neurips_2026_matched_baseline_v1
+status: ready_for_campaign_launch
+registered_at: "2026-07-23"
+preflight_completed_at: "2026-07-24"
+
+source:
+  reviewer_snapshot_commit: 946f9114fe5d9202e96d1a04abe7575e90864ce3
+  provenance_commit: 0d12f380838e0750ded1b0fd8f94538731a41b83
+  structured_extraction_commit: 5d297e12025fc090fb0f5a25116a49a707ad83ab
+  reviewer_archive_sha256: 2ea235d12e1eb6ca71744b4c886851384e32b3dbc200073d911b05b2f6f0a6dd
+  semantic_contract: rebuttal/SEMANTIC_CONTRACT.md
+  argument_dataset_sha256: 5461095870f58dcf50e912dc3fd3f66c775299914aa0cd55f5b9fb5122f5cf5d
+  classifier_weights_sha256: f9a073e14eb1e695afda5fd4e104b826b29d7660d35a335b9d332b970baa8f7d
+  classifier_tokenizer_sha256: 4b4f60231058db4b5794e7b124bb7945bc8ade6719282de4d2e0372ee527b929
+  classifier_config_sha256: f5e708445289eb195701d2adb9740253dc07ad4230519911a59d0d5065a2f910
+  classifier_wrapper_sha256: 10679e7996127be7b26dc8a82f22af139df9d141aa35c2eece6ff955fb0ffdb4
+
+research_question: >-
+  When generator, dialogue shell, context budget, starting stance, topics,
+  paired seeds, and external evaluator are held fixed, does the Belief Engine
+  produce a different expressed-stance trajectory from prompt self-update and
+  RAG plus self-update?
+
+conditions:
+  - be_gpt54mini
+  - prompt_self_update_gpt54mini
+  - rag_self_update_gpt54mini
+
+topics:
+  - Social media brings more harm than good
+  - We should subsidize journalism
+  - We should introduce compulsory voting
+  - We should adopt atheism
+  - We should adopt libertarianism
+
+design:
+  trials_per_topic_condition: 10
+  paired_seeds_per_topic: 10
+  total_debates: 150
+  execution_schedule: paired
+  worker_processes: 3
+  rounds_per_debate: 15
+  initial_pro_stance: 0.75
+  initial_con_stance: -0.75
+  generator_model: gpt-5.4-mini
+  generator_reasoning_effort: none
+  generator_verbosity: low
+  generation_temperature: 0.7
+  self_update_temperature: 0.0
+  response_context_messages: 4
+  response_shell: matched_v1
+  retrieval_k: 10
+  active_only_retrieval: true
+  allow_self_arguments: false
+  prompt_self_update_static_seed_context: false
+  belief_semantics_mode: active_explicit_prior_v1
+  explicit_prior_seed_records_numerically_excluded: true
+  be_update_sensitivity: 0.2
+  be_anchor_sensitivity: 0.4
+  stance_source_for_all_conditions: external
+  strict_judge_parsing: true
+  extraction_output_mode: structured_json_v1
+  strict_extraction_parsing: true
+  extraction_max_attempts_per_stage: 2
+  extraction_max_tokens_per_attempt: 2000
+  strict_memory_ingestion: true
+
+evaluator:
+  backend: openai
+  model: gpt-5.4-mini
+  reasoning_effort: none
+  verbosity: low
+  temperature: 0.0
+  condition_blind: true
+  prompt_path: src/prompts/evaluator_optimized.txt
+  prompt_sha256: 2c6eb444cd6ff752aa9b99929c1998936411379760b5a0340bfbcd4a2523ad83
+
+outcomes:
+  primary:
+    name: absolute_final_pro_con_gap
+    definition: >-
+      Absolute difference between externally judged final Pro and Con stance
+      within each paired topic-seed-condition debate.
+  secondary:
+    - gap_reduction_from_initialization
+    - mean_absolute_stance_shift
+    - crossing_rate
+    - trajectory_gap_auc
+    - be_internal_external_agreement
+
+analysis:
+  experimental_unit: topic_by_paired_seed
+  report_every_topic: true
+  paired_method_differences: true
+  uncertainty:
+    primary: hierarchical_bootstrap_topics_then_paired_seeds
+    sensitivity: paired_seed_bootstrap_with_topic_fixed_effects
+    confidence_level: 0.95
+  prohibited:
+    - treating turns as independent observations
+    - treating the two agents as independent observations
+    - selecting topics, trials, or outcomes after inspecting results
+
+decision_rules:
+  - condition: external comparison is null or materially heterogeneous
+    action: >-
+      Withdraw the general comparative-convergence claim and retain the
+      controllability, inspectability, and auditability claims.
+  - condition: one topic drives the pooled result
+    action: >-
+      Lead with topic heterogeneity and do not state a topic-general advantage.
+  - condition: implementation correction changes the qualitative BE result
+    action: >-
+      Stop expansion, audit the discrepancy, and disclose it rather than mixing
+      corrected and submitted trajectories.
+  - condition: any extraction stage still fails after its bounded retry
+    action: >-
+      Exclude and rerun the entire affected trial; do not retain a trajectory
+      with a silently missing evidence turn.
+  - condition: retry-rescued turns exceed 0.5 percent overall or 2 percent in
+      any topic-condition cell
+    action: >-
+      Stop the campaign and audit extraction reliability before interpreting
+      comparative outcomes.
+
+preflight_blockers:
+  resolved:
+    - locked fixed-start stance mode to active_explicit_prior_v1
+    - matched_v1 response shell is shared by all three conditions
+    - retrieval filters inactive records before quota allocation and backfill
+    - external stance is selected for every summary and trajectory
+    - prompt hashes and resolved context/retrieval settings are recorded
+    - live evaluator parsing is strict and fail-closed
+    - one complete 15-round three-condition live smoke passed with 90 direct
+      external scores, identical seed sets, and exact active-state reconstruction
+    - the first launch was stopped before any extractor-backed run completed
+      after a hidden 500-token backend cap truncated one legacy JSON response
+    - three workers replace six after concurrent Metal/MPS temporary files
+      exhausted the nearly full local volume
+    - structured_json_v1 sends the requested 2000-token budget through the
+      structured-output path, validates both stages, and retries whole stages
+    - strict campaign runs fail the trial on an unrecovered extraction error
+      or memory-ingestion error and require one audited extraction call per
+      generated message
+  remaining: []
+
+dry_run:
+  output_path: rebuttal/results/matched_baseline_dryrun_v4
+  generated_config_count: 150
+  unique_paired_seeds: 50
+  note: >-
+    Must be regenerated from the structured-extraction commit. The live output
+    directory must be new and must not reuse these dry-run configs.
+
+smoke:
+  output_path: rebuttal/results/matched_baseline_strict_full_smoke_v1
+  topic: We should introduce compulsory voting
+  paired_seeds: 1
+  conditions: 3
+  rounds: 15
+  judged_turns: 90
+  failures: 0
+  strict_parsing: true
+  direct_external_sources_only: true
+  active_state_reconstruction_error_max: 1.0e-12
+  note: >-
+    This smoke validated the strict external evaluator but used legacy_text_v1
+    extraction. A replacement structured_json_v1 smoke is required above.
+
+aborted_preflight:
+  output_path: rebuttal/results/matched_baseline_aborted_preflight_token_cap
+  completed_prompt_only_runs: 3
+  completed_extractor_backed_runs: 0
+  scientific_use: prohibited
+
+structured_smoke:
+  output_path: rebuttal/results/matched_baseline_structured_full_smoke_v1
+  code_commit: 5d297e12025fc090fb0f5a25116a49a707ad83ab
+  topic: We should introduce compulsory voting
+  paired_seeds: 1
+  conditions: 3
+  rounds: 15
+  atomic_results: 3
+  judged_turns: 90
+  audited_extraction_turns: 60
+  retry_attempts: 0
+  parse_failures: 0
+  api_failures: 0
+  validation_failures: 0
+  active_state_reconstruction_error_max: 8.9e-16
+  failures: 0

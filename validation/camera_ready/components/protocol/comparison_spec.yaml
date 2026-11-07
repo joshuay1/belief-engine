@@ -1,0 +1,142 @@
+conditions:
+  - name: be_s1_r1_p1_d1
+    label: Structured | retrieval on | persistent | dedup on
+    agent_type: belief_engine
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config: {reasoning_effort: none, verbosity: low}
+    extraction: {output_mode: structured_json_v1}
+    memory:
+      response_retrieval_enabled: true
+      dynamic_evidence_horizon: persistent
+      deduplication_enabled: true
+      retrieved_evidence_token_budget: 128
+      retrieved_evidence_encoding: cl100k_base
+
+  - name: be_s1_r1_p1_d1_uniform
+    label: Structured | retrieval on | persistent | dedup on | uniform strength
+    agent_type: belief_engine
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config: {reasoning_effort: none, verbosity: low}
+    extraction: {output_mode: structured_json_v1}
+    memory:
+      response_retrieval_enabled: true
+      dynamic_evidence_horizon: persistent
+      deduplication_enabled: true
+      strength_estimation_method: uniform_fixed
+      uniform_strength_value: 0.8475946340113878
+      retrieved_evidence_token_budget: 128
+      retrieved_evidence_encoding: cl100k_base
+
+  - name: be_s0_r1_p1_d1
+    label: Flat verbatim | retrieval on | persistent | dedup on
+    agent_type: belief_engine
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config: {reasoning_effort: none, verbosity: low}
+    extraction: {output_mode: whole_message_json_v1}
+    memory:
+      response_retrieval_enabled: true
+      dynamic_evidence_horizon: persistent
+      deduplication_enabled: true
+      retrieved_evidence_token_budget: 128
+      retrieved_evidence_encoding: cl100k_base
+
+  - name: be_s1_r0_p1_d1
+    label: Structured | retrieval off | persistent | dedup on
+    agent_type: belief_engine
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config: {reasoning_effort: none, verbosity: low}
+    extraction: {output_mode: structured_json_v1}
+    memory:
+      response_retrieval_enabled: false
+      dynamic_evidence_horizon: persistent
+      deduplication_enabled: true
+      retrieved_evidence_token_budget: 128
+      retrieved_evidence_encoding: cl100k_base
+
+  - name: be_s0_r0_p1_d1
+    label: Flat verbatim | retrieval off | persistent | dedup on
+    agent_type: belief_engine
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config: {reasoning_effort: none, verbosity: low}
+    extraction: {output_mode: whole_message_json_v1}
+    memory:
+      response_retrieval_enabled: false
+      dynamic_evidence_horizon: persistent
+      deduplication_enabled: true
+      retrieved_evidence_token_budget: 128
+      retrieved_evidence_encoding: cl100k_base
+
+  - name: be_s1_r1_p0_d1
+    label: Structured | retrieval on | turn-local | dedup on
+    agent_type: belief_engine
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config: {reasoning_effort: none, verbosity: low}
+    extraction: {output_mode: structured_json_v1}
+    memory:
+      response_retrieval_enabled: true
+      dynamic_evidence_horizon: latest_opponent_turn
+      deduplication_enabled: true
+      retrieved_evidence_token_budget: 128
+      retrieved_evidence_encoding: cl100k_base
+
+  - name: be_s0_r1_p0_d1
+    label: Flat verbatim | retrieval on | turn-local | dedup on
+    agent_type: belief_engine
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config: {reasoning_effort: none, verbosity: low}
+    extraction: {output_mode: whole_message_json_v1}
+    memory:
+      response_retrieval_enabled: true
+      dynamic_evidence_horizon: latest_opponent_turn
+      deduplication_enabled: true
+      retrieved_evidence_token_budget: 128
+      retrieved_evidence_encoding: cl100k_base
+
+  - name: be_s1_r0_p0_d1
+    label: Structured | retrieval off | turn-local | dedup on
+    agent_type: belief_engine
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config: {reasoning_effort: none, verbosity: low}
+    extraction: {output_mode: structured_json_v1}
+    memory:
+      response_retrieval_enabled: false
+      dynamic_evidence_horizon: latest_opponent_turn
+      deduplication_enabled: true
+      retrieved_evidence_token_budget: 128
+      retrieved_evidence_encoding: cl100k_base
+
+  - name: be_s0_r0_p0_d1
+    label: Flat verbatim | retrieval off | turn-local | dedup on
+    agent_type: belief_engine
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config: {reasoning_effort: none, verbosity: low}
+    extraction: {output_mode: whole_message_json_v1}
+    memory:
+      response_retrieval_enabled: false
+      dynamic_evidence_horizon: latest_opponent_turn
+      deduplication_enabled: true
+      retrieved_evidence_token_budget: 128
+      retrieved_evidence_encoding: cl100k_base
+
+  - name: be_s1_r1_p1_d0
+    label: Structured | retrieval on | persistent | dedup off
+    agent_type: belief_engine
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config: {reasoning_effort: none, verbosity: low}
+    extraction: {output_mode: structured_json_v1}
+    memory:
+      response_retrieval_enabled: true
+      dynamic_evidence_horizon: persistent
+      deduplication_enabled: false
+      retrieved_evidence_token_budget: 128
+      retrieved_evidence_encoding: cl100k_base

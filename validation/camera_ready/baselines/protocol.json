@@ -1,0 +1,167 @@
+{
+  "command": "validation/scripts/run_two_agent_model_comparison.py --comparison-spec validation/config/two_agent_model_comparison.yaml --topics social_media,journalism,compulsory_voting,atheism,libertarianism --conditions be_gpt54mini,prompt_self_update_gpt54mini,rag_self_update_gpt54mini --rounds 15 --trials 10 --seeding-limit 10 --be-update-sensitivity 0.2 --be-anchor-sensitivity 0.4 --temperature 0.7 --self-update-temperature 0.0 --response-shell matched_v1 --response-context-messages 4 --self-update-context-messages 4 --response-word-limit 120 --retrieval-strategy proportional --retrieval-k 10 --belief-semantics-mode active_explicit_prior_v1 --extraction-output-mode structured_json_v1 --extraction-max-attempts 2 --extraction-max-tokens 2000 --strict-extraction --strict-memory-ingestion --no-allow-self-arguments --judge-backend openai --judge-model gpt-5.4-mini --judge-reasoning-effort none --judge-verbosity low --judge-temperature 0.0 --strict-judge --be-stance-source external --artifact-mode compact --schedule-order paired --workers 3 --resume --output-dir rebuttal/results/matched_baseline_v1",
+  "git": {
+    "commit": "9d66614fb9fcf912d87b2aa446a591cffd24dc0e",
+    "branch": "rebuttal-2026",
+    "dirty": false,
+    "status_short": ""
+  },
+  "args": {
+    "output_dir": "rebuttal/results/matched_baseline_v1",
+    "rounds": 15,
+    "trials": 10,
+    "topics": "social_media,journalism,compulsory_voting,atheism,libertarianism",
+    "seeding_limit": 10,
+    "be_update_sensitivity": 0.2,
+    "be_anchor_sensitivity": 0.4,
+    "temperature": 0.7,
+    "self_update_temperature": 0.0,
+    "response_shell": "matched_v1",
+    "response_context_messages": 4,
+    "self_update_context_messages": 4,
+    "response_word_limit": 120,
+    "retrieval_strategy": "proportional",
+    "retrieval_k": 10,
+    "belief_semantics_mode": "active_explicit_prior_v1",
+    "extraction_output_mode": "structured_json_v1",
+    "extraction_max_attempts": 2,
+    "extraction_max_tokens": 2000,
+    "strict_extraction": true,
+    "strict_memory_ingestion": true,
+    "allow_self_arguments": false,
+    "workers": 3,
+    "schedule_order": "paired",
+    "resume": true,
+    "dry_run": false,
+    "aggregate_only": false,
+    "rejudge_existing": false,
+    "no_rejudge_backup": false,
+    "allow_missing_existing": false,
+    "max_runs": null,
+    "comparison_spec": "validation/config/two_agent_model_comparison.yaml",
+    "conditions": "be_gpt54mini,prompt_self_update_gpt54mini,rag_self_update_gpt54mini",
+    "artifact_mode": "compact",
+    "be_stance_source": "external",
+    "gpt_backend": "openai",
+    "gpt_model": "gpt-5.4-mini",
+    "qwen_backend": "openrouter",
+    "qwen_model": "qwen/qwen3.5-9b",
+    "gemma_backend": "openrouter",
+    "gemma_model": "google/gemma-4-e4b",
+    "baseline_backend": "openai",
+    "baseline_model": "gpt-5.4-mini",
+    "judge_backend": "openai",
+    "judge_model": "gpt-5.4-mini",
+    "judge_reasoning_effort": "none",
+    "judge_verbosity": "low",
+    "judge_temperature": 0.0,
+    "strict_judge": true
+  },
+  "topics": [
+    "Social media brings more harm than good",
+    "We should subsidize journalism",
+    "We should introduce compulsory voting",
+    "We should adopt atheism",
+    "We should adopt libertarianism"
+  ],
+  "initial_stances": {
+    "pro": 0.75,
+    "con": -0.75
+  },
+  "open_minded_memory": {
+    "update_sensitivity": 0.4,
+    "anchor_sensitivity": 0.2,
+    "allow_self_arguments": true,
+    "confirmation_bias": 0.0,
+    "worldview_openness": "balanced",
+    "argument_similarity_threshold": 0.6,
+    "self_similarity_threshold": 0.45,
+    "cross_polarity_dedup": false,
+    "opinion_change_style": "human_like"
+  },
+  "prompt_self_update_definition": "Prompt self-update baseline: each agent keeps a self-reported stance by asking the LLM to update after opponent turns. It has no Belief Engine and no memory retrieval.",
+  "rag_self_update_definition": "RAG + self-update baseline: agents receive the same retrieved argument memory as the Belief Engine condition and ask the LLM to self-report stance after opponent turns, but use no Bayesian belief update.",
+  "conditions": [
+    {
+      "name": "be_gpt54mini",
+      "label": "Belief Engine (5.4-mini)",
+      "backend_type": "openai",
+      "model": "gpt-5.4-mini",
+      "use_belief_engine": true,
+      "note": "Open-minded Belief Engine agents.",
+      "agent_type": "subject",
+      "use_memory": true,
+      "memory_overrides": {
+        "update_sensitivity": 0.2,
+        "anchor_sensitivity": 0.4,
+        "allow_self_arguments": true,
+        "confirmation_bias": 0.0,
+        "worldview_openness": "balanced",
+        "argument_similarity_threshold": 0.6,
+        "self_similarity_threshold": 0.45,
+        "cross_polarity_dedup": false,
+        "opinion_change_style": "human_like"
+      },
+      "backend_config": {
+        "reasoning_effort": "none",
+        "verbosity": "low"
+      }
+    },
+    {
+      "name": "prompt_self_update_gpt54mini",
+      "label": "Prompt self-update (5.4-mini)",
+      "backend_type": "openai",
+      "model": "gpt-5.4-mini",
+      "use_belief_engine": false,
+      "note": "Prompt self-update baseline: each agent keeps a self-reported stance by asking the LLM to update after opponent turns. It has no Belief Engine and no memory retrieval.",
+      "agent_type": "self_update",
+      "use_memory": false,
+      "memory_overrides": {},
+      "backend_config": {
+        "reasoning_effort": "none",
+        "verbosity": "low"
+      }
+    },
+    {
+      "name": "rag_self_update_gpt54mini",
+      "label": "RAG + self-update (5.4-mini)",
+      "backend_type": "openai",
+      "model": "gpt-5.4-mini",
+      "use_belief_engine": false,
+      "note": "RAG + self-update baseline: agents receive the same retrieved argument memory as the Belief Engine condition and ask the LLM to self-report stance after opponent turns, but use no Bayesian belief update.",
+      "agent_type": "self_update",
+      "use_memory": true,
+      "memory_overrides": {
+        "update_sensitivity": 0.0,
+        "anchor_sensitivity": 0.0,
+        "allow_self_arguments": true,
+        "confirmation_bias": 0.0,
+        "worldview_openness": "balanced",
+        "argument_similarity_threshold": 0.6,
+        "self_similarity_threshold": 0.45,
+        "cross_polarity_dedup": false,
+        "opinion_change_style": "human_like",
+        "stance_method": "blind",
+        "belief_engine_type": "bayesian"
+      },
+      "backend_config": {
+        "reasoning_effort": "none",
+        "verbosity": "low"
+      }
+    }
+  ],
+  "evaluator_provenance": {
+    "backend": "openai",
+    "model": "gpt-5.4-mini",
+    "reasoning_effort": "none",
+    "verbosity": "low",
+    "temperature": 0.0,
+    "prompt_path": "src/prompts/evaluator_optimized.txt",
+    "prompt_sha256": "2c6eb444cd6ff752aa9b99929c1998936411379760b5a0340bfbcd4a2523ad83",
+    "evaluator_code_path": "src/agents/evaluation_agent.py",
+    "evaluator_code_sha256": "47d225a6563d4d74aa9ec782c4004a7bed09a80dbfd3bba83ba4f3462870461d",
+    "runner_path": "validation/scripts/run_two_agent_model_comparison.py",
+    "runner_code_sha256": "0d95fd0bffdbe18cd36efb1d12b3b35663e1d884b0f2a452124e2194d833ffd6",
+    "runner_commit": "9d66614fb9fcf912d87b2aa446a591cffd24dc0e"
+  }
+}

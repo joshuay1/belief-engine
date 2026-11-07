@@ -1,0 +1,4 @@
+dimension,level,group_clusters,topic_clusters,denominator_n,feasible_exact_match_n,joint_exact_match_and_separated_n,exact_match_and_maximum_interior_gap_ge_0_20_rate,feasible_exact_match_rate,conditional_separation_rate_ge_0_20_among_exact_matches,median_maximum_interior_gap_among_exact_matches,maximum_absolute_endpoint_error_among_exact_matches
+overall,all,694,107,2441.0,958.0,869.0,0.35600163867267515,0.39246210569438755,0.907098121085595,0.4405208449660565,6.480926906249351e-15
+orientation,prior_consistent,632,107,1386.0,544.0,490.0,0.35353535353535354,0.3924963924963925,0.9007352941176471,0.41100679532980705,2.4424906541753444e-15
+orientation,prior_opposing,558,107,1055.0,414.0,379.0,0.35924170616113743,0.3924170616113744,0.9154589371980676,0.48018527817828055,6.480926906249351e-15

@@ -1,0 +1,3 @@
+comparison,estimate_equal_topic_weighted,observed_topic_t,exact_two_sided_marginal_p,exact_max_abs_t_adjusted_p,negative_topics,zero_topics,positive_topics,topic_sign_pattern,topics,assignments
+be_gpt54mini_minus_prompt_self_update_gpt54mini,-0.58760000000000001,-3.1937159872351786,0.0625,0.0625,5,0,0,"social_media:negative,journalism:negative,compulsory_voting:negative,atheism:negative,libertarianism:negative",5,32
+be_gpt54mini_minus_rag_self_update_gpt54mini,-0.49000000000000005,-3.1571011548838031,0.0625,0.0625,5,0,0,"social_media:negative,journalism:negative,compulsory_voting:negative,atheism:negative,libertarianism:negative",5,32

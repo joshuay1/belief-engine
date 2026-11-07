@@ -1,0 +1,101 @@
+classifier_audit_row,text_hash,topic,human_polarity,WA,MACE-P,quality_target,classifier_strength,n_extracted,pred_polarity_strongest,strongest_strength_llm
+0,00da98326dd3aa02,We should prohibit women in combat,affirmative,0.801645197,0.721296692,0.7614709445000001,0.8737974166870117,1,affirmative,0.6
+1,00ba8328b3aa6246,We should ban targeted killing,affirmative,0.656665091,0.261073458,0.4588692745,0.9222205281257629,1,affirmative,0.7
+2,7eb3667629eacc3a,Holocaust denial should be a criminal offence,affirmative,1.0,0.995783601,0.9978918005,0.9549005031585693,1,affirmative,0.7
+3,e7a5a2ecc023fbf9,We should ban factory farming,affirmative,1.0,0.986776639,0.9933883195,0.9547494649887085,3,affirmative,0.7
+4,e465fc4a36a2e0ac,We should ban missionary work,negative,0.802078873,0.091113179,0.446596026,0.7397414445877075,2,negative,0.6
+5,3d366088885430a4,We should ban targeted killing,affirmative,0.544803923,0.008249408,0.2765266655,0.8773986101150513,2,affirmative,0.7
+6,74db55eaa8ac7fa2,We should legalize cannabis,affirmative,1.0,0.901325981,0.9506629905,0.9375218152999878,1,affirmative,0.7
+7,c2fff4cd4f2bb064,We should adopt atheism,affirmative,0.353976886,6.15e-05,0.177019193,0.7093605995178223,1,affirmative,0.7
+8,e926b14a86ad8085,We should adopt libertarianism,affirmative,0.869887503,0.990339681,0.930113592,0.9060149192810059,1,affirmative,0.6
+9,d8669874670a076d,We should ban private military companies,negative,0.86138282,0.925992701,0.8936877605,0.8191760778427124,1,negative,0.4
+10,61bbb335b6c11543,We should prohibit school prayer,affirmative,0.882166396,0.743620377,0.8128933865000001,0.816838800907135,1,affirmative,0.6
+11,dd7e81c9de0fb3b9,We should abolish the Olympic Games,negative,0.871364757,0.986916151,0.929140454,0.8799694776535034,1,negative,0.5
+12,73b559cfc2d7974e,We should adopt libertarianism,affirmative,0.893856766,0.689804017,0.7918303915,0.9421412944793701,1,affirmative,0.7
+13,686170cee173bdf7,We should ban algorithmic trading,affirmative,0.735536914,0.539699351,0.6376181325,0.9173561334609985,1,affirmative,0.6
+14,46eb368be6b5de42,We should ban private military companies,affirmative,1.0,0.782793852,0.891396926,0.8578991889953613,1,affirmative,0.6
+15,f9e99d0ba6afb587,We should prohibit school prayer,affirmative,1.0,0.737377913,0.8686889565,0.875424861907959,1,affirmative,0.6
+16,7953ecf57e51ab70,We should ban factory farming,negative,1.0,0.773955253,0.8869776265,0.9746275544166565,1,negative,0.4
+17,7b2cd86995a76435,We should ban private military companies,affirmative,0.6915386,0.532400979,0.6119697895,0.8010083436965942,2,affirmative,0.6
+18,03c6a6e379de3c42,We should ban targeted killing,affirmative,0.627338338,0.037964129,0.3326512335,0.8973798751831055,1,affirmative,0.6
+19,96986a34325e8a05,We should abolish the three-strikes laws,negative,0.878940731,0.904505527,0.8917231290000001,0.8958065509796143,2,negative,0.5
+20,961b20eb296bb237,The use of public defenders should be mandatory,affirmative,0.979109246,0.815065873,0.8970875595000001,0.9164544343948364,1,affirmative,0.6
+21,80970065d619c241,We should ban targeted killing,negative,0.788518293,0.692343579,0.740430936,0.930019736289978,2,negative,0.5
+22,c301fea1c149937d,We should abolish the three-strikes laws,negative,0.877531432,0.778144561,0.8278379965,0.7636833190917969,1,negative,0.5
+23,7fdfcbc15df7330c,Holocaust denial should be a criminal offence,affirmative,0.638351908,0.062746211,0.3505490595,0.8613739013671875,2,affirmative,0.8
+24,958ce7913ff5f3f2,We should ban targeted killing,negative,1.0,0.995879495,0.9979397475,0.871962308883667,1,affirmative,0.4
+25,8819ef58fc795d13,We should legalize cannabis,negative,0.886965571,0.931192916,0.9090792435,0.9279971718788147,1,negative,0.6
+26,7b6ac955a346c08c,We should ban targeted killing,negative,0.492459868,0.013907498,0.253183683,0.6579495668411255,1,negative,0.5
+27,991105c0b7f0456e,We should prohibit school prayer,affirmative,0.596830964,0.001445194,0.299138079,0.6163501739501953,1,affirmative,0.4
+28,9cd4acb8d25b7cf2,We should ban targeted killing,affirmative,0.892282632,0.764164428,0.82822353,0.9341694116592407,1,affirmative,0.7
+29,8c11a1fbdf021a4b,We should adopt atheism,affirmative,0.580996628,0.099377033,0.3401868305,0.6206680536270142,1,affirmative,0.4
+30,29f6e652b63081d4,We should legalize cannabis,negative,0.914311593,0.952793553,0.933552573,0.9230269193649292,1,negative,0.5
+31,2145e03dc82668ce,We should prohibit school prayer,negative,0.50810321,0.60889933,0.55850127,0.7424421310424805,1,negative,0.4
+32,e5084856aaf3ea2b,Social media brings more harm than good,affirmative,0.877999536,0.757789407,0.8178944715,0.9000284671783447,1,affirmative,0.7
+33,69ab0f845b9368a5,We should legalize cannabis,negative,1.0,0.997728656,0.998864328,0.897234320640564,1,negative,0.5
+34,fa584d5c73bd2007,We should prohibit school prayer,negative,0.877970553,0.651841504,0.7649060285,0.8253523111343384,1,negative,0.5
+35,820c72af3f2817b4,We should prohibit school prayer,negative,0.862875905,0.615887299,0.739381602,0.877918004989624,2,negative,0.4
+36,7ee6b3175c39ec21,Holocaust denial should be a criminal offence,affirmative,0.317478983,0.000927383,0.159203183,0.734487771987915,1,affirmative,0.4
+37,79536376a2446574,We should adopt libertarianism,affirmative,0.85132444,0.307331184,0.5793278119999999,0.7333556413650513,1,affirmative,0.6
+38,4736c8acb68be8c9,Social media brings more harm than good,affirmative,0.741933467,0.18991554,0.4659245035,0.6832134127616882,1,affirmative,0.7
+39,e77daea10b2714d4,We should ban private military companies,negative,0.107524356,4.01e-06,0.053764183,0.8146172761917114,1,negative,0.4
+40,ce364decc49f4d14,Social media brings more harm than good,negative,1.0,0.872991061,0.9364955305,0.8081871271133423,1,negative,0.2
+41,747b6566d5dcfe67,We should prohibit school prayer,negative,0.810241308,0.908331642,0.859286475,0.8777677416801453,2,negative,0.5
+42,2516a876180a52da,We should ban factory farming,negative,0.646494463,0.063089764,0.3547921135,0.6679775714874268,1,negative,0.4
+43,785dc0cbc3106e4d,We should legalize cannabis,affirmative,0.755352033,0.559931683,0.657641858,0.9414178133010864,1,affirmative,0.6
+44,626a69f71da89b43,We should ban targeted killing,negative,0.755344383,0.225319019,0.490331701,0.7870278358459473,2,negative,0.4
+45,6d8211b0ad92745f,We should adopt libertarianism,negative,0.318272564,3.36e-05,0.159153082,0.4041508436203003,2,negative,0.6
+46,52819b95a81e16b3,We should legalize cannabis,affirmative,0.78317437,0.109531987,0.4463531785,0.5849959850311279,1,affirmative,0.6
+47,8c2ec5bd3ab63a1e,We should prohibit school prayer,affirmative,0.712161649,0.172386385,0.442274017,0.7321207523345947,1,affirmative,0.6
+48,d9f55fd68a9c275c,We should ban factory farming,negative,1.0,0.93775831,0.968879155,0.9402394890785217,1,negative,0.4
+49,70c67aac5fd1d7c8,We should ban missionary work,affirmative,0.602418184,0.380245633,0.4913319085,0.8157760500907898,1,affirmative,0.7
+50,c391977534ce85b3,We should ban targeted killing,affirmative,0.889046573,0.707400269,0.798223421,0.8727721571922302,2,affirmative,0.4
+51,0c6976fb4c8df0a7,The use of public defenders should be mandatory,affirmative,0.146288133,5.29e-06,0.0731467114999999,0.44963449239730835,1,affirmative,0.6
+52,fc612e0077887b1f,We should ban targeted killing,negative,0.823984933,0.938198438,0.8810916854999999,0.8741508722305298,1,negative,0.5
+53,8cef434ea6071ae4,We should prohibit women in combat,affirmative,0.631640656,0.093858908,0.3627497819999999,0.8301066160202026,1,affirmative,0.4
+54,2dc61dbe0368a938,We should abolish the three-strikes laws,negative,1.0,0.83830368,0.91915184,0.9447280168533325,1,negative,0.4
+55,bdd4d95293acc5c2,We should abolish the Olympic Games,negative,0.957375203,0.82032322,0.8888492115,0.941559910774231,0,,
+56,c0c5baaa22ab9973,We should legalize cannabis,affirmative,0.906803129,0.921330529,0.914066829,0.9434998631477356,1,affirmative,0.7
+57,205cf982b41edbf1,Holocaust denial should be a criminal offence,negative,0.766580018,0.516323825,0.6414519215,0.7745922207832336,1,negative,0.5
+58,707accf54e76b586,We should abolish the Olympic Games,negative,0.981896891,0.995752046,0.9888244685,0.9864262342453003,1,negative,0.4
+59,f8fc783a01cb8cbd,We should prohibit women in combat,affirmative,0.746868969,0.480064837,0.613466903,0.7889825105667114,1,affirmative,0.4
+60,47542a4e5031cf93,We should prohibit school prayer,negative,0.202715378,0.000292741,0.1015040595,0.4293167293071747,1,negative,0.4
+61,4265e354770ba84d,We should ban factory farming,negative,0.952361355,0.99991735,0.9761393525,0.9181089997291565,1,negative,0.4
+62,8e87ec5f6dd2392d,We should abolish the three-strikes laws,affirmative,0.847404354,0.676648609,0.7620264815,0.7109150290489197,1,affirmative,0.7
+63,a638176ac917114c,Social media brings more harm than good,negative,1.0,0.929818715,0.9649093575,0.8955084085464478,0,,
+64,96f5b0dad6f3274f,We should adopt atheism,affirmative,0.746169014,0.111092384,0.428630699,0.8179196715354919,1,affirmative,0.6
+65,e22c18bda561ea07,We should ban algorithmic trading,affirmative,0.975152602,0.969380055,0.9722663285,0.9361668825149536,1,affirmative,0.7
+66,dd67b14bc8318d0f,Social media brings more harm than good,affirmative,0.584319454,0.009435509,0.2968774815,0.6600049734115601,1,affirmative,0.6
+67,bff320d146fede0c,We should ban targeted killing,affirmative,1.0,0.971663828,0.985831914,0.9275357723236084,2,affirmative,0.7
+68,0bdaad192d75d1fa,Holocaust denial should be a criminal offence,negative,0.913947327,0.86604939,0.8899983585,0.8069288730621338,1,negative,0.5
+69,928f070d444c3e3e,We should adopt libertarianism,affirmative,0.973760787,0.962047586,0.9679041865,0.9095335006713867,2,affirmative,0.7
+70,ea56306a9fa730fb,We should legalize cannabis,negative,0.94405326,0.990027631,0.9670404455,0.9507992267608643,1,negative,0.6
+71,7f32f365ba61ced4,We should ban missionary work,negative,0.649129899,0.075944972,0.3625374354999999,0.8504500389099121,1,negative,0.5
+72,a68204a37273ba74,Social media brings more harm than good,affirmative,0.932274401,0.917154473,0.924714437,0.8835318088531494,1,affirmative,0.7
+73,808461a29ac3a457,We should ban factory farming,affirmative,0.860005638,0.945876737,0.9029411875,0.8670471906661987,2,affirmative,0.7
+74,4c20e10a8e683492,We should abolish the Olympic Games,negative,0.316121351,0.000392857,0.158257104,0.8104254007339478,0,,
+75,22caec2c80fd44bd,We should ban missionary work,negative,0.984871499,0.999998899,0.992435199,0.9674180746078491,1,negative,0.5
+76,0479da698d80c0ee,We should ban private military companies,affirmative,0.813964711,0.658958294,0.7364615025000001,0.8985520601272583,2,affirmative,0.6
+77,4d6679d87becdb2f,We should adopt atheism,negative,0.457533006,0.008366858,0.232949932,0.5240222215652466,1,negative,0.4
+78,79a97ed15c03bcf0,The use of public defenders should be mandatory,affirmative,0.71855796,0.580582789,0.6495703745000001,0.9550313949584961,2,affirmative,0.7
+79,6e9995264816eb9e,We should ban targeted killing,negative,0.669844426,0.087920416,0.378882421,0.8659200072288513,1,negative,0.5
+80,0a6ac493609abaca,We should legalize cannabis,affirmative,1.0,0.975811609,0.9879058045,0.9423485994338989,1,affirmative,0.6
+81,f4ce703dc6977db0,We should abolish the three-strikes laws,negative,0.849271086,0.574557987,0.7119145365,0.8890175819396973,1,negative,0.4
+82,7f56ec7595b0ad50,We should ban missionary work,negative,0.825573941,0.379585283,0.602579612,0.8885973691940308,2,negative,0.6
+83,97e215aadcb4b1fb,We should abolish the three-strikes laws,negative,0.715475896,0.730881387,0.7231786415,0.9457998275756836,1,negative,0.4
+84,712035469a06e65e,We should ban private military companies,negative,0.885510563,0.869987653,0.877749108,0.9030342102050781,1,negative,0.4
+85,8036c13f896511d2,We should prohibit school prayer,affirmative,0.865490204,0.830169283,0.8478297435,0.8705918192863464,2,affirmative,0.7
+86,6458c0927611d345,We should prohibit school prayer,affirmative,0.929972047,0.617534873,0.77375346,0.9377294778823853,1,affirmative,0.7
+87,f2dd4fb4da2332b0,We should ban factory farming,affirmative,1.0,0.998997234,0.999498617,0.9498158693313599,3,affirmative,0.7
+88,0599ec0a09556ff3,We should ban targeted killing,affirmative,0.636408456,0.061309335,0.3488588955,0.8435790538787842,1,negative,0.4
+89,1a83f0519a53d152,We should ban missionary work,negative,1.0,0.801275609,0.9006378045000001,0.9260703921318054,1,negative,0.6
+90,c93b4dd8a85067c2,We should abolish the Olympic Games,negative,0.855230776,0.669937796,0.7625842860000001,0.9416112303733826,1,negative,0.4
+91,82ecf6ccf46de6f3,We should ban missionary work,negative,0.950178657,0.964797713,0.957488185,0.9597557783126831,1,negative,0.4
+92,08e196a0a66aaa32,We should legalize cannabis,affirmative,0.853285309,0.893673775,0.873479542,0.9046115279197693,1,affirmative,0.7
+93,2eadc570f51fa23f,We should adopt libertarianism,negative,1.0,0.931536902,0.965768451,0.9563564658164978,1,negative,0.6
+94,7634ab1e53570617,We should legalize cannabis,affirmative,0.97904521,0.935655403,0.9573503065,0.8935613632202148,1,affirmative,0.7
+95,ad318d5d7623f2e3,We should abolish the three-strikes laws,negative,0.732310722,0.228597784,0.480454253,0.9191256761550903,1,negative,0.5
+96,8e44fd0988ddeb6d,The use of public defenders should be mandatory,affirmative,0.588448768,0.028875531,0.3086621495,0.48151353001594543,1,affirmative,0.7
+97,74ae7ee3202b9cc9,We should adopt libertarianism,negative,0.837329268,0.924074178,0.880701723,0.9051309823989868,1,negative,0.6
+98,689edd78de635150,We should abolish the Olympic Games,negative,0.841783794,0.706025329,0.7739045615,0.7295151352882385,1,affirmative,0.6
+99,99f99ee3a442e8df,We should ban algorithmic trading,affirmative,0.560028014,0.002027284,0.281027649,0.4704189598560333,1,affirmative,0.6

@@ -5,8 +5,8 @@ generation so that an agent's stance changes can be inspected and controlled.
 
 Companion code for **Belief Engine: Making Agent Stance Auditable in LLM Deliberation**.
 
-**Status:** camera-ready candidate. Updated code and tests are included.
-The newer experiment result packages are still being added.
+The code, offline tests, and compact saved results are included. See the
+[paper result guide](validation/camera_ready/README.md) for the camera-ready analyses.
 
 ## Quick start
 

@@ -1,0 +1,234 @@
+analysis_id: neurips_2026_matched_baseline_primary_multiplicity_posthoc_v1
+status: locked_for_execution
+classification: transparent_posthoc_multiplicity_audit_of_registered_primary_family
+locked_at: "2026-07-25"
+
+question: >-
+  Do the two registered Belief Engine versus comparator contrasts in absolute
+  externally scored final Pro-Con gap remain resolved when they are treated as
+  one two-comparison family and their dependence is preserved?
+
+relationship_to_registration:
+  parent: MATCHED_BASELINE_PREREGISTRATION.yaml
+  parent_primary_outcome: absolute_final_pro_con_gap
+  parent_experimental_unit: topic_by_paired_seed
+  classification: >-
+    The endpoint and both paired comparisons were specified in the parent
+    registration. The familywise interval and exact topic-sign-flip analyses
+    are transparent post-hoc multiplicity robustness checks; they do not
+    replace the originally reported estimates or uncertainty intervals.
+
+transparency:
+  results_known_before_this_lock:
+    - primary paired estimates and previously reported unadjusted intervals
+    - topic-level primary estimates
+  results_not_used_to_define_family:
+    - simultaneous max-absolute-t intervals
+    - Bonferroni percentile intervals
+    - exact shared topic-sign-flip p-values
+    - leave-one-topic-out ranges
+  reporting_rule: >-
+    Report both contrasts, every topic sign, and every leave-one-topic-out
+    estimate regardless of direction, interval width, or p-value.
+
+primary_family:
+  metric: absolute_final_pro_con_gap
+  definition: >-
+    At round 15, take the absolute difference between the condition-blind
+    external evaluator's Pro and Con scores within each debate.
+  difference: belief_engine_minus_comparator
+  direction: negative_means_smaller_final_gap_for_belief_engine
+  family_size: 2
+  contrasts:
+    - be_gpt54mini_minus_prompt_self_update_gpt54mini
+    - be_gpt54mini_minus_rag_self_update_gpt54mini
+  excluded_outcomes:
+    - all_secondary_and_diagnostic_outcomes_including_trajectory_gap_auc
+
+inputs:
+  preregistration:
+    path: MATCHED_BASELINE_PREREGISTRATION.yaml
+    sha256: d7bf7348840692a8e07b9c81677f0664228c1a0a154757ff4e87229bc96076e0
+    bytes: 7317
+  campaign_manifest:
+    path: results/matched_baseline_v1/manifest.json
+    sha256: feec16dc76cf526ac13fdfe8c136d37ee8e8ca2b7ebb74a04f43df35f526aeda
+    bytes: 138070
+  trajectory_csv:
+    path: results/matched_baseline_v1/stance_trajectories.csv
+    sha256: 75d3322a074ea49b31a92505267619b5e71e6be9e60d635d5cb7c891cf7c053a
+    bytes: 1102646
+  summary_csv:
+    path: results/matched_baseline_v1/summary.csv
+    sha256: 8d0cc4cb84b64c61aacad8143cfd5126b74fd51594473564b9b8c90cfbceb3c2
+    bytes: 66319
+  verified_primary_inventory:
+    path: results/analyses/matched_baseline_direction_v1/primary_input_inventory.json
+    sha256: 807667f520dced04aec5933f7a43dfd19a1bab239ab264601ddab1b2d022bee4
+    bytes: 7839
+  verified_trajectory_bundle_manifest:
+    path: results/analyses/matched_baseline_direction_v1/bundle_manifest.json
+    sha256: 739bf3cc901dde46fc243cfc2a75f71de46c3690f0ca8588c07f25a21d3d0b3e
+    bytes: 5561
+
+scripts:
+  analyzer:
+    path: scripts/analyze_matched_baseline_primary_multiplicity.py
+    sha256: 5841dd2b1d42f703e4cdef15f3942ae3b010baf6d7ad6191c24055166f52a118
+  verifier:
+    path: scripts/verify_matched_baseline_primary_multiplicity.py
+    sha256: 50813681731ffe970b4a4c94b41b7eb9f58fdbb712bfe529f7ac2ef978284c6c
+
+expected_design:
+  debates: 150
+  topics:
+    - slug: social_media
+      text: Social media brings more harm than good
+    - slug: journalism
+      text: We should subsidize journalism
+    - slug: compulsory_voting
+      text: We should introduce compulsory voting
+    - slug: atheism
+      text: We should adopt atheism
+    - slug: libertarianism
+      text: We should adopt libertarianism
+  conditions:
+    - be_gpt54mini
+    - prompt_self_update_gpt54mini
+    - rag_self_update_gpt54mini
+  paired_seeds_per_topic: 10
+  paired_topic_seed_blocks: 50
+  rounds: 15
+  stance_states_per_agent: 16
+  initial_pro_stance: 0.75
+  initial_con_stance: -0.75
+  execution_commit: 9d66614fb9fcf912d87b2aa446a591cffd24dc0e
+  campaign_tree_sha256: c4a8a07ee2d2a68d9b8a250e28b3b9a600afa994ea40cd196c5f5c4a77540356
+  registry_sha256: 03a28ddb4646f1e7e03f900bf38416e311d7d5d510b83083c30836cb17297ca0
+  evaluator_fingerprint_sha256: ac9fed85f1fd8e5a20ea940ca42b70ba9faa6471f73f584630506e62abaad4f2
+  evaluator:
+    backend: openai
+    model: gpt-5.4-mini
+    reasoning_effort: none
+    verbosity: low
+    temperature: 0.0
+    prompt_sha256: 2c6eb444cd6ff752aa9b99929c1998936411379760b5a0340bfbcd4a2523ad83
+    evaluator_code_sha256: 47d225a6563d4d74aa9ec782c4004a7bed09a80dbfd3bba83ba4f3462870461d
+    runner_code_sha256: 0d95fd0bffdbe18cd36efb1d12b3b35663e1d884b0f2a452124e2194d833ffd6
+    runner_commit: 9d66614fb9fcf912d87b2aa446a591cffd24dc0e
+
+reconstruction:
+  source: frozen_external_stance_trajectory_csv
+  final_round: 15
+  required_post_start_stance_source: external_judge
+  pairing_key:
+    - topic_slug
+    - trial
+    - seed
+  checks:
+    - exact_input_hashes_and_byte_sizes
+    - verified_completion_inventory_150_of_150
+    - clean_execution_commit_and_single_evaluator_fingerprint
+    - complete_round_0_through_15_pro_and_con_trajectories
+    - identical_topic_trial_seed_registry_across_three_conditions
+    - exact_summary_to_trajectory_final_score_agreement
+  failure_policy: abort_before_writing_any_result
+
+bootstrap:
+  method: shared_hierarchical_topic_then_paired_seed_bootstrap
+  estimand: equal_topic_weighted_mean_paired_difference
+  resampling:
+    - sample_five_topics_with_replacement
+    - within_each_sampled_topic_sample_ten_paired_seeds_with_replacement
+  shared_resamples_across_contrasts: true
+  replicates: 100000
+  random_seed: 2026072507
+  chunk_size: 2000
+  pointwise_interval: percentile_2_5_and_97_5
+  simultaneous_method: max_absolute_studentized_bootstrap_deviation
+  simultaneous_definition: >-
+    Divide each shared bootstrap estimate's deviation from the observed
+    contrast by that contrast's bootstrap standard error; use the 95th
+    percentile of the maximum absolute standardized deviation across the two
+    contrasts as one common critical value.
+  familywise_confidence_level: 0.95
+  bonferroni_percentile_quantiles:
+    - 0.0125
+    - 0.9875
+  bonferroni_marginal_confidence_level: 0.975
+
+exact_topic_sign_flip:
+  method: exhaustive_shared_topic_vector_sign_flip
+  input: two_contrast_vector_of_ten_seed_mean_differences_for_each_topic
+  topics: 5
+  assignments: 32
+  assignment_order: integer_masks_0_through_31
+  shared_signs_across_contrasts: true
+  statistic: >-
+    For each contrast, the mean of five topic differences divided by their
+    sample standard deviation over sqrt(5), recomputed after every shared sign
+    assignment.
+  marginal_p_value: >-
+    Fraction of all 32 assignments whose absolute contrast-specific t is at
+    least the observed absolute t.
+  familywise_p_value: >-
+    Fraction of all 32 assignments whose maximum absolute t across both
+    contrasts is at least the observed absolute contrast-specific t.
+  tail: two_sided_greater_than_or_equal
+  plus_one_correction: false_complete_enumeration
+  zero_variance_rule: zero_if_mean_zero_otherwise_signed_infinity
+
+topic_reporting:
+  enumerate_all_topic_mean_differences_and_signs: true
+  leave_one_topic_out:
+    estimand: equal_weighted_mean_of_four_retained_topic_means
+    report_all_omissions: true
+    report_minimum_and_maximum_ranges: true
+
+assumptions_and_limits:
+  - >-
+    The bootstrap treats the five observed topics as a resampling population
+    and paired seeds as exchangeable within topic. Five topics provide limited
+    support for topic-general claims.
+  - >-
+    The exact sensitivity requires joint sign exchangeability of each
+    two-contrast topic vector under the null. Exhaustive enumeration removes
+    Monte Carlo error but not this assumption.
+  - >-
+    The exact reference distribution has only 32 assignments, so p-values are
+    coarse.
+  - >-
+    This is a post-hoc familywise robustness audit, not a new preregistered
+    experiment and not independent replication.
+
+interpretation:
+  supported_if_observed: >-
+    A contrast whose simultaneous interval excludes zero is resolved at
+    familywise 95% confidence within this locked two-comparison primary family.
+    Agreement with the Bonferroni percentile sensitivity and exact topic-level
+    test strengthens robustness to inferential method, subject to the
+    five-topic limitation.
+  prohibited:
+    - adding_trajectory_auc_or_any_secondary_metric_to_the_primary_family
+    - selecting_or_dropping_a_contrast_after_inspecting_results
+    - treating_turns_agents_or_conditions_as_independent
+    - claiming_topic_general_superiority_from_five_topics
+    - calling_this_posthoc_audit_preregistered
+    - equating_smaller_disagreement_with_normatively_better_deliberation
+
+outputs:
+  directory: results/analyses/matched_baseline_primary_multiplicity_posthoc_v1
+  analyzer_payloads:
+    - paired_contrasts.csv
+    - topic_contrasts.csv
+    - bootstrap_intervals.csv
+    - exact_topic_sign_flip_tests.csv
+    - exact_topic_sign_flip_null.csv
+    - leave_one_topic_out.csv
+    - leave_one_topic_out_ranges.csv
+    - input_audit.json
+    - analysis.json
+    - report.md
+    - manifest.json
+  independent_verification:
+    - verification.json

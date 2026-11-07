@@ -1,0 +1,832 @@
+experiment_id: neurips_2026_component_necessity_factorial_v1
+status: registered_before_any_new_outcome
+registered_at: "2026-07-25"
+classification: post_hoc_prospectively_locked_rebuttal_ablation
+
+transparency:
+  motivation: >-
+    Reviewers requested targeted ablations separating structured memory,
+    deduplication, response retrieval, and the update/persistence path.
+  prior_information: >-
+    Results from the historical matched baseline, deterministic duplicate
+    fixture, DEBATE replay, and historical full-loop chain were known. No
+    response, extraction, judge output, or outcome from any cell in this new
+    contemporaneous factorial was generated before this specification.
+  prelaunch_validation_amendment: >-
+    After registration and still before any new scientific outcome, a
+    synthetic 135-cell analyzer test and an independent runner-free preflight
+    verifier were added. They did not change cells, outcomes, contrasts,
+    multiplicity, continuation rules, or call budgets.
+  outcome_blind_power_amendment: >-
+    Still before any response, extraction, judge output, or scientific outcome
+    from this campaign, an outcome-blind power audit showed that the original
+    five-topic by three-trial design was only a large-effect screen. The design
+    was therefore amended once, before launch, to all ten already-fixed
+    benchmark topics and five trials per topic. At the same pre-outcome point,
+    the reviewer wording was audited and a polarity-preserving uniform-strength
+    arm was added to isolate graded evidence scoring at the full setting. The
+    original registration, hashes, and 135-config dry run remain preserved in
+    the amendment record.
+  outcome_blind_deduplication_telemetry_amendment: >-
+    Still before any paid component-factorial call or scientific outcome, a
+    skeptical-review audit found that a null D1-versus-D0 outcome would be
+    uninterpretable unless the report established whether the natural D1 gate
+    actually ignored or replaced dynamic evidence. Outcome-independent
+    telemetry and independently reconstructed manipulation tables were added
+    without changing a cell, endpoint, contrast, multiplicity rule,
+    continuation rule, or call budget. The telemetry reports dynamic
+    added/ignored/replaced counts, final active/archive counts, and SHA-256
+    fingerprints of exact rendered retrieval contexts. Its values never
+    control campaign continuation.
+  outcome_blind_execution_resume_safety_amendment: >-
+    Still before any paid component-factorial call or scientific outcome, an
+    execution audit found that retrying an interrupted canary would refuse the
+    registered output root, while interrupted pilot, mid, and full stages could
+    not pass their exact-completed-set prerequisite checks. The launcher now
+    supports a dedicated resume-canary mode and whole-cell resume for every
+    later stage. Before the locked runner may skip a results.json marker, the
+    checkpoint verifier applies the frozen config and functional-result
+    contracts, records a SHA-256 ledger of every file in every completed raw
+    cell, and requires byte-identical post-resume preservation. Marker-free
+    interrupted cells remain eligible only for complete-debate rerun. This
+    changes no cell, factor, endpoint, multiplicity rule, continuation rule,
+    or call budget.
+  outcome_blind_component_manipulation_telemetry_amendment: >-
+    Still before any paid component-factorial call or scientific outcome, a
+    second skeptical-review audit found that the report also had to establish
+    realized exposure to the E and S interventions. Numeric-only extraction
+    score events, one-way record fingerprints, retrieval identity/order
+    fingerprints, canonical dynamic-state fingerprints, and paired report-only
+    tables were therefore added. The same pre-outcome amendment adds an exact
+    shared-topic-vector sign-flip/max-family sensitivity for the five primary
+    final-gap contrasts. It changes no cell, outcome, registered bootstrap,
+    contrast, multiplicity decision rule, continuation rule, or call budget.
+    Telemetry values cannot stop, extend, select, or otherwise adapt the
+    campaign.
+  outcome_blind_block_execution_amendment: >-
+    Still before any paid component-factorial call or scientific outcome, an
+    execution-order audit found that the generic parallel runner could submit
+    conditions from later topic-trial units before every condition in the
+    current paired unit had completed, and that a fixed within-block order
+    could confound condition with submission position. The execution layer was
+    therefore frozen to 50 complete ten-cell blocks ordered by trial and then
+    the already-registered topic order. Within blocks, the ten registered
+    conditions are cyclically rotated, giving every condition exactly five
+    appearances in each of the ten submission positions. A hard barrier
+    requires all ten completion markers before the next block can begin. The
+    canary was correspondingly expanded from three cells to the complete first
+    ten-cell block (1,080 successful calls). This changes no registered cell,
+    outcome, contrast, multiplicity rule, full-campaign continuation rule, or
+    54,000-call budget.
+  outcome_blind_interruption_reconciliation_amendment: >-
+    Still before any paid component-factorial call or scientific outcome, an
+    independent execution audit identified two narrow interruption states:
+    a terminated scheduler could leave invocation or attempt status running,
+    and a worker could atomically finish results.json before the parent
+    process recorded its raw-file ledger. Resume now requires the frozen
+    functional checkpoint first, then an outcome-blind reconciliation that
+    matches its whole-cell SHA-256 ledgers, validates the separate execution
+    sidecar, closes stale running records as interrupted, and reconstructs
+    missing parent provenance. It hashes but never parses results.json,
+    modifies no completed raw-cell byte, and leaves marker-free cells eligible
+    only for whole-cell quarantine and rerun. This changes no cell, factor,
+    endpoint, contrast, multiplicity rule, continuation rule, or call budget.
+  post_failure_schema_contract_amendment: >-
+    The first provider-backed implementation canary produced nine valid
+    completion markers and one marker-free failure after structured
+    distillation returned thirteen arguments twice. The prompt and local
+    validator already imposed a twelve-item maximum, but the strict JSON schema
+    omitted maxItems. Before any component-factorial effect estimate was
+    computed or used, the provider schema was repaired to encode maxItems 12.
+    The aborted nine-cell predecessor is preserved and excluded. The repaired
+    campaign starts in a fresh output root and reruns every registered cell,
+    including the complete ten-cell canary. No scientific factor, condition,
+    topic, seed, endpoint, contrast, multiplicity rule, continuation rule, or
+    call budget changed.
+  post_failure_worker_import_path_amendment: >-
+    The first launch from the schema-repaired source failed all ten canary
+    workers before provider execution because spawned processes could not
+    import the registered runner package. An external PYTHONPATH retry
+    established the cause but was deliberately interrupted before any
+    completion marker; partial initialization files were preserved and wholly
+    excluded. The scheduler now inserts its file-derived repository root into
+    sys.path before spawning workers, and a sanitized subprocess regression
+    test enforces that contract. The permanent campaign starts in a fresh
+    successor root and reruns all 500 cells. This changes no scientific setting
+    or inference.
+  post_failure_flat_completion_audit_amendment: >-
+    The next full canary completed all ten conditions and passed the independent
+    schedule audit, but the scientific verifier rejected all four flat
+    whole-message cells. Their exact counters showed 30 of 30 extraction calls,
+    30 classification passes, zero failures, and 30 single records; only the
+    generic runner's redundant complete field was absent because post-run
+    enrichment was gated to structured mode. Without inspecting scientific
+    outcomes, the same strict completion enrichment was extended to both
+    registered record modes. The completed canary is preserved and excluded,
+    and the final campaign begins in a fresh successor root. No provider
+    request, scientific setting, or inference changed.
+  scope: >-
+    The representation factor compares atomic claim decomposition against one
+    verbatim whole-message record. Both conditions retain the minimum polarity
+    and strength metadata required by the same Belief Engine update equation.
+    It therefore tests the value of structured decomposition, not an
+    impossible metadata-free invocation of the numerical updater.
+
+execution_resume_safety_provenance:
+  amendment_commit: 12a943a3e42a2b6f31ee9197f69189982729dbc3
+  predecessor_commit: ed95043224c1937ad7ba0ffc1091d4bd8f30b5e9
+  scientific_outcomes_read_before_commit: false
+  paid_component_calls_before_commit: 0
+  changes_scientific_design: false
+
+component_manipulation_telemetry_provenance:
+  amendment_commit: a676cfd64d2af07e92bd8d8cbf5407c32852b89d
+  predecessor_commit: 3dded13d4995b3383c41a87542fae88bb821ca06
+  scientific_outcomes_read_before_commit: false
+  paid_component_calls_before_commit: 0
+  changes_scientific_design: false
+  changes_registered_primary_inference: false
+  telemetry_use: report_only
+
+block_execution_provenance:
+  amendment_commit: 688ff0e1e67384e21ed445f953e649f05f63d18b
+  predecessor_commit: 26f7e41019214a90b7b75bd8dad95b627cf63c07
+  scientific_outcomes_read_before_commit: false
+  paid_component_calls_before_commit: 0
+  changes_registered_cells_or_inference: false
+  changes_canary_only: three_cells_to_one_complete_ten_cell_block
+  scheduler_strategy: complete_block_cyclic_rotation_v1
+  system_fingerprint_recorded: false
+  qualification: >-
+    The configured OpenAI wrapper exposes response content but not the
+    provider response system_fingerprint. Configured backend/model aliases,
+    frozen source hashes, resolved-config hashes, and parent/worker
+    submission-completion windows are recorded instead. Schedule verification
+    reads a dedicated execution_schedule.json sidecar and hashes results.json
+    without parsing scientific outcome fields.
+
+position_rotation_hardening_provenance:
+  amendment_commit: 48c365a94bc65eacb3e434e99bc9c6fd499f4cfa
+  predecessor_commit: ef0779b5296758a8e8b93a9b261f701ac9a1d216
+  scientific_outcomes_read_before_commit: false
+  paid_component_calls_before_commit: 0
+  changes_registered_cells_or_inference: false
+  changes_execution_order_only: true
+  scheduler_strategy: complete_block_topic_trial_latin_rotation_v2
+  rotation_formula: >-
+    (registered_topic_index + zero_based_trial_index) mod 10
+  global_position_balance_preserved: true
+  distinct_positions_per_condition_within_each_topic: 5
+
+interruption_reconciliation_provenance:
+  amendment_commit: 5d780e2e823169c676dbcc32d0a7dea54f75f568
+  predecessor_commit: 48c365a94bc65eacb3e434e99bc9c6fd499f4cfa
+  scientific_outcomes_read_before_commit: false
+  paid_component_calls_before_commit: 0
+  changes_registered_cells_or_inference: false
+  changes_execution_recovery_only: true
+  results_json_parsed_by_reconciliation: false
+  completed_raw_cells_modified_by_reconciliation: false
+
+post_failure_schema_contract_provenance:
+  classification: outcome_blind_implementation_contract_repair
+  predecessor_source_commit: 152774a2bfa37245d59ea25cadd12513dacc523d
+  repair_implementation_commit: 247d408de0a320e0badcba6e7adaa1d3d7106d9c
+  failed_run_id: social_media__be_s1_r1_p1_d1_uniform__trial_01
+  completed_predecessor_cells: 9
+  complete_predecessor_blocks: 0
+  exact_error: >-
+    Structured extraction stage 'distillation' failed after 2 attempt(s):
+    arguments must contain at most 12 items, got 13
+  scientific_effect_estimates_used_for_repair: false
+  predecessor_cells_in_repaired_analysis: false
+  repaired_campaign_uses_fresh_output_root: true
+  repaired_campaign_default_output_root: >-
+    rebuttal/results/component_necessity_factorial_v1_schema_contract_repair_restart_v3
+  repaired_campaign_default_analysis_root: >-
+    rebuttal/results/analyses/component_necessity_factorial_v1_schema_contract_repair_restart_v3
+  complete_canary_rerun_required: true
+  changes_scientific_design_or_inference: false
+  predecessor_archive:
+    local_path: >-
+      ../agent_mem_artifact_packaging/rebuttal/results/execution/component_factorial_failed_canary_20260726_before_schema_repair
+    verified_byte_identical_to_predecessor: true
+    file_count: 587
+    total_file_bytes: 8244226
+    relative_file_sha256_ledger_sha256: 5827a96ca367f0ba025cc77bc7c6c754d2bfa15c3bf0dd9f5439541491e22fe1
+    execution_schedule_plan_sha256: 34b2bd4a136f58427fc8acd2d3471ebe9ae101071815548f7dd4a970e51e2617
+    execution_provenance_sha256: f187b3895dcddd2c217905da44c0a49682c3e048afd0d771551d3e29290e3690
+    manifest_sha256: 1b95aec877231f00ac7560e024ee4ca6c56bc791bfdb7385cfaa95ccb34485a9
+  amendment_record: >-
+    rebuttal/component_necessity_factorial_v1/POST_FAILURE_SCHEMA_CONTRACT_AMENDMENT.md
+
+post_failure_worker_import_path_provenance:
+  classification: outcome_blind_execution_contract_repair
+  repair_implementation_commit: 8f32a8215018ca9e906b52d5bf40aec7bca76204
+  repair_predecessor_commit: 603b2a93d0f745e226796f1bc26e6d873b5135c5
+  exact_initial_error: "ModuleNotFoundError: No module named 'validation'"
+  initial_failed_cells: 10
+  initial_provider_calls: 0
+  interrupted_retry_completion_markers: 0
+  interrupted_retry_provider_calls: unknown
+  scientific_effect_estimates_used_for_repair: false
+  attempted_root_in_final_analysis: false
+  changes_scientific_design_or_inference: false
+  attempted_root_archive:
+    local_path: >-
+      ../agent_mem_artifact_packaging/rebuttal/results/execution/component_factorial_repaired_import_failure_and_aborted_retry_20260726
+    verified_byte_identical_to_attempted_root: true
+    file_count: 537
+    total_file_bytes: 5200755
+    relative_file_sha256_ledger_sha256: 86d0d926bc7aa5f06d08884f4b1b2fd57c5973a84d77c5803306dfbfbbaa758f
+    execution_schedule_plan_sha256: 8f8cb9d6c69d68f1de4ef64ebb3445398822d04c1ec2ba6e703cb183e208defe
+    execution_provenance_sha256: 0866adfd4433cb822ac0f45edb3a88fcb9ca962ad1a08cd49606649e38329587
+    manifest_sha256: 8ff01d622249de6f2b99ff553588070579475b076ed8bc08e076aea788395065
+  amendment_record: >-
+    rebuttal/component_necessity_factorial_v1/POST_FAILURE_WORKER_IMPORT_PATH_AMENDMENT.md
+
+post_failure_flat_completion_audit_provenance:
+  classification: outcome_blind_metadata_contract_repair
+  repair_implementation_commit: 133dd721840c8522289bb7f4eeb12c6b8a6c6798
+  repair_predecessor_commit: 0bada6d8688caea311d64133cb4f06c8dd8953fb
+  completed_canary_cells: 10
+  complete_canary_blocks: 1
+  independent_schedule_verification: pass
+  scientific_verifier_errors: 4
+  affected_mode: whole_message_json_v1
+  affected_cells_have_30_of_30_extract_calls: true
+  affected_cells_have_30_classification_passes: true
+  affected_cells_have_zero_extraction_failures: true
+  scientific_effect_estimates_used_for_repair: false
+  completed_canary_in_final_analysis: false
+  changes_provider_requests_or_scientific_inference: false
+  completed_canary_archive:
+    local_path: >-
+      ../agent_mem_artifact_packaging/rebuttal/results/execution/component_factorial_v2_flat_verifier_contract_canary_20260726
+    verified_byte_identical_to_completed_canary: true
+    file_count: 589
+    total_file_bytes: 8661500
+    relative_file_sha256_ledger_sha256: 37f7799f64b4d4a7ee0af37d6ed070207292ab25d1b91352baa3975facb63bac
+    execution_schedule_plan_sha256: c0aa94fafd4cbce4fe19613b68393ae13faf446579fd7c54747b346ab5a7f063
+    execution_provenance_sha256: 0751f6de8ecca23cb0cdd0eca1a8f51223747a0cb72114a750557f1131b71080
+    manifest_sha256: 3f7883f3e2c517650b99f7174b3745f31c4329e0d2a5a76140fa5838fe18e0fe
+  amendment_record: >-
+    rebuttal/component_necessity_factorial_v1/POST_FAILURE_FLAT_COMPLETION_AUDIT_AMENDMENT.md
+
+source:
+  implementation_commit: 32b1f976769628b3beccd8b477a68bccbb8b9b03
+  comparison_spec: rebuttal/component_necessity_factorial_v1/comparison_spec.yaml
+  registry: rebuttal/component_necessity_factorial_v1/registry.csv
+  implementation_lock: rebuttal/component_necessity_factorial_v1/implementation_lock.json
+  generator: rebuttal/scripts/generate_component_necessity_factorial.py
+  verifier: rebuttal/scripts/verify_component_necessity_factorial.py
+  independent_preflight_verifier: rebuttal/scripts/independently_verify_component_necessity_preflight.py
+  analyzer: rebuttal/scripts/analyze_component_necessity_factorial.py
+  scoring_scale_anchor_verifier: rebuttal/scripts/verify_component_scoring_scale_anchor.py
+  independent_postoutcome_verifier: rebuttal/scripts/independently_verify_component_necessity_statistics.py
+  telemetry_noninterference_verifier: rebuttal/scripts/verify_component_manipulation_telemetry_noninterference.py
+  launcher: rebuttal/launch_templates/run_component_necessity_factorial_v1.sh
+  resume_checkpoint_verifier: rebuttal/scripts/verify_component_necessity_resume_checkpoint.py
+  resume_checkpoint_test: rebuttal/scripts/test_component_necessity_resume_checkpoint.py
+  block_scheduler: rebuttal/scripts/run_component_necessity_block_scheduler.py
+  independent_execution_schedule_verifier: rebuttal/scripts/independently_verify_component_execution_schedule.py
+  execution_schedule_adversarial_test: tests/test_component_execution_scheduler.py
+  amendment_record: rebuttal/component_necessity_factorial_v1/PREOUTCOME_POWER_AMENDMENT.md
+  post_failure_schema_contract_amendment: >-
+    rebuttal/component_necessity_factorial_v1/POST_FAILURE_SCHEMA_CONTRACT_AMENDMENT.md
+  post_failure_worker_import_path_amendment: >-
+    rebuttal/component_necessity_factorial_v1/POST_FAILURE_WORKER_IMPORT_PATH_AMENDMENT.md
+  post_failure_flat_completion_audit_amendment: >-
+    rebuttal/component_necessity_factorial_v1/POST_FAILURE_FLAT_COMPLETION_AUDIT_AMENDMENT.md
+  power_audit: rebuttal/results/analyses/component_necessity_power_audit_v4_final/audit.json
+  frozen_hashes:
+    block_scheduler_sha256: c17c891e71686cf5d99f7d74eb8e4c1474ff786efad8685f717275d51fbda419
+    independent_execution_schedule_verifier_sha256: 2a187f563fdd35e319241634143a8526ebcd3fc9f5021d17f58da4f955d6c0c1
+    execution_schedule_adversarial_test_sha256: d8da8cb4c091f85ae187b035cd507c72cd90299a61d4e34437aa9699bc4be6de
+    schedule_aware_runner_sha256: 1fb255feb7b06b06862002de252c0e3161dad9073ab8d69f6c88b0136fb1c057
+    flat_completion_audit_test_sha256: 335c6689e867ee1d7c23511eee205b022838012d1d156c3f6069884fb56ac877
+    complete_block_launcher_sha256: cc16ad42a61e8f51d3d155d18493b24a81660035651495f9c5508cc81c54594b
+    complete_block_campaign_verifier_sha256: 4ad9f28ab992f96ceeadc0d0846e1589afbc91d486e817722ed2dc10f78d3f76
+    all_config_resume_verifier_sha256: 0e57cc554b0686b8a49099cc304c3afe0bfe4b3b0676a9348f23a9d32ef24a8e
+    complete_block_resume_test_sha256: 9d887742f4429093793b28ed87b31c35bbc92a9d53eb7b7dffbf2e232bbd9b8e
+    scoring_scale_anchor_verifier_sha256: 7ee1e19362dc9b51555125c84f0a1732813351993511d9adf6b964b0cf733959
+    campaign_verifier_sha256: 4ad9f28ab992f96ceeadc0d0846e1589afbc91d486e817722ed2dc10f78d3f76
+    primary_analyzer_sha256: 6156a741f4cd749b1cd20df479665cbc5af158dd395f7374214f8bd02fdc7110
+    independent_postoutcome_verifier_sha256: 9860ace48f3ecf33bc0fc5da74f0449e9ba3f81de799ffc46e4a7fb7aad01262
+    extractor_telemetry_source_sha256: c2fa51bbe865a270aeb3e2b3be9755454e1d9cdb3b9233695d8d467bcf4551e7
+    response_telemetry_source_sha256: 8433454157b8555c0a47dcb1b5d033fd67c19c86c62f70a8b3d5872078928224
+    memory_telemetry_source_sha256: 427da44c1fd50827ac17e595b7edfdb6da5b55626b34b188448450b13d176035
+    telemetry_noninterference_verifier_sha256: c5ca30f658e45dd472e0044359e323dfc091dc1c1d17df9017682620e4822ad9
+    outcome_blind_power_auditor_sha256: d30f1a807ea55235c4ebf5feb69b5b48856fdd194aca214c5a3182a11848854b
+    predecessor_launcher_sha256: b53f06c92e013b0e7df904e8a182f834aa4d8440d9ce6e5b2dfcd8fbd799ff62
+    pre_block_scheduler_launcher_sha256: fb5b379510499a0cfcf95b33e9a8b29cacaa4d15482675663841bbb9b067f35f
+    resume_safe_launcher_sha256: cc16ad42a61e8f51d3d155d18493b24a81660035651495f9c5508cc81c54594b
+    resume_checkpoint_verifier_sha256: 0e57cc554b0686b8a49099cc304c3afe0bfe4b3b0676a9348f23a9d32ef24a8e
+    resume_checkpoint_test_sha256: 9d887742f4429093793b28ed87b31c35bbc92a9d53eb7b7dffbf2e232bbd9b8e
+    repaired_extractor_source_sha256: c2fa51bbe865a270aeb3e2b3be9755454e1d9cdb3b9233695d8d467bcf4551e7
+    repaired_extractor_contract_test_sha256: 83c556cef09b76827159029eddd2f5020162a7c9b5a5e1098bfa64a2996a6e28
+
+factors:
+  representation:
+    structured:
+      code: S1
+      extraction_mode: structured_json_v1
+      definition: >-
+        Two-stage extraction decomposes each message into distinct canonical
+        claims and classifies every claim.
+    flat_verbatim:
+      code: S0
+      extraction_mode: whole_message_json_v1
+      definition: >-
+        No claim distillation or decomposition. The complete generated message
+        is stored verbatim as exactly one record and receives one
+        proposition-relative classification.
+  response_retrieval:
+    on: {code: R1, response_retrieval_enabled: true}
+    off: {code: R0, response_retrieval_enabled: false}
+  persistence:
+    persistent: {code: P1, dynamic_evidence_horizon: persistent}
+    turn_local: {code: P0, dynamic_evidence_horizon: latest_opponent_turn}
+  deduplication:
+    on: {code: D1, deduplication_enabled: true}
+    off: {code: D0, deduplication_enabled: false}
+  evidence_scoring:
+    graded_classifier:
+      code: E1
+      strength_estimation_method: classifier
+    uniform_fixed:
+      code: E0
+      strength_estimation_method: uniform_fixed
+      uniform_strength_value: 0.8475946340113878
+      definition: >-
+        Preserve extracted claims and proposition-relative polarities, but set
+        every newly extracted dynamic record's active support strength to the
+        frozen outcome-independent AQR classifier-output mean before
+        deduplication, retrieval, and updating. Frozen seed-record strengths
+        are unchanged.
+      scale_anchor:
+        authoritative_derivation: vendored_prediction_mean_cross_checked_by_in_repo_WA_mean_plus_registered_bias
+        sample_WA_mean: 0.786509556396
+        registered_WA_bias: 0.061085077615387826
+        reconstructed_classifier_strength_mean: 0.8475946340113878
+        predictions_status: vendored_byte_identical_frozen_calibration_asset
+        predictions_path: rebuttal/component_necessity_factorial_v1/scale_anchor/aqr_balanced_predictions.csv
+        predictions_sha256: 28fd6fafceb7adbed380602294dfe49a4353f7dcf203964b3cf1505ccc51270c
+        rows: 1000
+        affirmative_rows: 500
+        negative_rows: 500
+        topics: 15
+        classifier_strength_mean: 0.8475946340113878
+        source_test_csv: data/Argument-Quality-Ranking-30k/test.csv
+        source_test_csv_sha256: 18c0f0491e0206558f24dbe79b91901bd662e5ec2b1bd9d13ab740660b0c196f
+        evaluator_script_sha256: 62923990c47bc8ecfaa44f5318e0e59b6a25e36c9c4c44e565adc53b0c22e04d
+        metrics_sha256: b91d3dafec34fe3dff11a85e6e5b13a3c4876b96f53f138cff46ddfbe0f6e247
+        sample_text_hash_order_sha256: 1101282dc122714a0351dafe18f2e9bbe6cecf822812ddf77780d7b5a7add074
+
+design:
+  core: full_2x2x2_S_by_R_by_P_at_D1
+  dedup_extension: paired_D1_vs_D0_at_S1_R1_P1
+  evidence_scoring_extension: paired_E1_vs_E0_at_S1_R1_P1_D1
+  reason_dedup_not_fully_crossed: >-
+    The core and targeted arms estimate every S/R/P main effect and
+    interaction and the deduplication effect at the released full setting.
+    No cross-factor deduplication interaction will be claimed.
+  reason_evidence_scoring_not_fully_crossed: >-
+    The scale-matched uniform-fixed arm is a targeted full-setting control for
+    graded evidence scores. No scoring interaction will be claimed.
+  topics:
+    - Social media brings more harm than good
+    - Homeopathy brings more harm than good
+    - Entrapment should be legalized
+    - We should adopt a zero-tolerance policy in schools
+    - We should introduce compulsory voting
+    - We should adopt an austerity regime
+    - We should legalize sex selection
+    - We should adopt atheism
+    - We should subsidize journalism
+    - We should adopt libertarianism
+  trial_indices: [1, 2, 3, 4, 5]
+  conditions: 10
+  debates: 500
+  experimental_unit: topic_by_paired_trial_seed
+  paired_units: 50
+  execution_order: trial_then_registered_topic_order_complete_blocks
+  within_block_submission_order: cyclic_rotation_of_registered_condition_order
+  position_rotation_formula: >-
+    zero_based_rotation_offset =
+    (registered_topic_index + zero_based_trial_index) mod 10
+  submission_position_balance: exactly_5_per_condition_per_position_over_50_blocks
+  within_topic_position_diversity: >-
+    every condition occupies five distinct submission positions across the
+    five trials of each topic
+  block_barrier: all_10_results_markers_required_before_next_block_submission
+  speaker_order: pro-first
+  rounds_per_debate: 15
+  initial_stances: {Pro: 0.75, Con: -0.75}
+  complete_case_rule: >-
+    Every primary contrast requires all ten conditions for a topic-trial
+    block. Do not impute or substitute cells.
+
+common_controls:
+  generator:
+    backend: openai
+    model: gpt-5.4-mini
+    reasoning_effort: none
+    verbosity: low
+    temperature: 0.7
+  evaluator:
+    backend: openai
+    model: gpt-5.4-mini
+    reasoning_effort: none
+    verbosity: low
+    temperature: 0.0
+    strict: true
+    stance_source: external_only
+  response:
+    shell: matched_v1
+    context_messages: 4
+    word_limit: 120
+    retrieval_strategy: proportional
+    retrieval_k: 10
+  memory:
+    belief_semantics_mode: active_explicit_prior_v1
+    update_sensitivity: 0.2
+    anchor_sensitivity: 0.4
+    allow_self_arguments: false
+    confirmation_bias: 0.0
+    argument_similarity_threshold: 0.6
+    self_similarity_threshold: 0.45
+    cross_polarity_dedup: false
+  extraction:
+    strict: true
+    max_attempts: 2
+    max_tokens: 2000
+    strength_source: same_local_classifier
+    uniform_control: active_support_strength_fixed_at_0.8475946340113878
+  response_evidence_budget:
+    tokens: 128
+    tokenizer: cl100k_base
+    requirement: >-
+      Every retrieval-on response must expose exactly 128 tokens under the
+      pinned tokenizer. The verifier fails closed if any retrieval-on prompt
+      does not saturate the budget. Retrieval-off prompts expose zero memory
+      records by design.
+
+conditions:
+  - {name: be_s1_r1_p1_d1, S: 1, R: 1, P: 1, D: 1, E: 1}
+  - {name: be_s1_r1_p1_d1_uniform, S: 1, R: 1, P: 1, D: 1, E: 0}
+  - {name: be_s0_r1_p1_d1, S: 0, R: 1, P: 1, D: 1, E: 1}
+  - {name: be_s1_r0_p1_d1, S: 1, R: 0, P: 1, D: 1, E: 1}
+  - {name: be_s0_r0_p1_d1, S: 0, R: 0, P: 1, D: 1, E: 1}
+  - {name: be_s1_r1_p0_d1, S: 1, R: 1, P: 0, D: 1, E: 1}
+  - {name: be_s0_r1_p0_d1, S: 0, R: 1, P: 0, D: 1, E: 1}
+  - {name: be_s1_r0_p0_d1, S: 1, R: 0, P: 0, D: 1, E: 1}
+  - {name: be_s0_r0_p0_d1, S: 0, R: 0, P: 0, D: 1, E: 1}
+  - {name: be_s1_r1_p1_d0, S: 1, R: 1, P: 1, D: 0, E: 1}
+
+call_budget:
+  definition: successful_provider_calls_excluding_retries
+  per_structured_debate:
+    response_generation: 30
+    extraction_stages: 60
+    external_evaluation: 30
+    total: 120
+  per_flat_debate:
+    response_generation: 30
+    extraction_stages: 30
+    external_evaluation: 30
+    total: 90
+  canary_complete_first_block:
+    structured_debates: 6
+    flat_debates: 4
+    debates: 10
+    calls: 1080
+  trial_1_pilot:
+    debates: 100
+    calls: 10800
+  original_registered_three_trial_campaign:
+    structured_debates: 75
+    flat_debates: 60
+    debates: 135
+    calls: 14400
+    status: superseded_before_outcomes
+  amended_five_trial_campaign:
+    structured_debates: 300
+    flat_debates: 200
+    debates: 500
+    calls: 54000
+  historical_optional_full_2x2x2x2_extension:
+    added_debates: 105
+    added_calls: 10800
+    total_debates: 240
+    total_calls: 25200
+    status: not_part_of_amended_campaign
+
+outcomes:
+  primary:
+    name: absolute_final_pro_con_gap
+    source: same_frozen_external_evaluator_for_every_condition
+    lower_is_smaller_expressed_disagreement: true
+  secondary:
+    - normalized_trajectory_gap_auc
+    - mean_absolute_stance_shift
+    - absolute_final_midpoint_shift
+    - same_side_final_rate
+    - final_side_switch_count
+    - any_time_side_switch_count
+  outcome_independent_manipulation_checks:
+    evidence_scoring:
+      paired_conditions:
+        graded: be_s1_r1_p1_d1
+        uniform: be_s1_r1_p1_d1_uniform
+      report:
+        - realized_dynamic_score_count_mean_SD_and_quantiles
+        - mean_absolute_deviation_from_uniform_0.8475946340113878
+        - retained_classifier_score_distribution_in_both_arms
+        - paired_score_and_ranking_divergence_for_identity_matched_messages
+        - paired_replacement_retrieval_context_and_internal_state_divergence
+      continuation_use: prohibited
+      interpretation: >-
+        E1 uses the realized classifier scores at update time. E0 still records
+        the classifier scores but fixes active dynamic-record strength to the
+        frozen scale anchor. Message-level score or ranking comparisons are
+        identified only when the one-way record-identity sequence matches
+        across the pair; the denominator must always be reported.
+    structured_decomposition:
+      paired_conditions: all_four_R_by_P_core_pairs_at_D1_E1
+      report:
+        - S1_claims_per_message_distribution
+        - S1_fraction_of_messages_with_more_than_one_claim
+        - S0_one_verbatim_record_contract
+        - final_active_and_archived_record_counts
+        - paired_rendered_context_retrieval_order_and_internal_state_divergence
+      continuation_use: prohibited
+      interpretation: >-
+        This is structured atomic decomposition versus one verbatim
+        whole-message record with the same minimum update metadata. It is not
+        memory versus no memory.
+    deduplication:
+      paired_conditions:
+        enabled: be_s1_r1_p1_d1
+        disabled: be_s1_r1_p1_d0
+      report:
+        - dynamic_added_ignored_replaced_counts
+        - fraction_of_50_pairs_with_any_D1_ignore_or_replace
+        - final_dynamic_active_and_archived_record_counts
+        - paired_difference_in_retrieval_record_count
+        - exact_rendered_retrieval_context_sequence_SHA256_divergence
+      continuation_use: prohibited
+      interpretation: >-
+        These quantities establish realized exposure to the deduplication
+        intervention. They do not measure duplicate-detection accuracy. If D1
+        rarely fires, a null stance contrast is a weak-exposure result rather
+        than evidence that deduplication is unnecessary.
+
+primary_contrast_family:
+  positive_direction: named_component_reduces_external_final_gap
+  contrasts:
+    structured_representation_main:
+      formula: mean_RP[g(S0,R,P,D1)-g(S1,R,P,D1)]
+    response_retrieval_main:
+      formula: mean_SP[g(S,R0,P,D1)-g(S,R1,P,D1)]
+    persistence_main:
+      formula: mean_SR[g(S,R,P0,D1)-g(S,R,P1,D1)]
+    deduplication_at_full_setting:
+      formula: g(S1,R1,P1,D0)-g(S1,R1,P1,D1)
+    graded_evidence_scoring_at_full_setting:
+      formula: g(S1,R1,P1,D1,E0)-g(S1,R1,P1,D1,E1)
+  uncertainty:
+    bootstrap: hierarchical_topics_then_paired_trial_seeds
+    repetitions: 100000
+    random_seed: 20260725
+    marginal_interval: percentile_95
+    familywise_interval: bonferroni_percentile_99
+    familywise_quantiles: [0.005, 0.995]
+  offline_exact_topic_vector_sensitivity:
+    status: secondary_sensitivity_registered_bootstrap_remains_primary
+    unit: ten_topic_level_vectors_after_averaging_five_trials
+    enumeration: all_1024_shared_sign_vectors
+    statistic: absolute_sum_divided_by_root_sum_squares
+    family_adjustment: maximum_over_all_five_primary_contrasts
+    assumptions:
+      - topic vectors are independent units
+      - each joint five-contrast topic vector is sign-symmetric under the null
+      - the same sign applies to all five coordinates within a topic
+    qualification: >-
+      This is an exact enumeration under its sign-symmetry assumptions, not a
+      randomized-trial test. It supplements but cannot replace the registered
+      hierarchical bootstrap and family-wise intervals.
+  decision_rule: >-
+    Lead with the familywise interval. A component is supported as reducing
+    disagreement only if its 99% interval is strictly positive. Null,
+    negative, and heterogeneous estimates remain reportable outcomes.
+
+secondary_contrasts:
+  structured_update_path_without_response_retrieval:
+    formula: mean_P[g(S0,R0,P,D1)-g(S1,R0,P,D1)]
+    interpretation: >-
+      With retrieval disabled, this isolates the causal pathway from
+      representation through storage/update and scalar stance guidance.
+  structured_effect_with_response_retrieval:
+    formula: mean_P[g(S0,R1,P,D1)-g(S1,R1,P,D1)]
+  representation_by_retrieval:
+    formula: C_S_given_R1-C_S_given_R0
+    interpretation: >-
+      Difference-in-differences identifying the incremental pathway from
+      structured records being exposed in the response prompt.
+  representation_by_persistence: standard_factorial_interaction
+  retrieval_by_persistence: standard_factorial_interaction
+  representation_by_retrieval_by_persistence: standard_factorial_interaction
+  reporting: exploratory_95_percent_intervals_without_significance_claims
+
+heterogeneity:
+  mandatory:
+    - every topic estimate and sign
+    - leave_one_topic_out estimates
+    - topic_by_component interaction table
+  prohibited:
+    - selecting topics or trials after outcomes
+    - treating rounds, agents, or extracted records as independent
+    - outcome-defined mover filtering
+
+functional_gates:
+  every_debate:
+    replies: 30
+    external_scores: 30
+    stance_history_rows: 16
+    strict_failures: 0
+    response_token_budget: 128_if_retrieval_on
+  structured:
+    extract_calls: 30
+    successful_stage_calls: 60-valid_empty
+  flat:
+    extract_calls: 30
+    successful_stage_calls: 30
+    records_emitted: 30
+    single_record_extract_calls: 30
+    distillation_passes: 0
+    classification_passes: 30
+  retrieval_on: {retrieval_calls: 30, skipped_calls: 0}
+  retrieval_off: {retrieval_calls: 0, skipped_calls: 30}
+  persistent: {reset_calls: 0}
+  turn_local:
+    reset_calls: 30
+    receiver_turns: 30
+    seed_state_restored: true
+    maximum_state_reconstruction_error: 1.0e-12
+  dedup_off:
+    opponent_records_ignored_or_replaced: 0
+    exact_claim_collisions: preserved_with_unique_occurrence_ids
+  dedup_telemetry:
+    agents: [Pro, Con]
+    dynamic_status_counts: complete
+    final_dynamic_active_plus_archived_equals_total: true
+    state_fingerprints: SHA256_without_raw_claim_persistence
+    canonical_cross_process_state_fingerprints: >-
+      exclude timestamps and process-specific record IDs; retain hashed claim
+      identity, polarity, source role, scores, and active/archive state
+  retrieval_telemetry:
+    one_event_per_reply: true
+    rendered_context_SHA256: required
+    ordered_record_identity_SHA256: required
+    unordered_record_identity_multiset_SHA256: required
+    active_score_sequence_SHA256: required
+    raw_rendered_context_persisted: false
+  extraction_manipulation_telemetry:
+    one_event_per_extracted_message: true
+    numeric_classifier_and_active_score_vectors: required
+    one_way_record_identity_fingerprints: required
+    raw_claims_added_to_telemetry: false
+    use: report_only
+    noninterference_proof:
+      static_scientific_call_inventory_against_pre_amendment_commit: required
+      telemetry_dependent_runtime_branches_outside_serializers: prohibited
+      deterministic_serialization_off_vs_on_scientific_output_match: required
+  uniform_strength:
+    strength_estimation_method: uniform_fixed
+    uniform_strength_value: 0.8475946340113878
+    every_emitted_active_support_strength: 0.8475946340113878
+    polarity_and_claim_extraction: unchanged
+
+staging:
+  dry_run: all_500_configs_before_any_paid_call
+  canary: complete_first_ten_condition_topic_by_trial_block
+  pilot: all_100_trial_1_cells
+  extension: >-
+    Trials 2 and 3, then trials 4 and 5, are unconditional registered
+    extensions after functional verification of the preceding stage. Outcomes
+    do not control continuation.
+  manipulation_telemetry_rule: >-
+    Realized scoring, structured-decomposition, deduplication,
+    retrieval-context, and canonical-state diagnostics are report-only. Zero,
+    sparse, or extensive exposure cannot stop, extend, select, or otherwise
+    adapt the registered campaign. Functional schema validity may fail a cell;
+    the scientific values of valid telemetry may not.
+  stop_only_for:
+    - functional_contract_failure
+    - credential_or_provider_failure
+    - disk_safety_failure
+    - explicit_operator_stop
+  resume_contract: >-
+    Canary retry uses resume-canary. Pilot, mid, and full may be invoked again
+    after interruption. Before each invocation, every existing completion
+    marker in the target stage must pass the frozen functional verifier, the
+    prior registered stage must be complete, and every completed raw cell is
+    whole-directory SHA-256 ledgered. An outcome-blind reconciliation then
+    validates the separate execution sidecar, closes stale running
+    invocation and attempt records, and reconstructs parent provenance for a
+    valid marker written before its parent ledger. It hashes but never parses
+    results.json and never modifies a completed raw cell. The block scheduler
+    never submits a completed cell and invokes the locked runner in resume
+    mode only for marker-free cells; the runner quarantines any marker-free
+    partial directory before rerunning the whole debate. The postflight
+    requires all preexisting completed cells to remain byte-identical and the
+    target stage to be complete.
+  execution_schedule_contract:
+    blocks: 50
+    cells_per_block: 10
+    canary_blocks: 1
+    pilot_blocks: 10
+    mid_blocks: 30
+    full_blocks: 50
+    position_rotation: >-
+      cyclic_offset_equal_to_(registered_topic_index_plus_zero_based_trial_index)_modulo_10
+    appearances_per_condition_per_position: 5
+    distinct_positions_per_condition_within_each_topic: 5
+    advance_rule: all_10_cells_complete
+    independent_non_importing_verification: required
+    outcome_free_cell_sidecar: execution_schedule.json
+    result_files_hashed_without_parsing: true
+    stale_execution_reconciliation_requires_functional_checkpoint: true
+    recovered_completed_raw_cells_modified: false
+    outcome_values_used_for_scheduling: false
+    system_fingerprint_recorded: false
+  resume_safety_tests:
+    synthetic_positive_and_adversarial_checkpoint_test: PASS
+    pilot_prerequisite_from_complete_canary: PASS
+    completed_cell_byte_mutation_rejected: true
+    malformed_completion_marker_rejected: true
+    missing_prerequisite_rejected: true
+    unregistered_raw_directory_rejected: true
+    marker_free_interruption_classified_for_whole_cell_rerun: true
+    sigterm_after_marker_canary_reconciled: true
+    sigterm_after_completed_canary_later_stage_reconciled: true
+    interrupted_completed_cell_not_resubmitted: true
+    interrupted_completed_cell_byte_preservation: true
+    checkpoint_byte_tamper_rejected: true
+    coherent_sidecar_position_tamper_rejected: true
+
+claim_boundaries:
+  - >-
+    S1 versus S0 tests claim decomposition relative to a verbatim
+    whole-message memory that retains minimal update metadata; it is not a
+    comparison against an agent with no state.
+  - >-
+    D is estimated only at S1,R1,P1. No deduplication interaction is identified.
+    The realized-exposure table must accompany this contrast. Sparse natural
+    triggering limits the interpretation of a null effect but does not alter
+    the registered all-cell estimand.
+  - >-
+    E is estimated only at S1,R1,P1,D1. It tests graded classifier scores
+    relative to a polarity-preserving scale-matched uniform control; no scoring
+    interaction is identified.
+  - >-
+    The E intervention does not directly alter an extracted record's claim
+    text or polarity, but active score also enters score-based replacement and
+    retrieval ordering. Downstream generated dialogue may consequently
+    diverge. The contrast therefore tests the whole evidence-scoring pathway,
+    not only the numerical updater. It intervenes only on newly extracted
+    dynamic records; frozen seed-record strengths are unchanged.
+    The fixed value matches the frozen classifier's mean on an
+    outcome-independent AQR benchmark, but the prospective debate-message mean
+    may differ; update magnitude is therefore benchmark-scale matched, not
+    guaranteed to be message-scale matched. This is a scoring-off comparison,
+    not a pure calibration contrast.
+  - >-
+    P is persistence of dynamic evidence, not a no-update/update-rule
+    ablation. The separately locked u=0 uptake campaign supplies the no-update
+    contrast; no update-rule claim will be attributed to P alone.
+  - >-
+    Ten fixed topics improve topic resolution but do not license claims beyond
+    the sampled benchmark topic family.
+  - >-
+    Smaller external disagreement is not automatically better consensus,
+    factual accuracy, or human-likeness.
+
+analysis_outputs:
+  required_manipulation_files:
+    - deduplication_manipulation_checks.csv
+    - deduplication_manipulation_summary.json
+    - evidence_scoring_manipulation_checks.csv
+    - evidence_scoring_manipulation_summary.json
+    - structured_decomposition_manipulation_checks.csv
+    - structured_decomposition_manipulation_summary.json
+    - primary_topic_vector_signflip_max_family.csv
+    - primary_topic_vector_signflip_metadata.json
+  independent_verification: >-
+    The standalone post-outcome verifier reconstructs all manipulation tables,
+    summaries, and the exact 1,024-pattern topic-vector calculation from all
+    500 raw results without importing the campaign runner or primary analyzer.
+    Its self-test includes known-exposure, zero-exposure, and output-tamper
+    fixtures; zero exposure must be reported rather than treated as a failed
+    campaign.

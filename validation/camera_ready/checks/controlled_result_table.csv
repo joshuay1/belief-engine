@@ -1,0 +1,13 @@
+trace_direction,paraphrase_multiplicity,condition,signed_log_odds,signed_stance,absolute_stance_displacement,total_stored,active_records,archived_records,added,ignored,replaced
+pro_control_then_anti_paraphrases,1,full_dedup,0.0,0.0,0.0,2,2,0,2,0,0
+pro_control_then_anti_paraphrases,1,no_dedup,0.0,0.0,0.0,2,2,0,2,0,0
+pro_control_then_anti_paraphrases,3,full_dedup,0.0,0.0,0.0,4,2,2,2,2,0
+pro_control_then_anti_paraphrases,3,no_dedup,-0.2968400102365466,-0.14733969986357442,0.14733969986357442,4,4,0,4,0,0
+pro_control_then_anti_paraphrases,5,full_dedup,0.0,0.0,0.0,6,2,4,2,4,0
+pro_control_then_anti_paraphrases,5,no_dedup,-0.5936800204730932,-0.28841813415720474,0.28841813415720474,6,6,0,6,0,0
+anti_control_then_pro_paraphrases,1,full_dedup,0.0,0.0,0.0,2,2,0,2,0,0
+anti_control_then_pro_paraphrases,1,no_dedup,0.0,0.0,0.0,2,2,0,2,0,0
+anti_control_then_pro_paraphrases,3,full_dedup,0.0,0.0,0.0,4,2,2,2,2,0
+anti_control_then_pro_paraphrases,3,no_dedup,0.2968400102365466,0.1473396998635743,0.1473396998635743,4,4,0,4,0,0
+anti_control_then_pro_paraphrases,5,full_dedup,0.0,0.0,0.0,6,2,4,2,4,0
+anti_control_then_pro_paraphrases,5,no_dedup,0.5936800204730932,0.28841813415720474,0.28841813415720474,6,6,0,6,0,0
