@@ -1,102 +1,86 @@
-# Anonymous Reviewer Artifact
+# Belief Engine
 
-This repository is a compact, anonymous artifact for double-blind review. It is
-designed to let reviewers inspect the code, verify the selected paper artifacts,
-and rerun the self-contained checks without hosted-model calls.
+Code candidate for **Belief Engine: Making Agent Stance Auditable in LLM Deliberation**.
 
-The artifact is intentionally narrower than the full development repository.
-Large caches, raw hosted-model traces, model weights, unsettled third-party data
-redistribution, manuscript source files, and contributor metadata are excluded.
+This checkout starts from the anonymous reviewer artifact frozen on May 7, 2026.
+It adds the updated runtime, regression tests, and integration with the published
+argument-quality scorer. The original compact results remain unchanged. The
+newer camera-ready result packages still need to be added before publication.
 
-## Quick Start
+## Install and check
 
-From the repository root:
+Use Python 3.11. From the repository root:
 
 ```bash
 python3.11 -m venv .venv
 source .venv/bin/activate
-python -m pip install -U pip
-python -m pip install -e ".[analysis]"
-make -f paper_repro/Makefile reviewer-check
+python -m pip install -e '.[analysis]'
+make -f paper_repro/Makefile camera-ready-check
+python -B examples/update_modes.py
 ```
 
-The `reviewer-check` target performs four cold checks:
+The check runs syntax/import checks, behavioral tests, release hygiene checks,
+and both the original paper-artifact checksums and the current code checksums.
+Behavioral tests block outbound network connections. They use synthetic evidence,
+scripted language-model responses, and a small test tokenizer. No API keys,
+model weights, or third-party datasets are required for these checks.
 
-- verifies Python 3.11+, syntax, and key imports;
-- scans for generated files, raw-run folders, local absolute paths, and likely
-  secrets;
-- verifies `validation/paper_artifacts/MANIFEST.sha256`;
-- verifies the top-level `REVIEWER_RELEASE_MANIFEST.sha256`.
-
-These checks do not call OpenAI, OpenRouter, or any other hosted model.
-
-## What Is Included
-
-- `src/`: core agent, memory, belief-update, backend, and simulation code.
-- `paper_repro/`: reviewer Makefile, manifests, audit notes, experiment
-  inventory, and verification scripts.
-- `validation/paper_artifacts/`: the exact compact paper artifact bundle. This
-  is the primary byte-level verification target.
-- `validation/scripts/`, `validation/fitting/`, `validation/evaluation/`, and
-  `validation/data/`: selected paper-facing rebuild and analysis code.
-- `validation/results/`: selected compact source tables/figures needed by
-  optional rebuild commands. These folders are curated, not complete historical
-  result trees.
-- `config/`, `data/focus_topics.json`, and `experiments/selected_results/`:
-  selected paper-facing configuration and compact supporting artifacts.
-
-## Reproducibility Levels
-
-The release separates three levels of reproducibility:
-
-1. Exact artifact verification: run `make -f paper_repro/Makefile
-   reviewer-check`. This is fully self-contained.
-2. Local rebuilds from included compact CSV/PDF inputs: use the rebuild targets
-   below. These are intended for inspection and may rewrite generated outputs.
-3. Full live reruns: require external datasets, excluded caches/model weights,
-   and/or hosted-model API keys. They are not expected to be byte-identical
-   across time.
-
-Optional local rebuild targets:
+Optional classifier integration checks:
 
 ```bash
-make -f paper_repro/Makefile rebuild-debate-rmse-stats
-make -f paper_repro/Makefile rebuild-five-topic-table
-make -f paper_repro/Makefile rebuild-paper-artifacts
+python -m pip install -e '.[classifier]'
+make -f paper_repro/Makefile test-classifier
 ```
 
-## Main Verification Target
+These tests exercise the production scorer using synthetic tensors. They check
+score clipping, input routing, and failure handling without downloading weights.
+For the published checkpoint's verification examples, use the instructions in the
+[Hugging Face model release](https://huggingface.co/joshcyang/belief-engine-argument-quality-deberta-v3-large).
 
-The compact paper bundle lives at:
+## Update modes
 
-```text
-validation/paper_artifacts/
-```
+Select `memory.belief_semantics_mode` explicitly for new experiments.
 
-Its checksum manifest is:
+| Mode | Prior and evidence behavior |
+|---|---|
+| `incremental_v1` | Historical default. Newly admitted arguments accumulate. Replacing a record does not undo its earlier contribution. |
+| `active_seed_v1` | Recomputes from active records. Anchoring weights seed arguments and uptake weights later arguments. |
+| `active_explicit_prior_v1` | Keeps a fixed initial stance and recomputes active non-seed evidence. Seeds remain retrievable but do not enter the sum, so anchoring has no numerical effect. |
 
-```text
-validation/paper_artifacts/MANIFEST.sha256
-```
+The observed-initial-stance DEBATE replay has a separate prior-scaling formulation.
+Do not substitute the fixed-prior generated-agent mode for that replay protocol.
 
-To verify only that bundle:
+The runtime also supports strict structured extraction, matched response prompts,
+active-memory proportional retrieval, and the component-comparison controls.
+Legacy extraction and response behavior remain the defaults unless opted in.
 
-```bash
-make -f paper_repro/Makefile check-artifacts
-```
+## Argument-quality model
 
-## Exclusions
+Weights remain on Hugging Face. The pinned configuration is
+[`config/camera_ready/argument_quality.yaml`](config/camera_ready/argument_quality.yaml).
+Merge that memory block into the configuration for a classifier-based experiment.
+It selects `original-2025-12-v1`, commit
+`139279e9cbecea92a1778318c91547995ea8e0d4`.
 
-Excluded from this anonymous artifact:
+The scorer consumes claim text alone, truncates/pads to 128 tokens, and clips raw
+regression outputs to [0, 1]. It does not apply a sigmoid. Classifier-based runs
+stop if loading fails unless fallback is explicitly enabled. Embedding-based
+live deduplication additionally needs `pip install -e '.[embeddings]'` and its
+embedding model. The optional exploratory agentic-memory backend uses `.[agentic]`.
 
-- `.git` history from the development repository, remotes, and contributor
-  metadata;
-- API keys, `.env`, and hosted-model traces;
-- large extraction caches under `validation/data/cache/`;
-- raw `validation/results/*/raw_runs/` trees;
-- model weights such as `models/argument_quality_classifier/`;
-- third-party datasets whose redistribution status is not settled;
-- private manuscript source files and local paper-project paths.
+## Release status and provenance
 
-After review, this artifact can be de-anonymized and paired with an external
-archive for large raw/intermediate data.
+See [`paper_repro/CAMERA_READY.md`](paper_repro/CAMERA_READY.md) for the source
+revisions, test coverage, and remaining packaging work. The original release is
+preserved in the first Git commit. Its manifest and build record are retained in
+`paper_repro/provenance/`. Imported source hashes are recorded there as well.
+
+`validation/paper_artifacts/MANIFEST.sha256` still verifies the original 36-file
+paper bundle. `CAMERA_READY_MANIFEST.sha256` verifies this code candidate.
+The older experiment inventory is historical and does not yet describe all
+camera-ready results.
+
+This is a local release candidate, not a published complete paper release. The
+root project license and final public repository URL remain to be finalized.
+The imported argument-quality scorer retains its MIT notice in
+`src/classifiers/LICENSE.argument_quality`.

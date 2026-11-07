@@ -88,14 +88,29 @@ def retrieve_arguments(arguments: List[ArgumentRecord], strategy: str = "mixed",
 
     elif strategy == "proportional":
         from .argument_record import POLARITY_AFFIRMATIVE, POLARITY_NEGATIVE
-        
-        # Retrieve arguments proportional to the distribution in memory
-        pro_args = [arg for arg in arguments if arg.polarity == POLARITY_AFFIRMATIVE and arg.credence_relevant]
-        con_args = [arg for arg in arguments if arg.polarity == POLARITY_NEGATIVE and arg.credence_relevant]
-        
-        total_count = len(arguments)
-        if total_count == 0:
+
+        # The response context is defined over active evidence only. Archived
+        # records must not influence the quota denominator or re-enter through
+        # the backfill path.
+        active_arguments = [
+            arg for arg in arguments if getattr(arg, "credence_relevant", False)
+        ]
+        if not active_arguments:
             return []
+
+        # Retrieve arguments proportional to the distribution in memory
+        pro_args = [
+            arg
+            for arg in active_arguments
+            if arg.polarity == POLARITY_AFFIRMATIVE
+        ]
+        con_args = [
+            arg
+            for arg in active_arguments
+            if arg.polarity == POLARITY_NEGATIVE
+        ]
+
+        total_count = len(active_arguments)
             
         pro_ratio = len(pro_args) / total_count
         
@@ -114,7 +129,7 @@ def retrieve_arguments(arguments: List[ArgumentRecord], strategy: str = "mixed",
         
         # If we didn't get enough (e.g. ran out of one side), fill with strongest remaining
         if len(selected) < k:
-            remaining = [arg for arg in arguments if arg not in selected]
+            remaining = [arg for arg in active_arguments if arg not in selected]
             remaining.sort(key=lambda x: x.support_strength, reverse=True)
             selected.extend(remaining[:k - len(selected)])
             

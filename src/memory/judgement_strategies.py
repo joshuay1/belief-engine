@@ -30,6 +30,25 @@ class JudgementStrategy(ABC):
         """
         pass
 
+
+class NoDedupJudgementStrategy(JudgementStrategy):
+    """Admit every record without semantic similarity comparisons.
+
+    This is an explicit ablation path. It preserves storage, scoring, and the
+    active-set updater while removing only the duplicate gate.
+    """
+
+    def process(
+        self,
+        new_argument: ArgumentRecord,
+        existing_arguments: Dict[str, ArgumentRecord],
+        backend=None,
+    ) -> Tuple[str, Optional[str], str, ArgumentRecord]:
+        del existing_arguments, backend
+        new_argument.credence_relevant = True
+        return "added", None, "Deduplication disabled", new_argument
+
+
 class VectorJudgementStrategy(JudgementStrategy):
     """
     Math-based strategy using Vector Similarity.

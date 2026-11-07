@@ -29,6 +29,7 @@ memory:
   retrieval_strategy: "weighted" # options: recent, relevant, mixed, proportional, weighted
   stance_method: "bayesian" # options: bayesian, agentic, linear, blind
   belief_engine_type: "bayesian" # options: bayesian, agentic
+  belief_semantics_mode: "incremental_v1" # Preserve the historical default. Select active modes explicitly.
   # Bayesian Sensitivity Settings:
   # 0.5 - 1.0: Stubborn (Requires overwhelming evidence to shift)
   # 2.0: Balanced (Standard 3:1 likelihood ratio per strong argument)

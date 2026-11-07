@@ -696,7 +696,11 @@ def run_experiment(config_overrides=None, return_results=False, batch_dir=None, 
         rounds=config["debate"]["rounds"], 
         extractor=extractor, 
         evaluator=evaluator,
-        output_dir=logger.run_dir
+        output_dir=logger.run_dir,
+        speaker_order=config.get("simulation", {}).get(
+            "speaker_order",
+            "pro-first",
+        ),
     )
     
     # Execute Simulation

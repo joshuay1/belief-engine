@@ -63,8 +63,12 @@ def create_agent(agent_config: dict, global_config: dict, backend, log_dir: str 
 def _create_subject_agent(agent_config, global_config, backend, name, persona, log_dir=None):
     """Create a memory-backed subject agent."""
     from src.memory.memory_store import MemoryStore
-    from src.memory.agentic_memory import AgenticMemoryStore
     from src.agents.subject_agent import SubjectAgent
+    from src.simulation.belief_engine import (
+        BELIEF_SEMANTICS_ACTIVE_EXPLICIT_PRIOR_V1,
+        BELIEF_SEMANTICS_ACTIVE_SEED_V1,
+        BELIEF_SEMANTICS_INCREMENTAL_V1,
+    )
     from src.simulation.seeding_helper import seed_review_artifactory
 
     memory_conf = global_config.get("memory", {}).copy()
@@ -72,6 +76,38 @@ def _create_subject_agent(agent_config, global_config, backend, name, persona, l
         memory_conf.update(agent_config["memory"])
     generation_conf = global_config.get("generation", {})
     temperature = agent_config.get("temperature", generation_conf.get("temperature", 0.7))
+    response_shell = agent_config.get(
+        "response_shell",
+        generation_conf.get("response_shell", "legacy"),
+    )
+    response_context_messages = agent_config.get(
+        "response_context_messages",
+        generation_conf.get("response_context_messages", 4),
+    )
+    response_word_limit = agent_config.get(
+        "response_word_limit",
+        generation_conf.get("response_word_limit", 120),
+    )
+    retrieval_k = agent_config.get(
+        "retrieval_k",
+        memory_conf.get("retrieval_k", 10),
+    )
+    response_retrieval_enabled = agent_config.get(
+        "response_retrieval_enabled",
+        memory_conf.get("response_retrieval_enabled", True),
+    )
+    retrieved_evidence_token_budget = agent_config.get(
+        "retrieved_evidence_token_budget",
+        memory_conf.get("retrieved_evidence_token_budget"),
+    )
+    retrieved_evidence_encoding = agent_config.get(
+        "retrieved_evidence_encoding",
+        memory_conf.get("retrieved_evidence_encoding", "cl100k_base"),
+    )
+    belief_semantics_mode = memory_conf.get(
+        "belief_semantics_mode",
+        BELIEF_SEMANTICS_INCREMENTAL_V1,
+    )
 
     storage_mode = memory_conf.get("storage_mode", "episodic")
     common_kwargs = {
@@ -84,17 +120,27 @@ def _create_subject_agent(agent_config, global_config, backend, name, persona, l
         "confirmation_bias": memory_conf.get("confirmation_bias", 0.0),
         "allow_self_arguments": memory_conf.get("allow_self_arguments", True),
         "belief_engine_type": memory_conf.get("belief_engine_type", "bayesian"),
+        "belief_semantics_mode": belief_semantics_mode,
         "backend": backend,
         "agent_id": name,
         "initial_stance": agent_config.get("target_initial_stance", 0.0),
         "argument_similarity_threshold": memory_conf.get("argument_similarity_threshold", 0.7),
         "self_similarity_threshold": memory_conf.get("self_similarity_threshold", 0.95),
         "cross_polarity_dedup": memory_conf.get("cross_polarity_dedup", False),
+        "deduplication_enabled": memory_conf.get(
+            "deduplication_enabled",
+            True,
+        ),
+        "dynamic_evidence_horizon": memory_conf.get(
+            "dynamic_evidence_horizon",
+            "persistent",
+        ),
     }
     if log_dir:
         common_kwargs["memory_dir"] = os.path.join(log_dir, "memory", name)
 
     if storage_mode == "agentic":
+        from src.memory.agentic_memory import AgenticMemoryStore
         memory = AgenticMemoryStore(
             llm_backend=global_config["backend"].get("type", "openai"),
             llm_model=global_config["backend"].get("model", "gpt-4o-mini"),
@@ -114,22 +160,64 @@ def _create_subject_agent(agent_config, global_config, backend, name, persona, l
     if target_initial_stance is not None and hasattr(memory, "belief_engine"):
         try:
             target_score = float(target_initial_stance)
-            memory.initial_stance = target_score
-            if hasattr(memory.belief_engine, "set_belief_score"):
-                memory.belief_engine.set_belief_score(target_score, persist=True)
-                logger.info(
-                    "Initialized %s latent belief score to target_initial_stance=%+.3f",
-                    name,
-                    target_score,
-                )
         except (TypeError, ValueError):
             logger.warning(
                 "Ignoring non-numeric target_initial_stance=%r for %s",
                 target_initial_stance,
                 name,
             )
+        else:
+            memory.initial_stance = target_score
+            if (
+                belief_semantics_mode
+                == BELIEF_SEMANTICS_ACTIVE_EXPLICIT_PRIOR_V1
+            ):
+                memory.belief_engine.set_explicit_prior_score(
+                    target_score,
+                    active_records=memory.arguments.values(),
+                    persist=True,
+                )
+                logger.info(
+                    "Initialized %s explicit prior to "
+                    "target_initial_stance=%+.3f",
+                    name,
+                    target_score,
+                )
+            elif belief_semantics_mode == BELIEF_SEMANTICS_ACTIVE_SEED_V1:
+                memory.belief_engine.recompute_from_active_records(
+                    memory.arguments.values(),
+                    persist=True,
+                    increment_history=False,
+                )
+                logger.info(
+                    "Recorded target_initial_stance=%+.3f for %s as metadata; "
+                    "active_seed_v1 initializes numerical stance from active "
+                    "seed records only",
+                    target_score,
+                    name,
+                )
+            elif hasattr(memory.belief_engine, "set_belief_score"):
+                memory.belief_engine.set_belief_score(target_score, persist=True)
+                logger.info(
+                    "Initialized %s latent belief score to target_initial_stance=%+.3f",
+                    name,
+                    target_score,
+                )
 
-    return SubjectAgent(backend, memory, persona, name=name, temperature=temperature)
+    return SubjectAgent(
+        backend,
+        memory,
+        persona,
+        name=name,
+        temperature=temperature,
+        retrieval_k=retrieval_k,
+        response_shell=response_shell,
+        response_context_messages=response_context_messages,
+        response_word_limit=response_word_limit,
+        response_retrieval_enabled=response_retrieval_enabled,
+        retrieved_evidence_token_budget=retrieved_evidence_token_budget,
+        retrieved_evidence_encoding=retrieved_evidence_encoding,
+    )
 
 
 def _create_counter_agent(agent_config, global_config, backend):
@@ -179,6 +267,9 @@ def _create_self_updating_agent(agent_config, global_config, backend, name, pers
     target_initial_stance = agent_config.get("target_initial_stance", None)
     use_memory = bool(agent_config.get("use_memory", False))
     generation_conf = global_config.get("generation", {})
+    memory_conf = global_config.get("memory", {}).copy()
+    if "memory" in agent_config:
+        memory_conf.update(agent_config["memory"])
     generation_temperature = agent_config.get(
         "temperature",
         generation_conf.get("temperature", 0.7),
@@ -187,15 +278,31 @@ def _create_self_updating_agent(agent_config, global_config, backend, name, pers
         "self_update_temperature",
         generation_conf.get("self_update_temperature", 0.0),
     )
+    response_shell = agent_config.get(
+        "response_shell",
+        generation_conf.get("response_shell", "legacy"),
+    )
+    response_context_messages = agent_config.get(
+        "response_context_messages",
+        generation_conf.get("response_context_messages", 4),
+    )
+    response_word_limit = agent_config.get(
+        "response_word_limit",
+        generation_conf.get("response_word_limit", 120),
+    )
+    update_context_messages = agent_config.get(
+        "self_update_context_messages",
+        generation_conf.get("self_update_context_messages"),
+    )
+    retrieval_k = agent_config.get(
+        "retrieval_k",
+        memory_conf.get("retrieval_k", 10),
+    )
 
     seed_arguments = []
     memory = None
 
     if use_memory:
-        memory_conf = global_config.get("memory", {}).copy()
-        if "memory" in agent_config:
-            memory_conf.update(agent_config["memory"])
-
         common_kwargs = {
             "storage_mode": memory_conf.get("storage_mode", "episodic"),
             "retrieval_strategy": memory_conf.get("retrieval_strategy", "weighted"),
@@ -206,12 +313,20 @@ def _create_self_updating_agent(agent_config, global_config, backend, name, pers
             "confirmation_bias": memory_conf.get("confirmation_bias", 0.0),
             "allow_self_arguments": memory_conf.get("allow_self_arguments", True),
             "belief_engine_type": memory_conf.get("belief_engine_type", "bayesian"),
+            "belief_semantics_mode": memory_conf.get(
+                "belief_semantics_mode",
+                "incremental_v1",
+            ),
             "backend": backend,
             "agent_id": name,
             "initial_stance": target_initial_stance or 0.0,
             "argument_similarity_threshold": memory_conf.get("argument_similarity_threshold", 0.7),
             "self_similarity_threshold": memory_conf.get("self_similarity_threshold", 0.95),
             "cross_polarity_dedup": memory_conf.get("cross_polarity_dedup", False),
+            "deduplication_enabled": memory_conf.get(
+                "deduplication_enabled",
+                True,
+            ),
         }
         if log_dir:
             common_kwargs["memory_dir"] = os.path.join(log_dir, "memory", name)
@@ -233,9 +348,13 @@ def _create_self_updating_agent(agent_config, global_config, backend, name, pers
         initial_stance=target_initial_stance,
         seed_arguments=seed_arguments,
         memory=memory,
-        retrieval_k=agent_config.get("retrieval_k", 10),
+        retrieval_k=retrieval_k,
         generation_temperature=generation_temperature,
         update_temperature=update_temperature,
+        response_shell=response_shell,
+        response_context_messages=response_context_messages,
+        response_word_limit=response_word_limit,
+        update_context_messages=update_context_messages,
     )
 
 

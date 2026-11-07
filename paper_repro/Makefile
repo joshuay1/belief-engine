@@ -1,7 +1,7 @@
 PYTHON ?= python3.11
 ALL_TOPICS_DIR ?= validation/results/all_topics_u0.2_a0.4_8models
 
-.PHONY: help reviewer-check smoke audit-release check-artifacts check-release-manifest clean-generated rebuild-paper-artifacts rebuild-debate-rmse-stats rebuild-five-topic-table
+.PHONY: help reviewer-check camera-ready-check test test-classifier smoke audit-release check-artifacts check-release-manifest clean-generated rebuild-paper-artifacts rebuild-debate-rmse-stats rebuild-five-topic-table
 
 help:
 	@echo "Paper reproducibility helper targets:"
@@ -15,7 +15,15 @@ help:
 	@echo "  rebuild-debate-rmse-stats - rebuild DEBATE fold RMSE CI/test tables"
 	@echo "  rebuild-five-topic-table - rebuild five-topic 6-panel figures and metrics table"
 
-reviewer-check: smoke audit-release check-artifacts check-release-manifest
+reviewer-check: camera-ready-check
+
+camera-ready-check: smoke test audit-release check-artifacts check-release-manifest
+
+test:
+	$(PYTHON) paper_repro/scripts/run_tests.py
+
+test-classifier:
+	$(PYTHON) paper_repro/scripts/run_tests.py --classifier
 
 smoke:
 	$(PYTHON) paper_repro/scripts/reviewer_check.py
@@ -27,7 +35,7 @@ check-artifacts:
 	$(PYTHON) paper_repro/scripts/check_artifacts.py
 
 check-release-manifest:
-	$(PYTHON) paper_repro/scripts/check_artifacts.py --manifest REVIEWER_RELEASE_MANIFEST.sha256
+	$(PYTHON) paper_repro/scripts/check_artifacts.py --manifest CAMERA_READY_MANIFEST.sha256
 
 clean-generated:
 	find . \( -name '__pycache__' -o -name '*.pyc' -o -name '*.pyo' -o -name '.DS_Store' \) -prune -exec rm -rf {} +

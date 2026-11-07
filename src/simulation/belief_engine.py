@@ -2,9 +2,27 @@ import os
 import math
 import json
 import re
-from typing import Dict, Optional, Tuple
+from typing import Dict, Iterable, Optional, Tuple
 from src.memory.argument_record import ArgumentRecord
 from src.constants import POLARITY_AFFIRMATIVE, POLARITY_NEGATIVE
+
+
+BELIEF_SEMANTICS_INCREMENTAL_V1 = "incremental_v1"
+BELIEF_SEMANTICS_ACTIVE_SEED_V1 = "active_seed_v1"
+BELIEF_SEMANTICS_ACTIVE_EXPLICIT_PRIOR_V1 = "active_explicit_prior_v1"
+SUPPORTED_BELIEF_SEMANTICS_MODES = frozenset(
+    {
+        BELIEF_SEMANTICS_INCREMENTAL_V1,
+        BELIEF_SEMANTICS_ACTIVE_SEED_V1,
+        BELIEF_SEMANTICS_ACTIVE_EXPLICIT_PRIOR_V1,
+    }
+)
+ACTIVE_SET_BELIEF_SEMANTICS_MODES = frozenset(
+    {
+        BELIEF_SEMANTICS_ACTIVE_SEED_V1,
+        BELIEF_SEMANTICS_ACTIVE_EXPLICIT_PRIOR_V1,
+    }
+)
 
 
 def stance_to_log_odds(score: float) -> float:
@@ -118,18 +136,50 @@ class BayesianBeliefEngine:
         # Configuration Defaults
         if config is None:
             config = {}
+        self.semantics_mode = config.get(
+            "belief_semantics_mode",
+            BELIEF_SEMANTICS_INCREMENTAL_V1,
+        )
+        if self.semantics_mode not in SUPPORTED_BELIEF_SEMANTICS_MODES:
+            supported = ", ".join(sorted(SUPPORTED_BELIEF_SEMANTICS_MODES))
+            raise ValueError(
+                f"Unknown belief_semantics_mode={self.semantics_mode!r}; "
+                f"expected one of: {supported}"
+            )
         self.sensitivity = config.get("update_sensitivity", 2.0)
         # Check for anchor_sensitivity, default to regular sensitivity if not set
         self.anchor_sensitivity = config.get("anchor_sensitivity", self.sensitivity)
         if self.anchor_sensitivity is None:
             self.anchor_sensitivity = self.sensitivity
         self.confirmation_bias = config.get("confirmation_bias", 0.0)
+        if (
+            self.semantics_mode in ACTIVE_SET_BELIEF_SEMANTICS_MODES
+            and self.confirmation_bias != 0.0
+        ):
+            raise ValueError(
+                f"{self.semantics_mode} requires confirmation_bias=0 because "
+                "path-dependent bias cannot be reconstructed from an active set"
+            )
         
         # Load Instructions
         self.instructions = self.load_instructions()
         
         # State
-        self.log_odds = 0.0
+        initial_stance = config.get("initial_stance", 0.0)
+        if initial_stance is None:
+            initial_stance = 0.0
+        self.explicit_prior_log_odds = 0.0
+        if self.semantics_mode == BELIEF_SEMANTICS_ACTIVE_EXPLICIT_PRIOR_V1:
+            self.explicit_prior_log_odds = stance_to_log_odds(initial_stance)
+        elif (
+            self.semantics_mode == BELIEF_SEMANTICS_ACTIVE_SEED_V1
+            and float(initial_stance) != 0.0
+        ):
+            raise ValueError(
+                "active_seed_v1 has no explicit prior; initialize it through "
+                "active seed records and anchor_sensitivity"
+            )
+        self.log_odds = self.explicit_prior_log_odds
         self.history_count = 0
         
         # Load existing state if available
@@ -144,6 +194,11 @@ class BayesianBeliefEngine:
         Updates the internal belief state based on a new argument.
         Returns the delta (change in log-odds).
         """
+        if self.semantics_mode != BELIEF_SEMANTICS_INCREMENTAL_V1:
+            raise RuntimeError(
+                f"update(argument) is unsupported for {self.semantics_mode}; "
+                "use recompute_from_active_records(records)"
+            )
         strength = argument.support_strength
         
         # Calculate Likelihood Ratio (Bayes Factor)
@@ -182,6 +237,101 @@ class BayesianBeliefEngine:
         
         return delta
 
+    def argument_log_odds_contribution(self, argument: ArgumentRecord) -> float:
+        """Return one record's deterministic contribution to active-set log odds."""
+        strength = float(argument.support_strength)
+        if not math.isfinite(strength) or not 0.0 <= strength <= 1.0:
+            raise ValueError(
+                f"support_strength must be finite and in [0, 1], got {strength!r}"
+            )
+
+        sensitivity = (
+            self.anchor_sensitivity
+            if getattr(argument, "source_role", "") == "seed"
+            else self.sensitivity
+        )
+        sensitivity = float(sensitivity)
+        if not math.isfinite(sensitivity) or sensitivity < 0.0:
+            raise ValueError(
+                f"sensitivity must be finite and non-negative, got {sensitivity!r}"
+            )
+
+        magnitude = math.log1p(strength * sensitivity)
+        if argument.polarity == POLARITY_AFFIRMATIVE:
+            return magnitude
+        if argument.polarity == POLARITY_NEGATIVE:
+            return -magnitude
+        raise ValueError(
+            f"Unsupported active argument polarity: {argument.polarity!r}"
+        )
+
+    def compute_active_log_odds(
+        self,
+        arguments: Iterable[ArgumentRecord],
+    ) -> float:
+        """Compute log odds from the current active set under an opt-in mode."""
+        if self.semantics_mode not in ACTIVE_SET_BELIEF_SEMANTICS_MODES:
+            raise RuntimeError(
+                "compute_active_log_odds is only defined for active-set modes"
+            )
+
+        total = (
+            self.explicit_prior_log_odds
+            if self.semantics_mode
+            == BELIEF_SEMANTICS_ACTIVE_EXPLICIT_PRIOR_V1
+            else 0.0
+        )
+        for argument in arguments:
+            if not getattr(argument, "credence_relevant", False):
+                continue
+            if (
+                self.semantics_mode
+                == BELIEF_SEMANTICS_ACTIVE_EXPLICIT_PRIOR_V1
+                and getattr(argument, "source_role", "") == "seed"
+            ):
+                continue
+            total += self.argument_log_odds_contribution(argument)
+        return total
+
+    def recompute_from_active_records(
+        self,
+        arguments: Iterable[ArgumentRecord],
+        *,
+        persist: bool = True,
+        increment_history: bool = True,
+    ) -> float:
+        """Replace the latent state with a deterministic active-set recomputation."""
+        old_log_odds = self.log_odds
+        self.log_odds = self.compute_active_log_odds(arguments)
+        if increment_history:
+            self.history_count += 1
+        if persist:
+            self.save_state()
+        return self.log_odds - old_log_odds
+
+    def set_explicit_prior_score(
+        self,
+        score: float,
+        *,
+        active_records: Iterable[ArgumentRecord] = (),
+        persist: bool = True,
+    ) -> None:
+        """Set the fixed prior used by active_explicit_prior_v1."""
+        if (
+            self.semantics_mode
+            != BELIEF_SEMANTICS_ACTIVE_EXPLICIT_PRIOR_V1
+        ):
+            raise RuntimeError(
+                "set_explicit_prior_score requires "
+                "active_explicit_prior_v1"
+            )
+        self.explicit_prior_log_odds = stance_to_log_odds(score)
+        self.recompute_from_active_records(
+            active_records,
+            persist=persist,
+            increment_history=False,
+        )
+
     def get_belief_score(self) -> float:
         """
         Returns the standardized stance score between -1.0 and 1.0.
@@ -194,6 +344,11 @@ class BayesianBeliefEngine:
 
     def set_belief_score(self, score: float, persist: bool = True) -> None:
         """Directly set the latent Bayesian stance score."""
+        if self.semantics_mode != BELIEF_SEMANTICS_INCREMENTAL_V1:
+            raise RuntimeError(
+                f"set_belief_score is unsupported for {self.semantics_mode}; "
+                "active-set modes must preserve their declared state contract"
+            )
         self.log_odds = stance_to_log_odds(score)
         if persist:
             self.save_state()
@@ -219,6 +374,9 @@ class BayesianBeliefEngine:
             "log_odds": self.log_odds,
             "history_count": self.history_count
         }
+        if self.semantics_mode != BELIEF_SEMANTICS_INCREMENTAL_V1:
+            data["belief_semantics_mode"] = self.semantics_mode
+            data["explicit_prior_log_odds"] = self.explicit_prior_log_odds
         with open(self.state_file, 'w') as f:
             json.dump(data, f, indent=2)
 
@@ -228,9 +386,22 @@ class BayesianBeliefEngine:
             try:
                 with open(self.state_file, 'r') as f:
                     data = json.load(f)
+                    if self.semantics_mode in ACTIVE_SET_BELIEF_SEMANTICS_MODES:
+                        stored_mode = data.get("belief_semantics_mode")
+                        if stored_mode != self.semantics_mode:
+                            raise ValueError(
+                                "Belief state semantics mismatch: configured "
+                                f"{self.semantics_mode!r}, stored {stored_mode!r}"
+                            )
+                        self.explicit_prior_log_odds = data.get(
+                            "explicit_prior_log_odds",
+                            0.0,
+                        )
                     self.log_odds = data.get("log_odds", 0.0)
                     self.history_count = data.get("history_count", 0)
             except Exception as e:
+                if self.semantics_mode in ACTIVE_SET_BELIEF_SEMANTICS_MODES:
+                    raise
                 print(f"Warning: Could not load belief state for {self.agent_name}: {e}")
                 self.log_odds = 0.0
                 self.history_count = 0
@@ -408,6 +579,14 @@ def create_belief_engine(agent_name: str, memory_dir: str, config: Dict = None):
     if config is None:
         config = {}
     engine_type = config.get("belief_engine_type", "bayesian")
+    semantics_mode = config.get(
+        "belief_semantics_mode",
+        BELIEF_SEMANTICS_INCREMENTAL_V1,
+    )
     if engine_type in ("agentic", "llm"):
+        if semantics_mode != BELIEF_SEMANTICS_INCREMENTAL_V1:
+            raise ValueError(
+                f"{semantics_mode} requires belief_engine_type='bayesian'"
+            )
         return AgenticBeliefEngine(agent_name=agent_name, memory_dir=memory_dir, config=config)
     return BayesianBeliefEngine(agent_name=agent_name, memory_dir=memory_dir, config=config)

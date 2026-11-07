@@ -6,9 +6,10 @@ and argument quality scores. This module handles embedding arguments and
 determining which arguments should be marked as credence_relevant.
 """
 
-from typing import List, Dict, Tuple, Optional
+from typing import List, Dict, Tuple, Optional, TYPE_CHECKING
 import numpy as np
-from sentence_transformers import SentenceTransformer
+if TYPE_CHECKING:
+    from sentence_transformers import SentenceTransformer
 from .argument_record import ArgumentRecord
 
 
@@ -33,9 +34,10 @@ class CredenceManager:
         self._model = None
         self._embedding_cache: Dict[str, np.ndarray] = {}
     
-    def _get_model(self) -> SentenceTransformer:
+    def _get_model(self) -> "SentenceTransformer":
         """Lazy load the sentence transformer model."""
         if self._model is None:
+            from sentence_transformers import SentenceTransformer
             self._model = SentenceTransformer(self.model_name)
         return self._model
     

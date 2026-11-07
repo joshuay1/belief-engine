@@ -155,6 +155,10 @@ def run_simulation(config_path="config/simulation_default.yaml", log_dir_overrid
             live_plot=live_plot,
             live_json=bool(logging_config.get("live_json", artifact_mode != "compact")),
             artifact_mode=artifact_mode,
+            evaluator_strict=bool(
+                config.get("evaluation", {}).get("strict_parsing", False)
+            ),
+            speaker_order=sim_config.get("speaker_order", "pro-first"),
         )
         results = runner.run()
         

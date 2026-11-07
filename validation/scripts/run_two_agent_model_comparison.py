@@ -3,28 +3,31 @@
 
 The experiment compares multiple two-agent debate conditions. Each condition can
 choose its own model, backend, and agent mode, so vanilla LLM rows do not need
-to be paired with the same model as any Belief Engine row. Summary metrics use
-the selected measurement source. Topic-grid figures prefer Belief Engine
-internal stance when available while keeping non-BE baselines externally judged.
+to be paired with the same model as any Belief Engine row. Every summary,
+trajectory artifact, and topic-grid figure uses the selected measurement source.
 """
 
 from __future__ import annotations
 
 import argparse
+import copy
 import csv
 import hashlib
 import json
 import logging
 import math
 import os
+import shlex
 import shutil
 import subprocess
 import sys
+import tempfile
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from dataclasses import asdict, dataclass, field, replace
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
+from urllib.parse import urlparse
 
 import yaml
 
@@ -64,6 +67,25 @@ SHORT_TOPIC_LABELS = {
 INITIAL_STANCE = 0.75
 DEFAULT_ROUNDS = 15
 DEFAULT_TRIALS = 3
+BELIEF_SEMANTICS_MODES = (
+    "incremental_v1",
+    "active_seed_v1",
+    "active_explicit_prior_v1",
+)
+RESPONSE_SHELLS = ("legacy", "matched_v1")
+SCHEDULE_ORDERS = ("condition-major", "paired")
+SPEAKER_ORDERS = ("pro-first", "con-first")
+EXTRACTION_OUTPUT_MODES = (
+    "legacy_text_v1",
+    "structured_json_v1",
+    "whole_message_json_v1",
+)
+EXTRACTION_AUDIT_OUTPUT_MODES = frozenset(
+    {
+        "structured_json_v1",
+        "whole_message_json_v1",
+    }
+)
 
 CONTROLLED_DEBATER_PERSONA = (
     "You are a careful, concise debater. Defend your assigned side, engage "
@@ -79,7 +101,15 @@ OPEN_MINDED_MEMORY = {
     "argument_similarity_threshold": 0.60,
     "self_similarity_threshold": 0.45,
     "cross_polarity_dedup": False,
+    "deduplication_enabled": True,
     "opinion_change_style": "human_like",
+    "response_retrieval_enabled": True,
+    "dynamic_evidence_horizon": "persistent",
+    "retrieved_evidence_token_budget": None,
+    "retrieved_evidence_encoding": "cl100k_base",
+    "strength_estimation_method": "classifier",
+    "uniform_strength_value": None,
+    "classifier_model_path": "models/argument_quality_classifier",
 }
 
 VANILLA_DEFINITION = (
@@ -150,6 +180,311 @@ def build_evaluator(config: Dict[str, Any], generation_backend: Any = None) -> A
     )
 
 
+def file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _non_placeholder_api_key(value: Any) -> bool:
+    if not isinstance(value, str) or not value.strip():
+        return False
+    normalized = value.strip().lower()
+    return not (
+        normalized.startswith("sk-dummy")
+        or normalized.startswith("sk-example")
+        or normalized in {"dummy", "example", "changeme"}
+    )
+
+
+def require_configured_backend_credentials(config: Dict[str, Any]) -> None:
+    """Fail before artifact creation if a configured remote key is absent."""
+    backend_configs = [
+        ("generation", config.get("backend", {}) or {}),
+    ]
+    evaluation = config.get("evaluation", {}) or {}
+    if evaluation.get("enabled", False):
+        backend_configs.append(
+            ("evaluator", evaluation.get("backend", {}) or {})
+        )
+
+    for role, backend_config in backend_configs:
+        backend_type = str(backend_config.get("type", "openai"))
+        if backend_type == "openai":
+            key = backend_config.get("api_key") or os.environ.get(
+                "OPENAI_API_KEY"
+            )
+            if not _non_placeholder_api_key(key):
+                raise ValueError(
+                    f"{role} OpenAI backend requires a non-placeholder "
+                    "OPENAI_API_KEY in the operator environment before launch."
+                )
+        elif backend_type == "openrouter":
+            key = backend_config.get("api_key") or os.environ.get(
+                "OPENROUTER_API_KEY"
+            )
+            if not _non_placeholder_api_key(key):
+                raise ValueError(
+                    f"{role} OpenRouter backend requires a non-placeholder "
+                    "OPENROUTER_API_KEY in the operator environment before "
+                    "launch."
+                )
+
+
+def _base_url_category(backend: Any) -> str:
+    client = getattr(backend, "client", None)
+    raw_url = getattr(client, "base_url", None)
+    if raw_url is None:
+        return "none"
+    parsed = urlparse(str(raw_url))
+    hostname = (parsed.hostname or "").lower()
+    if hostname == "api.openai.com":
+        return "official_openai"
+    if hostname == "openrouter.ai":
+        return "openrouter"
+    if hostname in {"localhost", "127.0.0.1", "::1"}:
+        return "local"
+    return "custom_remote"
+
+
+def attest_runtime_backend(
+    backend: Any,
+    backend_config: Dict[str, Any],
+    *,
+    role: str,
+) -> Dict[str, Any]:
+    """Assert configured/runtime provider identity before the first API call."""
+    configured_type = str(backend_config.get("type", "openai"))
+    expected_classes = {
+        "openai": "src.backend.backend_openai.OpenAIBackend",
+        "openrouter": "src.backend.backend_openrouter.OpenRouterBackend",
+        "local": "src.backend.backend_local.LocalLLMBackend",
+        "mock": "src.backend.backend_mock.MockLLMBackend",
+    }
+    expected_class = expected_classes.get(configured_type)
+    actual_class = (
+        f"{backend.__class__.__module__}.{backend.__class__.__name__}"
+    )
+    if expected_class is None:
+        raise RuntimeError(
+            f"{role} has unsupported configured backend {configured_type!r}."
+        )
+    if actual_class != expected_class:
+        raise RuntimeError(
+            f"{role} backend identity mismatch: configured "
+            f"{configured_type!r}, instantiated {actual_class!r}."
+        )
+
+    configured_model = backend_config.get("model")
+    runtime_model = getattr(backend, "model", None)
+    if (
+        configured_type != "mock"
+        and configured_model is not None
+        and runtime_model != configured_model
+    ):
+        raise RuntimeError(
+            f"{role} backend model mismatch: configured "
+            f"{configured_model!r}, instantiated {runtime_model!r}."
+        )
+
+    base_url_category = _base_url_category(backend)
+    if (
+        configured_type == "openai"
+        and base_url_category != "official_openai"
+    ):
+        raise RuntimeError(
+            f"{role} OpenAI backend did not resolve to the official endpoint."
+        )
+
+    attestation = {
+        "configured_type": configured_type,
+        "runtime_class": actual_class,
+        "model": runtime_model,
+        "base_url_category": base_url_category,
+    }
+    for field in ("reasoning_effort", "verbosity"):
+        configured_value = backend_config.get(field)
+        runtime_value = getattr(backend, field, None)
+        if configured_value != runtime_value:
+            raise RuntimeError(
+                f"{role} backend {field} mismatch: configured "
+                f"{configured_value!r}, instantiated {runtime_value!r}."
+            )
+        attestation[field] = runtime_value
+    return attestation
+
+
+def _partial_run_inventory(raw_path: Path) -> Dict[str, Any]:
+    entries: List[Dict[str, Any]] = []
+    for path in sorted(raw_path.rglob("*")):
+        relative = path.relative_to(raw_path).as_posix()
+        if path.is_symlink():
+            entries.append(
+                {
+                    "path": relative,
+                    "kind": "symlink",
+                    "target_sha256": hashlib.sha256(
+                        os.readlink(path).encode("utf-8")
+                    ).hexdigest(),
+                }
+            )
+        elif path.is_file():
+            entries.append(
+                {
+                    "path": relative,
+                    "kind": "file",
+                    "size_bytes": path.stat().st_size,
+                    "sha256": file_sha256(path),
+                }
+            )
+    tree_payload = json.dumps(
+        entries,
+        separators=(",", ":"),
+        sort_keys=True,
+    ).encode("utf-8")
+    return {
+        "schema_version": 1,
+        "captured_at": datetime.now().astimezone().isoformat(
+            timespec="seconds"
+        ),
+        "run_id": raw_path.name,
+        "topic_slug": raw_path.parent.name,
+        "entries": entries,
+        "tree_sha256": hashlib.sha256(tree_payload).hexdigest(),
+    }
+
+
+def quarantine_partial_run(raw_path: Path) -> Dict[str, Any]:
+    """Inventory and move an incomplete run before an explicit resume retry."""
+    if not raw_path.is_dir() or (raw_path / "results.json").is_file():
+        raise ValueError(
+            "quarantine_partial_run requires an incomplete run directory."
+        )
+    inventory = _partial_run_inventory(raw_path)
+    write_json_atomic(raw_path / "PARTIAL_RUN_INVENTORY.json", inventory)
+
+    campaign_root = raw_path.parents[2]
+    quarantine_parent = (
+        campaign_root
+        / "quarantine"
+        / "partial_runs"
+        / raw_path.parent.name
+    )
+    quarantine_parent.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now().astimezone().strftime("%Y%m%dT%H%M%S%z")
+    target = quarantine_parent / (
+        f"{raw_path.name}__{timestamp}__"
+        f"{inventory['tree_sha256'][:12]}"
+    )
+    suffix = 1
+    while target.exists():
+        target = quarantine_parent / (
+            f"{raw_path.name}__{timestamp}__"
+            f"{inventory['tree_sha256'][:12]}__{suffix:02d}"
+        )
+        suffix += 1
+    raw_path.replace(target)
+    if raw_path.exists() or not target.is_dir():
+        raise RuntimeError("Incomplete-run quarantine move did not complete.")
+    return {
+        "quarantined_partial": str(target.relative_to(campaign_root)),
+        "tree_sha256": inventory["tree_sha256"],
+        "entry_count": len(inventory["entries"]),
+    }
+
+
+def evaluator_provenance_from_config(
+    config: Dict[str, Any],
+    evaluator: Any = None,
+) -> Dict[str, Any]:
+    """Describe the exact evaluator implementation without making an API call."""
+    from src.agents.evaluation_agent import (
+        DEFAULT_OPTIMIZED_PROMPT_PATH,
+        EvaluationAgent,
+    )
+
+    eval_conf = config.get("evaluation", {}) or {}
+    backend_conf = eval_conf.get("backend", {}) or {}
+    evaluator_code_path = Path(sys.modules[EvaluationAgent.__module__].__file__).resolve()
+    prompt_path_value = getattr(evaluator, "default_stance_prompt_path", None)
+    prompt_sha256 = getattr(evaluator, "default_stance_prompt_sha256", None)
+
+    if not prompt_path_value:
+        prompt_path = DEFAULT_OPTIMIZED_PROMPT_PATH.resolve()
+        prompt_path_value = str(prompt_path)
+        prompt_sha256 = file_sha256(prompt_path) if prompt_path.exists() else ""
+
+    prompt_path_text = str(prompt_path_value)
+    if not prompt_path_text.startswith("builtin:"):
+        prompt_path_text = display_path(Path(prompt_path_text))
+
+    return {
+        "backend": backend_conf.get("type"),
+        "model": backend_conf.get("model", eval_conf.get("model")),
+        "reasoning_effort": backend_conf.get("reasoning_effort"),
+        "verbosity": backend_conf.get("verbosity"),
+        "temperature": float(eval_conf.get("temperature", 0.0)),
+        "prompt_path": prompt_path_text,
+        "prompt_sha256": prompt_sha256 or "",
+        "evaluator_code_path": display_path(evaluator_code_path),
+        "evaluator_code_sha256": file_sha256(evaluator_code_path),
+        "runner_path": display_path(Path(__file__).resolve()),
+        "runner_code_sha256": file_sha256(Path(__file__).resolve()),
+        "runner_commit": git_metadata().get("commit", ""),
+    }
+
+
+def evaluator_provenance_from_args(args: argparse.Namespace) -> Dict[str, Any]:
+    backend_conf: Dict[str, Any] = {
+        "type": getattr(args, "judge_backend", None),
+        "model": getattr(args, "judge_model", None),
+    }
+    reasoning_effort = getattr(args, "judge_reasoning_effort", None)
+    verbosity = getattr(args, "judge_verbosity", None)
+    if reasoning_effort:
+        backend_conf["reasoning_effort"] = reasoning_effort
+    if verbosity:
+        backend_conf["verbosity"] = verbosity
+    return evaluator_provenance_from_config(
+        {
+            "evaluation": {
+                "enabled": True,
+                "backend": backend_conf,
+                "temperature": float(getattr(args, "judge_temperature", 0.0)),
+            }
+        }
+    )
+
+
+def write_json_atomic(path: Path, data: Dict[str, Any]) -> None:
+    """Replace a JSON artifact atomically after all validation has succeeded."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary_path: Optional[Path] = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            dir=path.parent,
+            prefix=f".{path.name}.",
+            suffix=".tmp",
+            delete=False,
+        ) as handle:
+            temporary_path = Path(handle.name)
+            json.dump(data, handle, indent=2)
+            handle.write("\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        if path.exists():
+            shutil.copystat(path, temporary_path)
+        os.replace(temporary_path, path)
+        temporary_path = None
+    finally:
+        if temporary_path is not None and temporary_path.exists():
+            temporary_path.unlink()
+
+
 def latest_agent_message_for_round(
     transcript: List[Dict[str, Any]],
     agent_name: str,
@@ -171,7 +506,7 @@ def latest_agent_message_for_round(
 
 
 def rejudge_existing_run(config_path: str, raw_dir: str, backup: bool = True) -> Optional[str]:
-    """Recompute external stance fields in an existing raw run."""
+    """Strictly recompute stance fields and replace results only after full success."""
     try:
         from src.utils.config import ConfigLoader
 
@@ -196,17 +531,22 @@ def rejudge_existing_run(config_path: str, raw_dir: str, backup: bool = True) ->
         ] or ["Pro", "Con"]
         agents_per_round = max(1, len(agent_names))
 
-        if backup:
-            backup_path = raw_path / "results.strict_topic_judge_backup.json"
-            if not backup_path.exists():
-                shutil.copy2(result_path, backup_path)
-
         judged = 0
         for entry in history:
             round_index = int(entry.get("round", 0) or 0)
             for agent_name in agent_names:
                 if round_index == 0:
-                    entry[f"{agent_name}_evaluated"] = entry.get(agent_name)
+                    initial_score = entry.get(agent_name)
+                    if (
+                        isinstance(initial_score, bool)
+                        or not isinstance(initial_score, (int, float))
+                        or not math.isfinite(float(initial_score))
+                        or not -1.0 <= float(initial_score) <= 1.0
+                    ):
+                        raise ValueError(
+                            f"round 0 has invalid initial stance for {agent_name}"
+                        )
+                    entry[f"{agent_name}_evaluated"] = float(initial_score)
                     entry.pop(f"{agent_name}_confidence", None)
                     continue
 
@@ -217,23 +557,50 @@ def rejudge_existing_run(config_path: str, raw_dir: str, backup: bool = True) ->
                     agents_per_round,
                 )
                 if not last_message:
-                    continue
+                    raise ValueError(
+                        f"round {round_index} has no saved message for {agent_name}"
+                    )
 
-                eval_result = evaluator.evaluate_stance(
-                    transcript=last_message,
-                    memory_snapshot="",
-                    topic=topic,
-                    agent_name=agent_name,
-                )
-                entry[f"{agent_name}_evaluated"] = coerce_stance(eval_result.get("stance_score")) or 0.0
+                try:
+                    eval_result = evaluator.evaluate_stance(
+                        transcript=last_message,
+                        memory_snapshot="",
+                        topic=topic,
+                        agent_name=agent_name,
+                        strict=True,
+                    )
+                except Exception as exc:
+                    raise ValueError(
+                        f"strict stance parse failed at round {round_index} "
+                        f"for {agent_name}: {exc}"
+                    ) from exc
+                entry[f"{agent_name}_evaluated"] = float(eval_result["stance_score"])
                 entry.pop(f"{agent_name}_confidence", None)
                 judged += 1
 
+        if judged == 0:
+            return "no stance entries were rejudged"
+
+        rejudged_at = datetime.now().astimezone().isoformat(timespec="seconds")
+        rejudge_metadata = evaluator_provenance_from_config(config, evaluator=evaluator)
+        rejudge_metadata.update(
+            {
+                "rejudged_count": judged,
+                "timestamp": rejudged_at,
+                "strict_parsing": True,
+            }
+        )
         result["stance_history"] = history
         result.setdefault("metadata", {})["external_stance_evaluator"] = "src.agents.evaluation_agent.EvaluationAgent"
-        result["metadata"]["external_stance_rejudged_at"] = datetime.now().isoformat(timespec="seconds")
-        result_path.write_text(json.dumps(result, indent=2) + "\n")
-        return None if judged else "no stance entries were rejudged"
+        result["metadata"]["external_stance_rejudged_at"] = rejudged_at
+        result["metadata"]["external_stance_rejudge"] = rejudge_metadata
+
+        if backup:
+            backup_path = raw_path / "results.strict_topic_judge_backup.json"
+            if not backup_path.exists():
+                shutil.copy2(result_path, backup_path)
+        write_json_atomic(result_path, result)
+        return None
     except Exception as exc:
         return str(exc)
 
@@ -249,6 +616,7 @@ class Condition:
     agent_type: str = "subject"
     use_memory: bool = True
     memory_overrides: Dict[str, Any] = field(default_factory=dict)
+    extraction_overrides: Dict[str, Any] = field(default_factory=dict)
     backend_config: Dict[str, Any] = field(default_factory=dict)
 
 
@@ -268,6 +636,7 @@ class RunSpec:
     memory_overrides: Dict[str, Any]
     trial: int
     seed: int
+    extraction_overrides: Dict[str, Any] = field(default_factory=dict)
 
 
 def slugify(text: str) -> str:
@@ -439,6 +808,9 @@ def make_spec_conditions(args: argparse.Namespace) -> List[Condition]:
                     agent_type=agent_settings["agent_type"],
                     use_memory=agent_settings["use_memory"],
                     memory_overrides=agent_settings["memory_overrides"],
+                    extraction_overrides=dict(
+                        item.get("extraction", {}) or {}
+                    ),
                     backend_config=backend_config_from_spec_item(item),
                 )
             )
@@ -584,32 +956,58 @@ def apply_be_parameter_overrides(conditions: List[Condition], args: argparse.Nam
     return updated_conditions
 
 
-def build_specs(conditions: Iterable[Condition], trials: int, topics: Iterable[str]) -> List[RunSpec]:
+def build_specs(
+    conditions: Iterable[Condition],
+    trials: int,
+    topics: Iterable[str],
+    *,
+    schedule_order: str = "condition-major",
+) -> List[RunSpec]:
+    if schedule_order not in SCHEDULE_ORDERS:
+        raise ValueError(
+            f"Unknown schedule_order={schedule_order!r}; "
+            f"expected one of {SCHEDULE_ORDERS}."
+        )
+    condition_list = list(conditions)
     specs: List[RunSpec] = []
     for topic in topics:
         topic_slug = short_topic_slug(topic)
-        for condition in conditions:
-            for trial in range(1, trials + 1):
-                seed = stable_seed("two_agent_model_comparison", topic, trial)
-                run_id = f"{topic_slug}__{condition.name}__trial_{trial:02d}"
-                specs.append(
-                    RunSpec(
-                        run_id=run_id,
-                        topic=topic,
-                        topic_slug=topic_slug,
-                        condition_name=condition.name,
-                        condition_label=condition.label,
-                        backend_type=condition.backend_type,
-                        model=condition.model,
-                        backend_config=dict(condition.backend_config),
-                        use_belief_engine=condition.use_belief_engine,
-                        agent_type=condition.agent_type,
-                        use_memory=condition.use_memory,
-                        memory_overrides=dict(condition.memory_overrides),
-                        trial=trial,
-                        seed=seed,
-                    )
+        if schedule_order == "paired":
+            cells = (
+                (condition, trial)
+                for trial in range(1, trials + 1)
+                for condition in condition_list
+            )
+        else:
+            cells = (
+                (condition, trial)
+                for condition in condition_list
+                for trial in range(1, trials + 1)
+            )
+        for condition, trial in cells:
+            seed = stable_seed("two_agent_model_comparison", topic, trial)
+            run_id = f"{topic_slug}__{condition.name}__trial_{trial:02d}"
+            specs.append(
+                RunSpec(
+                    run_id=run_id,
+                    topic=topic,
+                    topic_slug=topic_slug,
+                    condition_name=condition.name,
+                    condition_label=condition.label,
+                    backend_type=condition.backend_type,
+                    model=condition.model,
+                    backend_config=dict(condition.backend_config),
+                    use_belief_engine=condition.use_belief_engine,
+                    agent_type=condition.agent_type,
+                    use_memory=condition.use_memory,
+                    memory_overrides=dict(condition.memory_overrides),
+                    extraction_overrides=dict(
+                        condition.extraction_overrides
+                    ),
+                    trial=trial,
+                    seed=seed,
                 )
+            )
     return specs
 
 
@@ -641,7 +1039,12 @@ def resolve_topics(topic_filter: Optional[str]) -> List[str]:
     return selected
 
 
-def agent_config(spec: RunSpec, side: str) -> Dict[str, Any]:
+def agent_config(
+    spec: RunSpec,
+    side: str,
+    *,
+    effective_memory: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
     is_pro = side == "pro"
     seed_stance = "affirmative" if is_pro else "negative"
     target_initial_stance = INITIAL_STANCE if is_pro else -INITIAL_STANCE
@@ -661,7 +1064,11 @@ def agent_config(spec: RunSpec, side: str) -> Dict[str, Any]:
     }
     if spec.use_memory:
         config["use_memory"] = True
-        config["memory"] = dict(spec.memory_overrides or OPEN_MINDED_MEMORY)
+        config["memory"] = dict(
+            effective_memory
+            if effective_memory is not None
+            else (spec.memory_overrides or OPEN_MINDED_MEMORY)
+        )
     return config
 
 
@@ -684,6 +1091,70 @@ def build_config(spec: RunSpec, args: argparse.Namespace) -> Dict[str, Any]:
     effective_memory = dict(OPEN_MINDED_MEMORY)
     if spec.use_memory:
         effective_memory.update(spec.memory_overrides)
+    if args.allow_self_arguments is not None:
+        effective_memory["allow_self_arguments"] = args.allow_self_arguments
+    effective_memory["retrieval_k"] = args.retrieval_k
+    effective_memory["belief_semantics_mode"] = (
+        args.belief_semantics_mode
+        if spec.use_belief_engine
+        else "incremental_v1"
+    )
+    effective_memory["response_retrieval_enabled"] = bool_from_config(
+        effective_memory.get("response_retrieval_enabled"),
+        True,
+    )
+    dynamic_evidence_horizon = str(
+        effective_memory.get("dynamic_evidence_horizon", "persistent")
+    )
+    if dynamic_evidence_horizon not in {
+        "persistent",
+        "latest_opponent_turn",
+    }:
+        raise ValueError(
+            "dynamic_evidence_horizon must be 'persistent' or "
+            f"'latest_opponent_turn', got {dynamic_evidence_horizon!r}"
+        )
+    if (
+        dynamic_evidence_horizon == "latest_opponent_turn"
+        and effective_memory["belief_semantics_mode"]
+        != "active_explicit_prior_v1"
+    ):
+        raise ValueError(
+            "latest_opponent_turn requires "
+            "--belief-semantics-mode active_explicit_prior_v1"
+        )
+    effective_memory["dynamic_evidence_horizon"] = dynamic_evidence_horizon
+    self_update_context_messages = args.self_update_context_messages
+    if self_update_context_messages is None:
+        self_update_context_messages = (
+            args.response_context_messages
+            if args.response_shell == "matched_v1"
+            else 6
+        )
+    extraction_output_mode = getattr(
+        args,
+        "extraction_output_mode",
+        "legacy_text_v1",
+    )
+    extraction_config = {
+        "output_mode": extraction_output_mode,
+        "strict_parsing": bool(getattr(args, "strict_extraction", False)),
+        "max_attempts": int(getattr(args, "extraction_max_attempts", 2)),
+        "max_tokens": int(getattr(args, "extraction_max_tokens", 2000)),
+    }
+    extraction_config.update(spec.extraction_overrides)
+    extraction_output_mode = str(extraction_config["output_mode"])
+    if extraction_output_mode not in EXTRACTION_OUTPUT_MODES:
+        raise ValueError(
+            f"Unknown condition extraction output_mode "
+            f"{extraction_output_mode!r}."
+        )
+    extraction_strict = bool(extraction_config["strict_parsing"])
+    memory_strict = bool(
+        getattr(args, "strict_memory_ingestion", False)
+    )
+    extraction_max_attempts = int(extraction_config["max_attempts"])
+    extraction_max_tokens = int(extraction_config["max_tokens"])
     return {
         "backend": backend_config,
         "data": {
@@ -701,33 +1172,81 @@ def build_config(spec: RunSpec, args: argparse.Namespace) -> Dict[str, Any]:
         "generation": {
             "temperature": args.temperature,
             "self_update_temperature": args.self_update_temperature,
+            "response_shell": args.response_shell,
+            "response_context_messages": args.response_context_messages,
+            "response_word_limit": args.response_word_limit,
+            "self_update_context_messages": self_update_context_messages,
         },
+        "extraction": extraction_config,
         "memory": {
             "storage_mode": "episodic",
-            "stance_method": "bayesian",
-            "belief_engine_type": "bayesian",
-            "opinion_change_style": "human_like",
-            "worldview_openness": "balanced",
+            "stance_method": effective_memory.get("stance_method", "bayesian"),
+            "belief_engine_type": effective_memory.get(
+                "belief_engine_type",
+                "bayesian",
+            ),
+            "opinion_change_style": effective_memory.get(
+                "opinion_change_style",
+                "human_like",
+            ),
+            "worldview_openness": effective_memory.get(
+                "worldview_openness",
+                "balanced",
+            ),
             "retrieval_strategy": args.retrieval_strategy,
             "argument_similarity_threshold": effective_memory["argument_similarity_threshold"],
             "self_similarity_threshold": effective_memory["self_similarity_threshold"],
             "cross_polarity_dedup": effective_memory["cross_polarity_dedup"],
+            "deduplication_enabled": bool_from_config(
+                effective_memory.get("deduplication_enabled"),
+                True,
+            ),
             "confirmation_bias": effective_memory["confirmation_bias"],
             "allow_self_arguments": effective_memory["allow_self_arguments"],
+            "belief_semantics_mode": effective_memory["belief_semantics_mode"],
+            "retrieval_k": effective_memory["retrieval_k"],
+            "response_retrieval_enabled": effective_memory[
+                "response_retrieval_enabled"
+            ],
+            "dynamic_evidence_horizon": effective_memory[
+                "dynamic_evidence_horizon"
+            ],
+            "retrieved_evidence_token_budget": effective_memory.get(
+                "retrieved_evidence_token_budget"
+            ),
+            "retrieved_evidence_encoding": effective_memory.get(
+                "retrieved_evidence_encoding",
+                "cl100k_base",
+            ),
             "update_sensitivity": effective_memory["update_sensitivity"],
             "anchor_sensitivity": effective_memory["anchor_sensitivity"],
-            "strength_estimation_method": "classifier",
-            "classifier_model_path": "models/argument_quality_classifier",
+            "strength_estimation_method": effective_memory.get(
+                "strength_estimation_method",
+                "classifier",
+            ),
+            "classifier_model_path": effective_memory.get(
+                "classifier_model_path",
+                "models/argument_quality_classifier",
+            ),
+            "uniform_strength_value": effective_memory.get(
+                "uniform_strength_value"
+            ),
+            "strict_ingestion": memory_strict,
         },
         "simulation": {
             "rounds": args.rounds,
-            "agents": [agent_config(spec, "pro"), agent_config(spec, "con")],
+            "speaker_order": getattr(args, "speaker_order", "pro-first"),
+            "agents": [
+                agent_config(spec, "pro", effective_memory=effective_memory),
+                agent_config(spec, "con", effective_memory=effective_memory),
+            ],
             "live_plot": False,
         },
         "evaluation": {
             "enabled": True,
             "backend": judge_backend_config,
             "temperature": args.judge_temperature,
+            "strict_parsing": args.strict_judge,
             "stance_source": "external_judge_last_turn",
         },
         "logging": {
@@ -748,6 +1267,7 @@ def build_config(spec: RunSpec, args: argparse.Namespace) -> Dict[str, Any]:
             "agent_type": spec.agent_type,
             "use_memory": spec.use_memory,
             "memory_overrides": dict(spec.memory_overrides),
+            "extraction_overrides": dict(spec.extraction_overrides),
             "vanilla_definition": VANILLA_DEFINITION,
             "prompt_self_update_definition": PROMPT_SELF_UPDATE_DEFINITION,
             "rag_memory_definition": RAG_MEMORY_DEFINITION,
@@ -758,9 +1278,47 @@ def build_config(spec: RunSpec, args: argparse.Namespace) -> Dict[str, Any]:
             "initial_con_stance": -INITIAL_STANCE,
             "seed": spec.seed,
             "trial": spec.trial,
+            "speaker_order": getattr(args, "speaker_order", "pro-first"),
             "generation_temperature": args.temperature,
             "self_update_temperature": args.self_update_temperature,
+            "response_shell": args.response_shell,
+            "response_context_messages": args.response_context_messages,
+            "response_word_limit": args.response_word_limit,
+            "self_update_context_messages": self_update_context_messages,
+            "retrieval_k": args.retrieval_k,
+            "response_retrieval_enabled": effective_memory[
+                "response_retrieval_enabled"
+            ],
+            "dynamic_evidence_horizon": effective_memory[
+                "dynamic_evidence_horizon"
+            ],
+            "deduplication_enabled": bool_from_config(
+                effective_memory.get("deduplication_enabled"),
+                True,
+            ),
+            "strength_estimation_method": effective_memory.get(
+                "strength_estimation_method",
+                "classifier",
+            ),
+            "uniform_strength_value": effective_memory.get(
+                "uniform_strength_value"
+            ),
+            "retrieved_evidence_token_budget": effective_memory.get(
+                "retrieved_evidence_token_budget"
+            ),
+            "retrieved_evidence_encoding": effective_memory.get(
+                "retrieved_evidence_encoding",
+                "cl100k_base",
+            ),
+            "allow_self_arguments": effective_memory["allow_self_arguments"],
+            "belief_semantics_mode": effective_memory["belief_semantics_mode"],
             "judge_temperature": args.judge_temperature,
+            "strict_judge": args.strict_judge,
+            "extraction_output_mode": extraction_output_mode,
+            "strict_extraction": extraction_strict,
+            "strict_memory_ingestion": memory_strict,
+            "extraction_max_attempts": extraction_max_attempts,
+            "extraction_max_tokens": extraction_max_tokens,
         },
     }
 
@@ -769,14 +1327,57 @@ def config_path_for(output_dir: Path, spec: RunSpec) -> Path:
     return output_dir / "configs" / spec.topic_slug / f"{spec.run_id}.yaml"
 
 
+def partition_existing_tasks(
+    tasks: Iterable[Tuple[RunSpec, str, str]],
+) -> Tuple[
+    List[Tuple[RunSpec, str, str]],
+    List[Dict[str, Any]],
+]:
+    """Separate rejudgeable historical runs from explicitly missing cells."""
+    existing = []
+    skipped = []
+    for spec, config_path, raw_dir in tasks:
+        if (Path(raw_dir) / "results.json").exists():
+            existing.append((spec, config_path, raw_dir))
+        else:
+            skipped.append(
+                {
+                    "run_id": spec.run_id,
+                    "reason": "missing historical results.json",
+                }
+            )
+    return existing, skipped
+
+
 def raw_dir_for(output_dir: Path, spec: RunSpec) -> Path:
     return output_dir / "raw_runs" / spec.topic_slug / spec.run_id
 
 
+def requires_complete_extraction_audit(output_mode: str) -> bool:
+    """Return whether the runner must persist the strict completion contract."""
+    return output_mode in EXTRACTION_AUDIT_OUTPUT_MODES
+
+
 def write_yaml(path: Path, data: Dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w") as f:
-        yaml.safe_dump(data, f, sort_keys=False)
+    temporary_path: Optional[Path] = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            dir=path.parent,
+            prefix=f".{path.name}.",
+            suffix=".tmp",
+            delete=False,
+        ) as handle:
+            temporary_path = Path(handle.name)
+            yaml.safe_dump(data, handle, sort_keys=False)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary_path, path)
+    finally:
+        if temporary_path is not None and temporary_path.exists():
+            temporary_path.unlink()
 
 
 def read_json(path: Path) -> Dict[str, Any]:
@@ -800,14 +1401,28 @@ def write_csv(path: Path, rows: List[Dict[str, Any]], fieldnames: Optional[List[
         writer.writerows(rows)
 
 
-def run_generated_config(config_path: str, raw_dir: str, resume: bool) -> Optional[str]:
+def run_generated_config(
+    config_path: str,
+    raw_dir: str,
+    resume: bool,
+    execution_context: Optional[Dict[str, Any]] = None,
+) -> Optional[str]:
     """Run one generated config with a separate optional judge backend."""
     raw_path = Path(raw_dir)
     results_path = raw_path / "results.json"
     if resume and results_path.exists():
         return None
-    if raw_path.exists() and (not resume or not results_path.exists()):
-        shutil.rmtree(raw_path)
+    execution_started_at = datetime.now().astimezone().isoformat(
+        timespec="microseconds"
+    )
+    recovery_metadata: Optional[Dict[str, Any]] = None
+    if raw_path.exists():
+        if not resume:
+            return (
+                "raw run directory already exists; refusing to overwrite "
+                "unreviewed artifacts"
+            )
+        recovery_metadata = quarantine_partial_run(raw_path)
     raw_path.mkdir(parents=True, exist_ok=True)
 
     agents = []
@@ -820,12 +1435,18 @@ def run_generated_config(config_path: str, raw_dir: str, resume: bool) -> Option
         from src.utils.result_writer import ResultWriter
 
         config = ConfigLoader.load_config(config_path)
+        require_configured_backend_credentials(config)
         config.setdefault("logging", {})["log_dir"] = str(raw_path)
 
         writer = ResultWriter(str(raw_path))
-        writer.save_yaml("resolved_config.yaml", config)
+        write_yaml(raw_path / "resolved_config.yaml", config)
 
         generation_backend = create_backend(config)
+        generation_attestation = attest_runtime_backend(
+            generation_backend,
+            config.get("backend", {}) or {},
+            role="generation",
+        )
         topic = config["debate"]["topic"]
         agent_configs = config.get("simulation", {}).get("agents", [])
         needs_extractor = any(
@@ -841,6 +1462,14 @@ def run_generated_config(config_path: str, raw_dir: str, resume: bool) -> Option
             if needs_extractor
             else NoOpExtractor(topic)
         )
+        runtime_backends: Dict[str, Any] = {
+            "generation": generation_attestation,
+        }
+        if needs_extractor:
+            runtime_backends["extractor"] = {
+                **generation_attestation,
+                "shared_with_generation": True,
+            }
 
         for agent_conf in agent_configs:
             agents.append(create_agent(agent_conf, config, generation_backend, log_dir=str(raw_path)))
@@ -849,6 +1478,11 @@ def run_generated_config(config_path: str, raw_dir: str, resume: bool) -> Option
         eval_conf = config.get("evaluation", {})
         if eval_conf.get("enabled", False):
             evaluator = build_evaluator(config, generation_backend=generation_backend)
+            runtime_backends["evaluator"] = attest_runtime_backend(
+                evaluator.backend,
+                eval_conf.get("backend", {}) or config.get("backend", {}),
+                role="evaluator",
+            )
 
         logging_config = config.get("logging", {})
         artifact_mode = logging_config.get("artifact_mode", "compact")
@@ -861,12 +1495,144 @@ def run_generated_config(config_path: str, raw_dir: str, resume: bool) -> Option
             live_plot=False,
             live_json=False,
             artifact_mode=artifact_mode,
+            evaluator_strict=bool(eval_conf.get("strict_parsing", False)),
+            extraction_strict=bool(
+                config.get("extraction", {}).get("strict_parsing", False)
+            ),
+            memory_strict=bool(
+                config.get("memory", {}).get("strict_ingestion", False)
+            ),
+            speaker_order=config.get("simulation", {}).get(
+                "speaker_order",
+                "pro-first",
+            ),
         )
         results = runner.run()
-        writer.save_json("results.json", results)
-        writer.save_memory_dump(agents)
+        results.setdefault("metadata", {})[
+            "runtime_backends"
+        ] = runtime_backends
+        if recovery_metadata is not None:
+            results.setdefault("metadata", {})[
+                "operational_recovery"
+            ] = recovery_metadata
+        if (
+            needs_extractor
+            and requires_complete_extraction_audit(
+                config.get("extraction", {}).get("output_mode", "")
+            )
+            and hasattr(extractor, "audit_summary")
+        ):
+            extraction_audit = extractor.audit_summary()
+            expected_extract_calls = len(results.get("transcript", []))
+            completed_extract_calls = int(
+                extraction_audit.get("extract_calls", 0)
+            )
+            extractor_code_path = Path(
+                sys.modules[extractor.__class__.__module__].__file__
+            ).resolve()
+            extraction_audit.update(
+                {
+                    "output_mode": config["extraction"]["output_mode"],
+                    "strict_parsing": bool(
+                        config["extraction"]["strict_parsing"]
+                    ),
+                    "max_attempts": int(
+                        config["extraction"]["max_attempts"]
+                    ),
+                    "max_tokens": int(config["extraction"]["max_tokens"]),
+                    "backend": config.get("backend", {}).get("type"),
+                    "model": config.get("backend", {}).get("model"),
+                    "reasoning_effort": config.get("backend", {}).get(
+                        "reasoning_effort"
+                    ),
+                    "verbosity": config.get("backend", {}).get("verbosity"),
+                    "expected_extract_calls": expected_extract_calls,
+                    "completed_extract_calls": completed_extract_calls,
+                    "complete": completed_extract_calls
+                    == expected_extract_calls,
+                    "extractor_code_path": display_path(
+                        extractor_code_path
+                    ),
+                    "extractor_code_sha256": file_sha256(
+                        extractor_code_path
+                    ),
+                    "runner_commit": git_metadata().get("commit", ""),
+                }
+            )
+            if (
+                config.get("extraction", {}).get("strict_parsing", False)
+                and completed_extract_calls != expected_extract_calls
+            ):
+                raise RuntimeError(
+                    "Strict extraction audit mismatch: "
+                    f"expected {expected_extract_calls} calls, observed "
+                    f"{completed_extract_calls}."
+                )
+            results.setdefault("metadata", {})[
+                "argument_extraction"
+            ] = extraction_audit
+        if evaluator is not None:
+            evaluated_count = sum(
+                1
+                for entry in results.get("stance_history", [])
+                if int(entry.get("round", 0) or 0) > 0
+                for agent_conf in agent_configs
+                if f"{agent_conf.get('name')}_evaluated" in entry
+            )
+            evaluated_at = datetime.now().astimezone().isoformat(
+                timespec="seconds"
+            )
+            evaluator_metadata = evaluator_provenance_from_config(
+                config,
+                evaluator=evaluator,
+            )
+            evaluator_metadata.update(
+                {
+                    "evaluated_count": evaluated_count,
+                    "timestamp": evaluated_at,
+                    "strict_parsing": bool(
+                        eval_conf.get("strict_parsing", False)
+                    ),
+                }
+            )
+            results.setdefault("metadata", {})[
+                "external_stance_generation"
+            ] = evaluator_metadata
+        if execution_context is not None:
+            schedule_metadata = copy.deepcopy(execution_context)
+            schedule_metadata.update(
+                {
+                    "worker_started_at": execution_started_at,
+                    "worker_completed_at": (
+                        datetime.now().astimezone().isoformat(
+                            timespec="microseconds"
+                        )
+                    ),
+                    "system_fingerprint_recorded": False,
+                }
+            )
+            results.setdefault("metadata", {})[
+                "execution_schedule"
+            ] = schedule_metadata
+            # Keep execution attestation independently auditable without
+            # requiring the schedule verifier to parse scientific outcomes.
+            write_json_atomic(
+                raw_path / "execution_schedule.json",
+                schedule_metadata,
+            )
+        memory_dump = {
+            agent.name: agent.memory.get_all_arguments()
+            for agent in agents
+            if getattr(agent, "memory", None) is not None
+        }
+        if memory_dump:
+            write_json_atomic(raw_path / "memory_dump.json", memory_dump)
         if artifact_mode != "compact":
             writer.save_settings_summary(Path(config_path).stem, config_path, config)
+        # results.json is the completion marker. Write it atomically and last
+        # so interrupted or disk-full runs cannot be resumed or aggregated as
+        # successful cells.
+        write_json_atomic(results_path, results)
         return None
     except Exception as exc:
         return str(exc)
@@ -1036,7 +1802,13 @@ def aggregate_outputs(
         if summary:
             summary_rows.append(summary)
         trajectory_rows.extend(collect_trajectories(spec, raw_dir, be_stance_source=be_stance_source))
-        topic_grid_trajectory_rows.extend(collect_trajectories(spec, raw_dir, be_stance_source="internal"))
+        topic_grid_trajectory_rows.extend(
+            collect_trajectories(
+                spec,
+                raw_dir,
+                be_stance_source=be_stance_source,
+            )
+        )
 
     if summary_rows:
         write_csv(output_dir / "summary.csv", summary_rows)
@@ -1332,19 +2104,125 @@ def generate_figures(
 def measurement_description(args: argparse.Namespace) -> str:
     if args.be_stance_source == "internal":
         return (
-            "Belief Engine conditions are plotted and summarized using the "
+            "Belief Engine conditions are plotted and summarized in every output "
+            "using the "
             "agents' internal Belief Engine stance after each round. Non-BE "
             f"conditions remain measured by the "
             f"external judge (`{args.judge_backend}` / `{args.judge_model}`). "
             "Round 0 is fixed to the designed starting stances (+0.75 pro, -0.75 con)."
         )
     return (
-        f"Convergence summaries and `stance_trajectories.csv` use an external judge "
-        f"(`{args.judge_backend}` / `{args.judge_model}`) after each agent turn. "
-        "Topic-grid figures additionally prefer Belief Engine internal stance "
-        "for BE runs when available, while non-BE baselines remain externally judged. "
+        "All summaries, trajectory files, and topic-grid figures use the same "
+        f"external judge (`{args.judge_backend}` / `{args.judge_model}`) after "
+        "each agent turn, including Belief Engine conditions. "
         "Round 0 is fixed to the designed starting stances (+0.75 pro, -0.75 con)."
     )
+
+
+def reproduction_command(args: argparse.Namespace, output_dir: Path) -> str:
+    """Return a shell-safe command containing all comparison-defining controls."""
+    command = [
+        "python",
+        "validation/scripts/run_two_agent_model_comparison.py",
+    ]
+    if args.comparison_spec:
+        command.extend(["--comparison-spec", display_path(Path(args.comparison_spec))])
+    if args.topics:
+        command.extend(["--topics", args.topics])
+    if args.conditions:
+        command.extend(["--conditions", args.conditions])
+    command.extend(
+        [
+            "--rounds",
+            str(args.rounds),
+            "--trials",
+            str(args.trials),
+            "--seeding-limit",
+            str(args.seeding_limit),
+        ]
+    )
+    if args.be_update_sensitivity is not None:
+        command.extend(
+            ["--be-update-sensitivity", str(args.be_update_sensitivity)]
+        )
+    if args.be_anchor_sensitivity is not None:
+        command.extend(
+            ["--be-anchor-sensitivity", str(args.be_anchor_sensitivity)]
+        )
+    command.extend(
+        [
+            "--temperature",
+            str(args.temperature),
+            "--self-update-temperature",
+            str(args.self_update_temperature),
+            "--response-shell",
+            args.response_shell,
+            "--response-context-messages",
+            str(args.response_context_messages),
+            "--response-word-limit",
+            str(args.response_word_limit),
+            "--retrieval-strategy",
+            args.retrieval_strategy,
+            "--retrieval-k",
+            str(args.retrieval_k),
+            "--belief-semantics-mode",
+            args.belief_semantics_mode,
+            "--schedule-order",
+            args.schedule_order,
+            "--speaker-order",
+            getattr(args, "speaker_order", "pro-first"),
+            "--extraction-output-mode",
+            getattr(args, "extraction_output_mode", "legacy_text_v1"),
+            "--extraction-max-attempts",
+            str(getattr(args, "extraction_max_attempts", 2)),
+            "--extraction-max-tokens",
+            str(getattr(args, "extraction_max_tokens", 2000)),
+        ]
+    )
+    if args.self_update_context_messages is not None:
+        command.extend(
+            [
+                "--self-update-context-messages",
+                str(args.self_update_context_messages),
+            ]
+        )
+    if args.allow_self_arguments is not None:
+        command.append(
+            "--allow-self-arguments"
+            if args.allow_self_arguments
+            else "--no-allow-self-arguments"
+        )
+    if getattr(args, "allow_missing_existing", False):
+        command.append("--allow-missing-existing")
+    command.extend(
+        [
+            "--judge-backend",
+            args.judge_backend,
+            "--judge-model",
+            args.judge_model,
+            "--judge-reasoning-effort",
+            args.judge_reasoning_effort,
+            "--judge-verbosity",
+            args.judge_verbosity,
+            "--judge-temperature",
+            str(args.judge_temperature),
+            "--be-stance-source",
+            args.be_stance_source,
+            "--artifact-mode",
+            args.artifact_mode,
+            "--workers",
+            str(args.workers),
+            "--output-dir",
+            display_path(output_dir),
+        ]
+    )
+    if args.strict_judge:
+        command.append("--strict-judge")
+    if getattr(args, "strict_extraction", False):
+        command.append("--strict-extraction")
+    if getattr(args, "strict_memory_ingestion", False):
+        command.append("--strict-memory-ingestion")
+    return shlex.join(command)
 
 
 def write_manifest_and_readme(
@@ -1353,16 +2231,23 @@ def write_manifest_and_readme(
     conditions: List[Condition],
     specs: List[RunSpec],
     failures: List[Dict[str, Any]],
+    skipped: Optional[List[Dict[str, Any]]] = None,
 ) -> None:
+    skipped = skipped or []
     selected_topics = []
     for spec in specs:
         if spec.topic not in selected_topics:
             selected_topics.append(spec.topic)
+    topic_grid_source_policy = (
+        "external_judge_for_all_conditions"
+        if args.be_stance_source == "external"
+        else "belief_engine_internal_non_be_external_judge"
+    )
     manifest = {
         "experiment": "two_agent_model_comparison",
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "command": " ".join(sys.argv),
-        "repo_root": str(REPO_ROOT),
+        "repository_layout": "repository_relative_v1",
         "git": git_metadata(),
         "args": vars(args),
         "topics": selected_topics,
@@ -1373,11 +2258,14 @@ def write_manifest_and_readme(
         "rag_memory_definition": RAG_MEMORY_DEFINITION,
         "rag_self_update_definition": RAG_SELF_UPDATE_DEFINITION,
         "conditions": [asdict(condition) for condition in conditions],
-        "topic_grid_stance_source": "belief_engine_internal_when_available",
+        "selected_be_stance_source": args.be_stance_source,
+        "topic_grid_stance_source": topic_grid_source_policy,
+        "evaluator_provenance": evaluator_provenance_from_args(args),
         "runs": [asdict(spec) for spec in specs],
         "failures": failures,
+        "skipped": skipped,
     }
-    (output_dir / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    write_json_atomic(output_dir / "manifest.json", manifest)
 
     lines = [
         "# Two-Agent Model Comparison",
@@ -1394,6 +2282,39 @@ def write_manifest_and_readme(
         "## Measurement",
         "",
         measurement_description(args),
+        "",
+        "## Matched controls",
+        "",
+        f"- Response shell: `{args.response_shell}`",
+        f"- Response context: `{args.response_context_messages}` messages",
+        "- Self-update context: "
+        f"`{args.self_update_context_messages if args.self_update_context_messages is not None else ('response context' if args.response_shell == 'matched_v1' else 6)}`",
+        f"- Response word limit: `{args.response_word_limit}`",
+        f"- Retrieval: `{args.retrieval_strategy}`, `k={args.retrieval_k}`",
+        f"- BE semantics: `{args.belief_semantics_mode}`",
+        f"- Within-round speaker order: "
+        f"`{getattr(args, 'speaker_order', 'pro-first')}`",
+        "- Extraction: "
+        f"`{getattr(args, 'extraction_output_mode', 'legacy_text_v1')}`, "
+        f"strict=`{getattr(args, 'strict_extraction', False)}`, "
+        f"attempts=`{getattr(args, 'extraction_max_attempts', 2)}`, "
+        f"max tokens=`{getattr(args, 'extraction_max_tokens', 2000)}`",
+        "Memory ingestion fail-closed: "
+        f"`{getattr(args, 'strict_memory_ingestion', False)}`",
+        f"- Self-authored arguments: `{args.allow_self_arguments}` "
+        "(`None` means the condition default)",
+        "",
+        "### External evaluator provenance",
+        "",
+        "The complete machine-readable evaluator fingerprint is stored under "
+        "`evaluator_provenance` in `manifest.json`, including backend, model, "
+        "reasoning effort, verbosity, temperature, prompt path and SHA-256, "
+        "evaluator-code SHA-256, runner-code SHA-256, and runner commit.",
+        f"Live evaluator strict parsing: `{args.strict_judge}`.",
+        "Extractor-backed successful runs store cumulative contract-health "
+        "counters in `results.json` under "
+        "`metadata.argument_extraction`; strict runs must account for every "
+        "generated message.",
         "",
         "## Conditions",
         "",
@@ -1426,24 +2347,13 @@ def write_manifest_and_readme(
             "| `raw_runs/` | Raw transcripts, memory reports, resolved configs, and `results.json`. |",
             "| `summary.csv` | One row per completed run with final stances and convergence. |",
             "| `stance_trajectories.csv` | Long-form stance trajectories matching the summary stance source. |",
-            "| `topic_grid_stance_trajectories.csv` | Topic-grid trajectories, preferring BE internal stance where available. |",
+            "| `topic_grid_stance_trajectories.csv` | Topic-grid trajectories using the selected `--be-stance-source`. |",
             "| `figures/topic_grids/` | Topic-grid trajectory figures in the two-agent style. |",
             "",
             "## Reproduce",
             "",
             "```bash",
-            "python validation/scripts/run_two_agent_model_comparison.py "
-            + (f"--comparison-spec {display_path(Path(args.comparison_spec))} " if args.comparison_spec else "")
-            + (f"--topics {args.topics} " if args.topics else "")
-            + "--rounds 15 --trials 3 "
-            + (f"--be-update-sensitivity {args.be_update_sensitivity} " if args.be_update_sensitivity is not None else "")
-            + (f"--be-anchor-sensitivity {args.be_anchor_sensitivity} " if args.be_anchor_sensitivity is not None else "")
-            + f"--temperature {args.temperature} "
-            + f"--self-update-temperature {args.self_update_temperature} "
-            + f"--judge-temperature {args.judge_temperature} "
-            + f"--retrieval-strategy {args.retrieval_strategy} "
-            + ("--be-stance-source internal " if args.be_stance_source == "internal" else "")
-            + f"--output-dir {display_path(output_dir)}",
+            reproduction_command(args, output_dir),
             "```",
             "",
             "To compare other models, pass `--comparison-spec` with a YAML file "
@@ -1456,10 +2366,74 @@ def write_manifest_and_readme(
         lines.extend(["", "## Failures", "", "| Run | Error |", "| --- | --- |"])
         for failure in failures:
             lines.append(f"| `{failure['run_id']}` | {failure['error']} |")
+    if skipped:
+        lines.extend(["", "## Skipped", "", "| Run | Reason |", "| --- | --- |"])
+        for item in skipped:
+            lines.append(f"| `{item['run_id']}` | {item['reason']} |")
     (output_dir / "README.md").write_text("\n".join(lines) + "\n")
 
 
+def write_campaign_heartbeat(
+    output_dir: Path,
+    specs: List[RunSpec],
+    *,
+    status: str,
+    started_at: str,
+    failures: List[Dict[str, Any]],
+) -> None:
+    """Publish compact parent-runner liveness/progress without raw content."""
+    completed = [
+        spec.run_id
+        for spec in specs
+        if (raw_dir_for(output_dir, spec) / "results.json").is_file()
+    ]
+    payload = {
+        "schema_version": 1,
+        "owner": "run_two_agent_model_comparison",
+        "pid": os.getpid(),
+        "runner_commit": git_metadata().get("commit", ""),
+        "started_at": started_at,
+        "updated_at": datetime.now().astimezone().isoformat(
+            timespec="seconds"
+        ),
+        "status": status,
+        "registered_runs": len(specs),
+        "completed_runs": len(completed),
+        "completed_run_ids": completed,
+        "failed_run_ids": [
+            item.get("run_id")
+            for item in failures
+            if isinstance(item, dict)
+        ],
+    }
+    write_json_atomic(
+        output_dir / "monitor" / "runner_heartbeat.json",
+        payload,
+    )
+
+
 def run(args: argparse.Namespace) -> int:
+    for name in (
+        "response_context_messages",
+        "response_word_limit",
+        "retrieval_k",
+        "extraction_max_attempts",
+        "extraction_max_tokens",
+    ):
+        if int(
+            getattr(
+                args,
+                name,
+                2 if name == "extraction_max_attempts" else 2000,
+            )
+        ) < 1:
+            raise ValueError(f"--{name.replace('_', '-')} must be positive.")
+    if (
+        args.self_update_context_messages is not None
+        and int(args.self_update_context_messages) < 1
+    ):
+        raise ValueError("--self-update-context-messages must be positive.")
+
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_dir = (
         Path(args.output_dir)
@@ -1472,17 +2446,30 @@ def run(args: argparse.Namespace) -> int:
 
     conditions = make_conditions(args)
     topics = resolve_topics(args.topics)
-    specs = build_specs(conditions, args.trials, topics)
+    specs = build_specs(
+        conditions,
+        args.trials,
+        topics,
+        schedule_order=args.schedule_order,
+    )
     if args.max_runs:
         specs = specs[: args.max_runs]
 
     failures: List[Dict[str, Any]] = []
+    skipped: List[Dict[str, Any]] = []
 
     for spec in specs:
         write_yaml(config_path_for(output_dir, spec), build_config(spec, args))
 
     if args.dry_run:
-        write_manifest_and_readme(output_dir, args, conditions, specs, failures)
+        write_manifest_and_readme(
+            output_dir,
+            args,
+            conditions,
+            specs,
+            failures,
+            skipped,
+        )
         print(f"Wrote {len(specs)} configs to {display_path(output_dir)}")
         return 0
 
@@ -1490,8 +2477,13 @@ def run(args: argparse.Namespace) -> int:
         (spec, str(config_path_for(output_dir, spec)), str(raw_dir_for(output_dir, spec)))
         for spec in specs
     ]
+    heartbeat_started_at = datetime.now().astimezone().isoformat(
+        timespec="seconds"
+    )
 
     if args.rejudge_existing:
+        if args.allow_missing_existing:
+            tasks, skipped = partition_existing_tasks(tasks)
         backup = not args.no_rejudge_backup
         if args.workers > 1:
             with ProcessPoolExecutor(max_workers=args.workers) as executor:
@@ -1516,7 +2508,14 @@ def run(args: argparse.Namespace) -> int:
                     print(f"[REJUDGE FAIL] {spec.run_id}: {error}")
 
         aggregate_outputs(output_dir, specs, conditions, be_stance_source=args.be_stance_source)
-        write_manifest_and_readme(output_dir, args, conditions, specs, failures)
+        write_manifest_and_readme(
+            output_dir,
+            args,
+            conditions,
+            specs,
+            failures,
+            skipped,
+        )
         print(f"Rejudged and aggregated outputs in {display_path(output_dir)}")
         if failures:
             print(f"{len(failures)} runs failed to rejudge. See README.md and manifest.json.")
@@ -1525,11 +2524,25 @@ def run(args: argparse.Namespace) -> int:
 
     if args.aggregate_only:
         aggregate_outputs(output_dir, specs, conditions, be_stance_source=args.be_stance_source)
-        write_manifest_and_readme(output_dir, args, conditions, specs, failures)
+        write_manifest_and_readme(
+            output_dir,
+            args,
+            conditions,
+            specs,
+            failures,
+            skipped,
+        )
         print(f"Aggregated outputs in {display_path(output_dir)}")
         return 0
 
     if args.workers > 1:
+        write_campaign_heartbeat(
+            output_dir,
+            specs,
+            status="running",
+            started_at=heartbeat_started_at,
+            failures=failures,
+        )
         with ProcessPoolExecutor(max_workers=args.workers) as executor:
             future_map = {
                 executor.submit(run_generated_config, config_path, raw_dir, args.resume): spec
@@ -1543,16 +2556,51 @@ def run(args: argparse.Namespace) -> int:
                     print(f"[FAIL] {spec.run_id}: {error}")
                 else:
                     print(f"[OK] {spec.run_id}")
+                write_campaign_heartbeat(
+                    output_dir,
+                    specs,
+                    status="running",
+                    started_at=heartbeat_started_at,
+                    failures=failures,
+                )
     else:
+        write_campaign_heartbeat(
+            output_dir,
+            specs,
+            status="running",
+            started_at=heartbeat_started_at,
+            failures=failures,
+        )
         for idx, (spec, config_path, raw_dir) in enumerate(tasks, start=1):
             print(f"[{idx}/{len(tasks)}] Running {spec.run_id}")
             error = run_generated_config(config_path, raw_dir, args.resume)
             if error:
                 failures.append({"run_id": spec.run_id, "error": error})
                 print(f"[FAIL] {spec.run_id}: {error}")
+            write_campaign_heartbeat(
+                output_dir,
+                specs,
+                status="running",
+                started_at=heartbeat_started_at,
+                failures=failures,
+            )
 
     aggregate_outputs(output_dir, specs, conditions, be_stance_source=args.be_stance_source)
-    write_manifest_and_readme(output_dir, args, conditions, specs, failures)
+    write_manifest_and_readme(
+        output_dir,
+        args,
+        conditions,
+        specs,
+        failures,
+        skipped,
+    )
+    write_campaign_heartbeat(
+        output_dir,
+        specs,
+        status="failed" if failures else "complete",
+        started_at=heartbeat_started_at,
+        failures=failures,
+    )
 
     print(f"Done. Results: {display_path(output_dir)}")
     if failures:
@@ -1597,6 +2645,33 @@ def parse_args() -> argparse.Namespace:
         help="Temperature for prompt self-update JSON stance updates.",
     )
     parser.add_argument(
+        "--response-shell",
+        choices=RESPONSE_SHELLS,
+        default="legacy",
+        help="Versioned response-generation shell shared across selected conditions.",
+    )
+    parser.add_argument(
+        "--response-context-messages",
+        type=int,
+        default=4,
+        help="Recent transcript messages exposed during response generation.",
+    )
+    parser.add_argument(
+        "--self-update-context-messages",
+        type=int,
+        default=None,
+        help=(
+            "Recent transcript messages exposed to prompt self-update. "
+            "Defaults to four for matched_v1 and six for legacy."
+        ),
+    )
+    parser.add_argument(
+        "--response-word-limit",
+        type=int,
+        default=120,
+        help="Common response word limit for generated conditions.",
+    )
+    parser.add_argument(
         "--retrieval-strategy",
         default="proportional",
         help=(
@@ -1604,7 +2679,87 @@ def parse_args() -> argparse.Namespace:
             "Use `proportional` to match the focus10 two-agent artifact."
         ),
     )
+    parser.add_argument(
+        "--retrieval-k",
+        type=int,
+        default=10,
+        help="Common retrieval budget for memory-backed response conditions.",
+    )
+    parser.add_argument(
+        "--belief-semantics-mode",
+        choices=BELIEF_SEMANTICS_MODES,
+        default="incremental_v1",
+        help=(
+            "Belief-state contract for BE conditions. Non-BE memory conditions "
+            "always use incremental_v1."
+        ),
+    )
+    parser.add_argument(
+        "--extraction-output-mode",
+        choices=EXTRACTION_OUTPUT_MODES,
+        default="legacy_text_v1",
+        help=(
+            "Versioned extractor response contract. structured_json_v1 uses "
+            "schema-constrained JSON and bounded whole-stage retries."
+        ),
+    )
+    parser.add_argument(
+        "--extraction-max-attempts",
+        type=int,
+        default=2,
+        help="Maximum complete attempts per structured extraction stage.",
+    )
+    parser.add_argument(
+        "--extraction-max-tokens",
+        type=int,
+        default=2000,
+        help="Completion-token budget for each structured extraction attempt.",
+    )
+    parser.add_argument(
+        "--strict-extraction",
+        action="store_true",
+        help=(
+            "Fail the entire trial on an unrecovered extraction-contract "
+            "failure or incomplete extraction-call audit."
+        ),
+    )
+    parser.add_argument(
+        "--strict-memory-ingestion",
+        action="store_true",
+        help=(
+            "Fail the entire trial if an extracted record cannot be admitted "
+            "to an intended agent memory."
+        ),
+    )
+    parser.add_argument(
+        "--allow-self-arguments",
+        action=argparse.BooleanOptionalAction,
+        default=None,
+        help=(
+            "Override self-authored memory ingestion. Use "
+            "--no-allow-self-arguments for a received-evidence-only comparison."
+        ),
+    )
     parser.add_argument("--workers", type=int, default=1, help="Parallel worker processes.")
+    parser.add_argument(
+        "--schedule-order",
+        choices=SCHEDULE_ORDERS,
+        default="condition-major",
+        help=(
+            "Execution order only. paired interleaves conditions within each "
+            "topic/trial to bound classifier memory and temporal drift."
+        ),
+    )
+    parser.add_argument(
+        "--speaker-order",
+        choices=SPEAKER_ORDERS,
+        default="pro-first",
+        help=(
+            "Within-round order for the two configured agents. pro-first "
+            "preserves the historical Pro-then-Con default; con-first reverses "
+            "it for the order-sensitivity experiment."
+        ),
+    )
     parser.add_argument("--resume", action="store_true", help="Skip runs that already have results.json.")
     parser.add_argument("--dry-run", action="store_true", help="Write configs and metadata without executing runs.")
     parser.add_argument("--aggregate-only", action="store_true", help="Only aggregate existing raw runs and regenerate figures.")
@@ -1617,6 +2772,14 @@ def parse_args() -> argparse.Namespace:
         "--no-rejudge-backup",
         action="store_true",
         help="Do not create results.strict_topic_judge_backup.json before rejudging.",
+    )
+    parser.add_argument(
+        "--allow-missing-existing",
+        action="store_true",
+        help=(
+            "With --rejudge-existing, record missing historical runs as skipped "
+            "instead of failures. This never applies to fresh generation."
+        ),
     )
     parser.add_argument("--max-runs", type=int, default=None, help="Optional cap for debugging.")
     parser.add_argument(
@@ -1682,6 +2845,15 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--judge-verbosity", default="low", help="Optional verbosity for OpenAI judge models.")
     parser.add_argument("--judge-temperature", type=float, default=0.0, help="External judge temperature.")
+    parser.add_argument(
+        "--strict-judge",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help=(
+            "Fail a generated run on malformed, non-finite, or out-of-range "
+            "external stance output instead of using the legacy neutral fallback."
+        ),
+    )
     return parser.parse_args()
 
 

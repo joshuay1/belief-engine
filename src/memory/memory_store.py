@@ -1,5 +1,8 @@
-from typing import List, Dict, Optional
+from typing import Any, Dict, List, Optional
+import copy
+import hashlib
 import json
+import math
 from .argument_record import ArgumentRecord
 
 from .merging import merge_arguments
@@ -7,13 +10,26 @@ from .retrieval import retrieve_arguments
 from .credence_manager import CredenceManager
 from ..constants import POLARITY_AFFIRMATIVE, POLARITY_NEGATIVE
 from ..utils.output import print_memory, print_debug, print_info, get_verbosity
-from ..simulation.belief_engine import create_belief_engine
+from ..simulation.belief_engine import (
+    ACTIVE_SET_BELIEF_SEMANTICS_MODES,
+    BELIEF_SEMANTICS_ACTIVE_EXPLICIT_PRIOR_V1,
+    BELIEF_SEMANTICS_INCREMENTAL_V1,
+    create_belief_engine,
+)
+
+DYNAMIC_EVIDENCE_HORIZON_PERSISTENT = "persistent"
+DYNAMIC_EVIDENCE_HORIZON_LATEST_OPPONENT_TURN = "latest_opponent_turn"
+DYNAMIC_EVIDENCE_HORIZONS = (
+    DYNAMIC_EVIDENCE_HORIZON_PERSISTENT,
+    DYNAMIC_EVIDENCE_HORIZON_LATEST_OPPONENT_TURN,
+)
+
 
 class MemoryStore:
     """
     Manages the storage, retrieval, and updates of arguments.
     """
-    def __init__(self, storage_mode: str = "episodic", retrieval_strategy: str = "weighted", worldview_openness: str = "balanced", stance_method: str = "linear", update_sensitivity: float = 2.0, anchor_sensitivity: float = None, argument_similarity_threshold: float = 0.7, self_similarity_threshold: float = 0.95, confirmation_bias: float = 0.0, cross_polarity_dedup: bool = False, allow_self_arguments: bool = True, belief_engine_type: str = "bayesian", **kwargs):
+    def __init__(self, storage_mode: str = "episodic", retrieval_strategy: str = "weighted", worldview_openness: str = "balanced", stance_method: str = "linear", update_sensitivity: float = 2.0, anchor_sensitivity: float = None, argument_similarity_threshold: float = 0.7, self_similarity_threshold: float = 0.95, confirmation_bias: float = 0.0, cross_polarity_dedup: bool = False, deduplication_enabled: bool = True, allow_self_arguments: bool = True, belief_engine_type: str = "bayesian", belief_semantics_mode: str = BELIEF_SEMANTICS_INCREMENTAL_V1, dynamic_evidence_horizon: str = DYNAMIC_EVIDENCE_HORIZON_PERSISTENT, **kwargs):
         self.arguments: Dict[str, ArgumentRecord] = {}
         self.storage_mode = storage_mode
         self.retrieval_strategy = retrieval_strategy
@@ -23,24 +39,66 @@ class MemoryStore:
         self.anchor_sensitivity = anchor_sensitivity
         self.confirmation_bias = confirmation_bias
         self.belief_engine_type = belief_engine_type
+        self.belief_semantics_mode = belief_semantics_mode
         self.argument_similarity_threshold = argument_similarity_threshold
         self.self_similarity_threshold = self_similarity_threshold
         self.cross_polarity_dedup = cross_polarity_dedup
+        self.deduplication_enabled = bool(deduplication_enabled)
         self.allow_self_arguments = allow_self_arguments
+        self.dynamic_evidence_horizon = str(dynamic_evidence_horizon)
         self.agent_id = kwargs.get("agent_id", "Unknown")
         self.backend = kwargs.get("backend")
         self.initial_stance = kwargs.get("initial_stance", 0.0)
+        if self.dynamic_evidence_horizon not in DYNAMIC_EVIDENCE_HORIZONS:
+            raise ValueError(
+                "dynamic_evidence_horizon must be one of "
+                f"{DYNAMIC_EVIDENCE_HORIZONS}, got "
+                f"{self.dynamic_evidence_horizon!r}"
+            )
+        if (
+            self.dynamic_evidence_horizon
+            == DYNAMIC_EVIDENCE_HORIZON_LATEST_OPPONENT_TURN
+            and self.belief_semantics_mode
+            != BELIEF_SEMANTICS_ACTIVE_EXPLICIT_PRIOR_V1
+        ):
+            raise ValueError(
+                "dynamic_evidence_horizon='latest_opponent_turn' requires "
+                "belief_semantics_mode='active_explicit_prior_v1'"
+            )
+        if self.belief_semantics_mode in ACTIVE_SET_BELIEF_SEMANTICS_MODES:
+            if self.stance_method != "bayesian":
+                raise ValueError(
+                    f"{self.belief_semantics_mode} requires stance_method='bayesian'"
+                )
+            if self.belief_engine_type != "bayesian":
+                raise ValueError(
+                    f"{self.belief_semantics_mode} requires "
+                    "belief_engine_type='bayesian'"
+                )
+            if self.storage_mode == "agentic":
+                raise ValueError(
+                    f"{self.belief_semantics_mode} is not implemented for "
+                    "AgenticMemoryStore"
+                )
         
         # Initialize Credence Manager (still used by VectorStrategy)
         self.credence_manager = CredenceManager(similarity_threshold=argument_similarity_threshold)
         
         # Initialize Judgement Strategy
-        from .judgement_strategies import VectorJudgementStrategy, AgenticJudgementStrategy, JudgementStrategy
+        from .judgement_strategies import (
+            AgenticJudgementStrategy,
+            JudgementStrategy,
+            NoDedupJudgementStrategy,
+            VectorJudgementStrategy,
+        )
         
         self.judgement_strategy: JudgementStrategy
         self.judgement_strategy: JudgementStrategy
         # FIX: Check openness directly. Previously restricted to 'worldview' storage, causing 'agentic_episodic' to fallback to Vector.
-        if self.worldview_openness == "agentic":
+        if not self.deduplication_enabled:
+            print_memory(self.agent_id, "Deduplication disabled")
+            self.judgement_strategy = NoDedupJudgementStrategy()
+        elif self.worldview_openness == "agentic":
             print_memory(self.agent_id, "Using Agentic Judgement Strategy (Logic-Based)")
             self.judgement_strategy = AgenticJudgementStrategy()
         else:
@@ -69,8 +127,444 @@ class MemoryStore:
                 "anchor_sensitivity": self.anchor_sensitivity,
                 "confirmation_bias": self.confirmation_bias,
                 "belief_engine_type": self.belief_engine_type,
+                "belief_semantics_mode": self.belief_semantics_mode,
+                "initial_stance": (
+                    self.initial_stance
+                    if self.belief_semantics_mode
+                    == BELIEF_SEMANTICS_ACTIVE_EXPLICIT_PRIOR_V1
+                    else 0.0
+                ),
             }
         )
+        self._evidence_horizon_events: List[Dict[str, Any]] = []
+        # The turn-local ablation must remove *all* cross-turn influence,
+        # including in-place mutations that deduplication can make to seed
+        # records. Capture the complete seed-record state at the first
+        # receiver turn and restore deep copies on every reset.
+        self._seed_state_baseline: Optional[Dict[str, ArgumentRecord]] = None
+        self._no_dedup_collision_count = 0
+        self._dedup_status_counts: Dict[str, int] = {}
+        self._dedup_dynamic_status_counts: Dict[str, int] = {}
+        self._dedup_seed_status_counts: Dict[str, int] = {}
+
+    def _make_no_dedup_record_id_unique(
+        self,
+        argument: ArgumentRecord,
+    ) -> None:
+        """Prevent exact repeated claims from overwriting earlier occurrences."""
+        if self.deduplication_enabled or argument.id not in self.arguments:
+            return
+        base_id = str(argument.id)
+        suffix = 2
+        candidate = f"{base_id}::occurrence:{suffix}"
+        while candidate in self.arguments:
+            suffix += 1
+            candidate = f"{base_id}::occurrence:{suffix}"
+        argument.id = candidate
+        self._no_dedup_collision_count += 1
+
+    def deduplication_audit_summary(
+        self,
+        include_manipulation_telemetry: bool = True,
+    ) -> Dict[str, Any]:
+        dynamic_records = {
+            argument_id: argument
+            for argument_id, argument in self.arguments.items()
+            if getattr(argument, "source_role", "") != "seed"
+        }
+        active_dynamic_records = {
+            argument_id: argument
+            for argument_id, argument in dynamic_records.items()
+            if bool(getattr(argument, "credence_relevant", False))
+        }
+        archived_dynamic_records = {
+            argument_id: argument
+            for argument_id, argument in dynamic_records.items()
+            if not bool(getattr(argument, "credence_relevant", False))
+        }
+        summary = {
+            "deduplication_enabled": self.deduplication_enabled,
+            "status_counts": dict(self._dedup_status_counts),
+            "dynamic_status_counts": dict(
+                self._dedup_dynamic_status_counts
+            ),
+            "seed_status_counts": dict(self._dedup_seed_status_counts),
+            "no_dedup_id_collisions_preserved": self._no_dedup_collision_count,
+            "final_dynamic_records_total": len(dynamic_records),
+            "final_dynamic_active_records": len(active_dynamic_records),
+            "final_dynamic_archived_records": len(archived_dynamic_records),
+        }
+        if include_manipulation_telemetry:
+            summary.update(
+                {
+                    "final_dynamic_state_sha256": (
+                        self._record_state_fingerprint(dynamic_records)
+                    ),
+                    "final_dynamic_active_state_sha256": (
+                        self._record_state_fingerprint(
+                            active_dynamic_records
+                        )
+                    ),
+                    "final_dynamic_canonical_state_sha256": (
+                        self._canonical_record_state_fingerprint(
+                            dynamic_records
+                        )
+                    ),
+                    "final_dynamic_active_canonical_state_sha256": (
+                        self._canonical_record_state_fingerprint(
+                            active_dynamic_records
+                        )
+                    ),
+                }
+            )
+        return summary
+
+    @staticmethod
+    def _record_state_fingerprint(
+        records: Dict[str, ArgumentRecord],
+    ) -> str:
+        """Hash complete record state without exposing claims in telemetry."""
+        payload = {
+            str(argument_id): vars(argument)
+            for argument_id, argument in sorted(records.items())
+        }
+        encoded = json.dumps(
+            payload,
+            default=str,
+            ensure_ascii=False,
+            separators=(",", ":"),
+            sort_keys=True,
+        ).encode("utf-8")
+        return hashlib.sha256(encoded).hexdigest()
+
+    @staticmethod
+    def _canonical_record_state_fingerprint(
+        records: Dict[str, ArgumentRecord],
+    ) -> str:
+        """Hash intervention-relevant state without IDs or wall-clock fields.
+
+        Python-generated record IDs and timestamps are intentionally excluded,
+        so paired cells can be compared across separate worker processes.
+        Claims are represented only by SHA-256 fingerprints in the telemetry.
+        Duplicate occurrences remain separate list entries.
+        """
+        payload = []
+        for argument in records.values():
+            claim_sha256 = hashlib.sha256(
+                str(argument.claim).encode("utf-8")
+            ).hexdigest()
+            payload.append(
+                {
+                    "claim_sha256": claim_sha256,
+                    "polarity": str(argument.polarity),
+                    "source_role": str(argument.source_role),
+                    "support_strength": float(argument.support_strength),
+                    "support_strength_llm": float(
+                        argument.support_strength_llm
+                    ),
+                    "support_strength_classifier": float(
+                        argument.support_strength_classifier
+                    ),
+                    "credence_relevant": bool(
+                        argument.credence_relevant
+                    ),
+                }
+            )
+        encoded = json.dumps(
+            sorted(
+                payload,
+                key=lambda item: json.dumps(
+                    item,
+                    separators=(",", ":"),
+                    sort_keys=True,
+                ),
+            ),
+            separators=(",", ":"),
+            sort_keys=True,
+        ).encode("utf-8")
+        return hashlib.sha256(encoded).hexdigest()
+
+    def _current_seed_records(self) -> Dict[str, ArgumentRecord]:
+        return {
+            argument_id: argument
+            for argument_id, argument in self.arguments.items()
+            if getattr(argument, "source_role", "") == "seed"
+        }
+
+    def _restore_seed_state_baseline(self) -> Dict[str, Any]:
+        """Restore the exact pre-dynamic seed state for a turn-local reset."""
+        current_seed_records = self._current_seed_records()
+        if self._seed_state_baseline is None:
+            self._seed_state_baseline = copy.deepcopy(current_seed_records)
+
+        baseline = self._seed_state_baseline
+        baseline_ids = set(baseline)
+        unexpected_seed_ids = set(current_seed_records) - baseline_ids
+        if unexpected_seed_ids:
+            raise RuntimeError(
+                "Seed-record membership changed after the turn-local baseline "
+                "was captured."
+            )
+
+        before_fingerprint = self._record_state_fingerprint(
+            current_seed_records
+        )
+        baseline_fingerprint = self._record_state_fingerprint(baseline)
+        restored_records = sum(
+            argument_id not in current_seed_records
+            or self._record_state_fingerprint(
+                {argument_id: current_seed_records[argument_id]}
+            )
+            != self._record_state_fingerprint(
+                {argument_id: baseline[argument_id]}
+            )
+            for argument_id in baseline
+        )
+
+        # Replace the entire active store with deep copies of the pristine
+        # seeds. This restores every mutable dataclass field and also repairs a
+        # dynamic record that may have collided with a seed's dictionary key.
+        self.arguments.clear()
+        self.arguments.update(copy.deepcopy(baseline))
+        after_fingerprint = self._record_state_fingerprint(
+            self._current_seed_records()
+        )
+        return {
+            "baseline_fingerprint": baseline_fingerprint,
+            "before_fingerprint": before_fingerprint,
+            "after_fingerprint": after_fingerprint,
+            "baseline_records": len(baseline),
+            "restored_records": restored_records,
+            "restoration_ok": after_fingerprint == baseline_fingerprint,
+        }
+
+    def _memory_role_counts(self) -> Dict[str, int]:
+        seed_records = sum(
+            getattr(argument, "source_role", "") == "seed"
+            for argument in self.arguments.values()
+        )
+        return {
+            "total": len(self.arguments),
+            "seed": seed_records,
+            "dynamic": len(self.arguments) - seed_records,
+        }
+
+    def prepare_for_opponent_evidence_turn(
+        self,
+        *,
+        round_index: int,
+        sender_name: str,
+    ) -> int:
+        """Apply the configured horizon before ingesting one opponent message."""
+        if (
+            self._evidence_horizon_events
+            and not self._evidence_horizon_events[-1].get("finalized", False)
+        ):
+            raise RuntimeError(
+                "Previous opponent evidence turn was not finalized before "
+                "the next turn began."
+            )
+
+        before = self._memory_role_counts()
+        stance_before = self.get_stance(verbose=False)
+        evicted_ids: List[str] = []
+        prior_reconstruction_error = 0.0
+        seed_restoration = {
+            "baseline_fingerprint": "",
+            "before_fingerprint": "",
+            "after_fingerprint": "",
+            "baseline_records": before["seed"],
+            "restored_records": 0,
+            "restoration_ok": True,
+        }
+        reset_applied = (
+            self.dynamic_evidence_horizon
+            == DYNAMIC_EVIDENCE_HORIZON_LATEST_OPPONENT_TURN
+        )
+
+        if reset_applied:
+            evicted_ids = [
+                argument_id
+                for argument_id, argument in self.arguments.items()
+                if getattr(argument, "source_role", "") != "seed"
+            ]
+            seed_restoration = self._restore_seed_state_baseline()
+            if not seed_restoration["restoration_ok"]:
+                raise RuntimeError(
+                    "Turn-local seed-state restoration fingerprint mismatch."
+                )
+            self.belief_engine.recompute_from_active_records(
+                self.arguments.values(),
+                persist=True,
+                increment_history=False,
+            )
+            expected_prior_stance = math.tanh(
+                float(self.belief_engine.explicit_prior_log_odds) / 2.0
+            )
+            prior_reconstruction_error = abs(
+                self.get_stance(verbose=False) - expected_prior_stance
+            )
+
+        after_reset = self._memory_role_counts()
+        event = {
+            "event_index": len(self._evidence_horizon_events),
+            "round": int(round_index),
+            "sender": str(sender_name),
+            "horizon": self.dynamic_evidence_horizon,
+            "reset_applied": reset_applied,
+            "before": before,
+            "after_reset": after_reset,
+            "evicted_records": len(evicted_ids),
+            "seed_records_preserved": (
+                after_reset["seed"] == seed_restoration["baseline_records"]
+                and bool(seed_restoration["restoration_ok"])
+            ),
+            "seed_state_baseline_fingerprint": seed_restoration[
+                "baseline_fingerprint"
+            ],
+            "seed_state_before_reset_fingerprint": seed_restoration[
+                "before_fingerprint"
+            ],
+            "seed_state_after_reset_fingerprint": seed_restoration[
+                "after_fingerprint"
+            ],
+            "seed_state_restored_records": seed_restoration[
+                "restored_records"
+            ],
+            "seed_state_restoration_ok": seed_restoration[
+                "restoration_ok"
+            ],
+            "stance_before": stance_before,
+            "stance_after_reset": self.get_stance(verbose=False),
+            "prior_reconstruction_error": prior_reconstruction_error,
+            "finalized": False,
+        }
+        self._evidence_horizon_events.append(event)
+        return int(event["event_index"])
+
+    def finalize_opponent_evidence_turn(
+        self,
+        event_index: int,
+        *,
+        extracted_records: int,
+        accepted_records: int,
+        status_counts: Optional[Dict[str, int]] = None,
+    ) -> None:
+        """Close one receiver-side horizon event after batch ingestion."""
+        if event_index < 0 or event_index >= len(self._evidence_horizon_events):
+            raise IndexError(f"Unknown evidence-horizon event {event_index}.")
+        event = self._evidence_horizon_events[event_index]
+        if event.get("finalized", False):
+            raise RuntimeError(
+                f"Evidence-horizon event {event_index} was already finalized."
+            )
+
+        after_batch = self._memory_role_counts()
+        active_state_error = (
+            abs(
+                float(self.belief_engine.log_odds)
+                - float(
+                    self.belief_engine.compute_active_log_odds(
+                        self.arguments.values()
+                    )
+                )
+            )
+            if self.belief_semantics_mode in ACTIVE_SET_BELIEF_SEMANTICS_MODES
+            else 0.0
+        )
+        event.update(
+            {
+                "extracted_records": int(extracted_records),
+                "accepted_records": int(accepted_records),
+                "status_counts": dict(status_counts or {}),
+                "after_batch": after_batch,
+                "latest_turn_bound_ok": (
+                    self.dynamic_evidence_horizon
+                    != DYNAMIC_EVIDENCE_HORIZON_LATEST_OPPONENT_TURN
+                    or after_batch["dynamic"] <= int(extracted_records)
+                ),
+                "active_state_recomputation_error": active_state_error,
+                "finalized": True,
+            }
+        )
+
+    def abort_opponent_evidence_turn(
+        self,
+        event_index: int,
+        *,
+        reason: str,
+    ) -> None:
+        """Close an incomplete horizon event when its turn fails."""
+        if event_index < 0 or event_index >= len(self._evidence_horizon_events):
+            raise IndexError(f"Unknown evidence-horizon event {event_index}.")
+        event = self._evidence_horizon_events[event_index]
+        if event.get("finalized", False):
+            return
+        event.update(
+            aborted=True,
+            abort_reason=str(reason),
+            finalized=True,
+        )
+
+    def evidence_horizon_audit_summary(self) -> Dict[str, Any]:
+        """Return compact counts plus per-turn records for horizon verification."""
+        events = [dict(event) for event in self._evidence_horizon_events]
+        completed = [
+            event
+            for event in events
+            if event.get("finalized", False)
+            and not event.get("aborted", False)
+        ]
+        def total(key, source=events):
+            return sum(int(event.get(key, 0)) for event in source)
+
+        def maximum(key, source):
+            return max(
+                (float(event.get(key, 0.0)) for event in source),
+                default=0.0,
+            )
+        return {
+            "dynamic_evidence_horizon": self.dynamic_evidence_horizon,
+            "prepare_calls": len(events),
+            "completed_turns": len(completed),
+            "aborted_turns": sum(event.get("aborted", False) for event in events),
+            "open_turns": sum(not event.get("finalized", False) for event in events),
+            "reset_calls": sum(event.get("reset_applied", False) for event in events),
+            "evicted_records": total("evicted_records"),
+            "seed_state_restored_records": total(
+                "seed_state_restored_records"
+            ),
+            "extracted_records": total("extracted_records", completed),
+            "accepted_records": total("accepted_records", completed),
+            "prior_reconstruction_error_max": maximum(
+                "prior_reconstruction_error",
+                events,
+            ),
+            "active_state_recomputation_error_max": maximum(
+                "active_state_recomputation_error",
+                completed,
+            ),
+            "post_batch_dynamic_records_max": max(
+                (
+                    int(event.get("after_batch", {}).get("dynamic", 0))
+                    for event in completed
+                ),
+                default=0,
+            ),
+            "all_seed_records_preserved": all(
+                bool(event.get("seed_records_preserved", False))
+                for event in events
+            ),
+            "all_seed_state_restorations_ok": all(
+                bool(event.get("seed_state_restoration_ok", False))
+                for event in events
+            ),
+            "all_latest_turn_bounds_ok": all(
+                bool(event.get("latest_turn_bound_ok", False))
+                for event in completed
+            ),
+            "events": events,
+        }
 
     def _add_argument_internal(
         self,
@@ -87,6 +581,7 @@ class MemoryStore:
             snippet = argument.claim[:60] + "..."
             return "ignored", "Self arguments disabled", snippet, argument, False
 
+        self._make_no_dedup_record_id_unique(argument)
         snippet = argument.claim[:60] + "..."
         belief_updated = False
 
@@ -94,6 +589,15 @@ class MemoryStore:
         # The strategy modifies flags (credence_relevant) in-place
         # 2. Delegate to Judgement Strategy (Gatekeeper)
         status, target_id, reason, processed_arg = self.judgement_strategy.process(argument, self.arguments, backend)
+        self._dedup_status_counts[status] = (
+            self._dedup_status_counts.get(status, 0) + 1
+        )
+        role_counts = (
+            self._dedup_seed_status_counts
+            if getattr(argument, "source_role", "") == "seed"
+            else self._dedup_dynamic_status_counts
+        )
+        role_counts[status] = role_counts.get(status, 0) + 1
         print_debug(f"add_argument processed '{argument.claim[:20]}...' -> Status: {status}, Reason: {reason}")
         
         # Update storage (we store EVERYTHING, but flags determine visibility)
@@ -102,9 +606,22 @@ class MemoryStore:
         if status == "replaced":
             # Soft Replace: Old was hidden, New was added/shown
              if self.stance_method in ("bayesian", "agentic", "llm"):
-                 # Technically we should "remove" the old belief and "add" the new one for the running counter
-                 # (If we were tracking exactly, but running counter is approximate anyway)
-                 pass
+                 if self.belief_semantics_mode in ACTIVE_SET_BELIEF_SEMANTICS_MODES:
+                     change = self.belief_engine.recompute_from_active_records(
+                         self.arguments.values(),
+                         persist=persist_belief_state,
+                     )
+                     belief_updated = True
+                     new_score = self.belief_engine.get_belief_score()
+                     print_info(
+                         f"[{self.agent_id}] Belief Recomputed: "
+                         f"Delta {change:+.3f} -> Score {new_score:.3f}",
+                         level=2,
+                     )
+                 else:
+                     # Technically we should "remove" the old belief and "add" the new one for the running counter
+                     # (If we were tracking exactly, but running counter is approximate anyway)
+                     pass
              reason = f"Replaced (Soft): {reason}"
              
         elif status == "ignored":
@@ -157,13 +674,19 @@ class MemoryStore:
                         and getattr(arg, "credence_relevant", False)
                         and getattr(arg, "source_role", "") == "opponent"
                     )
-                    change = self.belief_engine.update(
-                        argument,
-                        backend=engine_backend,
-                        memory_context=memory_context,
-                        persist=persist_belief_state,
-                        active_opponent_count=active_opponent_count,
-                    )
+                    if self.belief_semantics_mode in ACTIVE_SET_BELIEF_SEMANTICS_MODES:
+                        change = self.belief_engine.recompute_from_active_records(
+                            self.arguments.values(),
+                            persist=persist_belief_state,
+                        )
+                    else:
+                        change = self.belief_engine.update(
+                            argument,
+                            backend=engine_backend,
+                            memory_context=memory_context,
+                            persist=persist_belief_state,
+                            active_opponent_count=active_opponent_count,
+                        )
                     new_score = self.belief_engine.get_belief_score()
                     new_desc = self.belief_engine.get_belief_description()
                     belief_updated = True

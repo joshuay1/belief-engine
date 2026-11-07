@@ -1,0 +1,166 @@
+{
+  "anonymous_baseline_commit": "35622040233c97e521b81c3cc4201ef308cb100c",
+  "imports": [
+    {
+      "path": "src/memory/memory_store.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "427da44c1fd50827ac17e595b7edfdb6da5b55626b34b188448450b13d176035"
+    },
+    {
+      "path": "src/memory/retrieval.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "53dbb7b25efd38ae0ad2d619bd1b9c360639b6a384160b6ab1dd7915bdc14903"
+    },
+    {
+      "path": "src/memory/judgement_strategies.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "b5cbce1827a41436ebaa4ed876032fdaa2e8d7ac55484c2ed93a3412e87c0e80"
+    },
+    {
+      "path": "src/simulation/simulation_runner.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "fe373de30685f61e90ddb6de605ae5be79844ce67517a0920c9589e4be955568"
+    },
+    {
+      "path": "src/simulation/belief_engine.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "683b0f9ae57a23d17aa30b675c6fc5e3edb8c0baf93cb84ee7fa2cbd6ab5da58"
+    },
+    {
+      "path": "src/simulation/run_simulation.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "95289d379cb838b8b1c7d1f60b0ab069e6a13e068d1b03ad5f0889b6c7d97159"
+    },
+    {
+      "path": "src/agents/evaluation_agent.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "47d225a6563d4d74aa9ec782c4004a7bed09a80dbfd3bba83ba4f3462870461d"
+    },
+    {
+      "path": "src/agents/self_updating_agent.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "06cb01c79d8ebbfcf2afa0fcc697aa62dfdba99d9dd6d0b802a60fd923bc04e4"
+    },
+    {
+      "path": "src/agents/subject_agent.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "8433454157b8555c0a47dcb1b5d033fd67c19c86c62f70a8b3d5872078928224"
+    },
+    {
+      "path": "src/agents/factory.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "5d34b7cacbd288386866e822c53546e4a0609a4862b204f1bc7ee6d2faef2674"
+    },
+    {
+      "path": "src/agents/shared_instructions.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "49e5ff174297952fc40423c041d255bc5bf61dacf25db73f17febe8790bd0ab0"
+    },
+    {
+      "path": "src/agents/extractor_agent.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "c2fa51bbe865a270aeb3e2b3be9755454e1d9cdb3b9233695d8d467bcf4551e7"
+    },
+    {
+      "path": "src/backend/factory.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "dc7a21b337710ba8a3c6c0ed2ed065036401385545c807a2079a6910078faaa0"
+    },
+    {
+      "path": "src/experiment/orchestrator.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "679da53f4944e5df9bfd62562456d96d41b7c41998e3a343aca32a855dc4cc42"
+    },
+    {
+      "path": "src/experiment/resume_experiment.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "5cd6cf9182b74f24655b60fa02bada3e367ef57fcf98de4ccc08778a68267677"
+    },
+    {
+      "path": "validation/scripts/run_two_agent_model_comparison.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "1fb255feb7b06b06862002de252c0e3161dad9073ab8d69f6c88b0136fb1c057"
+    },
+    {
+      "path": "validation/scripts/run_two_agent_controlled.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "d335cbdc83070917cc90a31aa7758d25651f09b8d7e8efb73874cbe90aa556ea"
+    },
+    {
+      "path": "tests/test_reviewer_release_belief_semantics.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "9bb8d3d9ce39414445e7f1eb7123cffbded776a6029de488202eba92b6a13d8a"
+    },
+    {
+      "path": "tests/test_proportional_retrieval.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "f0436e0da0f5fda645bc0bebcd41000e111b642cc6605637a442f208c58e9258"
+    },
+    {
+      "path": "tests/test_structured_extractor.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "83c556cef09b76827159029eddd2f5020162a7c9b5a5e1098bfa64a2996a6e28"
+    },
+    {
+      "path": "tests/test_matched_response_shell.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "d88a31daed7b0d1308c9d208ec4347fc6bccf659b774bbfa65e12154f430cc96"
+    },
+    {
+      "path": "tests/test_self_update_audit.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "4bbc6f9a7f3958640c3886d8f0a0e9c6640918568570c3bd77f8b06180a06c90"
+    },
+    {
+      "path": "tests/test_simulation_speaker_order.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "8c5931dd35ac5419365054e42742e287bf8d2ec8d402382f1678d7477f46d623"
+    },
+    {
+      "path": "tests/test_no_dedup_ablation.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "3bc7d06249ec008787749c0a6d3988ba9b80d0c0e893990c62e44a08881bfb11"
+    },
+    {
+      "path": "tests/test_full_loop_ablation_controls.py",
+      "source": "agent_mem_response_factorial_v1",
+      "source_commit": "c23a9d4a4327fe1ed9493555088ff58e2107fc28",
+      "source_sha256": "cdf2ecd8cee21b27aa50b8b72bff52a319cbe089aae690bbde7217cf4b2c4da1"
+    },
+    {
+      "path": "src/classifiers/argument_quality.py",
+      "source": "codex/argument-evaluator-release",
+      "source_commit": "24865e47810fe454b3b37f729e11a5f8fd0b3571",
+      "source_sha256": "fa7cd00151b83bbe8dbe4c392cc9a108e92431ae11d06cafddfc93b6f82d2779"
+    }
+  ],
+  "integration_notes": [
+    "Merged the classifier loading methods from PR #12 into the newer structured extractor.",
+    "Behavioral tests adapted for the camera-ready package and explicit legacy invariants.",
+    "Source hashes identify imported bytes before integration edits."
+  ]
+}

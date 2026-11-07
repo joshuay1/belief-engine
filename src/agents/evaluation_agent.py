@@ -1,9 +1,15 @@
+import hashlib
 import json
+import math
 from pathlib import Path
-from typing import Dict
+from typing import Any, Dict, Tuple
 from ..backend.backend_base import LLMBackend
 
 DEFAULT_OPTIMIZED_PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "evaluator_optimized.txt"
+
+
+class StanceEvaluationError(ValueError):
+    """Raised when a stance response fails strict rebuttal validation."""
 
 
 def _builtin_default_stance_prompt() -> str:
@@ -28,19 +34,35 @@ Scoring rules:
 7. Avoid coarse binning: do NOT default to ±0.50/±0.80 when evidence is weaker/stronger.
 8. For borderline cases between anchors, interpolate with two decimals (for example 0.27, -0.58).
 9. If uncertain between two nearby levels, choose the less extreme value.
-"""
+""".strip()
+
+
+def _load_default_stance_prompt_with_provenance() -> Tuple[str, str, str]:
+    """Load the prompt together with its immutable source path and SHA-256."""
+    try:
+        if DEFAULT_OPTIMIZED_PROMPT_PATH.exists():
+            raw_content = DEFAULT_OPTIMIZED_PROMPT_PATH.read_bytes()
+            content = raw_content.decode("utf-8").strip()
+            if content:
+                return (
+                    content,
+                    str(DEFAULT_OPTIMIZED_PROMPT_PATH.resolve()),
+                    hashlib.sha256(raw_content).hexdigest(),
+                )
+    except Exception:
+        pass
+    content = _builtin_default_stance_prompt()
+    return (
+        content,
+        "builtin:_builtin_default_stance_prompt",
+        hashlib.sha256(content.encode("utf-8")).hexdigest(),
+    )
 
 
 def _load_default_stance_prompt() -> str:
     """Loads optimized prompt from disk if available, else returns built-in baseline."""
-    try:
-        if DEFAULT_OPTIMIZED_PROMPT_PATH.exists():
-            content = DEFAULT_OPTIMIZED_PROMPT_PATH.read_text(encoding="utf-8").strip()
-            if content:
-                return content
-    except Exception:
-        pass
-    return _builtin_default_stance_prompt()
+    content, _path, _sha256 = _load_default_stance_prompt_with_provenance()
+    return content
 
 
 def _render_stance_prompt(template: str, topic: str, agent_name: str) -> str:
@@ -55,9 +77,75 @@ class EvaluationAgent:
     def __init__(self, backend: LLMBackend, temperature: float = 0.0):
         self.backend = backend
         self.temperature = temperature
-        self.default_stance_prompt_template = _load_default_stance_prompt()
+        (
+            self.default_stance_prompt_template,
+            self.default_stance_prompt_path,
+            self.default_stance_prompt_sha256,
+        ) = _load_default_stance_prompt_with_provenance()
 
-    def evaluate_stance(self, transcript: str, memory_snapshot: str, topic: str, agent_name: str, expected_stance_instruction: str = None, custom_system_prompt: str = None) -> Dict[str, float]:
+    @staticmethod
+    def _validated_score(data: Any) -> float:
+        if not isinstance(data, dict):
+            raise StanceEvaluationError("stance response must be a JSON object")
+        if "stance_score" not in data:
+            raise StanceEvaluationError("stance response is missing 'stance_score'")
+
+        score = data["stance_score"]
+        if isinstance(score, bool) or not isinstance(score, (int, float)):
+            raise StanceEvaluationError("'stance_score' must be numeric")
+        score = float(score)
+        if not math.isfinite(score):
+            raise StanceEvaluationError("'stance_score' must be finite")
+        if score < -1.0 or score > 1.0:
+            raise StanceEvaluationError("'stance_score' must be in [-1, 1]")
+        return score
+
+    @classmethod
+    def _parse_stance_response(cls, response: str, *, strict: bool) -> Dict[str, float]:
+        data: Any = None
+        try:
+            cleaned = response.replace("```json", "").replace("```", "").strip()
+            data = json.loads(cleaned)
+            score = cls._validated_score(data)
+            return {"stance_score": score}
+        except Exception as exc:
+            if strict:
+                if isinstance(exc, StanceEvaluationError):
+                    raise
+                raise StanceEvaluationError(f"invalid stance JSON: {exc}") from exc
+
+            # Preserve the legacy label mapping before falling back to neutral.
+            try:
+                if isinstance(data, dict) and "stance_label" in data:
+                    mapping = {
+                        "Extremely Support": 1.0,
+                        "Strongly Support": 0.75,
+                        "Support": 0.5,
+                        "Weakly Support": 0.25,
+                        "Neutral": 0.0,
+                        "Weakly Oppose": -0.25,
+                        "Oppose": -0.5,
+                        "Strongly Oppose": -0.75,
+                        "Extremely Oppose": -1.0,
+                    }
+                    return {"stance_score": mapping.get(data.get("stance_label"), 0.0)}
+            except Exception:
+                pass
+
+            print(f"Error parsing evaluation response: {exc}")
+            return {"stance_score": 0.0, "stance_label": "Neutral"}
+
+    def evaluate_stance(
+        self,
+        transcript: str,
+        memory_snapshot: str,
+        topic: str,
+        agent_name: str,
+        expected_stance_instruction: str = None,
+        custom_system_prompt: str = None,
+        *,
+        strict: bool = False,
+    ) -> Dict[str, float]:
         """
         Estimates stance based on the transcript and memory.
         Returns a score from -1.0 (Con) to 1.0 (Pro).
@@ -121,28 +209,7 @@ class EvaluationAgent:
             system_prompt=system_prompt,
             temperature=self.temperature
         )
-
-        try:
-            cleaned = response.replace("```json", "").replace("```", "").strip()
-            data = json.loads(cleaned)
-            
-            # If "stance_score" is already present (from the instruction-based branch), return it
-            if "stance_score" in data:
-                data.pop("confidence_score", None)
-                return data
-
-            # Fallback if LLM outputs label but not score (rare with new prompt)
-            if "stance_label" in data and "stance_score" not in data:
-                 # Minimal mapping just in case
-                 label = data.get("stance_label", "Neutral")
-                 mapping = {"Extremely Support": 1.0, "Strongly Support": 0.75, "Support": 0.5, "Weakly Support": 0.25, "Neutral": 0.0, "Weakly Oppose": -0.25, "Oppose": -0.5, "Strongly Oppose": -0.75, "Extremely Oppose": -1.0}
-                 return {"stance_score": mapping.get(label, 0.0)}
-            
-            return data
-
-        except Exception as e:
-            print(f"Error parsing evaluation response: {e}")
-            return {"stance_score": 0.0, "stance_label": "Neutral"}
+        return self._parse_stance_response(response, strict=strict)
 
 
     def evaluate_consistency(self, initial_persona: str, transcript: str) -> Dict[str, float]:

@@ -1,3 +1,5 @@
+> Historical reviewer snapshot documentation (May 2026). For the current code candidate, see [CAMERA_READY.md](CAMERA_READY.md). The later result packages are not yet included.
+
 # Paper Reproducibility Notes
 
 The top-level `README.md` is the reviewer entry point. This directory contains

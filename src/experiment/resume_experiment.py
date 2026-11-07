@@ -263,7 +263,11 @@ def resume_experiment(log_dir, additional_rounds, overrides=None):
         extractor=extractor, 
         output_dir=logger.run_dir,
         initial_transcript=history,
-        start_round=last_round + 1
+        start_round=last_round + 1,
+        speaker_order=config.get("simulation", {}).get(
+            "speaker_order",
+            "pro-first",
+        ),
     )
     
     # State Injection is handled by initial_transcript

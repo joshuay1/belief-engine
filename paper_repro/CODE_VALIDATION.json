@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-06",
+  "status": "local code candidate",
+  "base_snapshot": "anonymous reviewer release generated 2026-05-07T11:03:44Z",
+  "tests": {
+    "core": 56,
+    "classifier": 8,
+    "failures": 0,
+    "expected_failures": 0,
+    "network_connections": "blocked by test runner",
+    "tokenizer": "synthetic byte-BPE test fixture",
+    "classifier_weights": "synthetic tensors, no checkpoint downloaded"
+  },
+  "verification": {
+    "syntax_files": 97,
+    "checked_imports": 10,
+    "original_paper_manifest_files": 36,
+    "unchanged_original_artifact_files": 91,
+    "pip_check": "passed"
+  },
+  "environment": {
+    "python": "3.11.2",
+    "system": "Darwin",
+    "machine": "arm64",
+    "dependency_versions": "requirements-verified-py311.txt"
+  },
+  "integration_notes": [
+    "Optional embedding and agentic imports are lazy.",
+    "Classifier loading fails explicitly unless fallback is opted in.",
+    "Historical defaults and existing result artifacts are preserved."
+  ],
+  "remaining": [
+    "Newer camera-ready result packages and exact run configurations",
+    "Final project license, citation and public release URL",
+    "Full checkpoint inference can be checked using the pinned Hugging Face release verifier"
+  ]
+}

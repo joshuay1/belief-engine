@@ -81,18 +81,14 @@ def create_backend(config: Dict[str, Any], model: Optional[str] = None) -> LLMBa
             if env_key and not env_key.startswith("sk-dummy"):
                 api_key = env_key
             else:
-                # No real key found — try local fallback
-                url = backend_config.get("url", "")
-                if url and ("localhost" in url or "127.0.0.1" in url):
-                    from .backend_local import LocalLLMBackend
-                    return LocalLLMBackend(
-                        base_url=url,
-                        api_key=api_key or "sk-dummy",
-                        model=backend_model,
-                    )
+                # A configured OpenAI provider must never silently become a
+                # local OpenAI-compatible server. That changes the scientific
+                # treatment while leaving the saved provenance mislabeled.
                 raise ValueError(
-                    "OpenAI backend requires an API key. Set OPENAI_API_KEY in .env "
-                    "or backend.api_key in config."
+                    "OpenAI backend requires a non-placeholder API key. Set "
+                    "OPENAI_API_KEY in the operator environment or "
+                    "backend.api_key in config. Use backend.type='local' "
+                    "explicitly for a local OpenAI-compatible server."
                 )
 
         return OpenAIBackend(

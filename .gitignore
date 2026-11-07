@@ -30,3 +30,6 @@ validation/data/cache/
 validation/results/**/raw_runs/
 models/
 data/Argument-Quality-Ranking-30k/
+*.egg-info/
+build/
+dist/

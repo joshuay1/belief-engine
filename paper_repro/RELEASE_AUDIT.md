@@ -1,3 +1,5 @@
+> Historical reviewer snapshot documentation (May 2026). For the current code candidate, see [CAMERA_READY.md](CAMERA_READY.md). The later result packages are not yet included.
+
 # Paper Repro Release Audit
 
 Audit date: 2026-05-07

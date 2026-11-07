@@ -1,9 +1,18 @@
+import hashlib
+import json
 from typing import List
 from ..backend.backend_base import LLMBackend
 from ..memory.memory_store import MemoryStore, ArgumentRecord
 from ..constants import POLARITY_AFFIRMATIVE, POLARITY_NEGATIVE, POLARITY_DISPLAY
 from ..simulation.belief_engine import BayesianBeliefEngine
-from .shared_instructions import build_shared_debate_rules
+from .shared_instructions import (
+    LEGACY_RESPONSE_SHELL,
+    MATCHED_RESPONSE_SHELL,
+    build_matched_response_call,
+    build_shared_debate_rules,
+    render_retrieved_arguments,
+    validate_response_shell,
+)
 
 class SubjectAgent:
     """
@@ -17,6 +26,13 @@ class SubjectAgent:
         persona: str,
         name: str = "Subject",
         temperature: float = 0.7,
+        retrieval_k: int = 10,
+        response_shell: str = LEGACY_RESPONSE_SHELL,
+        response_context_messages: int = 4,
+        response_word_limit: int = 120,
+        response_retrieval_enabled: bool = True,
+        retrieved_evidence_token_budget: int = None,
+        retrieved_evidence_encoding: str = "cl100k_base",
     ):
         self.backend = backend
         self.memory = memory
@@ -24,6 +40,42 @@ class SubjectAgent:
         self.name = name
         self.type = "subject"
         self.temperature = temperature
+        self.retrieval_k = int(retrieval_k)
+        self.response_shell = validate_response_shell(response_shell)
+        self.response_context_messages = int(response_context_messages)
+        self.response_word_limit = int(response_word_limit)
+        self.response_retrieval_enabled = bool(response_retrieval_enabled)
+        self.retrieved_evidence_token_budget = (
+            None
+            if retrieved_evidence_token_budget is None
+            else int(retrieved_evidence_token_budget)
+        )
+        self.retrieved_evidence_encoding = str(retrieved_evidence_encoding)
+        self._response_retrieval_audit = {
+            "response_retrieval_enabled": self.response_retrieval_enabled,
+            "reply_calls": 0,
+            "retrieval_calls": 0,
+            "retrieval_skipped_calls": 0,
+            "records_returned_total": 0,
+            "records_returned_max": 0,
+            "memory_context_tokens_total": 0,
+            "memory_context_tokens_max": 0,
+            "memory_context_budget_saturated_calls": 0,
+            "events": [],
+        }
+        if self.retrieval_k < 1:
+            raise ValueError("retrieval_k must be at least one.")
+        if self.response_context_messages < 1:
+            raise ValueError("response_context_messages must be at least one.")
+        if self.response_word_limit < 1:
+            raise ValueError("response_word_limit must be positive.")
+        if (
+            self.retrieved_evidence_token_budget is not None
+            and self.retrieved_evidence_token_budget < 1
+        ):
+            raise ValueError(
+                "retrieved_evidence_token_budget must be positive."
+            )
         
         # Use the Belief Engine from the Memory Store
         self.belief_engine = self.memory.belief_engine
@@ -49,7 +101,23 @@ class SubjectAgent:
         # 2. Retrieve relevant arguments
         # Pass the opponent's message as the query if strategy is 'relevant'
         # We pass backend because retrieval might need it for semantic check
-        retrieved_args = self.memory.retrieve(k=10, query=last_opponent_msg, backend=self.backend)
+        self._response_retrieval_audit["reply_calls"] += 1
+        if self.response_retrieval_enabled:
+            self._response_retrieval_audit["retrieval_calls"] += 1
+            retrieved_args = self.memory.retrieve(
+                k=self.retrieval_k,
+                query=last_opponent_msg,
+                backend=self.backend,
+            )
+        else:
+            self._response_retrieval_audit["retrieval_skipped_calls"] += 1
+            retrieved_args = []
+        returned_count = len(retrieved_args)
+        self._response_retrieval_audit["records_returned_total"] += returned_count
+        self._response_retrieval_audit["records_returned_max"] = max(
+            self._response_retrieval_audit["records_returned_max"],
+            returned_count,
+        )
 
         # 3. Format retrieved memory for context
         memory_context = "Here are some arguments I recall:\n"
@@ -64,6 +132,119 @@ class SubjectAgent:
         # Calculate current stance to guide behavior
         # Use memory.get_stance() to respect the configured method (linear vs bayesian)
         current_stance = self.memory.get_stance(verbose=False)
+
+        # Get topic from memory
+        topic = list(self.memory.arguments.values())[0].topic_id if self.memory.arguments else 'Unknown'
+
+        if self.response_shell == MATCHED_RESPONSE_SHELL:
+            (
+                _rendered_evidence,
+                memory_context_tokens,
+                memory_context_saturated,
+            ) = render_retrieved_arguments(
+                retrieved_args,
+                token_budget=self.retrieved_evidence_token_budget,
+                encoding_name=self.retrieved_evidence_encoding,
+            )
+            if self.response_retrieval_enabled:
+                self._response_retrieval_audit[
+                    "memory_context_tokens_total"
+                ] += max(memory_context_tokens, 0)
+                self._response_retrieval_audit[
+                    "memory_context_tokens_max"
+                ] = max(
+                    self._response_retrieval_audit[
+                        "memory_context_tokens_max"
+                    ],
+                    max(memory_context_tokens, 0),
+                )
+                self._response_retrieval_audit[
+                    "memory_context_budget_saturated_calls"
+                ] += int(memory_context_saturated)
+            retrieved_identity_fingerprints = []
+            for argument in retrieved_args:
+                identity_payload = json.dumps(
+                    {
+                        "claim": str(argument.claim),
+                        "polarity": str(argument.polarity),
+                        "source_role": str(argument.source_role),
+                    },
+                    ensure_ascii=False,
+                    separators=(",", ":"),
+                    sort_keys=True,
+                ).encode("utf-8")
+                retrieved_identity_fingerprints.append(
+                    hashlib.sha256(identity_payload).hexdigest()
+                )
+            retrieved_score_sequence = [
+                float(argument.support_strength)
+                for argument in retrieved_args
+            ]
+            self._response_retrieval_audit["events"].append(
+                {
+                    "call_index": len(
+                        self._response_retrieval_audit["events"]
+                    )
+                    + 1,
+                    "retrieval_enabled": self.response_retrieval_enabled,
+                    "records_returned": returned_count,
+                    "memory_context_tokens": max(
+                        memory_context_tokens,
+                        0,
+                    ),
+                    "memory_context_budget_saturated": bool(
+                        memory_context_saturated
+                    ),
+                    "rendered_context_sha256": hashlib.sha256(
+                        _rendered_evidence.encode("utf-8")
+                    ).hexdigest(),
+                    "retrieved_record_identity_sequence_sha256": (
+                        hashlib.sha256(
+                            json.dumps(
+                                retrieved_identity_fingerprints,
+                                separators=(",", ":"),
+                            ).encode("utf-8")
+                        ).hexdigest()
+                    ),
+                    "retrieved_record_identity_multiset_sha256": (
+                        hashlib.sha256(
+                            json.dumps(
+                                sorted(retrieved_identity_fingerprints),
+                                separators=(",", ":"),
+                            ).encode("utf-8")
+                        ).hexdigest()
+                    ),
+                    "retrieved_active_score_sequence_sha256": (
+                        hashlib.sha256(
+                            json.dumps(
+                                retrieved_score_sequence,
+                                separators=(",", ":"),
+                            ).encode("utf-8")
+                        ).hexdigest()
+                    ),
+                }
+            )
+            system_prompt, neutral_messages = build_matched_response_call(
+                name=self.name,
+                persona=self.persona,
+                topic=topic,
+                stance_score=current_stance,
+                retrieved_arguments=retrieved_args,
+                conversation_history=conversation_history,
+                context_messages=self.response_context_messages,
+                word_limit=self.response_word_limit,
+                retrieved_evidence_token_budget=(
+                    self.retrieved_evidence_token_budget
+                ),
+                retrieved_evidence_encoding=self.retrieved_evidence_encoding,
+            )
+            response = self.backend.chat(
+                messages=neutral_messages,
+                system_prompt=system_prompt,
+                temperature=self.temperature,
+            )
+            return response, retrieved_args
+
         stance_desc = "Neutral/Undecided" # Default
         explicit_stance_instruction = None
         
@@ -80,9 +261,6 @@ class SubjectAgent:
             elif current_stance < -0.5: stance_desc = "Strongly Disagree"
             elif current_stance < -0.1: stance_desc = "Disagree"
             else: stance_desc = "Neutral / Undecided"
-        
-        # Get topic from memory
-        topic = list(self.memory.arguments.values())[0].topic_id if self.memory.arguments else 'Unknown'
         
         # Build opponent context section based on whether there's a prior message
         if last_opponent_msg:
@@ -160,7 +338,7 @@ class SubjectAgent:
         system_prompt += build_shared_debate_rules(
             conversation_instruction=conversation_instruction,
             tone_instruction=tone_instruction,
-            word_limit=120,
+            word_limit=self.response_word_limit,
             explicit_stance_instruction=explicit_stance_instruction,
         )
 
@@ -205,6 +383,21 @@ class SubjectAgent:
         )
         
         return response, retrieved_args
+
+    def response_retrieval_audit_summary(
+        self,
+        include_manipulation_telemetry: bool = True,
+    ):
+        """Return generation-only retrieval telemetry for reproducibility."""
+        summary = dict(self._response_retrieval_audit)
+        if include_manipulation_telemetry:
+            summary["events"] = [
+                dict(event)
+                for event in self._response_retrieval_audit["events"]
+            ]
+        else:
+            summary.pop("events", None)
+        return summary
 
     def get_current_stance(self, **kwargs) -> float:
         return self.memory.get_stance(**kwargs)

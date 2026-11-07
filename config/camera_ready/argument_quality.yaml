@@ -1,0 +1,8 @@
+# Merge this memory block into a live experiment configuration.
+# Downloads the published model if it is not cached. Not used by offline tests.
+memory:
+  strength_estimation_method: classifier
+  classifier_kind: argument_quality
+  classifier_model_path: joshcyang/belief-engine-argument-quality-deberta-v3-large
+  classifier_revision: 139279e9cbecea92a1778318c91547995ea8e0d4
+  classifier_allow_llm_fallback: false
