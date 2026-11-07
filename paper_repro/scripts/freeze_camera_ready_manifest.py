@@ -8,7 +8,7 @@ import hashlib
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[2]
-MANIFEST = "CAMERA_READY_MANIFEST.sha256"
+MANIFEST = "paper_repro/manifest.sha256"
 
 
 def main():

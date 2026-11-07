@@ -15,7 +15,7 @@
     "syntax_files": 98,
     "checked_imports": 10,
     "original_paper_manifest_files": 36,
-    "unchanged_original_artifact_files": 91,
+    "unchanged_original_artifact_files": 88,
     "pip_check": "passed",
     "replay_tables_rebuilt_and_matched": 3
   },
@@ -28,7 +28,8 @@
   "integration_notes": [
     "Optional embedding and agentic imports are lazy.",
     "Classifier loading fails explicitly unless fallback is opted in.",
-    "Historical defaults and existing result artifacts are preserved."
+    "Historical defaults and existing result artifacts are preserved.",
+    "Removed the superseded six-condition benchmark (three files) and stale release documentation; preserved them in Git history."
   ],
   "remaining": [
     "Newer camera-ready result packages and exact run configurations",

@@ -83,10 +83,18 @@ These are the next stage, not prerequisites for the code tests:
    support the retained manuscript result. Keep differently sampled older
    summaries clearly identified.
 4. Add final Figure 1 code and reconcile the profile panel and other figure copies.
-5. Replace the historical inventory with a claim-to-artifact map for the current
-   paper, including exact replay aggregation and experiment-specific update modes.
+5. Complete the result index with a claim-to-artifact map, exact replay
+   aggregation, and experiment-specific update modes for the newer studies.
 6. Finalize the project license, citation, public URL, and release version.
 
 The separate data/model access requirements remain in force. Do not copy the
 entire development tree, raw datasets, credentials, or model weights into this
 candidate merely to satisfy a path in an older manifest.
+
+## Repository cleanup
+
+Superseded May setup notes, release audit, allowlist, and inventory were removed
+from the current tree. The earlier six-condition architecture benchmark is not
+reported in the active manuscript and was also removed. All remain recoverable
+from the original snapshot commit. Existing paper artifacts and retained result
+values were not changed. The current result index is `validation/README.md`.

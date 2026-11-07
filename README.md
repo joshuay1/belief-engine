@@ -34,5 +34,19 @@ The [argument-quality scorer](https://huggingface.co/joshcyang/belief-engine-arg
 is available separately on Hugging Face. Its pinned configuration is in
 [`config/camera_ready/argument_quality.yaml`](config/camera_ready/argument_quality.yaml).
 
-Source provenance, test details, and remaining release tasks are in the
-[maintainer notes](paper_repro/CAMERA_READY.md).
+## Repository layout
+
+| Folder | Contents |
+|---|---|
+| `src/` | Agents, evidence scoring, memory, and stance updates |
+| `config/` | Runtime and experiment settings |
+| `examples/` | Small runnable examples |
+| `tests/` | Offline regression tests |
+| `validation/` | Analysis scripts and saved paper results |
+| `paper_repro/` | Verification tools and maintainer records |
+
+Historical stance-calibration outputs remain under `experiments/`. The small
+`data/` folder contains topic names, not third-party datasets.
+
+See the [reproduction guide](REPRODUCING.md) for result locations and the
+[maintainer notes](paper_repro/CAMERA_READY.md) for release preparation.

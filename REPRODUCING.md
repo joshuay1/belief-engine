@@ -23,9 +23,8 @@ make rebuild-replay-stats
 
 This rebuilds the DEBATE fold-level RMSE statistics from the included participant
 prediction tables. Outputs go to `output/replay/`, leaving the frozen results intact.
-The [saved paper artifacts](validation/paper_artifacts/) and
-[selected result files](validation/results/) also include the original sweeps,
-earlier baseline comparisons, topic grids, and stance-validation outputs.
+The [result index](validation/README.md) links to the saved sweeps, baseline
+comparisons, replay tables, topic grids, and validation outputs.
 
 The ten-topic stance validation, 150-debate common-evaluator comparison,
 finite-solver analysis, and component-study result packages are still pending.
@@ -45,8 +44,7 @@ The update mode is part of the experiment configuration:
 
 Use the original mode when reproducing an existing run. The generated-agent
 fixed-prior mode differs from DEBATE replay, where anchoring scales the observed
-initial log odds. The earlier [experiment inventory](paper_repro/PAPER_EXPERIMENT_INVENTORY.md)
-describes the reviewer snapshot and is not yet a complete camera-ready run guide.
+initial log odds. Use the result index to find the included artifacts.
 
 Live reruns require access to the named base model or hosted API, the appropriate
 dataset, and the experiment's exact configuration and prompts. Hosted-model
@@ -78,4 +76,4 @@ requires `pip install -e '.[embeddings]'` and its embedding model.
 The tested Python 3.11 dependency versions are recorded in
 [`paper_repro/requirements-verified-py311.txt`](paper_repro/requirements-verified-py311.txt).
 The [maintainer notes](paper_repro/CAMERA_READY.md) retain implementation provenance,
-test coverage, and release preparation details. Original results are preserved.
+test coverage, and release preparation details.
