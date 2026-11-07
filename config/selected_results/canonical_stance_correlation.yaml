@@ -1,0 +1,49 @@
+name: "canonical_stance_correlation"
+description: "Internal vs External Stance Correlation study comparing CoreBot (Subject+Worldview) and OpenClaw (Moltbot+Episodic) across 201 controlled stance positions."
+
+# NOTE: This is a specialized validation experiment that requires custom runner code.
+# It programmatically sets internal stance values from -1.0 to +1.0 (in 0.01 increments)
+# and measures the external stance (as evaluated by an external judge) to validate
+# the correlation between internal belief state and externally expressed position.
+
+# This config documents the experiment parameters for reproducibility.
+# To reproduce, use the specialized stance correlation runner script (not standard CLI).
+
+topics:
+  - "We should introduce compulsory voting"
+
+execution:
+  # 201 trials per agent type: stances from -1.00 to +1.00 in 0.01 increments
+  stance_range: [-1.0, 1.0]
+  stance_step: 0.01
+  total_trials_per_agent: 201
+
+global_settings:
+  debate:
+    rounds: 1  # Single round to capture stance at specific position
+    seed_stance: "controlled"  # Programmatically set per trial
+
+conditions:
+  # ----------------------------------------------------------------------
+  # CoreBot (Subject Agent with Worldview Abstractive Memory)
+  # ----------------------------------------------------------------------
+  CoreBot:
+    type: "subject"
+    memory:
+      storage_mode: "worldview"
+      stance_method: "bayesian"
+      belief_engine_type: "bayesian"
+
+  # ----------------------------------------------------------------------
+  # OpenClaw (Moltbot Agent with Episodic Verbatim Memory)
+  # ----------------------------------------------------------------------
+  OpenClaw:
+    type: "moltbot"
+    memory:
+      storage_mode: "episodic"
+      stance_method: "bayesian"
+      belief_engine_type: "bayesian"
+
+# Expected output: Scatter plot showing:
+# - OpenClaw: r=0.950 (p=2.3e-102) Pearson correlation
+# - CoreBot: r=0.967 (p=1.2e-120) Pearson correlation

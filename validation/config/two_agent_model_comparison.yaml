@@ -1,0 +1,87 @@
+# Example comparison spec for validation/scripts/run_two_agent_model_comparison.py.
+#
+# Run with:
+#   python validation/scripts/run_two_agent_model_comparison.py \
+#     --comparison-spec validation/config/two_agent_model_comparison.yaml \
+#     --rounds 15 --trials 3 --workers 4 \
+#     --retrieval-strategy proportional \
+#     --be-stance-source internal \
+#     --output-dir validation/results/two_agent_model_comparison
+#
+# Each condition is independent: vanilla rows can use any model and do not need
+# to be paired with a Belief Engine row using the same model.
+
+conditions:
+  - name: be_gpt4omini
+    label: Belief Engine (4o-mini)
+    agent_type: belief_engine
+    backend: openai
+    model: gpt-4o-mini
+
+  - name: be_gpt54mini
+    label: Belief Engine (5.4-mini)
+    agent_type: belief_engine
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config:
+      reasoning_effort: none
+      verbosity: low
+
+  - name: vanilla_no_update_gpt54mini
+    label: Vanilla no-update (5.4-mini)
+    agent_type: vanilla
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config:
+      reasoning_effort: none
+      verbosity: low
+
+  - name: prompt_self_update_gpt54mini
+    label: Prompt self-update (5.4-mini)
+    agent_type: prompt_self_update
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config:
+      reasoning_effort: none
+      verbosity: low
+
+  - name: rag_only_gpt54mini
+    label: RAG-only (5.4-mini)
+    agent_type: rag
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config:
+      reasoning_effort: none
+      verbosity: low
+
+  - name: rag_self_update_gpt54mini
+    label: RAG + self-update (5.4-mini)
+    agent_type: rag_self_update
+    backend: openai
+    model: gpt-5.4-mini
+    backend_config:
+      reasoning_effort: none
+      verbosity: low
+
+  # Vanilla can use a completely different model from the BE conditions.
+  # - name: vanilla_gpt4omini
+  #   label: Vanilla LLM (4o-mini)
+  #   agent_type: vanilla
+  #   backend: openai
+  #   model: gpt-4o-mini
+
+  # OpenRouter example. Uncomment and adjust the slug if your provider exposes
+  # a different model name.
+  # - name: be_qwen35_9b
+  #   label: Belief Engine (Qwen3.5 9B)
+  #   agent_type: belief_engine
+  #   backend: openrouter
+  #   model: qwen/qwen3.5-9b
+
+  # Local OpenAI-compatible server example.
+  # - name: be_local_llama
+  #   label: Belief Engine (Local Llama)
+  #   agent_type: belief_engine
+  #   backend: local
+  #   model: llama-local
+  #   url: http://localhost:1234/v1

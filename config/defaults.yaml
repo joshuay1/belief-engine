@@ -1,0 +1,80 @@
+backend:
+  type: "openrouter" # Options: "local", "openrouter", "openai", "mock"
+  url: "http://localhost:1234/v1" # For local LLM
+  # api_key: "sk-example" # Leave commented to use OPENAI_API_KEY env var
+  model: "anthropic/claude-sonnet-4"
+
+memory:
+  # MEMORY BEHAVIOR
+  # - "episodic": Stores every argument as-is.
+  # - "worldview": Reframes arguments to fit the agent's worldview.
+  storage_mode: "worldview"
+  
+  # WORLDVIEW OPENNESS: Controls TWO critical systems
+  #
+  # 1. DEDUPLICATION STRATEGY (How duplicate arguments are detected):
+  #    - "agentic": Uses LLM reasoning to detect semantic equivalence (smarter but slower)
+  #    - "balanced/stubborn/open_minded": Uses vector similarity (cosine ≥ 0.8, faster but literal)
+  #
+  # 2. WORLDVIEW FILTERING (How opposing arguments are screened):
+  #    - "stubborn": EXTREME filtering - Auto-rejects opposing arguments ("If it conflicts, reject it")
+  #    - "balanced": MODERATE filtering - Rejects only if existing knowledge provides strong counter-argument
+  #    - "open_minded": LOW filtering - Only rejects direct factual contradictions
+  #    - "agentic": NO FILTERING - All arguments enter memory (no ideological gate)
+  #
+  # Recommended for experiments:
+  #   - Use "balanced" for standard sensitivity sweeps (matches published results)
+  #   - Use "agentic" to study pure sensitivity dynamics without worldview filtering
+  worldview_openness: "balanced" # Options: "stubborn", "balanced", "open_minded", "agentic"
+  retrieval_strategy: "weighted" # options: recent, relevant, mixed, proportional, weighted
+  stance_method: "bayesian" # options: bayesian, agentic, linear, blind
+  belief_engine_type: "bayesian" # options: bayesian, agentic
+  # Bayesian Sensitivity Settings:
+  # 0.5 - 1.0: Stubborn (Requires overwhelming evidence to shift)
+  # 2.0: Balanced (Standard 3:1 likelihood ratio per strong argument)
+  # 3.0+: Reactive (Easily swayed by single arguments)
+  update_sensitivity: 0.4 # Validated experiment default
+  anchor_sensitivity: 0.4 # Sensitivity for seeded arguments (Initial Confidence). Low = Open Minded.
+  confirmation_bias: 0.0 # 0.0=Rational, >0.0=Biased (Amplifies confirming args, dampens opposing)
+  argument_similarity_threshold: 0.8 # Threshold for credence relevance similarity (0.0 to 1.0)
+  self_similarity_threshold: 0.5 # Deduplication threshold for OWN arguments. Lower = Strict deduplication (avoids self-convincing).
+  allow_self_arguments: true # Global single-debate default. Sweep runs override to false unless the sweep config says otherwise.
+
+  cross_polarity_dedup: false # If true, Vector Judge compares against ALL arguments (not just same-polarity). Enables cross-polarity semantic deduplication. Makes Vector behavior closer to Agentic.
+  strength_estimation_method: "classifier" # Options: "llm" (use LLM to estimate support_strength) or "classifier" (use argument_quality_classifier model)
+
+  classifier_model_path: "models/argument_quality_classifier" # Path to the classifier model directory (only used if strength_estimation_method is "classifier")
+
+# Data source configuration
+# Options:
+#   - "json_files": Use separate JSON files per topic (data/topics/{topic}/{side}.json) - default/backward compatible
+#   - "unified_json": Use unified JSON file with all topics (data/Argument-Quality-Ranking-30k/arguments.json)
+data:
+  source: "unified_json"  # Options: "json_files" or "unified_json"
+  # Only needed if source is "unified_json":
+  json_path: "data/Argument-Quality-Ranking-30k/arguments.json"
+
+debate:
+  rounds: 15
+  # If using unified_json, use the exact topic string as it appears in the JSON file
+  # Example: "We should adopt universal basic income" or "We should abolish capital punishment"
+  # If using json_files, use topic IDs like "eu_migration_pact", "universal_basic_income", etc.
+  topic: "Blockade of the Gaza Strip should be ended" # For unified_json: use full topic string from available_topics.txt. For json_files: use topic ID.
+  seed_stance: "affirmative" # options: affirmative, negative, neutral, none
+  target_initial_stance: 0.99 # Auto-calibrates anchor to achieve start of ~0.99
+  seeding_limit: 10 # Number of arguments to seed memory with
+  seeding_strategy: "random" # "quality_max" (top-k by support), "quality_balanced" (balanced across quality tiers), or "random"
+  seeding_random_seed: null # Optional fixed RNG seed for deterministic seeding; useful for sweeps and reproducible comparisons
+  seeding_num_bins: 5 # Number of quality bins for "quality_balanced" strategy (default: 5)
+  seeding_quality_lower_bound: null # Lower bound for "random" strategy - only select arguments with support_strength >= this value (default: null, no lower bound)
+  seeding_quality_upper_bound: null # Upper bound for "random" strategy - only select arguments with support_strength <= this value (default: null, no upper bound)
+  subject_persona: "A direct citizen who relies on their memory to form and defend their opinions, but remains open to compelling evidence."
+
+logging:
+  log_dir: "experiments/logs"
+  level: INFO
+  verbosity: 1  # 0=minimal, 1=normal (default), 2=verbose, 3=debug
+
+evaluation:
+  enabled: false
+  model: "gpt-5.1"

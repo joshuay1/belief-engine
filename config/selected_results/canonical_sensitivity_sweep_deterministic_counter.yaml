@@ -1,0 +1,149 @@
+name: "canonical_sensitivity_sweep_deterministic_counter"
+description: "Canonical 2x2 sensitivity sweep with a deterministic counter agent and explicitly separated update vs anchor conditions."
+
+base_config:
+  debate.topic: "We should introduce compulsory voting"
+  debate.rounds: 15
+  debate.counter_agent_type: "deterministic"
+  debate.seeding_random_seed: 7           # Match the canonical sweep so comparisons reuse the same seeded argument set
+  memory.stance_method: "bayesian"
+  memory.belief_engine_type: "bayesian"
+  memory.worldview_openness: "balanced"  # Match original topic5 experiment (Feb 2026)
+  memory.allow_self_arguments: false     # Sweep convention: do not reinforce from the subject's own extracted arguments
+
+variations:
+  # ----------------------------------------------------------------------
+  # CoreBot (Subject Agent with Worldview Abstractive Memory)
+  # ----------------------------------------------------------------------
+  # VARYING UPDATE SENSITIVITY
+  # Update sweep keeps target_initial_stance enabled so all conditions start from a comparable seeded stance.
+  - name: "CoreBot_Update_0.2"
+    overrides:
+      debate.agent_type: "subject"
+      debate.target_initial_stance: 0.99
+      memory.storage_mode: "worldview"
+      memory.update_sensitivity: 0.2
+  - name: "CoreBot_Update_0.4"
+    overrides:
+      debate.agent_type: "subject"
+      debate.target_initial_stance: 0.99
+      memory.storage_mode: "worldview"
+      memory.update_sensitivity: 0.4
+  - name: "CoreBot_Update_0.6"
+    overrides:
+      debate.agent_type: "subject"
+      debate.target_initial_stance: 0.99
+      memory.storage_mode: "worldview"
+      memory.update_sensitivity: 0.6
+  - name: "CoreBot_Update_0.8"
+    overrides:
+      debate.agent_type: "subject"
+      debate.target_initial_stance: 0.99
+      memory.storage_mode: "worldview"
+      memory.update_sensitivity: 0.8
+  - name: "CoreBot_Update_1.0"
+    overrides:
+      debate.agent_type: "subject"
+      debate.target_initial_stance: 0.99
+      memory.storage_mode: "worldview"
+      memory.update_sensitivity: 1.0
+
+  # VARYING ANCHOR SENSITIVITY
+  # Anchor sweep disables target_initial_stance, otherwise the runner auto-recomputes anchor_sensitivity and collapses this sweep.
+  - name: "CoreBot_Anchor_0.2"
+    overrides:
+      debate.agent_type: "subject"
+      debate.target_initial_stance: none
+      memory.storage_mode: "worldview"
+      memory.anchor_sensitivity: 0.2
+  - name: "CoreBot_Anchor_0.4"
+    overrides:
+      debate.agent_type: "subject"
+      debate.target_initial_stance: none
+      memory.storage_mode: "worldview"
+      memory.anchor_sensitivity: 0.4
+  - name: "CoreBot_Anchor_0.6"
+    overrides:
+      debate.agent_type: "subject"
+      debate.target_initial_stance: none
+      memory.storage_mode: "worldview"
+      memory.anchor_sensitivity: 0.6
+  - name: "CoreBot_Anchor_0.8"
+    overrides:
+      debate.agent_type: "subject"
+      debate.target_initial_stance: none
+      memory.storage_mode: "worldview"
+      memory.anchor_sensitivity: 0.8
+  - name: "CoreBot_Anchor_1.0"
+    overrides:
+      debate.agent_type: "subject"
+      debate.target_initial_stance: none
+      memory.storage_mode: "worldview"
+      memory.anchor_sensitivity: 1.0
+
+  # ----------------------------------------------------------------------
+  # OpenClaw (Moltbot Agent with Episodic Verbatim Memory)
+  # ----------------------------------------------------------------------
+  # VARYING UPDATE SENSITIVITY
+  - name: "OpenClaw_Update_0.2"
+    overrides:
+      debate.agent_type: "moltbot"
+      debate.target_initial_stance: 0.99
+      memory.storage_mode: "episodic"
+      memory.update_sensitivity: 0.2
+  - name: "OpenClaw_Update_0.4"
+    overrides:
+      debate.agent_type: "moltbot"
+      debate.target_initial_stance: 0.99
+      memory.storage_mode: "episodic"
+      memory.update_sensitivity: 0.4
+  - name: "OpenClaw_Update_0.6"
+    overrides:
+      debate.agent_type: "moltbot"
+      debate.target_initial_stance: 0.99
+      memory.storage_mode: "episodic"
+      memory.update_sensitivity: 0.6
+  - name: "OpenClaw_Update_0.8"
+    overrides:
+      debate.agent_type: "moltbot"
+      debate.target_initial_stance: 0.99
+      memory.storage_mode: "episodic"
+      memory.update_sensitivity: 0.8
+  - name: "OpenClaw_Update_1.0"
+    overrides:
+      debate.agent_type: "moltbot"
+      debate.target_initial_stance: 0.99
+      memory.storage_mode: "episodic"
+      memory.update_sensitivity: 1.0
+
+  # VARYING ANCHOR SENSITIVITY
+  - name: "OpenClaw_Anchor_0.2"
+    overrides:
+      debate.agent_type: "moltbot"
+      debate.target_initial_stance: none
+      memory.storage_mode: "episodic"
+      memory.anchor_sensitivity: 0.2
+  - name: "OpenClaw_Anchor_0.4"
+    overrides:
+      debate.agent_type: "moltbot"
+      debate.target_initial_stance: none
+      memory.storage_mode: "episodic"
+      memory.anchor_sensitivity: 0.4
+  - name: "OpenClaw_Anchor_0.6"
+    overrides:
+      debate.agent_type: "moltbot"
+      debate.target_initial_stance: none
+      memory.storage_mode: "episodic"
+      memory.anchor_sensitivity: 0.6
+  - name: "OpenClaw_Anchor_0.8"
+    overrides:
+      debate.agent_type: "moltbot"
+      debate.target_initial_stance: none
+      memory.storage_mode: "episodic"
+      memory.anchor_sensitivity: 0.8
+  - name: "OpenClaw_Anchor_1.0"
+    overrides:
+      debate.agent_type: "moltbot"
+      debate.target_initial_stance: none
+      memory.storage_mode: "episodic"
+      memory.anchor_sensitivity: 1.0

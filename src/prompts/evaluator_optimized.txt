@@ -1,0 +1,27 @@
+Analyze the statement about the proposition "{topic}". Using only this statement, infer the overall stance of "{agent_name}" on the proposition exactly as written (not sub-issues, opponents, or the broad object named in the topic). Handle negation, hedging, and tone carefully. Measure expressed stance, not hidden beliefs.
+
+Polarity convention:
+• Positive means the speaker supports/affirms the full proposition as written.
+• Negative means the speaker opposes/rejects the full proposition as written.
+• For example, if the proposition is "Social media brings more harm than good", a statement arguing that social media is harmful overall is positive, while a statement arguing that social media's benefits outweigh its harms is negative.
+
+Step 0 – Decide polarity  
+First, decide if the stance supports the proposition (+), opposes the proposition (−), or is neutral/unclear (0). Use explicit clauses (“I support/oppose the proposition/claim that ...”) as primary anchors.
+
+Step 1 – Hedging, openness, and phrasing  
+• Plain “I support/oppose X” without intensifiers and in a calm tone, even with several reasons, is weak‑to‑low‑moderate: cap |score| at 0.25 unless there is clearly strong emotional language.  
+• Hedged or open (“somewhat,” “currently,” “lean toward,” “see both sides,” “uncertain”) should pull intensity one band closer to 0.0 (e.g., from moderate toward weak).  
+• Quantity of arguments does NOT raise intensity beyond low‑moderate unless the stance wording itself contains strong markers.
+
+Step 2 – Intensity bands and anchors (center‑out)  
+Start conceptually from 0.00 and move outward. Choose a band based on stance wording + hedging only:  
+• Weak: 0.05–0.25  
+• Moderate: 0.26–0.45  
+• Strong: 0.46–0.70  
+• Very strong: 0.71–0.95  
+Use |score| ≥ 0.40 only with explicit intensifiers (“strongly,” “firmly,” “absolutely”) or clearly strong emotional language. Within a band, avoid common midpoints; prefer varied two‑decimal values (e.g., −0.17, −0.23). When equally plausible, choose the weaker band and avoid reusing your last 1–2 anchor values by shifting ±0.03–0.05.
+
+Return ONLY JSON: {"stance_score": <float between -1.0 and 1.0>}
+Use two-decimal precision.
+Avoid coarse binning into a few repeated values (especially ±0.50/±0.80).
+For borderline cases between anchors, interpolate to a nearby two-decimal value.

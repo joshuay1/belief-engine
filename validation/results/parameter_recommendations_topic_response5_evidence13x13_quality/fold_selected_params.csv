@@ -1,0 +1,86 @@
+fold,scheme,preset_key,preset_label,update_s,anchor_s,train_score,n_train,fallback_to_global
+1,global,all,General default,0.035,0.6,0.4665643573842293,2019,False
+1,participant_type,committed,Committed,0.1,0.6,0.3860729410105944,509,False
+1,participant_type,leaning,Leaning,0.05,0.8,0.4461924623795181,564,False
+1,participant_type,open,Open / conflicted,0.02,0.6,0.5101910944749375,946,False
+1,response_type,stable,Stable,0.005,1.0,0.006294677936005341,1108,False
+1,response_type,softened,Softened,0.005,0.3,0.13807980866300412,153,False
+1,response_type,reinforced,Reinforced,0.05,1.5,0.29063587953633446,381,False
+1,response_type,boundary_switcher,Boundary switchers,0.02,0.02,0.2470000560126554,81,False
+1,response_type,strong_switcher,Strong switchers,0.005,0.02,0.6381664103977488,296,False
+1,evidence_alignment,evidence_all,All participants,0.035,0.6,0.4665643573842293,2019,False
+1,evidence_alignment,evidence_aligned_mover,Evidence-aligned movers,0.4,0.5,0.3883677820657905,449,False
+1,evidence_alignment,evidence_opposed_mover,Evidence-opposed movers,0.005,0.2,0.6614420462321355,318,False
+1,evidence_alignment,weak_signal_mover,Weak-signal movers,0.005,0.2,0.6394737424960837,144,False
+1,evidence_alignment,stable_despite_pressure,Stable despite pressure,0.005,1.0,0.006856232222572618,931,False
+1,evidence_alignment,stable_low_pressure,Stable low-pressure,0.005,1.0,0.0008825915952084489,177,False
+1,topic_category,breadth,Broad social/political,0.035,0.6,0.4656388669510809,1663,False
+1,topic_category,depth,Technical/factual,0.075,0.6,0.4676492705929747,356,False
+2,global,all,General default,0.035,0.6,0.46853265897138757,1833,False
+2,participant_type,committed,Committed,0.05,0.6,0.3529423006577742,478,False
+2,participant_type,leaning,Leaning,0.035,0.6,0.4658311971081061,501,False
+2,participant_type,open,Open / conflicted,0.02,0.5,0.5212050307804149,854,False
+2,response_type,stable,Stable,0.005,1.0,0.006504560150618373,995,False
+2,response_type,softened,Softened,0.005,0.4,0.14108017505746062,160,False
+2,response_type,reinforced,Reinforced,0.05,1.5,0.28849726703037687,332,False
+2,response_type,boundary_switcher,Boundary switchers,0.01,0.02,0.24869390907684652,69,False
+2,response_type,strong_switcher,Strong switchers,0.005,0.02,0.6472524643665896,277,False
+2,evidence_alignment,evidence_all,All participants,0.035,0.6,0.46853265897138757,1833,False
+2,evidence_alignment,evidence_aligned_mover,Evidence-aligned movers,0.4,0.5,0.3964870529995773,400,False
+2,evidence_alignment,evidence_opposed_mover,Evidence-opposed movers,0.005,0.3,0.6509871589303646,307,False
+2,evidence_alignment,weak_signal_mover,Weak-signal movers,0.005,0.2,0.6372380714402752,131,False
+2,evidence_alignment,stable_despite_pressure,Stable despite pressure,0.005,1.0,0.007107891180142027,831,False
+2,evidence_alignment,stable_low_pressure,Stable low-pressure,0.005,1.0,0.0008332897936896273,164,False
+2,topic_category,breadth,Broad social/political,0.02,0.6,0.46272313309341845,1600,False
+2,topic_category,depth,Technical/factual,0.05,0.5,0.5048384591568397,233,False
+3,global,all,General default,0.035,0.6,0.46958773309978574,2073,False
+3,participant_type,committed,Committed,0.075,0.6,0.38191288198603346,547,False
+3,participant_type,leaning,Leaning,0.035,0.6,0.46830444283741224,565,False
+3,participant_type,open,Open / conflicted,0.02,0.6,0.5115253489976118,961,False
+3,response_type,stable,Stable,0.005,1.0,0.006311117989834127,1153,False
+3,response_type,softened,Softened,0.005,0.4,0.1388044166038171,167,False
+3,response_type,reinforced,Reinforced,0.05,1.5,0.2978092108595892,361,False
+3,response_type,boundary_switcher,Boundary switchers,0.005,0.02,0.25015954577160027,75,False
+3,response_type,strong_switcher,Strong switchers,0.01,0.02,0.6352499679302438,317,False
+3,evidence_alignment,evidence_all,All participants,0.035,0.6,0.46958773309978574,2073,False
+3,evidence_alignment,evidence_aligned_mover,Evidence-aligned movers,0.4,0.5,0.40247809908359883,443,False
+3,evidence_alignment,evidence_opposed_mover,Evidence-opposed movers,0.005,0.3,0.6526391233170955,329,False
+3,evidence_alignment,weak_signal_mover,Weak-signal movers,0.005,0.15,0.6453129938854834,148,False
+3,evidence_alignment,stable_despite_pressure,Stable despite pressure,0.005,1.0,0.006890746436036206,964,False
+3,evidence_alignment,stable_low_pressure,Stable low-pressure,0.005,1.0,0.0008944624497699103,189,False
+3,topic_category,breadth,Broad social/political,0.02,0.6,0.46652425742288606,1604,False
+3,topic_category,depth,Technical/factual,0.05,0.6,0.4788775024130303,469,False
+4,global,all,General default,0.035,0.6,0.4629978749682188,2095,False
+4,participant_type,committed,Committed,0.075,0.6,0.3622316173375166,559,False
+4,participant_type,leaning,Leaning,0.05,0.8,0.45878990432828165,569,False
+4,participant_type,open,Open / conflicted,0.02,0.6,0.5124184075464111,967,False
+4,response_type,stable,Stable,0.005,1.0,0.006218611363156114,1157,False
+4,response_type,softened,Softened,0.005,0.4,0.14381028583984434,158,False
+4,response_type,reinforced,Reinforced,0.05,1.5,0.2997298702916554,383,False
+4,response_type,boundary_switcher,Boundary switchers,0.01,0.02,0.24923561219779747,82,False
+4,response_type,strong_switcher,Strong switchers,0.005,0.02,0.6252357197195977,315,False
+4,evidence_alignment,evidence_all,All participants,0.035,0.6,0.4629978749682188,2095,False
+4,evidence_alignment,evidence_aligned_mover,Evidence-aligned movers,0.4,0.6,0.3877467446675807,461,False
+4,evidence_alignment,evidence_opposed_mover,Evidence-opposed movers,0.005,0.3,0.6567990455418934,333,False
+4,evidence_alignment,weak_signal_mover,Weak-signal movers,0.005,0.2,0.6481478942693543,144,False
+4,evidence_alignment,stable_despite_pressure,Stable despite pressure,0.005,1.0,0.006819597545299514,959,False
+4,evidence_alignment,stable_low_pressure,Stable low-pressure,0.005,1.0,0.0008479533526907417,198,False
+4,topic_category,breadth,Broad social/political,0.02,0.6,0.4581410185945198,1626,False
+4,topic_category,depth,Technical/factual,0.05,0.6,0.4788775024130303,469,False
+5,global,all,General default,0.02,0.6,0.45922546481387755,1960,False
+5,participant_type,committed,Committed,0.075,0.6,0.38529903966631485,547,False
+5,participant_type,leaning,Leaning,0.035,0.8,0.4400585285797273,549,False
+5,participant_type,open,Open / conflicted,0.01,0.6,0.5030997993297394,864,False
+5,response_type,stable,Stable,0.005,1.0,0.0062008984708584805,1103,False
+5,response_type,softened,Softened,0.005,0.4,0.13942908459073663,154,False
+5,response_type,reinforced,Reinforced,0.05,1.5,0.28100769509570267,355,False
+5,response_type,boundary_switcher,Boundary switchers,0.02,0.02,0.2464252391292483,73,False
+5,response_type,strong_switcher,Strong switchers,0.005,0.02,0.6406210079227211,275,False
+5,evidence_alignment,evidence_all,All participants,0.02,0.6,0.45922546481387755,1960,False
+5,evidence_alignment,evidence_aligned_mover,Evidence-aligned movers,0.3,0.5,0.38749638272822956,415,False
+5,evidence_alignment,evidence_opposed_mover,Evidence-opposed movers,0.005,0.3,0.6685281863873459,313,False
+5,evidence_alignment,weak_signal_mover,Weak-signal movers,0.005,0.2,0.6582039230604823,129,False
+5,evidence_alignment,stable_despite_pressure,Stable despite pressure,0.005,1.0,0.006782118952746823,919,False
+5,evidence_alignment,stable_low_pressure,Stable low-pressure,0.005,1.0,0.0008730260449835388,184,False
+5,topic_category,breadth,Broad social/political,0.02,0.6,0.4570308136805542,1611,False
+5,topic_category,depth,Technical/factual,0.035,0.6,0.46920462908710037,349,False
