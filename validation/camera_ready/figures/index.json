@@ -1,0 +1,129 @@
+{
+  "scope": "Exact final manuscript assets. Numerical reproduction may use a different layout. Original reviewer artifact bundle is unchanged.",
+  "figures": [
+    {
+      "paper_file": "figures/figure1_variants/figure1_s.pdf",
+      "release_file": "validation/camera_ready/figures/figure1_s.pdf",
+      "sha256": "414fb12316f225e5826cb477388435dad994ab868c70f26a5f601167102ebd74",
+      "matching_saved_plots": []
+    },
+    {
+      "paper_file": "figures/sweep_be_agent.pdf",
+      "release_file": "validation/results/model_sensitivity_comparison/figure_model_trajectory_sweep_be_agent.pdf",
+      "sha256": "b749c70b58a6553651e8cc6f440650155d7c57217b51abddd7b8f400e309bfe6",
+      "matching_saved_plots": [
+        "validation/results/model_sensitivity_comparison/figure_model_trajectory_sweep_be_agent.pdf"
+      ]
+    },
+    {
+      "paper_file": "figures/configure.pdf",
+      "release_file": "validation/camera_ready/figures/configure.pdf",
+      "sha256": "3b46674afe447afc1419e1abcf634ce3891456e9dba7019a3918c1686dbd086f",
+      "matching_saved_plots": []
+    },
+    {
+      "paper_file": "figures/atheism.pdf",
+      "release_file": "validation/camera_ready/figures/atheism.pdf",
+      "sha256": "17e2abb1aff4d3a2dd522ea4dbf6aa0149bc7fcd4cac3343efdc20e433c0d0b7",
+      "matching_saved_plots": []
+    },
+    {
+      "paper_file": "figures/parameter_alignment.pdf",
+      "release_file": "validation/camera_ready/figures/parameter_alignment.pdf",
+      "sha256": "4de0873bc54537524e15812fc80099892ef7aed54505c183fd35038176ab5c54",
+      "matching_saved_plots": []
+    },
+    {
+      "paper_file": "figures/example.pdf",
+      "release_file": "validation/results/individual_opinion_tracking_response5_evidence13x13/figure_individual_type_showcase_group.pdf",
+      "sha256": "dc8fbcd76bc8ec32c21127eafdb56da238c32bd2b40dbd840aa0f396e34e979b",
+      "matching_saved_plots": [
+        "validation/results/individual_opinion_tracking_response5_evidence13x13/figure_individual_type_showcase_group.pdf"
+      ]
+    },
+    {
+      "paper_file": "figures/ex_judge.pdf",
+      "release_file": "validation/results/journalism_u0.2_a0.4_8models/figures/topic_grids/journalism_6panel_external_judged_grid_2x3.pdf",
+      "sha256": "d88fdad853c17accfbdb8c713bcbd50d5063fc6ce378f2cfbc3573b7341783a7",
+      "matching_saved_plots": [
+        "validation/results/journalism_u0.2_a0.4_8models/figures/topic_grids/journalism_6panel_external_judged_grid_2x3.pdf"
+      ]
+    },
+    {
+      "paper_file": "figures/endpoint_paths_camera_ready.pdf",
+      "release_file": "validation/camera_ready/figures/endpoint_paths_camera_ready.pdf",
+      "sha256": "1e5a9b70057c2489c862381d768b797d321f018d1ff15532c55516465e158da9",
+      "matching_saved_plots": []
+    },
+    {
+      "paper_file": "figures/topic_grids/social_media_2agent_belief_grid.pdf",
+      "release_file": "validation/paper_artifacts/two_agent_focus10/topic_grids/social_media_2agent_belief_grid.pdf",
+      "sha256": "bed52a1eb3123e09446b1a7a2f1e3d6e9640f709a67eb9837d1d82f719285beb",
+      "matching_saved_plots": [
+        "validation/paper_artifacts/two_agent_focus10/topic_grids/social_media_2agent_belief_grid.pdf"
+      ]
+    },
+    {
+      "paper_file": "figures/topic_grids/entrapment_2agent_belief_grid.pdf",
+      "release_file": "validation/paper_artifacts/two_agent_focus10/topic_grids/entrapment_2agent_belief_grid.pdf",
+      "sha256": "363f54dfec3cb269852e15cd4f24689de684ff1d0be331540e09e394c4dec943",
+      "matching_saved_plots": [
+        "validation/paper_artifacts/two_agent_focus10/topic_grids/entrapment_2agent_belief_grid.pdf"
+      ]
+    },
+    {
+      "paper_file": "figures/topic_grids/compulsory_voting_2agent_belief_grid.pdf",
+      "release_file": "validation/paper_artifacts/two_agent_focus10/topic_grids/compulsory_voting_2agent_belief_grid.pdf",
+      "sha256": "59c80a7140ec442a59b36ed807fe5b0b6244e19bbddfd047f9a00ceec2e9767f",
+      "matching_saved_plots": [
+        "validation/paper_artifacts/two_agent_focus10/topic_grids/compulsory_voting_2agent_belief_grid.pdf"
+      ]
+    },
+    {
+      "paper_file": "figures/topic_grids/austerity_2agent_belief_grid.pdf",
+      "release_file": "validation/paper_artifacts/two_agent_focus10/topic_grids/austerity_2agent_belief_grid.pdf",
+      "sha256": "53dfb36b4552e67adfae9e38c84feda0da6fd3639190b58364348ad87bb775d9",
+      "matching_saved_plots": [
+        "validation/paper_artifacts/two_agent_focus10/topic_grids/austerity_2agent_belief_grid.pdf"
+      ]
+    },
+    {
+      "paper_file": "figures/topic_grids/sex_selection_2agent_belief_grid.pdf",
+      "release_file": "validation/paper_artifacts/two_agent_focus10/topic_grids/sex_selection_2agent_belief_grid.pdf",
+      "sha256": "87e3addc52244d0c9aa250b27f11c9aec7964e639e6e75ea771d23de22cc5e01",
+      "matching_saved_plots": [
+        "validation/paper_artifacts/two_agent_focus10/topic_grids/sex_selection_2agent_belief_grid.pdf"
+      ]
+    },
+    {
+      "paper_file": "figures/topic_grids/atheism_2agent_belief_grid.pdf",
+      "release_file": "validation/paper_artifacts/two_agent_focus10/topic_grids/atheism_2agent_belief_grid.pdf",
+      "sha256": "204e4b93eb7ff3ac1b41780b51bb91940e8dd325673921e0d47ffb0eddb32715",
+      "matching_saved_plots": [
+        "validation/paper_artifacts/two_agent_focus10/topic_grids/atheism_2agent_belief_grid.pdf"
+      ]
+    },
+    {
+      "paper_file": "figures/topic_grids/journalism_2agent_belief_grid.pdf",
+      "release_file": "validation/paper_artifacts/two_agent_focus10/topic_grids/journalism_2agent_belief_grid.pdf",
+      "sha256": "7c3f175ab8ac85e6886a9351227f0779a06a5901704154e69922b92df6a566b9",
+      "matching_saved_plots": [
+        "validation/paper_artifacts/two_agent_focus10/topic_grids/journalism_2agent_belief_grid.pdf"
+      ]
+    },
+    {
+      "paper_file": "figures/topic_grids/zero_tolerance_schools_2agent_belief_grid.pdf",
+      "release_file": "validation/paper_artifacts/two_agent_focus10/topic_grids/zero_tolerance_schools_2agent_belief_grid.pdf",
+      "sha256": "10c2c792e82a544df914fb691ad81980da11d925bad195f3be97cb3243dc6d12",
+      "matching_saved_plots": [
+        "validation/paper_artifacts/two_agent_focus10/topic_grids/zero_tolerance_schools_2agent_belief_grid.pdf"
+      ]
+    },
+    {
+      "paper_file": "figures/stance_alignment_ten_topics.tex",
+      "release_file": "validation/camera_ready/figures/stance_alignment_ten_topics.tex",
+      "sha256": "cdd2ea2451d8348b16cca0d8d49e7aaebed301e60f73c47c309afe062db7f092",
+      "matching_saved_plots": []
+    }
+  ]
+}

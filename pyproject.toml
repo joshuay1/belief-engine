@@ -4,9 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "belief-engine"
-version = "0.1.0"
+version = "1.0.0"
 description = "Auditable stance updates for LLM deliberation"
 requires-python = ">=3.11"
+license = {file = "LICENSE"}
 
 # Core dependencies — enough to run episodic/summary/conceptual/worldview experiments
 dependencies = [

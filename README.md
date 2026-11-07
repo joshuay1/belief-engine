@@ -50,3 +50,10 @@ Historical stance-calibration outputs remain under `experiments/`. The small
 
 See the [reproduction guide](REPRODUCING.md) for result locations and the
 [maintainer notes](paper_repro/CAMERA_READY.md) for release preparation.
+
+## Licence and citation
+
+Original code is released under the [MIT licence](LICENSE). Third-party assets
+retain their own terms, as described in [NOTICE.md](NOTICE.md). Use
+[CITATION.cff](CITATION.cff) to cite the paper and identify the software version.
+The camera-ready release is [v1.0.0](https://github.com/joshuay1/belief-engine/releases/tag/v1.0.0).

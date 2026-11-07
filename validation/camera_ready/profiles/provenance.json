@@ -1,0 +1,14 @@
+{
+  "source_campaign": "agent_mem/validation/results/two_agent_focus10_gpt54mini",
+  "topic": "We should adopt an austerity regime",
+  "model": "gpt-5.4-mini",
+  "selection": "All twelve austerity runs, including the fourth pairing omitted from the main figure. raw_dir column omitted.",
+  "original_file_sha256": {
+    "summary.csv": "2bea9ac45b8ba02509d52696a33d6b2057d47b7ab19527b4ae947177a2abf769",
+    "stance_trajectories.csv": "3c8414d6992cdb7b50a62db198dc25ee5c7d8a307ae0c3a7bc11efa213939dfd"
+  },
+  "figure_sha256": "3b46674afe447afc1419e1abcf634ce3891456e9dba7019a3918c1686dbd086f",
+  "plotter": "validation/scripts/run_two_agent_controlled.py::generate_figures",
+  "preset": "human_showcase_focus10",
+  "interpretation": "Separate GPT-5.4-mini campaign. Do not substitute the older appendix austerity grid."
+}

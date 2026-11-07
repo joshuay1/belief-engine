@@ -1,6 +1,6 @@
 {
   "date": "2026-11-06",
-  "status": "camera-ready code candidate",
+  "status": "camera-ready release v1.0.0",
   "base_snapshot": "anonymous reviewer release generated 2026-05-07T11:03:44Z",
   "tests": {
     "core": 57,
@@ -28,7 +28,10 @@
     ],
     "fresh_checkout_commit": "92a2145a4e043465b6345f71b788a08ce90b287d",
     "fresh_checkout_environment": "Separate Git clone using the verified Python 3.11 environment; no original input paths or model calls needed.",
-    "replay_bootstrap_scope": "Older scoring/updater check: exact point estimates and same reported interval conclusions. Hashed cluster ordering changes Monte Carlo draws; original intervals are retained."
+    "replay_bootstrap_scope": "Older scoring/updater check: exact point estimates and same reported interval conclusions. Hashed cluster ordering changes Monte Carlo draws; original intervals are retained.",
+    "final_figure_assets": 17,
+    "saved_profile_runs_checked": 12,
+    "saved_BE_sweep_runs_checked": 150
   },
   "environment": {
     "python": "3.11.2",
@@ -42,9 +45,9 @@
     "Historical defaults and existing result artifacts are preserved.",
     "Removed the superseded six-condition benchmark (three files) and stale release documentation; preserved them in Git history."
   ],
-  "remaining": [
-    "Final project licence, citation metadata and release tag",
-    "Separate final-figure and older-bundle consistency audit",
-    "Full checkpoint inference can be checked using the pinned Hugging Face release verifier"
+  "scope_limits": [
+    "Full checkpoint inference was not rerun locally; use the pinned Hugging Face release verifier.",
+    "The final-asset audit checks exact files and saved trajectory endpoints, not every historical plotting command.",
+    "Live hosted-model reruns are not expected to reproduce saved responses byte for byte."
   ]
 }

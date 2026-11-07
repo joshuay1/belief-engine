@@ -1,8 +1,8 @@
 # Reproducing the paper
 
 Start with the installation steps in the [README](README.md).
-The saved results allow selected analyses to be checked without running language
-models. Live experiments additionally require the relevant datasets and models.
+The saved results allow the reported numerical analyses to be checked without
+running language models. Live experiments additionally require the relevant datasets and models.
 
 ## 1. Verify the code and included files
 
@@ -38,6 +38,11 @@ to `output/paper/`. It requires no API keys or model downloads. Allow a few minu
 for the endpoint search and bootstrap calculations. The
 [paper result guide](validation/camera_ready/README.md) maps each study to its
 inputs, expected results, and a command for rebuilding it separately.
+
+The [final figure index](validation/camera_ready/figures/README.md) connects the
+manuscript assets to these result packages and the older saved outputs. Run
+`make check-figures` to verify their checksums, the 150 BE sweep trajectories,
+and the separately recovered GPT-5.4-mini profile trajectories.
 
 ## 3. Run experiments with the correct update mode
 

@@ -8,6 +8,7 @@ Run verification and rebuild commands from the repository root, following
 | Study | Saved outputs |
 |---|---|
 | Uptake and anchoring sweeps | [Trajectories, summaries, and figures](results/model_sensitivity_comparison/) |
+| Main GPT-5.4-mini profile panel | [Austerity trajectories and provenance](camera_ready/profiles/) |
 | Earlier five-topic baselines | [Three-trial comparison](results/all_topics_u0.2_a0.4_8models/) |
 | Journalism external-judge check | [Scores and figure](results/journalism_u0.2_a0.4_8models/) |
 | DEBATE replay | [Tables and figures](paper_artifacts/evidence_alignment/) |
@@ -35,3 +36,6 @@ The original one-topic stance-calibration outputs are retained under
 
 Frozen outputs stay in `paper_artifacts/` and `results/`. Rebuilt outputs from
 `make rebuild-replay-stats` go to `output/replay/` at the repository root.
+
+The [final figure index](camera_ready/figures/README.md) identifies the exact
+assets used in the camera-ready draft.

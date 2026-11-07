@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "Please cite the paper and identify the software release used."
+type: software
+title: "Belief Engine"
+version: 1.0.0
+date-released: 2026-11-06
+license: MIT
+repository-code: "https://github.com/joshuay1/belief-engine"
+url: "https://github.com/joshuay1/belief-engine"
+authors:
+  - family-names: Yang
+    given-names: Joshua C.
+  - family-names: Flechtner
+    given-names: Maurice
+  - family-names: Dailisan
+    given-names: Damian
+  - family-names: Bakker
+    given-names: Michiel A.
+preferred-citation:
+  type: conference-paper
+  title: "Belief Engine: Making Agent Stance Auditable in LLM Deliberation"
+  authors:
+    - family-names: Yang
+      given-names: Joshua C.
+    - family-names: Flechtner
+      given-names: Maurice
+    - family-names: Dailisan
+      given-names: Damian
+    - family-names: Bakker
+      given-names: Michiel A.
+  year: 2026
+  collection-title: "Advances in Neural Information Processing Systems"
+  url: "https://arxiv.org/abs/2605.15343"

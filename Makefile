@@ -1,8 +1,9 @@
 PYTHON ?= python3.11
 .DEFAULT_GOAL := help
-.PHONY: help check example test-classifier rebuild-replay-stats rebuild-paper
+.PHONY: help check example test-classifier rebuild-replay-stats rebuild-paper check-figures
 
 help:
+	@echo "make check-figures        Verify final assets and saved profile/sweep trajectories"
 	@echo "make check                Verify the code and included files (offline)"
 	@echo "make example              Show replacement behavior in each update mode"
 	@echo "make test-classifier      Check scorer integration (classifier extra required)"
@@ -23,3 +24,6 @@ rebuild-replay-stats:
 
 rebuild-paper:
 	$(PYTHON) -B validation/scripts/paper/rebuild.py
+
+check-figures:
+	$(PYTHON) -B validation/scripts/paper/check_final_assets.py

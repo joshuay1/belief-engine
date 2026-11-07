@@ -1,8 +1,8 @@
-# Camera-ready code candidate
+# Camera-ready release v1.0.0
 
 Prepared on November 6, 2026 from the 199-file anonymous reviewer snapshot.
-This stage updates executable code and tests. It does not replace the original
-results or claim that every camera-ready result is already packaged.
+This release updates executable code and tests and includes the six camera-ready
+analysis packages. The original reviewer result bundle remains unchanged.
 
 ## Source integration
 
@@ -78,10 +78,13 @@ The six missing empirical packages are included under `validation/camera_ready/`
 `make rebuild-paper` checks them from saved inputs without hosted-model calls.
 See that folder's README for the study map and numerical verification scope.
 
-Before a final named release, choose the project licence and citation metadata,
-and complete the separate audit of final figure copies and the older bundles.
-The new empirical packages do not certify every historical plotting command.
-Figure 1 drawing code is optional and remains in the paper project.
+The release includes MIT licensing, citation metadata, and an index of all 17
+final manuscript assets. Matching older files are referenced rather than copied.
+The main GPT-5.4-mini profile panel uses the separately recovered austerity
+campaign, not the older appendix topic grids. `make check-figures` verifies the
+assets and profile/sweep trajectories. This check does not certify every historical
+plotting command or regenerate hosted responses. Figure 1 drawing code remains
+in the paper project; its final PDF is included.
 
 ## Repository cleanup
 
