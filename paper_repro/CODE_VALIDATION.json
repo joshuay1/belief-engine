@@ -3,7 +3,7 @@
   "status": "local code candidate",
   "base_snapshot": "anonymous reviewer release generated 2026-05-07T11:03:44Z",
   "tests": {
-    "core": 56,
+    "core": 57,
     "classifier": 8,
     "failures": 0,
     "expected_failures": 0,
@@ -12,11 +12,12 @@
     "classifier_weights": "synthetic tensors, no checkpoint downloaded"
   },
   "verification": {
-    "syntax_files": 97,
+    "syntax_files": 98,
     "checked_imports": 10,
     "original_paper_manifest_files": 36,
     "unchanged_original_artifact_files": 91,
-    "pip_check": "passed"
+    "pip_check": "passed",
+    "replay_tables_rebuilt_and_matched": 3
   },
   "environment": {
     "python": "3.11.2",

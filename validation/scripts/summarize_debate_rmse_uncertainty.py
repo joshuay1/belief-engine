@@ -208,6 +208,11 @@ def paired_fold_tests(
                                 reference_values,
                                 zero_method="wilcox",
                                 alternative="two-sided",
+                                # Preserve the original SciPy 1.10 auto policy.
+                                # Newer versions use a different default for
+                                # zero differences in these small fold samples.
+                                method=("approx" if np.any(diff == 0.0)
+                                        or n_folds > 50 else "exact"),
                             )
                         wilcoxon_statistic = float(wilcoxon_result.statistic)
                         wilcoxon_p_value = float(wilcoxon_result.pvalue)

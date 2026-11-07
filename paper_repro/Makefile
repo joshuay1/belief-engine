@@ -9,7 +9,7 @@ help:
 	@echo "  smoke                    - check Python version, syntax, and key imports"
 	@echo "  audit-release            - scan for generated files, raw runs, local paths, and secrets"
 	@echo "  check-artifacts          - verify validation/paper_artifacts/MANIFEST.sha256"
-	@echo "  check-release-manifest   - verify REVIEWER_RELEASE_MANIFEST.sha256"
+	@echo "  check-release-manifest   - verify CAMERA_READY_MANIFEST.sha256"
 	@echo "  clean-generated          - remove local bytecode/cache files"
 	@echo "  rebuild-paper-artifacts  - rebuild selected paper artifact bundle"
 	@echo "  rebuild-debate-rmse-stats - rebuild DEBATE fold RMSE CI/test tables"

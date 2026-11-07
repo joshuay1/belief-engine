@@ -64,6 +64,14 @@ The manifest tool uses the staged Git file list and the current file bytes. It
 never adds untracked files, includes model weights automatically, or rewrites the
 original artifact checksums. Stage the new manifest before committing.
 
+## Rebuild compatibility
+
+The saved DEBATE fold statistics now have an end-to-end regression test. The
+Wilcoxon calculation explicitly retains the original SciPy 1.10 selection rule
+(exact for up to 50 nonzero paired differences, otherwise approximation). This
+avoids a change in newer SciPy defaults for zero differences. The three rebuilt
+tables match the saved outputs to numerical tolerance.
+
 ## Remaining paper packaging
 
 These are the next stage, not prerequisites for the code tests:
